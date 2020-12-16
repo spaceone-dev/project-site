@@ -1,1 +1,1 @@
-project-site
+SpaceONE Open Source Project Site
