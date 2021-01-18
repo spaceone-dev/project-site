@@ -23,7 +23,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src",
-    "next.config.js"
+    "next.config.js",
+    "custom.d.ts"
   ],
   "exclude": [
     "node_modules"
