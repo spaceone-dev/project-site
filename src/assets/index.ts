@@ -24,3 +24,7 @@ export { default as Photo } from "./tabletgrosplandcb 1.svg";
 export { default as Universe } from "./universe_circlebg.svg";
 export { default as Megazone } from "./Group 2377.svg";
 export { default as CloudNative } from "./Group 2328.svg";
+export { default as Plugin1 } from "./spaceoneplugin-1.svg";
+export { default as Plugin2 } from "./firstplugin-2.svg";
+export { default as Plugin3 } from "./secondplugin-3.svg";
+export { default as Plugin4 } from "./upcomingplugins-4.svg";

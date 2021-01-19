@@ -131,41 +131,43 @@ const Scroll_1 = () => {
             opacity: "0.8",
           }}
         />
-
-        <Title>
-          <div className="__one">Manage</div>
-          <div className="__two">All Cloud Resources</div>
-          <div className="__three">
-            in<span className="__three__gradient">One Platform</span>
-          </div>
-          <div className="__info">
-            <div>Open-source Multicloud Management Platform;</div>
-            <br />
-            <div>SpaceONE is a cloud management platform that enables</div>
-            <br />
-            <div>
-              integrated management of Multi-Cloud. We boost and maximize
+        <div style={{ position: "absolute", zIndex: 1 }}>
+          <Title>
+            <div className="__one">Manage</div>
+            <div className="__two">All Cloud Resources</div>
+            <div className="__three">
+              in<span className="__three__gradient">One Platform</span>
             </div>
-            <br />
-            <div>
-              your operational efficiency in managements as following features.
+            <div className="__info">
+              <div>Open-source Multicloud Management Platform;</div>
+              <br />
+              <div>SpaceONE is a cloud management platform that enables</div>
+              <br />
+              <div>
+                integrated management of Multi-Cloud. We boost and maximize
+              </div>
+              <br />
+              <div>
+                your operational efficiency in managements as following
+                features.
+              </div>
             </div>
-          </div>
-        </Title>
-        <div
-          className="__git"
-          onMouseEnter={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-        >
-          {!isHover ? <Github /> : <Github_fill />}
-          <div className="__git__content">
-            <span style={{ marginBottom: "0.2rem" }}>
-              <GithubLogo />
-            </span>
-            <span style={{ marginLeft: "0.9rem" }}>Github</span>
-            <span style={{ marginLeft: "0.5rem" }}>
-              <ExternalLink />
-            </span>
+          </Title>
+          <div
+            className="__git"
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+          >
+            {!isHover ? <Github /> : <Github_fill />}
+            <div className="__git__content">
+              <span style={{ marginBottom: "0.2rem" }}>
+                <GithubLogo />
+              </span>
+              <span style={{ marginLeft: "0.9rem" }}>Github</span>
+              <span style={{ marginLeft: "0.5rem" }}>
+                <ExternalLink />
+              </span>
+            </div>
           </div>
         </div>
       </Container>
@@ -188,13 +190,11 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
   }
   .__wave2 {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
   }
   .__ellipse1 {
     position: absolute;

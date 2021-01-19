@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { Universe } from "../../assets";
+import { Universe, Plugin1, Plugin2, Plugin3, Plugin4 } from "../../assets";
 import spinPurple from "../../assets/spin_purple_final.json";
 import spinWhite from "../../assets/spin_white_final.json";
 import spinBlue from "../../assets/spin_blue_final.json";
@@ -42,7 +42,7 @@ const Scroll_5 = () => {
               width: "11.2rem",
               height: "11.2rem",
               left: "8rem",
-              top: "13.7rem",
+              top: "20rem",
               transform: "rotate(70.54deg)",
               opacity: "0.5",
             }}
@@ -54,7 +54,7 @@ const Scroll_5 = () => {
               width: "17.6rem",
               height: "17.6rem",
               left: "42rem",
-              top: "48rem",
+              top: "54rem",
               opacity: "0.5",
             }}
           />
@@ -65,7 +65,7 @@ const Scroll_5 = () => {
               width: "9rem",
               height: "9rem",
               left: "13.4rem",
-              top: "70rem",
+              top: "76.5rem",
               transform: "rotate(-90deg)",
               opacity: "0.7",
             }}
@@ -76,8 +76,8 @@ const Scroll_5 = () => {
               position: "absolute",
               width: "13.3rem",
               height: "13.3rem",
-              left: "74rem",
-              top: "56.5rem",
+              left: "73.7rem",
+              top: "63rem",
               opacity: "0.5",
             }}
           />
@@ -87,14 +87,27 @@ const Scroll_5 = () => {
               position: "absolute",
               width: "7.277rem",
               height: "7.277rem",
-              left: "88.7rem",
-              top: "18rem",
+              left: "89rem",
+              top: "25rem",
               opacity: "0.5",
               transform: "rotate(-17.7deg)",
             }}
           />
+
           <div className="__universe">
             <Universe />
+          </div>
+          <div className="__plugin1">
+            <Plugin1 />
+          </div>
+          <div className="__plugin2">
+            <Plugin2 />
+          </div>
+          <div className="__plugin3">
+            <Plugin3 />
+          </div>
+          <div className="__plugin4">
+            <Plugin4 />
           </div>
           <Upcoming>
             UPCOMING
@@ -128,8 +141,27 @@ const Container = styled.div`
   height: 100vh;
   .__universe {
     position: absolute;
-    z-index: 1;
     left: 0;
+  }
+  .__plugin1 {
+    position: absolute;
+    left: 11rem;
+    top: 31rem;
+  }
+  .__plugin2 {
+    position: absolute;
+    left: 25rem;
+    top: 16rem;
+  }
+  .__plugin3 {
+    position: absolute;
+    left: 53rem;
+    top: 10rem;
+  }
+  .__plugin4 {
+    position: absolute;
+    left: 95rem;
+    top: 25rem;
   }
 `;
 
@@ -142,7 +174,7 @@ const Upcoming = styled.div`
   font-weight: bold;
   color: #b9dcff;
   left: 96.7rem;
-  top: 12rem;
+  top: 18rem;
   .__plugins {
     font-weight: normal;
     color: #e9f4ff;
