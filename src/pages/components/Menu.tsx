@@ -58,33 +58,43 @@ const SmallList = ({ text }) => {
 
 const Menu = () => {
   return (
-    <Container>
-      <div style={{ marginTop: "16.6rem" }}>
-        {menuList.map((item) => (
-          <List text={item.name} />
-        ))}
-      </div>
-      <div className="__small">
-        {smallMenuList.map((item) => (
-          <SmallList text={item.name} />
-        ))}
-      </div>
-    </Container>
+    <Box>
+      <Container>
+        <div style={{ marginTop: "16.6rem" }}>
+          {menuList.map((item) => (
+            <List text={item.name} />
+          ))}
+        </div>
+        <div className="__small">
+          {smallMenuList.map((item) => (
+            <SmallList text={item.name} />
+          ))}
+        </div>
+      </Container>
+    </Box>
   );
 };
 
-const Container = styled.div`
-  display: flex;
+const Box = styled.div`
   width: 100%;
   height: 45.2rem;
   background: #001b33;
   box-shadow: 0px 4px 15px rgba(0, 92, 179, 0.3);
-  color: white;
+  z-index: 2;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Container = styled.div`
+  display: flex;
+  width: 144rem;
+  height: 45.2rem;
+  color: white;
   font-size: 4.2rem;
   font-weight: 300;
   top: 0;
-  z-index: 2;
   font-family: "Roboto";
   .__small {
     position: absolute;

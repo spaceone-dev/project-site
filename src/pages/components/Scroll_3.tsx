@@ -32,60 +32,61 @@ const Scroll_3 = () => {
   return (
     <Box>
       <Container>
-        <div className="__title">ALSO...</div>
-        <Card>
-          <Lottie
-            options={optionsManage}
-            style={{
-              position: "absolute",
-              width: "13.3rem",
-              height: "13.3rem",
-              top: "33.3rem",
-            }}
-          />
-          <div className="__keyword">Manage Resources</div>
-          <div className="__explain">
-            Manage User and Multicloud account. Detect Multicloud resources and
-            Categorization. Monitoring and Provide spend information. Monitoring
-            and Provide spend information.
-          </div>
-        </Card>
-        <Card>
-          <Lottie
-            options={optionsGovern}
-            style={{
-              position: "absolute",
-              width: "16rem",
-              height: "10.3rem",
-              top: "35rem",
-              left: "56rem",
-            }}
-          />
-          <div className="__keyword">Govern Analytics</div>
-          <div className="__explain">
-            Manage User and Multicloud account. Detect Multicloud resources and
-            Categorization. Monitoring and Provide spend information. Monitoring
-            and Provide spend information.
-          </div>
-        </Card>
-        <Card>
-          <Lottie
-            options={optionsOffer}
-            style={{
-              position: "absolute",
-              width: "29.3rem",
-              height: "17.3rem",
-              left: "77rem",
-              top: "28rem",
-            }}
-          />
-          <div className="__keyword">Offer Automating</div>
-          <div className="__explain">
-            Manage User and Multicloud account. Detect Multicloud resources and
-            Categorization. Monitoring and Provide spend information. Monitoring
-            and Provide spend information.
-          </div>
-        </Card>
+        <div style={{ padding: "19rem", display: "flex" }}>
+          <div className="__title">ALSO...</div>
+          <Card>
+            <Lottie
+              options={optionsManage}
+              style={{
+                position: "absolute",
+                width: "13.3rem",
+                height: "13.3rem",
+              }}
+            />
+            <div className="__keyword">Manage Resources</div>
+            <div className="__explain">
+              Manage User and Multicloud account. Detect Multicloud resources
+              and Categorization. Monitoring and Provide spend information.
+              Monitoring and Provide spend information.
+            </div>
+          </Card>
+          <Card>
+            <Lottie
+              options={optionsGovern}
+              style={{
+                position: "absolute",
+                width: "16rem",
+                height: "10.3rem",
+                top: "2rem",
+                left: "2rem",
+              }}
+            />
+            <div className="__keyword">Govern Analytics</div>
+            <div className="__explain">
+              Manage User and Multicloud account. Detect Multicloud resources
+              and Categorization. Monitoring and Provide spend information.
+              Monitoring and Provide spend information.
+            </div>
+          </Card>
+          <Card>
+            <Lottie
+              options={optionsOffer}
+              style={{
+                position: "absolute",
+                width: "29.3rem",
+                height: "17.3rem",
+                top: "-5rem",
+                left: "-13rem",
+              }}
+            />
+            <div className="__keyword">Offer Automating</div>
+            <div className="__explain">
+              Manage User and Multicloud account. Detect Multicloud resources
+              and Categorization. Monitoring and Provide spend information.
+              Monitoring and Provide spend information.
+            </div>
+          </Card>
+        </div>
       </Container>
     </Box>
   );
@@ -104,12 +105,8 @@ const Box = styled.div`
 const Container = styled.div`
   width: 144rem;
   height: 100vh;
-  position: relative;
-  padding: 0 19rem;
   display: flex;
-  /* margin-top: 20rem; */
   .__title {
-    padding-top: 20rem;
     position: absolute;
     color: #cf88a0;
     font-family: "Roboto";
@@ -118,11 +115,12 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
-  margin-top: 32.3rem;
+  position: relative;
+  margin-top: 15rem;
   margin-right: 2rem;
   /* flex: 0.3; */
   .__keyword {
-    margin-top: 17rem;
+    margin-top: 15rem;
     font-family: "Roboto Slab";
     font-weight: bold;
     font-size: 2.8rem;

@@ -120,17 +120,6 @@ const Scroll_1 = () => {
             opacity: "0.8",
           }}
         />
-        <Lottie
-          options={optionsSpaceMan}
-          style={{
-            position: "absolute",
-            width: "22rem",
-            height: "22rem",
-            left: "73.2rem",
-            top: "50.2rem",
-            opacity: "0.8",
-          }}
-        />
         <div style={{ position: "absolute", zIndex: 1 }}>
           <Title>
             <div className="__one">Manage</div>
@@ -169,6 +158,17 @@ const Scroll_1 = () => {
               </span>
             </div>
           </div>
+          <Lottie
+            options={optionsSpaceMan}
+            style={{
+              position: "absolute",
+              width: "22rem",
+              height: "22rem",
+              left: "70rem",
+              top: "50rem",
+              opacity: "0.8",
+            }}
+          />
         </div>
       </Container>
     </Box>
@@ -260,7 +260,7 @@ const Title = styled.div`
     font-family: "Roboto", sans-serif;
     font-size: 1.8rem;
     line-height: 1.5rem;
-    color: #a8a5ce;
+    color: #ebeaf6;
     margin-top: 3rem;
   }
 `;
