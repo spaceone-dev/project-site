@@ -4,6 +4,7 @@ import {
   ExternalLink_blue,
   GithubLogo_menu,
   ExternalLink_blue_sm,
+  GithubLogo_menu_hover,
 } from "../../assets";
 
 const menuList = [
@@ -43,7 +44,8 @@ const SmallList = ({ text }) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      {text === "Github" && <GithubLogo_menu />}
+      {text === "Github" &&
+        (!isHover ? <GithubLogo_menu /> : <GithubLogo_menu_hover />)}
       <span style={{ marginLeft: text === "Github" && "0.8rem" }}>{text}</span>
       {isHover && (
         <span style={{ marginLeft: "1.2rem" }}>
@@ -94,7 +96,7 @@ const Container = styled.div`
       display: flex;
       margin-bottom: 2rem;
       &:hover {
-        text-decoration: underline solid white 0.2rem;
+        color: #65cba0;
       }
     }
   }
@@ -106,7 +108,7 @@ const MenuList = styled.div`
   margin-bottom: 3.6rem;
   font-weight: 100;
   &:hover {
-    text-decoration: underline solid white 0.2rem;
+    color: #65cba0;
   }
 `;
 
