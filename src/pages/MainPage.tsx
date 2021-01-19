@@ -10,13 +10,24 @@ import Scroll_4 from "./components/Scroll_4";
 import Scroll_5 from "./components/Scroll_5";
 import scroll from "../assets/scroll_FINAL.json";
 import Menu from "./components/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MainPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrollable, setIsScrollable] = useState(true);
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    const html = document.documentElement;
+    window.addEventListener("scroll", () => {
+      if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
+        setIsScrollable(false);
+      } else setIsScrollable(true);
+    });
+  }, []);
 
   const optionsScroll = {
     animationData: scroll,
@@ -43,16 +54,18 @@ const MainPage = () => {
             {isMenuOpen ? "Close" : "Menu"}
           </span>
         </div>
-        <ScrollBtn>
-          <Lottie
-            options={optionsScroll}
-            style={{
-              width: "2rem",
-              height: "3.25rem",
-            }}
-          />
-          <div className="__text">scroll</div>
-        </ScrollBtn>
+        {isScrollable && (
+          <ScrollBtn>
+            <Lottie
+              options={optionsScroll}
+              style={{
+                width: "2rem",
+                height: "3.25rem",
+              }}
+            />
+            <div className="__text">scroll</div>
+          </ScrollBtn>
+        )}
 
         <Scroll_1 />
         <div style={{ marginTop: "-1rem" }}>
