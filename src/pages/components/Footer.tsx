@@ -37,7 +37,7 @@ const Footer = () => {
 
 const Top = styled.div`
   width: auto;
-  height: 38rem;
+  height: 48rem;
   background: #001b33;
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@ const Top = styled.div`
 
 const Bottom = styled.div`
   width: 100%;
-  height: 38rem;
+  height: 48rem;
   background: #000f1c;
 `;
 
