@@ -29,9 +29,9 @@ const MainPage = () => {
 
   return (
     <Background>
-      {/* <Stars_1 /> */}
-      {/* <Stars_2 /> */}
-      {/* <Stars_3 /> */}
+      <div className="stars" />
+      <div className="stars2" />
+      <div className="stars3" />
       <Container>
         {isMenuOpen && <Menu />}
         <div className="__logo">
@@ -39,7 +39,7 @@ const MainPage = () => {
         </div>
         <div className="__menu" onClick={handleMenuOpen}>
           <SOneMan />
-          <span style={{ marginLeft: "0.4rem" }}>
+          <span style={{ marginLeft: "0.4rem", marginTop: "0.2rem" }}>
             {isMenuOpen ? "Close" : "Menu"}
           </span>
         </div>
@@ -55,7 +55,9 @@ const MainPage = () => {
         </ScrollBtn>
 
         <Scroll_1 />
-        <Scroll_2 />
+        <div style={{ marginTop: "-1rem" }}>
+          <Scroll_2 />
+        </div>
         <Scroll_3 />
         <Scroll_4 />
         <Scroll_5 />
@@ -68,7 +70,6 @@ const MainPage = () => {
 const Background = styled.div`
   width: 100%;
   height: auto;
-  background: #141921;
   position: absolute;
   z-index: -2;
   overflow: hidden;
@@ -96,7 +97,7 @@ const Container = styled.div`
     font-family: "Roboto";
     font-size: 1.8rem;
     &:hover {
-      text-decoration: underline;
+      color: #65cba0;
     }
   }
 `;
@@ -105,6 +106,7 @@ const ScrollBtn = styled.div`
   position: fixed;
   left: 10rem;
   bottom: 7rem;
+  z-index: 10;
   .__text {
     margin-top: 1rem;
     color: #ebeaf6;
@@ -112,23 +114,5 @@ const ScrollBtn = styled.div`
     font-size: 1.2rem;
   }
 `;
-
-// const Stars_1 = styled.div`
-//   width: 1px;
-//   height: 1px;
-//   background: transparent;
-//   box-shadow: $shadows-small;
-//   animation: animStar 50s linear infinite;
-
-//   &:after {
-//     content: " ";
-//     position: absolute;
-//     top: 2000px;
-//     width: 1px;
-//     height: 1px;
-//     background: transparent;
-//     box-shadow: $shadows-small;
-//   }
-// `;
 
 export default MainPage;

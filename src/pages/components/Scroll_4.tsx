@@ -39,6 +39,7 @@ const Scroll_4 = () => {
 };
 
 const Box = styled.div`
+  background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
   width: 100%;
   height: 150vh;
   display: flex;

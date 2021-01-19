@@ -24,7 +24,8 @@
     "**/*.tsx",
     "src",
     "next.config.js",
-    "custom.d.ts"
+    "custom.d.ts",
+    "**/*.scss"
   ],
   "exclude": [
     "node_modules"

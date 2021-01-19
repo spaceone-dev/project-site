@@ -19,6 +19,7 @@ import {
 } from "../../assets";
 import spinPurple from "../../assets/spin_purple_final.json";
 import spinWhite from "../../assets/spin_white_final.json";
+import spaceMan from "../../assets/spaceman0119_final.json";
 import { useState } from "react";
 
 const Scroll_1 = () => {
@@ -32,6 +33,14 @@ const Scroll_1 = () => {
   };
   const optionsSpinWhite = {
     animationData: spinWhite,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const optionsSpaceMan = {
+    animationData: spaceMan,
     loop: true,
     autoplay: true,
     rendererSettings: {
@@ -108,6 +117,17 @@ const Scroll_1 = () => {
             left: "74.387rem",
             top: "12.5rem",
             transform: "rotate(-27.22deg)",
+            opacity: "0.8",
+          }}
+        />
+        <Lottie
+          options={optionsSpaceMan}
+          style={{
+            position: "absolute",
+            width: "22rem",
+            height: "22rem",
+            left: "73.2rem",
+            top: "50.2rem",
             opacity: "0.8",
           }}
         />
@@ -198,7 +218,7 @@ const Container = styled.div`
       font-size: 1.6rem;
       position: absolute;
       bottom: 0;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.9rem;
       margin-left: 3rem;
       color: white;
       display: flex;

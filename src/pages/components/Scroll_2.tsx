@@ -91,6 +91,7 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
 `;
 
 const Container = styled.div`
@@ -109,7 +110,6 @@ const Container = styled.div`
     width: 134.017rem;
     height: 64rem;
     position: absolute;
-    z-index: -1;
     justify-content: center;
     left: 5rem;
     top: 18rem;
