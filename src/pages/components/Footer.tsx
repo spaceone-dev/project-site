@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Megazone, CloudNative } from "../../assets";
+import { MZ, CNCF, SOneMan_footer } from "../../assets";
 
 const Footer = () => {
   return (
@@ -8,36 +8,66 @@ const Footer = () => {
         <Box>
           <div className="__card">
             <div className="__card__big">76</div>
-            <div className="__card__small">Enrolled Projects</div>
+            <div className="__card__300">Enrolled Projects</div>
           </div>
           <div className="__card">
             <div className="__card__big">28</div>
-            <div className="__card__small">Contributors</div>
+            <div className="__card__300">Contributors</div>
           </div>
           <div className="__card">
             <div className="__megazone">
-              <Megazone />
+              <MZ />
             </div>
-            <div className="__card__small">
+            <div className="__card__300">
               <div>Official Partner</div>
               <div>
                 Official Member of
                 <span style={{ marginLeft: "0.6rem" }}>
-                  <CloudNative />
+                  <CNCF />
                 </span>
               </div>
             </div>
           </div>
         </Box>
       </Top>
-      <Bottom></Bottom>
+      <Bottom>
+        <Box>
+          <div className="__card">
+            <div style={{ position: "absolute", left: "0", top: "-8rem" }}>
+              <SOneMan_footer />
+            </div>
+            <div className="__card__400">
+              SpaceONE <div />
+              Copyright 2021
+              <div className="__card__500">MEGAZONE Cloud</div>
+            </div>
+          </div>
+          <div className="__card">
+            <div className="__card__400">
+              Contacts
+              <div className="__card__300__18">MEGAZONE Cloud</div>
+            </div>
+          </div>
+          <div className="__card">
+            <div className="__card__400">
+              Seoul
+              <div className="__card__300__18">
+                46, Nonhyeon-ro 85-gil
+                <div />
+                Gangnam-gu, Korea
+              </div>
+              <div className="__card__300__18">+82 1644-2243 </div>
+            </div>
+          </div>
+        </Box>
+      </Bottom>
     </div>
   );
 };
 
 const Top = styled.div`
   width: auto;
-  height: 48rem;
+  height: 50vh;
   background: #001b33;
   display: flex;
   align-items: center;
@@ -45,9 +75,12 @@ const Top = styled.div`
 `;
 
 const Bottom = styled.div`
-  width: 100%;
-  height: 48rem;
+  width: auto;
+  height: 50vh;
   background: #000f1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Box = styled.div`
@@ -56,18 +89,35 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   .__card {
+    position: relative;
     width: 30rem;
-    margin-right: 6rem;
-    font-family: Roboto;
+    margin-left: 6rem;
+    font-family: "Roboto";
     color: #ffffff;
     line-height: 7rem;
     &__big {
       font-size: 7.2rem;
     }
-    &__small {
+    &__300 {
       font-size: 2rem;
       font-weight: 300;
-      line-height: 23px;
+      line-height: 2.5rem;
+      &__18 {
+        margin-top: 1rem;
+        font-weight: 300;
+        font-size: 1.8rem;
+      }
+    }
+    &__400 {
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.5rem;
+    }
+    &__500 {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 2.5rem;
+      margin-top: 2.4rem;
     }
   }
   .__megazone {
