@@ -9,12 +9,13 @@ import Scroll_3 from "./components/Scroll_3";
 import Scroll_4 from "./components/Scroll_4";
 import Scroll_5 from "./components/Scroll_5";
 import scroll from "../assets/scroll_FINAL.json";
-import Menu from "./components/Menu";
 import { useEffect, useState } from "react";
 import Fullpage, {
   FullPageSections,
   FullpageSection,
 } from "@ap.cx/react-fullpage";
+import Menu from "./components/Menu";
+import Background from "./components/Background";
 
 const MainPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,75 +46,80 @@ const MainPage = () => {
   };
 
   return (
-    <Fullpage>
-      <Container>
-        <div className="__logo">
-          <SpaceONE />
-        </div>
-        <div className="__menu" onClick={handleMenuOpen}>
-          <SOneMan />
-          <span style={{ marginLeft: "0.4rem", marginTop: "0.2rem" }}>
-            {isMenuOpen ? "Close" : "Menu"}
-          </span>
-        </div>
-        {isScrollable && (
-          <ScrollBtn>
-            <Lottie
-              options={optionsScroll}
+    <>
+      {isMenuOpen && <Menu />}
+      <Background />
+
+      <Fullpage>
+        <Container>
+          <div className="__logo">
+            <SpaceONE />
+          </div>
+          <div className="__menu" onClick={handleMenuOpen}>
+            <SOneMan />
+            <span style={{ marginLeft: "0.4rem", marginTop: "0.2rem" }}>
+              {isMenuOpen ? "Close" : "Menu"}
+            </span>
+          </div>
+          {isScrollable && (
+            <ScrollBtn>
+              <Lottie
+                options={optionsScroll}
+                style={{
+                  width: "2rem",
+                  height: "3.25rem",
+                }}
+              />
+              <div className="__text">scroll</div>
+            </ScrollBtn>
+          )}
+          <FullPageSections>
+            <FullpageSection
               style={{
-                width: "2rem",
-                height: "3.25rem",
+                height: "100vh",
               }}
-            />
-            <div className="__text">scroll</div>
-          </ScrollBtn>
-        )}
-        <FullPageSections>
-          <FullpageSection
-            style={{
-              height: "100vh",
-            }}
-          >
-            <Scroll_1 isMenuOpen={isMenuOpen} />
-          </FullpageSection>
-          <FullpageSection
-            style={{
-              height: "100vh",
-            }}
-          >
-            <Scroll_2 />
-          </FullpageSection>
-          <FullpageSection
-            style={{
-              height: "100vh",
-            }}
-          >
-            <Scroll_3 />
-          </FullpageSection>
-          <FullpageSection
-            style={{
-              height: "100vh",
-            }}
-          >
-            <Scroll_4 />
-          </FullpageSection>
-          <FullpageSection
-            style={{
-              height: "100vh",
-            }}
-          >
-            <Scroll_5 />
-          </FullpageSection>
-          <FullpageSection
-            style={{
-              height: "100vh",
-            }}
-          >
-            <Footer />
-          </FullpageSection>
-        </FullPageSections>
-      </Container>
-    </Fullpage>
+            >
+              <Scroll_1 />
+            </FullpageSection>
+            <FullpageSection
+              style={{
+                height: "100vh",
+              }}
+            >
+              <Scroll_2 />
+            </FullpageSection>
+            <FullpageSection
+              style={{
+                height: "100vh",
+              }}
+            >
+              <Scroll_3 />
+            </FullpageSection>
+            <FullpageSection
+              style={{
+                height: "100vh",
+              }}
+            >
+              <Scroll_4 />
+            </FullpageSection>
+            <FullpageSection
+              style={{
+                height: "100vh",
+              }}
+            >
+              <Scroll_5 />
+            </FullpageSection>
+            <FullpageSection
+              style={{
+                height: "100vh",
+              }}
+            >
+              <Footer />
+            </FullpageSection>
+          </FullPageSections>
+        </Container>
+      </Fullpage>
+    </>
   );
 };
 

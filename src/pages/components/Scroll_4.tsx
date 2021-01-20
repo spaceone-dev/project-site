@@ -48,6 +48,7 @@ const Box = styled.div`
 `;
 
 const Container = styled.div`
+  position: relative;
   width: 144rem;
   height: 100vh;
   .__title {

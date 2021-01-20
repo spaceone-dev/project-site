@@ -22,8 +22,9 @@ import spinWhite from "../../assets/spin_white_final.json";
 import spaceMan from "../../assets/spaceman0119_final.json";
 import { useState } from "react";
 import Menu from "./Menu";
+import Background from "./Background";
 
-const Scroll_1 = ({ isMenuOpen }) => {
+const Scroll_1 = () => {
   const optionsSpinPurple = {
     animationData: spinPurple,
     loop: true,
@@ -53,9 +54,7 @@ const Scroll_1 = ({ isMenuOpen }) => {
 
   return (
     <Box>
-      {isMenuOpen && <Menu />}
-      <div className="stars" />
-      <div className="twinkling" />
+      {/* <Background /> */}
       <Container>
         <div className="__wave1">
           <Wave1 />
