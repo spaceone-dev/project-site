@@ -27,8 +27,10 @@ const MainPage = () => {
     if (!isMenuShown) {
       setIsMenuOpen(true);
       setIsMenuShown(true);
+      setIsScrollable(false);
     } else {
       setIsMenuOpen(false);
+      setIsScrollable(true);
       setTimeout(() => {
         setIsMenuShown(false);
       }, 500);
@@ -64,7 +66,7 @@ const MainPage = () => {
       <Background />
 
       <Fullpage>
-        <Container>
+        <Container isMenuOpen={isMenuOpen}>
           <div className="__logo">
             <SpaceONE />
           </div>
@@ -75,7 +77,7 @@ const MainPage = () => {
             </span>
           </div>
           {isScrollable && (
-            <ScrollBtn>
+            <ScrollBtn isMenuOpen={isMenuOpen}>
               <Lottie
                 options={optionsScroll}
                 style={{
@@ -136,8 +138,7 @@ const MainPage = () => {
   );
 };
 
-const Container = styled.div`
-  font-family: "Roboto Slab", serif;
+const Container = styled.div<{ isMenuOpen: Boolean }>`
   font-size: 3rem;
   .__logo {
     cursor: pointer;
@@ -145,6 +146,10 @@ const Container = styled.div`
     left: 10rem;
     top: 8rem;
     z-index: 10;
+    opacity: ${({ isMenuOpen }) => isMenuOpen && "0.6"};
+    animation: ${({ isMenuOpen }) =>
+        isMenuOpen ? "openMenuLogo" : "closeMenuLogo"}
+      0.5s;
   }
   .__menu {
     cursor: pointer;
@@ -164,11 +169,13 @@ const Container = styled.div`
   }
 `;
 
-const ScrollBtn = styled.div`
+const ScrollBtn = styled.div<{ isMenuOpen: Boolean }>`
   position: fixed;
   left: 10rem;
   bottom: 7rem;
   z-index: 10;
+  animation: ${({ isMenuOpen }) => (!isMenuOpen ? "openMenu" : "closeMenu")}
+    0.5s;
   .__text {
     margin-top: 1rem;
     color: #ebeaf6;

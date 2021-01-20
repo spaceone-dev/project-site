@@ -20,11 +20,18 @@ import {
 import spinPurple from "../../assets/spin_purple_final.json";
 import spinWhite from "../../assets/spin_white_final.json";
 import spaceMan from "../../assets/spaceman0119_final.json";
+import planet from "../../assets/purpleplanet.json";
 import { useState } from "react";
-import Menu from "./Menu";
-import Background from "./Background";
 
 const Scroll_1 = () => {
+  const optionsPlanet = {
+    animationData: planet,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   const optionsSpinPurple = {
     animationData: spinPurple,
     loop: true,
@@ -54,7 +61,6 @@ const Scroll_1 = () => {
 
   return (
     <Box>
-      {/* <Background /> */}
       <Container>
         <div className="__wave1">
           <Wave1 />
@@ -69,19 +75,19 @@ const Scroll_1 = () => {
           <Ellipse2 />
         </div>
 
-        <div style={{ position: "absolute", left: "7rem", top: "47.3rem" }}>
+        <div style={{ position: "absolute", left: "14rem", top: "58.2rem" }}>
           <Circle96 />
         </div>
-        <div style={{ position: "absolute", left: "19rem", top: "40.5rem" }}>
+        <div style={{ position: "absolute", left: "26rem", top: "53rem" }}>
           <Circle105 />
         </div>
-        <div style={{ position: "absolute", left: "3.7rem", top: "53.5rem" }}>
+        <div style={{ position: "absolute", left: "11.5rem", top: "64rem" }}>
           <Circle109 />
         </div>
-        <div style={{ position: "absolute", left: "8.5rem", top: "60rem" }}>
+        <div style={{ position: "absolute", left: "8.5rem", top: "59rem" }}>
           <Circle110 />
         </div>
-        <div style={{ position: "absolute", left: "4.1rem", top: "16rem" }}>
+        <div style={{ position: "absolute", left: "4.5rem", top: "16rem" }}>
           <Circle111 />
         </div>
 
@@ -105,8 +111,8 @@ const Scroll_1 = () => {
             position: "absolute",
             width: "13.563rem",
             height: "13.563rem",
-            left: "-0.1rem",
-            top: "12rem",
+            left: "10rem",
+            top: "20rem",
             transform: "rotate(-30deg)",
             opacity: "0.7",
           }}
@@ -117,32 +123,39 @@ const Scroll_1 = () => {
             position: "absolute",
             width: "7.557rem",
             height: "7.557rem",
-            left: "74.387rem",
+            left: "92.387rem",
             top: "12.5rem",
             transform: "rotate(-27.22deg)",
             opacity: "0.8",
           }}
         />
+        <Lottie
+          options={optionsPlanet}
+          style={{
+            position: "absolute",
+            width: "12.6rem",
+            height: "12.033rem",
+            left: "-6rem",
+            top: "33.9rem",
+            transform: "matrix(0.97, 0.21, -0.24, 0.98, 0, 0)",
+            opacity: "0.4",
+          }}
+        />
+
         <div style={{ position: "absolute", zIndex: 1 }}>
           <Title>
-            <div className="__one">Manage</div>
-            <div className="__two">All Cloud Resources</div>
-            <div className="__three">
-              in<span className="__three__gradient">One Platform</span>
+            <div className="__title">
+              MANAGE
+              <div />
+              ALL CLOUD
+              <div />
+              RESOURCES IN
             </div>
+            <div className="__gradient">ONE PLATFORM</div>
             <div className="__info">
-              <div>Open-source Multicloud Management Platform;</div>
-              <br />
-              <div>SpaceONE is a cloud management platform that enables</div>
-              <br />
-              <div>
-                integrated management of Multi-Cloud. We boost and maximize
-              </div>
-              <br />
-              <div>
-                your operational efficiency in managements as following
-                features.
-              </div>
+              <div>SpaceONE is an Open-Source Platform and</div>
+              <div />
+              <div>Enables Integrated Management of Multi-Cloud.</div>
             </div>
           </Title>
           <div
@@ -167,8 +180,8 @@ const Scroll_1 = () => {
               position: "absolute",
               width: "22rem",
               height: "22rem",
-              left: "70rem",
-              top: "50rem",
+              left: "18rem",
+              top: "55rem",
               opacity: "0.8",
             }}
           />
@@ -189,6 +202,8 @@ const Box = styled.div`
 const Container = styled.div`
   width: 144rem;
   height: 100vh;
+  display: flex;
+  justify-content: center;
   .__wave1 {
     position: absolute;
     top: 0;
@@ -201,19 +216,19 @@ const Container = styled.div`
   }
   .__ellipse1 {
     position: absolute;
-    top: 0;
+    top: 11.2rem;
     left: 0;
   }
   .__ellipse2 {
     position: absolute;
     top: 0;
-    left: 72rem;
+    left: 90rem;
   }
   .__git {
     width: 160px;
     height: 48px;
-    left: 19rem;
-    top: 4rem;
+    left: -25rem;
+    top: 4.6rem;
     cursor: pointer;
     position: relative;
     &__content {
@@ -232,39 +247,24 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 7.4rem;
-  font-weight: 300;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: -0.01em;
+  font-size: 6rem;
+  margin-left: -25rem;
+  font-weight: 500;
   color: #ebeaf6;
-  margin-top: 14.4rem;
-  margin-left: 19rem;
-  .__two {
-    margin-top: 2rem;
-  }
-  .__three {
-    font-family: "Roboto Slab", sans-serif;
-    font-size: 6.8rem;
-    letter-spacing: -0.02em;
-    display: flex;
-    align-items: flex-end;
-    margin-top: 1.2rem;
-    &__gradient {
-      margin-left: 1.4rem;
-      font-size: 8rem;
-      font-weight: 500;
-      background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  margin-top: 21rem;
+  .__gradient {
+    font-size: 6rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .__info {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.8rem;
-    line-height: 1.5rem;
+    font-size: 2rem;
+    line-height: 3.4rem;
     color: #ebeaf6;
-    margin-top: 3rem;
+    margin-top: 2.6rem;
   }
 `;
 

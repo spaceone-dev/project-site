@@ -16,6 +16,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
           rel="stylesheet"
         ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;600&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <body>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

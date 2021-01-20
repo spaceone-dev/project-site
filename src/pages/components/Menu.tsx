@@ -14,7 +14,7 @@ const menuList = [
 ];
 const smallMenuList = [
   { name: "Github", url: "" },
-  { name: "Contact", url: "" },
+  { name: "Get In Touch", url: "" },
 ];
 
 const List = ({ text }) => {
@@ -99,11 +99,11 @@ const Container = styled.div`
   color: white;
   font-size: 4.2rem;
   font-weight: 300;
-  font-family: "Roboto";
   .__small {
-    font-size: 3.4rem;
+    font-size: 3rem;
+    font-weight: 500;
     margin-bottom: 16.6rem;
-    margin-left: 48rem;
+    margin-left: 40rem;
     &__text {
       cursor: pointer;
       display: flex;
@@ -113,9 +113,10 @@ const Container = styled.div`
       }
     }
     &__email {
+      font-family: Roboto;
       position: absolute;
       font-size: 1.8rem;
-      bottom: 8.9rem;
+      bottom: 10rem;
     }
   }
 `;
@@ -124,7 +125,9 @@ const MenuList = styled.div`
   cursor: pointer;
   margin-left: 19rem;
   margin-bottom: 3.6rem;
-  font-weight: 100;
+  font-size: 4.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   &:hover {
     color: #65cba0;
   }
