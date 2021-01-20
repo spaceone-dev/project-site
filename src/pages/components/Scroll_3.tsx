@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import Manage from "../../assets/ManageResources_final.json";
-import Govern from "../../assets/GovernAnalytics_final.json";
-import Offer from "../../assets/offerautomating_final.json";
+import Manage from "../../assets/manageresourcesguy_120.json";
+import Govern from "../../assets/GovernAnalytics_final (1).json";
+import Offer from "../../assets/offerautomatingguy_120.json";
 
 const Scroll_3 = () => {
   const optionsManage = {
