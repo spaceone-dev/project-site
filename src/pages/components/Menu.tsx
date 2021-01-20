@@ -80,7 +80,8 @@ const Box = styled.div`
   height: 45.2rem;
   background: #001b33;
   box-shadow: 0px 4px 15px rgba(0, 92, 179, 0.3);
-  z-index: 2;
+  z-index: 5;
+  top: 0;
   position: fixed;
   display: flex;
   align-items: center;

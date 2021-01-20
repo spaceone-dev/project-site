@@ -11,6 +11,10 @@ import Scroll_5 from "./components/Scroll_5";
 import scroll from "../assets/scroll_FINAL.json";
 import Menu from "./components/Menu";
 import { useEffect, useState } from "react";
+import Fullpage, {
+  FullPageSections,
+  FullpageSection,
+} from "@ap.cx/react-fullpage";
 
 const MainPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +24,9 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
+
+    // Show scroll icon or not
     const html = document.documentElement;
     window.addEventListener("scroll", () => {
       if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
@@ -39,12 +45,8 @@ const MainPage = () => {
   };
 
   return (
-    <Background>
-      <div className="stars" />
-      <div className="stars2" />
-      <div className="stars3" />
+    <Fullpage>
       <Container>
-        {isMenuOpen && <Menu />}
         <div className="__logo">
           <SpaceONE />
         </div>
@@ -66,27 +68,54 @@ const MainPage = () => {
             <div className="__text">scroll</div>
           </ScrollBtn>
         )}
-
-        <Scroll_1 />
-        <div style={{ marginTop: "-1rem" }}>
-          <Scroll_2 />
-        </div>
-        <Scroll_3 />
-        <Scroll_4 />
-        <Scroll_5 />
-        <Footer />
+        <FullPageSections>
+          <FullpageSection
+            style={{
+              height: "100vh",
+            }}
+          >
+            <Scroll_1 isMenuOpen={isMenuOpen} />
+          </FullpageSection>
+          <FullpageSection
+            style={{
+              height: "100vh",
+            }}
+          >
+            <Scroll_2 />
+          </FullpageSection>
+          <FullpageSection
+            style={{
+              height: "100vh",
+            }}
+          >
+            <Scroll_3 />
+          </FullpageSection>
+          <FullpageSection
+            style={{
+              height: "100vh",
+            }}
+          >
+            <Scroll_4 />
+          </FullpageSection>
+          <FullpageSection
+            style={{
+              height: "100vh",
+            }}
+          >
+            <Scroll_5 />
+          </FullpageSection>
+          <FullpageSection
+            style={{
+              height: "100vh",
+            }}
+          >
+            <Footer />
+          </FullpageSection>
+        </FullPageSections>
       </Container>
-    </Background>
+    </Fullpage>
   );
 };
-
-const Background = styled.div`
-  width: 100%;
-  height: auto;
-  position: absolute;
-  z-index: -2;
-  overflow: hidden;
-`;
 
 const Container = styled.div`
   font-family: "Roboto Slab", serif;
@@ -110,6 +139,7 @@ const Container = styled.div`
     font-family: "Roboto";
     font-size: 1.8rem;
     &:hover {
+      transition: 0.3s;
       color: #65cba0;
     }
   }

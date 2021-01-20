@@ -12,7 +12,7 @@ const Scroll_4 = () => {
             the dashboards.
           </div>
         </Card>
-        <Card>
+        {/* <Card>
           <div
             style={{
               position: "absolute",
@@ -32,16 +32,15 @@ const Scroll_4 = () => {
             Integrate all multi account and discovery resources automatically on
             the dashboards.
           </div>
-        </Card>
+        </Card> */}
       </Container>
     </Box>
   );
 };
 
 const Box = styled.div`
-  background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
   width: 100%;
-  height: 150vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +49,7 @@ const Box = styled.div`
 
 const Container = styled.div`
   width: 144rem;
-  height: 150vh;
+  height: 100vh;
   .__title {
     padding-top: 20rem;
     color: #cf88a0;

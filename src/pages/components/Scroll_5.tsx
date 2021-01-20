@@ -125,14 +125,11 @@ const Background = styled.div`
   height: 100vh;
   background: #001b33;
   opacity: 0.5;
-  position: absolute;
-  z-index: 0;
 `;
 
 const Box = styled.div`
   width: 100%;
   height: 100vh;
-  background: #090a0f;
 `;
 
 const Container = styled.div`

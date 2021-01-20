@@ -9,6 +9,7 @@
     "eslint": "eslint ."
   },
   "dependencies": {
+    "@ap.cx/react-fullpage": "^0.2.0",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
@@ -27,6 +28,7 @@
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "@types/react-lottie": "^1.2.5",
     "@types/styled-components": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/eslint-plugin-tslint": "^4.10.0",
