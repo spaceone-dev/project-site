@@ -12,7 +12,9 @@ import {
   Circle102,
   Circle171,
   ExternalLink,
+  ExternalLink_fill,
   GithubLogo,
+  GithubLogo_fill,
   Wave1,
   Wave2,
   Github,
@@ -157,34 +159,34 @@ const Scroll_1 = () => {
               <div />
               <div>Enables Integrated Management of Multi-Cloud.</div>
             </div>
+            <Lottie
+              options={optionsSpaceMan}
+              style={{
+                position: "absolute",
+                width: "22rem",
+                height: "22rem",
+                left: "82.4rem",
+                top: "55rem",
+                opacity: "0.8",
+              }}
+            />
           </Title>
           <div
             className="__git"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >
-            {!isHover ? <Github /> : <Github_fill />}
+            <Github />
             <div className="__git__content">
-              <span style={{ marginBottom: "0.2rem" }}>
-                <GithubLogo />
-              </span>
-              <span style={{ marginLeft: "0.9rem" }}>Github</span>
-              <span style={{ marginLeft: "0.5rem" }}>
-                <ExternalLink />
+              <span>{isHover ? <GithubLogo_fill /> : <GithubLogo />}</span>
+              <span style={{ marginLeft: "0.6rem" }}>Github</span>
+              <span style={{ marginLeft: "0.4rem" }}>
+                <span>
+                  {isHover ? <ExternalLink_fill /> : <ExternalLink />}
+                </span>
               </span>
             </div>
           </div>
-          <Lottie
-            options={optionsSpaceMan}
-            style={{
-              position: "absolute",
-              width: "22rem",
-              height: "22rem",
-              left: "18rem",
-              top: "55rem",
-              opacity: "0.8",
-            }}
-          />
         </div>
       </Container>
     </Box>
@@ -194,16 +196,16 @@ const Scroll_1 = () => {
 const Box = styled.div`
   width: 100%;
   height: 100vh;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 `;
 
 const Container = styled.div`
-  width: 144rem;
+  width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   .__wave1 {
     position: absolute;
     top: 0;
@@ -225,30 +227,40 @@ const Container = styled.div`
     left: 90rem;
   }
   .__git {
-    width: 160px;
-    height: 48px;
+    width: 13.4rem;
+    height: 4rem;
     left: -25rem;
     top: 4.6rem;
     cursor: pointer;
     position: relative;
+    color: white;
+    &:hover {
+      background: linear-gradient(
+        90deg,
+        #65cba0 0%,
+        #cf88a0 52.6%,
+        #5ca2b1 100%
+      );
+      color: #001b33;
+    }
+    border-radius: 3rem;
     &__content {
       font-family: "Roboto", sans-serif;
       font-size: 1.6rem;
       position: absolute;
       bottom: 0;
       margin-bottom: 0.9rem;
-      margin-left: 3rem;
-      color: white;
+      margin-left: 2.4rem;
       display: flex;
       align-items: center;
-      justify-content: center;
     }
   }
 `;
 
 const Title = styled.div`
   font-size: 6rem;
-  margin-left: -25rem;
+  margin-left: 36rem;
+  margin-right: 10rem;
   font-weight: 500;
   color: #ebeaf6;
   margin-top: 21rem;
@@ -266,19 +278,6 @@ const Title = styled.div`
     color: #ebeaf6;
     margin-top: 2.6rem;
   }
-`;
-
-const Github_fill = styled.div`
-  width: 160px;
-  height: 48px;
-  background: linear-gradient(
-    89.89deg,
-    #65cba0 0.09%,
-    #cf88a0 53.64%,
-    #5ca2b1 99.91%
-  );
-  opacity: 0.4;
-  border-radius: 3rem;
 `;
 
 export default Scroll_1;

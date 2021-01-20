@@ -121,6 +121,7 @@ const Keywords = styled.div`
   margin-left: 19rem;
   color: #f8f8fc;
   .__word {
+    text-transform: uppercase;
     font-weight: 500;
     font-size: 4.2rem;
     letter-spacing: 0.02em;
