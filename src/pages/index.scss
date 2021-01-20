@@ -1,78 +1,140 @@
-@function multiple-box-shadow($n) {
-  $value: "#{random(700)}rem #{random(700)}rem #FFF";
-  @for $i from 2 through $n {
-    $value: "#{$value} , #{random(700)}rem #{random(700)}rem #FFF";
-  }
-  @return unquote($value);
-}
+// @function multiple-box-shadow($n) {
+//   $value: "#{random(700)}rem #{random(700)}rem #FFF";
+//   @for $i from 2 through $n {
+//     $value: "#{$value} , #{random(700)}rem #{random(700)}rem #FFF";
+//   }
+//   @return unquote($value);
+// }
 
-$shadows-small: multiple-box-shadow(3000);
-$shadows-medium: multiple-box-shadow(2000);
-$shadows-big: multiple-box-shadow(1000);
+// $shadows-small: multiple-box-shadow(3000);
+// $shadows-medium: multiple-box-shadow(2000);
+// $shadows-big: multiple-box-shadow(1000);
 
-html {
-  height: 100vh;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-}
+// html {
+// height: 600vh;
+// background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+// }
 
 .stars {
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: $shadows-small;
-  animation: animStar 650s linear infinite;
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 700rem;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: $shadows-small;
-  }
+  // width: 1px;
+  // height: 600vh;
+  // background: transparent;
+  // box-shadow: $shadows-small;
+  // animation: animStar 650s linear infinite;
+  // &:after {
+  //   content: " ";
+  //   position: absolute;
+  //   top: 700rem;
+  //   width: 1px;
+  //   height: 1px;
+  //   background: transparent;
+  //   box-shadow: $shadows-small;
+  // }
+  background: #000
+    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    center;
+  z-index: 0;
 }
 
-.stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: $shadows-medium;
-  animation: animStar 700s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 700rem;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium;
-  }
+.stars,
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
 }
 
-.stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: $shadows-big;
-  animation: animStar 750s linear infinite;
+.twinkling {
+  background: transparent
+    url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat
+    top center;
 
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 700rem;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big;
-  }
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite;
 }
 
-@keyframes animStar {
+// .stars2 {
+//   width: 2px;
+//   height: 2px;
+//   background: transparent;
+//   box-shadow: $shadows-medium;
+//   animation: animStar 700s linear infinite;
+
+//   &:after {
+//     content: " ";
+//     position: absolute;
+//     top: 700rem;
+//     width: 2px;
+//     height: 2px;
+//     background: transparent;
+//     box-shadow: $shadows-medium;
+//   }
+// }
+
+// .stars3 {
+//   width: 3px;
+//   height: 3px;
+//   background: transparent;
+//   box-shadow: $shadows-big;
+//   // animation: animStar 750s linear infinite;
+
+//   &:after {
+//     content: " ";
+//     position: absolute;
+//     top: 700rem;
+//     width: 3px;
+//     height: 3px;
+//     background: transparent;
+//     box-shadow: $shadows-big;
+//   }
+// }
+
+// @keyframes animStar {
+//   from {
+//     transform: translateY(-700rem);
+//   }
+//   to {
+//     transform: translateY(0);
+//   }
+// }
+
+@keyframes move-twink-back {
   from {
-    transform: translateY(-700rem);
+    background-position: 0 0;
   }
   to {
-    transform: translateY(0);
+    background-position: -10000px 5000px;
+  }
+}
+@-webkit-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-moz-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-ms-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
   }
 }
