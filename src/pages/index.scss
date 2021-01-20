@@ -71,3 +71,21 @@ $shadows-big: multiple-box-shadow(100);
     transform: translateY(0);
   }
 }
+
+@keyframes openMenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes closeMenu {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

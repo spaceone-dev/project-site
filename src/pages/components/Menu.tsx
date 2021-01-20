@@ -56,52 +56,54 @@ const SmallList = ({ text }) => {
   );
 };
 
-const Menu = () => {
+const Menu = ({ isMenuOpen, isMenuShown }) => {
   return (
-    <Box>
-      <Container>
-        <div style={{ marginTop: "16.6rem" }}>
-          {menuList.map((item) => (
-            <List text={item.name} />
-          ))}
-        </div>
-        <div className="__small">
-          {smallMenuList.map((item) => (
-            <SmallList text={item.name} />
-          ))}
-        </div>
-      </Container>
-    </Box>
+    <>
+      <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
+        <Container>
+          <div>
+            {menuList.map((item) => (
+              <List text={item.name} />
+            ))}
+          </div>
+          <div className="__small">
+            {smallMenuList.map((item) => (
+              <SmallList text={item.name} />
+            ))}
+            <div className="__small__email">support@spaceone.dev</div>
+          </div>
+        </Container>
+      </Box>
+    </>
   );
 };
 
-const Box = styled.div`
+const Box = styled.div<{ isMenuOpen: Boolean; isMenuShown: Boolean }>`
   width: 100%;
-  height: 45.2rem;
+  height: 100vh;
   background: #001b33;
   box-shadow: 0px 4px 15px rgba(0, 92, 179, 0.3);
   z-index: 5;
   top: 0;
   position: fixed;
   display: flex;
-  align-items: center;
   justify-content: center;
+  animation: ${({ isMenuOpen }) => (isMenuOpen ? "openMenu" : "closeMenu")} 0.5s;
 `;
 
 const Container = styled.div`
+  padding-top: 26rem;
   display: flex;
   width: 144rem;
-  height: 45.2rem;
+  height: auto;
   color: white;
   font-size: 4.2rem;
   font-weight: 300;
-  top: 0;
   font-family: "Roboto";
   .__small {
-    position: absolute;
     font-size: 3.4rem;
-    margin-top: 16.6rem;
-    margin-left: 91rem;
+    margin-bottom: 16.6rem;
+    margin-left: 48rem;
     &__text {
       cursor: pointer;
       display: flex;
@@ -109,6 +111,11 @@ const Container = styled.div`
       &:hover {
         color: #65cba0;
       }
+    }
+    &__email {
+      position: absolute;
+      font-size: 1.8rem;
+      bottom: 8.9rem;
     }
   }
 `;

@@ -19,9 +19,20 @@ import Background from "./components/Background";
 
 const MainPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuShown, setIsMenuShown] = useState(false);
+
   const [isScrollable, setIsScrollable] = useState(true);
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (!isMenuShown) {
+      setIsMenuOpen(true);
+      setIsMenuShown(true);
+    } else {
+      setIsMenuOpen(false);
+      setTimeout(() => {
+        setIsMenuShown(false);
+      }, 500);
+    }
   };
 
   useEffect(() => {
@@ -47,7 +58,9 @@ const MainPage = () => {
 
   return (
     <>
-      {isMenuOpen && <Menu />}
+      {isMenuShown && (
+        <Menu isMenuOpen={isMenuOpen} isMenuShown={isMenuShown} />
+      )}
       <Background />
 
       <Fullpage>
