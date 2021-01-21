@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { SpaceONE, SOneMan } from "../assets";
+import { SpaceONE, SOneMan, UpIcon } from "../assets";
 import { theme } from "../styles/theme";
 import Footer from "./components/Footer";
 import Scroll_1 from "./components/Scroll_1";
@@ -20,17 +20,20 @@ import Background from "./components/Background";
 const MainPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuShown, setIsMenuShown] = useState(false);
-
   const [isScrollable, setIsScrollable] = useState(true);
+  const [isUpShown, setIsUpShown] = useState(false);
+
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
     if (!isMenuShown) {
       setIsMenuOpen(true);
       setIsMenuShown(true);
       setIsScrollable(false);
+      setIsUpShown(false);
     } else {
       setIsMenuOpen(false);
       setIsScrollable(true);
+      setIsUpShown(true);
       setTimeout(() => {
         setIsMenuShown(false);
       }, 500);
@@ -45,7 +48,11 @@ const MainPage = () => {
     window.addEventListener("scroll", () => {
       if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
         setIsScrollable(false);
-      } else setIsScrollable(true);
+        setIsUpShown(true);
+      } else {
+        setIsScrollable(true);
+        setIsUpShown(false);
+      }
     });
   }, []);
 
@@ -87,6 +94,15 @@ const MainPage = () => {
               />
               <div className="__text">scroll</div>
             </ScrollBtn>
+          )}
+          {isUpShown && (
+            <UpBtn
+              isMenuOpen={isMenuOpen}
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              <UpIcon />
+              <div className="__text">up</div>
+            </UpBtn>
           )}
           <FullPageSections>
             <FullpageSection
@@ -174,6 +190,25 @@ const ScrollBtn = styled.div<{ isMenuOpen: Boolean }>`
   left: 10rem;
   bottom: 7rem;
   z-index: 10;
+  animation: ${({ isMenuOpen }) => (!isMenuOpen ? "openMenu" : "closeMenu")}
+    0.5s;
+  .__text {
+    margin-top: 1rem;
+    color: ${({ theme }) => theme.color.primary[200]};
+    font-family: "Roboto";
+    font-size: 1.2rem;
+  }
+`;
+
+const UpBtn = styled.div<{ isMenuOpen: Boolean }>`
+  cursor: pointer;
+  position: fixed;
+  right: 12.5rem;
+  bottom: 7rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation: ${({ isMenuOpen }) => (!isMenuOpen ? "openMenu" : "closeMenu")}
     0.5s;
   .__text {

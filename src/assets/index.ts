@@ -31,3 +31,4 @@ export { default as Plugin2 } from "./firstplugin-2.svg";
 export { default as Plugin3 } from "./secondplugin-3.svg";
 export { default as Plugin4 } from "./upcomingplugins-4.svg";
 export { default as SOneMan_footer } from "./Group 2373.svg";
+export { default as UpIcon } from "./Group 2481.svg";
