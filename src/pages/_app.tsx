@@ -1,10 +1,12 @@
 import Head from "next/head";
 import type { AppProps } from "next/app";
+import { theme } from "../styles/theme";
 import "./index.scss";
+import { ThemeProvider } from "styled-components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <meta charSet="utf-8" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -26,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <script>AOS.init();</script>
       </body>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }
 

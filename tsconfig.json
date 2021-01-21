@@ -25,6 +25,7 @@
     "src",
     "next.config.js",
     "custom.d.ts",
+    "styled.d.ts",
     "**/*.scss"
   ],
   "exclude": [

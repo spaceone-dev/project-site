@@ -3,6 +3,16 @@ import styled, { css, DefaultTheme } from "styled-components";
 export const theme: DefaultTheme = {
   color: {
     black: "#000000",
-    primary3: "#EBEAF6",
+    white: "#ffffff",
+    green: "#65CBA0",
+    pink: "#CF88A0",
+    teal: "#5CA2B1",
+    primary: {
+      100: "#F8F8FC",
+      200: "#EBEAF6",
+    },
+    blue: {
+      200: "#E9F4FF",
+    },
   },
 };
