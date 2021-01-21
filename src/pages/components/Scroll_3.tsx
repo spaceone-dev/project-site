@@ -108,9 +108,10 @@ const Container = styled.div`
   display: flex;
   .__title {
     position: absolute;
-    color: #cf88a0;
-    font-family: "Roboto";
-    font-size: 2.8rem;
+    color: ${({ theme }) => theme.color.teal};
+    font-size: 2.4rem;
+    opacity: 0.8;
+    font-weight: bold;
   }
 `;
 
@@ -118,21 +119,20 @@ const Card = styled.div`
   position: relative;
   margin-top: 15rem;
   margin-right: 2rem;
-  /* flex: 0.3; */
   .__keyword {
     margin-top: 15rem;
-    font-family: "Roboto Slab";
     font-weight: bold;
     font-size: 2.8rem;
-    color: #ffffff;
+    color: ${({ theme }) => theme.color.white};
+    font-weight: 600;
   }
   .__explain {
     margin-top: 1.4rem;
     font-family: "Roboto";
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 140%;
-    color: #e9f4ff;
+    color: ${({ theme }) => theme.color.blue[200]};
     opacity: 0.8;
   }
 `;

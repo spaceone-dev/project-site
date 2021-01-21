@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 import {
-  ExternalLink_blue,
   GithubLogo_menu,
   ExternalLink_blue_sm,
   GithubLogo_menu_hover,
@@ -21,17 +20,18 @@ const List = ({ text }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
-    <MenuList
+    <div
+      className="__big__text"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
       {text}
       {isHover && (
-        <span style={{ marginLeft: "1.8rem" }}>
-          <ExternalLink_blue />
+        <span style={{ marginLeft: "1rem", marginTop: "0.05rem" }}>
+          <ExternalLink_blue_sm />
         </span>
       )}
-    </MenuList>
+    </div>
   );
 };
 
@@ -48,7 +48,7 @@ const SmallList = ({ text }) => {
         (!isHover ? <GithubLogo_menu /> : <GithubLogo_menu_hover />)}
       <span style={{ marginLeft: text === "Github" && "0.8rem" }}>{text}</span>
       {isHover && (
-        <span style={{ marginLeft: "1.2rem" }}>
+        <span style={{ marginLeft: "1rem", marginTop: "0.15rem" }}>
           <ExternalLink_blue_sm />
         </span>
       )}
@@ -61,7 +61,7 @@ const Menu = ({ isMenuOpen, isMenuShown }) => {
     <>
       <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
         <Container>
-          <div>
+          <div className="__big">
             {menuList.map((item) => (
               <List text={item.name} />
             ))}
@@ -70,8 +70,8 @@ const Menu = ({ isMenuOpen, isMenuShown }) => {
             {smallMenuList.map((item) => (
               <SmallList text={item.name} />
             ))}
-            <div className="__small__email">support@spaceone.dev</div>
           </div>
+          <div className="__small__email">support@spaceone.dev</div>
         </Container>
       </Box>
     </>
@@ -96,40 +96,49 @@ const Container = styled.div`
   display: flex;
   width: 144rem;
   height: auto;
-  color: white;
-  font-size: 4.2rem;
-  font-weight: 300;
+  font-size: 4.6rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.color.primary[200]};
+  .__big {
+    cursor: pointer;
+    margin-left: 19rem;
+    font-size: 4.6rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    &__text {
+      margin-bottom: 4rem;
+      height: 4.1rem;
+      cursor: pointer;
+      display: flex;
+      &:hover {
+        color: ${({ theme }) => theme.color.green};
+      }
+    }
+  }
   .__small {
+    position: absolute;
     font-size: 3rem;
     font-weight: 500;
     margin-bottom: 16.6rem;
-    margin-left: 40rem;
+    margin-left: 94.6rem;
     &__text {
+      height: 3.6rem;
       cursor: pointer;
       display: flex;
       margin-bottom: 2rem;
       &:hover {
-        color: #65cba0;
+        color: ${({ theme }) => theme.color.green};
       }
     }
     &__email {
+      color: ${({ theme }) => theme.color.primary[100]};
       font-family: Roboto;
       position: absolute;
       font-size: 1.8rem;
+      margin-left: 94.6rem;
       bottom: 10rem;
+      font-weight: 300;
     }
-  }
-`;
-
-const MenuList = styled.div`
-  cursor: pointer;
-  margin-left: 19rem;
-  margin-bottom: 3.6rem;
-  font-size: 4.6rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  &:hover {
-    color: #65cba0;
   }
 `;
 

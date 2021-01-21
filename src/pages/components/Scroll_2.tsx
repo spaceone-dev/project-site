@@ -99,9 +99,10 @@ const Container = styled.div`
   position: relative;
   .__title {
     padding-top: 20rem;
-    color: #cf88a0;
-    font-family: "Roboto";
-    font-size: 2.8rem;
+    color: ${({ theme }) => theme.color.pink};
+    font-weight: 600;
+    opacity: 0.8;
+    font-size: 2.6rem;
     margin-left: 19rem;
   }
   .__ellipse {
@@ -119,18 +120,17 @@ const Keywords = styled.div`
   display: flex;
   margin-top: 19.5rem;
   margin-left: 19rem;
-  color: #f8f8fc;
+  color: ${({ theme }) => theme.color.primary[100]};
   .__word {
     text-transform: uppercase;
-    font-weight: 500;
-    font-size: 4.2rem;
-    letter-spacing: 0.02em;
+    font-weight: 600;
+    font-size: 4rem;
   }
   .__sub {
-    font-weight: 300;
-    font-size: 3.4rem;
-    font-family: "Roboto";
+    font-weight: normal;
+    font-size: 2.8rem;
     margin-top: 1.5rem;
+    letter-spacing: -0.02em;
   }
 `;
 

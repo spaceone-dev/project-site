@@ -196,16 +196,12 @@ const Scroll_1 = () => {
 const Box = styled.div`
   width: 100%;
   height: 100vh;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 `;
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  /* justify-content: center; */
   .__wave1 {
     position: absolute;
     top: 0;
@@ -262,7 +258,7 @@ const Title = styled.div`
   margin-left: 36rem;
   margin-right: 10rem;
   font-weight: 500;
-  color: #ebeaf6;
+  color: ${({ theme }) => theme.color.primary[200]};
   margin-top: 21rem;
   .__gradient {
     font-size: 6rem;
@@ -275,7 +271,7 @@ const Title = styled.div`
   .__info {
     font-size: 2rem;
     line-height: 3.4rem;
-    color: #ebeaf6;
+    opacity: 0.7;
     margin-top: 2.6rem;
   }
 `;

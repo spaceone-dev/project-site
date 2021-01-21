@@ -159,7 +159,7 @@ const Container = styled.div<{ isMenuOpen: Boolean }>`
     align-items: center;
     right: 12.5rem;
     top: 8rem;
-    color: #ebeaf6;
+    color: ${({ theme }) => theme.color.primary[200]};
     font-family: "Roboto";
     font-size: 1.8rem;
     &:hover {
@@ -178,7 +178,7 @@ const ScrollBtn = styled.div<{ isMenuOpen: Boolean }>`
     0.5s;
   .__text {
     margin-top: 1rem;
-    color: #ebeaf6;
+    color: ${({ theme }) => theme.color.primary[200]};
     font-family: "Roboto";
     font-size: 1.2rem;
   }
