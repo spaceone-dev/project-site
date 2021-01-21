@@ -225,7 +225,7 @@ const Container = styled.div`
   .__git {
     width: 13.4rem;
     height: 4rem;
-    left: -25rem;
+    left: 36rem;
     top: 4.6rem;
     cursor: pointer;
     position: relative;

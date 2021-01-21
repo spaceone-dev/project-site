@@ -104,46 +104,22 @@ const MainPage = () => {
             </UpBtn>
           )}
           <FullPageSections>
-            <FullpageSection
-              style={{
-                height: "100vh",
-              }}
-            >
+            <FullpageSection>
               <Scroll_1 />
             </FullpageSection>
-            <FullpageSection
-              style={{
-                height: "100vh",
-              }}
-            >
+            <FullpageSection>
               <Scroll_2 />
             </FullpageSection>
-            <FullpageSection
-              style={{
-                height: "100vh",
-              }}
-            >
+            <FullpageSection>
               <Scroll_3 />
             </FullpageSection>
-            <FullpageSection
-              style={{
-                height: "100vh",
-              }}
-            >
+            <FullpageSection>
               <Scroll_4 />
             </FullpageSection>
-            <FullpageSection
-              style={{
-                height: "100vh",
-              }}
-            >
+            <FullpageSection>
               <Scroll_5 />
             </FullpageSection>
-            <FullpageSection
-              style={{
-                height: "100vh",
-              }}
-            >
+            <FullpageSection>
               <Footer />
             </FullpageSection>
           </FullPageSections>
@@ -152,7 +128,6 @@ const MainPage = () => {
     </>
   );
 };
-
 const Container = styled.div<{ isMenuOpen: Boolean }>`
   font-size: 3rem;
   .__logo {
