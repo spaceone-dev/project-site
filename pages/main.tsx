@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { SpaceONE, SOneMan, UpIcon } from "../assets";
-import { theme } from "../styles/theme";
+import { SpaceONE, SOneMan, UpIcon } from "../public/assets";
 import Footer from "./components/Footer";
 import Scroll_1 from "./components/Scroll_1";
 import Scroll_2 from "./components/Scroll_2";
 import Scroll_3 from "./components/Scroll_3";
 import Scroll_4 from "./components/Scroll_4";
 import Scroll_5 from "./components/Scroll_5";
-import scroll from "../assets/scroll_FINAL.json";
+import scroll from "../public/assets/scroll_FINAL.json";
 import { useEffect, useState } from "react";
 import Fullpage, {
   FullPageSections,

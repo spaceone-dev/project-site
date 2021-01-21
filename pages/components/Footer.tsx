@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MZ, CNCF, SOneMan_footer } from "../../assets";
+import { MZ, CNCF, SOneMan_footer } from "../../public/assets";
 
 const Footer = () => {
   return (
@@ -121,6 +121,7 @@ const Box = styled.div`
     }
   }
   .__megazone {
+    margin-bottom: -1rem;
   }
 `;
 

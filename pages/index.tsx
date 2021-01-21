@@ -1,11 +1,11 @@
 import { GlobalStyle } from "../styles/global-style";
-import MainPage from "./MainPage";
+import Main from "./main";
 
-const IndexPage = () => (
+const Index = () => (
   <div title="Home">
     <GlobalStyle />
-    <MainPage />
+    <Main />
   </div>
 );
 
-export default IndexPage;
+export default Index;

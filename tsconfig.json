@@ -22,13 +22,15 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src",
     "next.config.js",
     "custom.d.ts",
     "styled.d.ts",
+    "styles",
+    "pages",
+    "public",
     "**/*.scss"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
   ]
 }

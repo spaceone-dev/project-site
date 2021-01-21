@@ -4,7 +4,7 @@ import {
   GithubLogo_menu,
   ExternalLink_blue_sm,
   GithubLogo_menu_hover,
-} from "../../assets";
+} from "../../public/assets";
 
 const menuList = [
   { name: "User Guide", url: "" },

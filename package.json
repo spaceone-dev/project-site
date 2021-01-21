@@ -11,7 +11,6 @@
   "dependencies": {
     "@ap.cx/react-fullpage": "^0.2.0",
     "@svgr/webpack": "^5.5.0",
-    "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "next": "latest",

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { Ellipse3 } from "../../assets";
-import spinPurple from "../../assets/spin_purple_final.json";
-import spinWhite from "../../assets/spin_white_final.json";
+import { Ellipse3, Integrate, Improve, Manage } from "../../public/assets";
+import spinPurple from "../../public/assets/spin_purple_final.json";
+import spinWhite from "../../public/assets/spin_white_final.json";
 
 const Scroll_2 = () => {
   const optionsSpinPurple = {
@@ -68,14 +68,17 @@ const Scroll_2 = () => {
         </div>
         <Keywords>
           <div>
+            <Integrate />
             <div className="__word">Integrate</div>
             <div className="__sub">Multicloud Accounts</div>
           </div>
           <div style={{ marginLeft: "6rem" }}>
+            <Improve />
             <div className="__word">Improve</div>
             <div className="__sub">Operation Efficiency</div>
           </div>
           <div style={{ marginLeft: "6rem" }}>
+            <Manage />
             <div className="__word">Manage</div>
             <div className="__sub">Cloud Spend</div>
           </div>
@@ -118,10 +121,11 @@ const Container = styled.div`
 
 const Keywords = styled.div`
   display: flex;
-  margin-top: 19.5rem;
+  margin-top: 19rem;
   margin-left: 19rem;
   color: ${({ theme }) => theme.color.primary[100]};
   .__word {
+    margin-top: 1rem;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 4rem;

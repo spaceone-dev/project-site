@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Head>
         <meta charSet="utf-8" />
+        <link rel="shortcut icon" href="/static/favicon_icon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500&display=swap"

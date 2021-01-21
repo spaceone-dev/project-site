@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { Universe, Plugin1, Plugin2, Plugin3, Plugin4 } from "../../assets";
-import spinPurple from "../../assets/spin_purple_final.json";
-import spinWhite from "../../assets/spin_white_final.json";
-import spinBlue from "../../assets/spin_blue_final.json";
+import { Universe, Plugins, Upcoming } from "../../public/assets";
+import spinPurple from "../../public/assets/spin_purple_final.json";
+import spinWhite from "../../public/assets/spin_white_final.json";
+import spinBlue from "../../public/assets/spin_blue_final.json";
 
 const Scroll_5 = () => {
   const optionsSpinPurple = {
@@ -97,22 +97,12 @@ const Scroll_5 = () => {
           <div className="__universe">
             <Universe />
           </div>
-          <div className="__plugin1">
-            <Plugin1 />
+          <div className="__plugins">
+            <Plugins />
           </div>
-          <div className="__plugin2">
-            <Plugin2 />
+          <div className="__upcoming">
+            <Upcoming />
           </div>
-          <div className="__plugin3">
-            <Plugin3 />
-          </div>
-          <div className="__plugin4">
-            <Plugin4 />
-          </div>
-          <Upcoming>
-            UPCOMING
-            <div className="__plugins">Plugins</div>
-          </Upcoming>
         </div>
         <Background />
       </Container>
@@ -138,44 +128,17 @@ const Container = styled.div`
   height: 100vh;
   .__universe {
     position: absolute;
-    left: 0;
+    left: -30rem;
   }
-  .__plugin1 {
-    position: absolute;
-    left: 11rem;
-    top: 31rem;
-  }
-  .__plugin2 {
+  .__plugins {
     position: absolute;
     left: 25rem;
     top: 16rem;
   }
-  .__plugin3 {
-    position: absolute;
-    left: 53rem;
-    top: 10rem;
-  }
-  .__plugin4 {
+  .__upcoming {
     position: absolute;
     left: 95rem;
     top: 25rem;
-  }
-`;
-
-const Upcoming = styled.div`
-  position: absolute;
-  font-family: Roboto;
-  line-height: 2.1rem;
-  font-size: 1.8rem;
-  text-align: center;
-  font-weight: bold;
-  color: #b9dcff;
-  left: 96.7rem;
-  top: 18rem;
-  .__plugins {
-    font-weight: normal;
-    color: #e9f4ff;
-    font-size: 1.6rem;
   }
 `;
 

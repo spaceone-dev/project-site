@@ -18,11 +18,11 @@ import {
   Wave1,
   Wave2,
   Github,
-} from "../../assets";
-import spinPurple from "../../assets/spin_purple_final.json";
-import spinWhite from "../../assets/spin_white_final.json";
-import spaceMan from "../../assets/spaceman0119_final.json";
-import planet from "../../assets/purpleplanet.json";
+} from "../../public/assets";
+import spinPurple from "../../public/assets/spin_purple_final.json";
+import spinWhite from "../../public/assets/spin_white_final.json";
+import spaceMan from "../../public/assets/spaceman0119_final.json";
+import planet from "../../public/assets/purpleplanet.json";
 import { useState } from "react";
 
 const Scroll_1 = () => {
