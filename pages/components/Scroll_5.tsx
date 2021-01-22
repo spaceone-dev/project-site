@@ -4,6 +4,7 @@ import { Universe, Plugins, Upcoming } from "../../public/assets";
 import spinPurple from "../../public/assets/spin_purple_final.json";
 import spinWhite from "../../public/assets/spin_white_final.json";
 import spinBlue from "../../public/assets/spin_blue_final.json";
+import { media } from "../../styles/theme";
 
 const Scroll_5 = () => {
   const optionsSpinPurple = {
@@ -131,6 +132,9 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
+  ${media[768]} {
+    left: -22rem;
+  }
   .__universe {
     position: absolute;
     left: -30rem;

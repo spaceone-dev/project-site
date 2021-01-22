@@ -1,33 +1,42 @@
 import styled from "styled-components";
+import { media } from "../../styles/theme";
 
 const Scroll_4 = () => {
   return (
     <Box>
       <Container>
-        <div className="__title">Cloud Native Infrastructure</div>
-        <div style={{ display: "flex" }}>
-          <Card>
-            <div className="__keyword">Plugin Architecture</div>
-            <div className="__explain">
-              Integrate all multi account and discovery resources automatically
-              on the dashboards.
-            </div>
-          </Card>
-          <Card>
-            <div className="__keyword">Kbunernetis</div>
-            <div className="__explain">
-              Integrate all multi account and discovery resources automatically
-              on the dashboards.
-            </div>
-          </Card>
-          <Card>
-            <div className="__keyword">Microservice Architecture</div>
-            <div className="__explain">
-              Integrate all multi account and discovery resources automatically
-              on the dashboards.
-            </div>
-          </Card>
-        </div>
+        <Padding>
+          <div className="__title">
+            Cloud
+            <div />
+            Native
+            <div />
+            Infrastructure
+          </div>
+          <Cards>
+            <Card>
+              <div className="__keyword">Plugin Architecture</div>
+              <div className="__explain">
+                Integrate all multi account and discovery resources
+                automatically on the dashboards.
+              </div>
+            </Card>
+            <Card>
+              <div className="__keyword">Kbunernetis</div>
+              <div className="__explain">
+                Integrate all multi account and discovery resources
+                automatically on the dashboards.
+              </div>
+            </Card>
+            <Card>
+              <div className="__keyword">Microservice Architecture</div>
+              <div className="__explain">
+                Integrate all multi account and discovery resources
+                automatically on the dashboards.
+              </div>
+            </Card>
+          </Cards>
+        </Padding>
       </Container>
     </Box>
   );
@@ -43,42 +52,57 @@ const Box = styled.div`
   overflow: hidden;
 `;
 
+const Padding = styled.div`
+  padding: 20rem 19rem;
+  display: flex;
+  ${media[768]} {
+    padding: 20rem 7rem;
+  }
+`;
+
 const Container = styled.div`
   width: 144rem;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   .__title {
-    padding-top: 20rem;
+    width: 34rem;
+    /* ${media[768]} {
+      width: 15rem;
+      word-break: break-all;
+    } */
     color: ${({ theme }) => theme.color.green};
-    font-size: 3rem;
+    font-size: 2.4rem;
     opacity: 0.8;
     font-weight: bold;
+    line-height: 2.8rem;
+    text-transform: uppercase;
   }
+`;
+
+const Cards = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
 `;
 
 const Card = styled.div`
   width: 34rem;
-  margin-top: 3rem;
+  height: 34rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  height: 34rem;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.color.primary[100]};
   .__keyword {
-    /* margin-top: 4rem; */
-    margin-top: 30rem;
-    font-weight: bold;
-    font-size: 4.2rem;
-    line-height: 4.9rem;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 3.3rem;
   }
   .__explain {
     margin-top: 1.5rem;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 150%;
   }
 `;

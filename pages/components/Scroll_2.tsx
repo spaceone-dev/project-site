@@ -3,6 +3,7 @@ import Lottie from "react-lottie";
 import { Ellipse3, Integrate, Improve, Manage } from "../../public/assets";
 import spinPurple from "../../public/assets/spin_purple_final.json";
 import spinWhite from "../../public/assets/spin_white_final.json";
+import { media } from "../../styles/theme";
 
 const Scroll_2 = () => {
   const optionsSpinPurple = {
@@ -61,28 +62,29 @@ const Scroll_2 = () => {
             transform: "rotate(30deg)",
           }}
         />
-
-        <div className="__title">WE'RE VERY CAPABLE:</div>
-        <div className="__ellipse">
-          <Ellipse3 />
-        </div>
-        <Keywords>
-          <div>
-            <Integrate />
-            <div className="__word">Integrate</div>
-            <div className="__sub">Multicloud Accounts</div>
+        <Padding>
+          <div className="__title">WE'RE VERY CAPABLE:</div>
+          <div className="__ellipse">
+            <Ellipse3 />
           </div>
-          <div style={{ marginLeft: "6rem" }}>
-            <Improve />
-            <div className="__word">Improve</div>
-            <div className="__sub">Operation Efficiency</div>
-          </div>
-          <div style={{ marginLeft: "6rem" }}>
-            <Manage />
-            <div className="__word">Manage</div>
-            <div className="__sub">Cloud Spend</div>
-          </div>
-        </Keywords>
+          <Keywords>
+            <div>
+              <Integrate />
+              <div className="__word">Integrate</div>
+              <div className="__sub">Multicloud Accounts</div>
+            </div>
+            <div style={{ marginLeft: "6rem" }}>
+              <Improve />
+              <div className="__word">Improve</div>
+              <div className="__sub">Operation Efficiency</div>
+            </div>
+            <div style={{ marginLeft: "6rem" }}>
+              <Manage />
+              <div className="__word">Manage</div>
+              <div className="__sub">Cloud Spend</div>
+            </div>
+          </Keywords>
+        </Padding>
       </Container>
     </Box>
   );
@@ -98,45 +100,59 @@ const Box = styled.div`
   overflow: hidden;
 `;
 
+const Padding = styled.div`
+  padding: 20rem 19rem;
+  display: flex;
+  flex-direction: column;
+  ${media[768]} {
+    padding: 20rem 7rem;
+  }
+`;
+
 const Container = styled.div`
   width: 144rem;
   height: 100vh;
   position: relative;
   .__title {
-    padding-top: 20rem;
     color: ${({ theme }) => theme.color.pink};
     font-weight: 600;
     opacity: 0.8;
     font-size: 2.6rem;
-    margin-left: 19rem;
+    ${media[768]} {
+      font-size: 2.4rem;
+    }
   }
   .__ellipse {
-    display: flex;
-    width: 134.017rem;
-    height: 64rem;
     position: absolute;
-    justify-content: center;
-    left: 5rem;
     top: 18rem;
+    left: 5rem;
+    ${media[768]} {
+      left: -10rem;
+    }
   }
 `;
 
 const Keywords = styled.div`
   display: flex;
   margin-top: 19rem;
-  margin-left: 19rem;
   color: ${({ theme }) => theme.color.primary[100]};
   .__word {
     margin-top: 1rem;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 4rem;
+    ${media[768]} {
+      font-size: 3.2rem;
+    }
   }
   .__sub {
     font-weight: normal;
     font-size: 2.8rem;
     margin-top: 1.5rem;
     letter-spacing: -0.02em;
+    ${media[768]} {
+      font-size: 3rem;
+    }
   }
 `;
 

@@ -176,7 +176,9 @@ const Scroll_1 = () => {
               onMouseEnter={() => setIsHover(true)}
               onMouseLeave={() => setIsHover(false)}
             >
-              <Github />
+              <div style={{ position: "absolute", bottom: "-1rem" }}>
+                <Github />
+              </div>
               <div className="__git__content">
                 <span>{isHover ? <GithubLogo_fill /> : <GithubLogo />}</span>
                 <span style={{ marginLeft: "0.6rem" }}>Github</span>
@@ -204,7 +206,7 @@ const Box = styled.div`
 `;
 
 const Container = styled.div`
-  /* width: 144rem; */
+  width: 144rem;
   height: 100vh;
   display: flex;
   margin-top: 23rem;
@@ -250,7 +252,7 @@ const Container = styled.div`
       font-family: "Roboto", sans-serif;
       font-size: 1.6rem;
       position: absolute;
-      bottom: 0;
+      bottom: 1rem;
       margin-left: 2.4rem;
       display: flex;
       align-items: center;
@@ -260,9 +262,7 @@ const Container = styled.div`
 
 const Title = styled.div`
   font-size: 6rem;
-  ${media[1440]} {
-    margin-left: -20rem;
-  }
+  margin-left: -20rem;
   ${media[768]} {
     margin-left: -10rem;
   }

@@ -11,6 +11,7 @@ import scroll from "../public/assets/scroll_FINAL.json";
 import { useEffect, useState } from "react";
 import Menu from "./components/Menu";
 import Background from "./components/Background";
+import { media } from "../styles/theme";
 
 const MainPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,7 +89,10 @@ const MainPage = () => {
         </ScrollBtn>
       )}
       {isUpShown && (
-        <UpBtn isMenuOpen={isMenuOpen} onClick={() => window.scrollTo(0, 0)}>
+        <UpBtn
+          isMenuOpen={isMenuOpen}
+          onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+        >
           <UpIcon />
           <div className="__text">up</div>
         </UpBtn>
@@ -109,6 +113,9 @@ const Container = styled.div<{ isMenuOpen: Boolean }>`
     cursor: pointer;
     position: fixed;
     left: 10rem;
+    ${media[768]} {
+      left: 4rem;
+    }
     top: 8rem;
     z-index: 10;
     opacity: ${({ isMenuOpen }) => isMenuOpen && "0.6"};
@@ -122,6 +129,9 @@ const Container = styled.div<{ isMenuOpen: Boolean }>`
     z-index: 10;
     display: flex;
     align-items: center;
+    ${media[768]} {
+      right: 4rem;
+    }
     right: 12.5rem;
     top: 8rem;
     color: ${({ theme }) => theme.color.primary[200]};
@@ -147,6 +157,9 @@ const ScrollBtn = styled.div<{ isMenuOpen: Boolean }>`
     font-family: "Roboto";
     font-size: 1.2rem;
   }
+  ${media[768]} {
+    left: 4rem;
+  }
 `;
 
 const UpBtn = styled.div<{ isMenuOpen: Boolean }>`
@@ -165,6 +178,9 @@ const UpBtn = styled.div<{ isMenuOpen: Boolean }>`
     color: ${({ theme }) => theme.color.primary[200]};
     font-family: "Roboto";
     font-size: 1.2rem;
+  }
+  ${media[768]} {
+    right: 4rem;
   }
 `;
 

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { MZ, CNCF, SOneMan_footer } from "../../public/assets";
+import { media } from "../../styles/theme";
 
 const Footer = () => {
   return (
     <div style={{ position: "relative" }}>
       <Top>
-        <Box>
+        <Padding>
           <div className="__card">
             <div className="__card__big">76</div>
             <div className="__card__300">Enrolled Projects</div>
@@ -14,24 +15,20 @@ const Footer = () => {
             <div className="__card__big">28</div>
             <div className="__card__300">Contributors</div>
           </div>
-          <div className="__card">
+          <div className="__card__logo">
             <div className="__megazone">
               <MZ />
             </div>
             <div className="__card__300">
               <div>Official Partner</div>
-              <div>
-                Official Member of
-                <span style={{ marginLeft: "0.6rem" }}>
-                  <CNCF />
-                </span>
-              </div>
+              <span style={{ marginRight: "1rem" }}>Official Member of</span>
+              <CNCF />
             </div>
           </div>
-        </Box>
+        </Padding>
       </Top>
       <Bottom>
-        <Box>
+        <Padding>
           <div className="__card">
             <div style={{ position: "absolute", left: "0", top: "-8rem" }}>
               <SOneMan_footer />
@@ -59,7 +56,7 @@ const Footer = () => {
               <div className="__card__300__18">+82 1644-2243 </div>
             </div>
           </div>
-        </Box>
+        </Padding>
       </Bottom>
     </div>
   );
@@ -71,7 +68,6 @@ const Top = styled.div`
   background: #001b33;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
 `;
 
@@ -81,24 +77,28 @@ const Bottom = styled.div`
   background: #000f1c;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
 `;
 
-const Box = styled.div`
-  width: 144rem;
+const Padding = styled.div`
+  width: 100%;
+  padding: 19rem;
   display: flex;
-  display: flex;
-  justify-content: center;
+  align-content: space-between;
+  ${media[768]} {
+    padding: 6rem;
+  }
   .__card {
+    width: 100%;
     position: relative;
-    width: 30rem;
-    margin-left: 6rem;
     font-family: "Roboto";
     color: #ffffff;
     line-height: 7rem;
     &__big {
       font-size: 7.2rem;
+      ${media[768]} {
+        font-size: 6.8rem;
+      }
     }
     &__300 {
       font-size: 2rem;
@@ -120,6 +120,15 @@ const Box = styled.div`
       font-weight: 500;
       line-height: 2.5rem;
       margin-top: 2.4rem;
+    }
+    &__logo {
+      position: relative;
+      font-family: "Roboto";
+      color: #ffffff;
+      line-height: 7rem;
+      ${media[768]} {
+        width: 25rem;
+      }
     }
   }
   .__megazone {
