@@ -9,10 +9,6 @@ import Scroll_4 from "./components/Scroll_4";
 import Scroll_5 from "./components/Scroll_5";
 import scroll from "../public/assets/scroll_FINAL.json";
 import { useEffect, useState } from "react";
-import Fullpage, {
-  FullPageSections,
-  FullpageSection,
-} from "@ap.cx/react-fullpage";
 import Menu from "./components/Menu";
 import Background from "./components/Background";
 
@@ -65,69 +61,48 @@ const MainPage = () => {
   };
 
   return (
-    <>
+    <Container isMenuOpen={isMenuOpen}>
       {isMenuShown && (
         <Menu isMenuOpen={isMenuOpen} isMenuShown={isMenuShown} />
       )}
       <Background />
-
-      <Fullpage>
-        <Container isMenuOpen={isMenuOpen}>
-          <div className="__logo">
-            <SpaceONE />
-          </div>
-          <div className="__menu" onClick={handleMenuOpen}>
-            <SOneMan />
-            <span style={{ marginLeft: "0.4rem", marginTop: "0.2rem" }}>
-              {isMenuOpen ? "Close" : "Menu"}
-            </span>
-          </div>
-          {isScrollable && (
-            <ScrollBtn isMenuOpen={isMenuOpen}>
-              <Lottie
-                options={optionsScroll}
-                style={{
-                  width: "2rem",
-                  height: "3.25rem",
-                }}
-              />
-              <div className="__text">scroll</div>
-            </ScrollBtn>
-          )}
-          {isUpShown && (
-            <UpBtn
-              isMenuOpen={isMenuOpen}
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              <UpIcon />
-              <div className="__text">up</div>
-            </UpBtn>
-          )}
-          <FullPageSections>
-            <FullpageSection>
-              <Scroll_1 />
-            </FullpageSection>
-            <FullpageSection>
-              <Scroll_2 />
-            </FullpageSection>
-            <FullpageSection>
-              <Scroll_3 />
-            </FullpageSection>
-            <FullpageSection>
-              <Scroll_4 />
-            </FullpageSection>
-            <FullpageSection>
-              <Scroll_5 />
-            </FullpageSection>
-            <FullpageSection>
-              <Footer />
-            </FullpageSection>
-          </FullPageSections>
-        </Container>
-      </Fullpage>
-    </>
+      <div className="__logo">
+        <SpaceONE />
+      </div>
+      <div className="__menu" onClick={handleMenuOpen}>
+        <SOneMan />
+        <span style={{ marginLeft: "0.4rem", marginTop: "0.2rem" }}>
+          {isMenuOpen ? "Close" : "Menu"}
+        </span>
+      </div>
+      {isScrollable && (
+        <ScrollBtn isMenuOpen={isMenuOpen}>
+          <Lottie
+            options={optionsScroll}
+            style={{
+              width: "2rem",
+              height: "3.25rem",
+            }}
+          />
+          <div className="__text">scroll</div>
+        </ScrollBtn>
+      )}
+      {isUpShown && (
+        <UpBtn isMenuOpen={isMenuOpen} onClick={() => window.scrollTo(0, 0)}>
+          <UpIcon />
+          <div className="__text">up</div>
+        </UpBtn>
+      )}
+      <Scroll_1 />
+      <Scroll_2 />
+      <Scroll_3 />
+      <Scroll_4 />
+      <Scroll_5 />
+      <Footer />
+    </Container>
   );
 };
+
 const Container = styled.div<{ isMenuOpen: Boolean }>`
   font-size: 3rem;
   .__logo {
