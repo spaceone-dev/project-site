@@ -99,6 +99,7 @@ const Box = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background-color: #001b33;
 `;
 

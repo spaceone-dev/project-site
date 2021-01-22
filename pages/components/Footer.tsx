@@ -72,6 +72,7 @@ const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 const Bottom = styled.div`
@@ -81,6 +82,7 @@ const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 const Box = styled.div`

@@ -24,6 +24,7 @@ import spinWhite from "../../public/assets/spin_white_final.json";
 import spaceMan from "../../public/assets/spaceman0119_final.json";
 import planet from "../../public/assets/purpleplanet.json";
 import { useState } from "react";
+import { media } from "../../styles/theme";
 
 const Scroll_1 = () => {
   const optionsPlanet = {
@@ -144,7 +145,7 @@ const Scroll_1 = () => {
           }}
         />
 
-        <div style={{ position: "absolute", zIndex: 1 }}>
+        <div style={{ position: "relative" }}>
           <Title>
             <div className="__title">
               MANAGE
@@ -165,28 +166,28 @@ const Scroll_1 = () => {
                 position: "absolute",
                 width: "22rem",
                 height: "22rem",
-                left: "82.4rem",
-                top: "55rem",
+                left: "26rem",
+                top: "35rem",
                 opacity: "0.8",
               }}
             />
-          </Title>
-          <div
-            className="__git"
-            onMouseEnter={() => setIsHover(true)}
-            onMouseLeave={() => setIsHover(false)}
-          >
-            <Github />
-            <div className="__git__content">
-              <span>{isHover ? <GithubLogo_fill /> : <GithubLogo />}</span>
-              <span style={{ marginLeft: "0.6rem" }}>Github</span>
-              <span style={{ marginLeft: "0.4rem" }}>
-                <span>
-                  {isHover ? <ExternalLink_fill /> : <ExternalLink />}
+            <div
+              className="__git"
+              onMouseEnter={() => setIsHover(true)}
+              onMouseLeave={() => setIsHover(false)}
+            >
+              <Github />
+              <div className="__git__content">
+                <span>{isHover ? <GithubLogo_fill /> : <GithubLogo />}</span>
+                <span style={{ marginLeft: "0.6rem" }}>Github</span>
+                <span style={{ marginLeft: "0.4rem" }}>
+                  <span>
+                    {isHover ? <ExternalLink_fill /> : <ExternalLink />}
+                  </span>
                 </span>
-              </span>
+              </div>
             </div>
-          </div>
+          </Title>
         </div>
       </Container>
     </Box>
@@ -196,12 +197,18 @@ const Scroll_1 = () => {
 const Box = styled.div`
   width: 100%;
   height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
 `;
 
 const Container = styled.div`
-  width: 100%;
+  /* width: 144rem; */
   height: 100vh;
   display: flex;
+  margin-top: 23rem;
+  justify-content: center;
   .__wave1 {
     position: absolute;
     top: 0;
@@ -225,7 +232,6 @@ const Container = styled.div`
   .__git {
     width: 13.4rem;
     height: 4rem;
-    left: 36rem;
     top: 4.6rem;
     cursor: pointer;
     position: relative;
@@ -245,7 +251,6 @@ const Container = styled.div`
       font-size: 1.6rem;
       position: absolute;
       bottom: 0;
-      margin-bottom: 0.9rem;
       margin-left: 2.4rem;
       display: flex;
       align-items: center;
@@ -255,11 +260,14 @@ const Container = styled.div`
 
 const Title = styled.div`
   font-size: 6rem;
-  margin-left: 36rem;
-  margin-right: 10rem;
+  ${media[1440]} {
+    margin-left: -20rem;
+  }
+  ${media[768]} {
+    margin-left: -10rem;
+  }
   font-weight: 500;
   color: ${({ theme }) => theme.color.primary[200]};
-  margin-top: 21rem;
   .__gradient {
     font-size: 6rem;
     font-weight: 600;

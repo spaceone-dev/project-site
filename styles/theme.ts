@@ -1,4 +1,4 @@
-import styled, { css, DefaultTheme } from "styled-components";
+import { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   color: {
@@ -15,4 +15,15 @@ export const theme: DefaultTheme = {
       200: "#E9F4FF",
     },
   },
+};
+
+const customMediaQuery = (maxWidth: number): string => {
+  return `@media (max-width: ${maxWidth}px)`;
+};
+
+export const media = {
+  custom: customMediaQuery,
+  1440: customMediaQuery(1440),
+  768: customMediaQuery(768),
+  phone: customMediaQuery(576),
 };
