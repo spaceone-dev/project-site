@@ -113,16 +113,16 @@ const Scroll_5 = () => {
 
 const Background = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background: #001b33;
   opacity: 0.5;
+  position: absolute;
 `;
 
 const Box = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  position: relative;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -131,7 +131,7 @@ const Box = styled.div`
 const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 96rem;
   ${media[768]} {
     left: -22rem;
   }

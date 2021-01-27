@@ -62,7 +62,7 @@ const Padding = styled.div`
 
 const Container = styled.div`
   width: 144rem;
-  height: 100vh;
+  height: 96rem;
   display: flex;
   .__title {
     width: 34rem;

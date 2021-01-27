@@ -34,7 +34,11 @@ const Scroll_3 = () => {
     <Box>
       <Container>
         <Padding>
-          <div className="__title">ALSO...</div>
+          {/* <div className="__title">
+            Manage Cloud
+            <div />
+            Resource
+          </div> */}
           <Card>
             <Lottie
               options={optionsManage}
@@ -91,9 +95,18 @@ const Scroll_3 = () => {
           </Card>
         </Padding>
       </Container>
+      <Background />
     </Box>
   );
 };
+
+const Background = styled.div`
+  width: 100%;
+  height: 110vh;
+  background: #001b33;
+  opacity: 0.5;
+  position: absolute;
+`;
 
 const Box = styled.div`
   width: 100%;
@@ -103,7 +116,6 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #001b33;
 `;
 
 const Padding = styled.div`
@@ -116,8 +128,10 @@ const Padding = styled.div`
 
 const Container = styled.div`
   width: 144rem;
-  height: 100vh;
+  height: 96rem;
   display: flex;
+  position: absolute;
+  z-index: 1;
   align-content: space-between;
   .__title {
     position: absolute;

@@ -111,7 +111,7 @@ const Padding = styled.div`
 
 const Container = styled.div`
   width: 144rem;
-  height: 100vh;
+  height: 96rem;
   position: relative;
   .__title {
     color: ${({ theme }) => theme.color.pink};
@@ -141,6 +141,7 @@ const Keywords = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     font-size: 4rem;
+    color: ${({ theme }) => theme.color.primary[300]};
     ${media[768]} {
       font-size: 3.2rem;
     }
