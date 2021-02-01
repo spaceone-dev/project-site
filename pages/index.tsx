@@ -1,3 +1,4 @@
+import Router, { useRouter } from "next/router";
 import styled from "styled-components";
 import Lottie from "react-lottie";
 import { SpaceONE, SOneMan, UpIcon } from "../public/assets";
@@ -15,6 +16,8 @@ import { media } from "../styles/theme";
 import Scroll_6 from "./components/Scroll_6";
 
 const Index = () => {
+  const pathname = useRouter().pathname;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuShown, setIsMenuShown] = useState(false);
   const [isScrollable, setIsScrollable] = useState(true);
@@ -65,7 +68,11 @@ const Index = () => {
   return (
     <Container isMenuOpen={isMenuOpen}>
       {isMenuShown && (
-        <Menu isMenuOpen={isMenuOpen} isMenuShown={isMenuShown} />
+        <Menu
+          pathname={pathname}
+          isMenuOpen={isMenuOpen}
+          isMenuShown={isMenuShown}
+        />
       )}
       <Background />
       <div className="__logo">

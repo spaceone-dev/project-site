@@ -1,3 +1,4 @@
+import Router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import styled from "styled-components";
@@ -8,6 +9,8 @@ import Menu from "./components/Menu";
 import scroll from "../public/assets/scroll_FINAL.json";
 
 const ReleaseNote = () => {
+  const pathname = useRouter().pathname;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuShown, setIsMenuShown] = useState(false);
   const [isScrollable, setIsScrollable] = useState(true);
@@ -58,7 +61,11 @@ const ReleaseNote = () => {
   return (
     <Container isMenuOpen={isMenuOpen}>
       {isMenuShown && (
-        <Menu isMenuOpen={isMenuOpen} isMenuShown={isMenuShown} />
+        <Menu
+          pathname={pathname}
+          isMenuOpen={isMenuOpen}
+          isMenuShown={isMenuShown}
+        />
       )}
       <div className="__logo">
         <SpaceONE />
