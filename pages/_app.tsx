@@ -4,6 +4,8 @@ import { theme } from "../styles/theme";
 import "./index.scss";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../styles/global-style";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,15 +21,26 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500&display=swap"
           rel="stylesheet"
-        ></link>
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
           rel="stylesheet"
-        ></link>
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"
           rel="stylesheet"
-        ></link>
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
       </Head>
       <body>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

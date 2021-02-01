@@ -1,12 +1,54 @@
 import styled from "styled-components";
 import { media } from "../../styles/theme";
+import Image from "next/image";
+import Slider from "react-slick";
 
 const Scroll_3 = () => {
+  const settings1 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+  };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+  };
+
   return (
     <Box>
       <Container>
         <Padding>
-          <div className="__title">our approach:</div>
+          <Slider className="text-slider" {...settings1}>
+            <div>Manage Cloud Resource</div>
+            <div>Project-Based Management System</div>
+            <div>Consolidated Billing</div>
+            <div>Real-Time Monitoring</div>
+          </Slider>
+          <Slider className="image-slider" {...settings}>
+            <div>
+              <Image src="/assets/img1.png" alt="s" width="700" height="560" />
+            </div>
+            <div>
+              <Image src="/assets/img2.png" alt="s" width="700" height="560" />
+            </div>
+            <div>
+              <Image src="/assets/img3.png" alt="s" width="700" height="560" />
+            </div>
+            <div>
+              <Image src="/assets/img4.png" alt="s" width="700" height="560" />
+            </div>
+          </Slider>
         </Padding>
       </Container>
       <Background />
@@ -29,7 +71,7 @@ const Box = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const Padding = styled.div`
@@ -56,6 +98,16 @@ const Container = styled.div`
     ${media[768]} {
       font-size: 2.4rem;
     }
+  }
+  .text-slider {
+    width: 34rem;
+    color: white;
+  }
+  .image-slider {
+    width: 700px;
+  }
+  .dots {
+    color: red;
   }
 `;
 
