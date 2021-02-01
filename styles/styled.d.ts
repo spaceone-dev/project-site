@@ -1,7 +1,7 @@
 import "styled-components";
 
 declare module "styled-components" {
-  export interface DefaultThene {
+  export interface DefaultTheme {
     color: {
       black: "#000000";
       white: "#ffffff";
@@ -11,9 +11,13 @@ declare module "styled-components" {
       primary: {
         100: "#F8F8FC";
         200: "#EBEAF6";
+        300: "#A8A5CE";
       };
       blue: {
         200: "#E9F4FF";
+      };
+      gray: {
+        300: "#CED0D6";
       };
     };
   }

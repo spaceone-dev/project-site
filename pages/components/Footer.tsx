@@ -5,29 +5,7 @@ import { media } from "../../styles/theme";
 const Footer = () => {
   return (
     <div style={{ position: "relative" }}>
-      <Top>
-        <Padding>
-          <div className="__card">
-            <div className="__card__big">76</div>
-            <div className="__card__300">Enrolled Projects</div>
-          </div>
-          <div className="__card">
-            <div className="__card__big">28</div>
-            <div className="__card__300">Contributors</div>
-          </div>
-          <div className="__card__logo">
-            <div className="__megazone">
-              <MZ />
-            </div>
-            <div className="__card__300">
-              <div>Official Partner</div>
-              <span style={{ marginRight: "1rem" }}>Official Member of</span>
-              <CNCF />
-            </div>
-          </div>
-        </Padding>
-      </Top>
-      <Bottom>
+      <Container>
         <Padding>
           <div className="__card">
             <div style={{ position: "absolute", left: "0", top: "-8rem" }}>
@@ -57,21 +35,12 @@ const Footer = () => {
             </div>
           </div>
         </Padding>
-      </Bottom>
+      </Container>
     </div>
   );
 };
 
-const Top = styled.div`
-  width: auto;
-  height: 50vh;
-  background: #001b33;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-`;
-
-const Bottom = styled.div`
+const Container = styled.div`
   width: auto;
   height: 50vh;
   background: #000f1c;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import {
   GithubLogo_menu,
-  ExternalLink_blue_sm,
+  ExternalLink_menu_sm,
   GithubLogo_menu_hover,
 } from "../../public/assets";
 
@@ -28,7 +28,7 @@ const List = ({ text }) => {
       {text}
       {isHover && (
         <span style={{ marginLeft: "1rem", marginTop: "0.05rem" }}>
-          <ExternalLink_blue_sm />
+          <ExternalLink_menu_sm />
         </span>
       )}
     </div>
@@ -49,7 +49,7 @@ const SmallList = ({ text }) => {
       <span style={{ marginLeft: text === "Github" && "0.8rem" }}>{text}</span>
       {isHover && (
         <span style={{ marginLeft: "1rem", marginTop: "0.15rem" }}>
-          <ExternalLink_blue_sm />
+          <ExternalLink_menu_sm />
         </span>
       )}
     </div>

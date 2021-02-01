@@ -24,7 +24,6 @@ import spinWhite from "../../public/assets/spin_white_final.json";
 import spaceMan from "../../public/assets/spaceman0119_final.json";
 import planet from "../../public/assets/purpleplanet.json";
 import { useState } from "react";
-import { media } from "../../styles/theme";
 
 const Scroll_1 = () => {
   const optionsPlanet = {
@@ -65,6 +64,7 @@ const Scroll_1 = () => {
   return (
     <Box>
       <Container>
+        {/* Background */}
         <div className="__wave1">
           <Wave1 />
         </div>
@@ -107,7 +107,9 @@ const Scroll_1 = () => {
         <div style={{ position: "absolute", left: "91.1rem", top: "11rem" }}>
           <Circle171 />
         </div>
+        {/* Background */}
 
+        {/* Lotties */}
         <Lottie
           options={optionsSpinPurple}
           style={{
@@ -144,17 +146,17 @@ const Scroll_1 = () => {
             opacity: "0.4",
           }}
         />
+        {/* Lotties */}
 
         <div style={{ position: "relative" }}>
           <Title>
-            <div className="__title">
-              MANAGE
+            <div>
+              Manage All
               <div />
-              ALL CLOUD
+              Cloud Resources
               <div />
-              RESOURCES IN
+              in <span className="__gradient">One Platform</span>
             </div>
-            <div className="__gradient">ONE PLATFORM</div>
             <div className="__info">
               <div>SpaceONE is an Open-Source Platform and</div>
               <div />
@@ -164,10 +166,10 @@ const Scroll_1 = () => {
               options={optionsSpaceMan}
               style={{
                 position: "absolute",
-                width: "22rem",
-                height: "22rem",
-                left: "26rem",
-                top: "35rem",
+                width: "20rem",
+                height: "20rem",
+                left: "37rem",
+                top: "33rem",
                 opacity: "0.8",
               }}
             />
@@ -234,7 +236,7 @@ const Container = styled.div`
   .__git {
     width: 13.4rem;
     height: 4rem;
-    top: 4.6rem;
+    top: 13.2rem;
     cursor: pointer;
     position: relative;
     color: white;
@@ -261,26 +263,25 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 6rem;
-  margin-left: -20rem;
-  ${media[768]} {
-    margin-left: -10rem;
-  }
+  font-size: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-weight: 500;
+  letter-spacing: -0.01em;
+  text-align: center;
   color: ${({ theme }) => theme.color.primary[200]};
   .__gradient {
-    font-size: 6rem;
-    font-weight: 600;
     background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .__info {
-    font-size: 2rem;
-    line-height: 3.4rem;
+    font-size: 2.2rem;
+    line-height: 130%;
     opacity: 0.7;
-    margin-top: 2.6rem;
+    margin-top: 3rem;
   }
 `;
 

@@ -63,7 +63,7 @@ const Scroll_2 = () => {
           }}
         />
         <Padding>
-          <div className="__title">WE'RE VERY CAPABLE:</div>
+          <div className="__title">we're very capable:</div>
           <div className="__ellipse">
             <Ellipse3 />
           </div>
@@ -118,6 +118,7 @@ const Container = styled.div`
     font-weight: 600;
     opacity: 0.8;
     font-size: 2.6rem;
+    text-transform: uppercase;
     ${media[768]} {
       font-size: 2.4rem;
     }
@@ -135,20 +136,18 @@ const Container = styled.div`
 const Keywords = styled.div`
   display: flex;
   margin-top: 19rem;
+  font-weight: 500;
   color: ${({ theme }) => theme.color.primary[100]};
   .__word {
     margin-top: 1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 4rem;
+    font-size: 4.6rem;
     color: ${({ theme }) => theme.color.primary[300]};
     ${media[768]} {
       font-size: 3.2rem;
     }
   }
   .__sub {
-    font-weight: normal;
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin-top: 1.5rem;
     letter-spacing: -0.02em;
     ${media[768]} {

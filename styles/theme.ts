@@ -15,6 +15,9 @@ export const theme: DefaultTheme = {
     blue: {
       200: "#E9F4FF",
     },
+    gray: {
+      300: "#CED0D6",
+    },
   },
 };
 
