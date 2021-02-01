@@ -1,0 +1,11 @@
+*.swp
+*.bak
+.git
+.gitignore
+.dockerignore
+.eslintrc.js
+docker-compose.yml
+node_modules
+test
+nginx
+.next                # Existing Next.js builds

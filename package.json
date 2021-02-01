@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "eslint": "eslint ."
+    "eslint": "eslint .",
+    "serve:docker": "docker-compose up"
   },
   "dependencies": {
     "@ap.cx/react-fullpage": "^0.2.0",
