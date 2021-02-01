@@ -84,6 +84,7 @@ const Container = styled.div`
       color: ${({ theme }) => theme.color.primary[300]};
     }
     &__link {
+      cursor: pointer;
       text-decoration: underline;
       font-size: 1.7rem;
       color: ${({ theme }) => theme.color.green};

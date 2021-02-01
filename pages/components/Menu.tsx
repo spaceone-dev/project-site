@@ -1,33 +1,84 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
 import {
   GithubLogo_menu,
   ExternalLink_menu_sm,
   GithubLogo_menu_hover,
+  Mail,
+  Mail_hover,
+  SOne_menu,
 } from "../../public/assets";
+import { theme } from "../../styles/theme";
 
 const menuList = [
+  { name: "Home", url: "/" },
   { name: "User Guide", url: "" },
   { name: "API Reference", url: "" },
-  { name: "Release Note", url: "" },
+  { name: "Release Note", url: "/releasenote" },
 ];
 const smallMenuList = [
   { name: "Github", url: "" },
   { name: "Get In Touch", url: "" },
 ];
 
-const List = ({ text }) => {
+const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
+  const router = useRouter();
+
+  return (
+    <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
+      <Container>
+        <div className="__big">
+          {menuList.map((item) => (
+            <div onClick={() => router.push(item.url)}>
+              <List pathname={pathname} text={item.name} />
+            </div>
+          ))}
+        </div>
+        <div className="__small">
+          {smallMenuList.map((item) => (
+            <SmallList text={item.name} />
+          ))}
+        </div>
+      </Container>
+    </Box>
+  );
+};
+
+const List = ({ text, pathname }) => {
   const [isHover, setIsHover] = useState(false);
+  console.log(pathname.split("/")[1]);
 
   return (
     <div
+      style={{
+        color: `${
+          ((text === "Home" && pathname === "/") ||
+            (text === "Release Note" && pathname === "/releasenote")) &&
+          theme.color.green
+        }`,
+      }}
       className="__big__text"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      {text}
-      {isHover && (
-        <span style={{ marginLeft: "1rem", marginTop: "0.05rem" }}>
+      {((text === "Home" && pathname === "/") ||
+        (text === "Release Note" && pathname === "/releasenote")) && (
+        <SOne_menu />
+      )}
+      <span
+        style={{
+          marginLeft: `${
+            ((text === "Home" && pathname === "/") ||
+              (text === "Release Note" && pathname === "/releasenote")) &&
+            "1rem"
+          }`,
+        }}
+      >
+        {text}
+      </span>
+      {text !== "Home" && text !== "Release Note" && (
+        <span style={{ marginLeft: "0.7rem", marginTop: "0.3rem" }}>
           <ExternalLink_menu_sm />
         </span>
       )}
@@ -46,35 +97,21 @@ const SmallList = ({ text }) => {
     >
       {text === "Github" &&
         (!isHover ? <GithubLogo_menu /> : <GithubLogo_menu_hover />)}
+      {text === "Get In Touch" &&
+        (!isHover ? (
+          <span style={{ marginLeft: "0.5rem", marginRight: "1.3rem" }}>
+            <Mail />
+          </span>
+        ) : (
+          <span style={{ marginLeft: "0.5rem", marginRight: "1.3rem" }}>
+            <Mail_hover />
+          </span>
+        ))}
       <span style={{ marginLeft: text === "Github" && "0.8rem" }}>{text}</span>
-      {isHover && (
-        <span style={{ marginLeft: "1rem", marginTop: "0.15rem" }}>
-          <ExternalLink_menu_sm />
-        </span>
-      )}
+      <span style={{ marginLeft: "0.7rem", marginTop: "0.3rem" }}>
+        <ExternalLink_menu_sm />
+      </span>
     </div>
-  );
-};
-
-const Menu = ({ isMenuOpen, isMenuShown }) => {
-  return (
-    <>
-      <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
-        <Container>
-          <div className="__big">
-            {menuList.map((item) => (
-              <List text={item.name} />
-            ))}
-          </div>
-          <div className="__small">
-            {smallMenuList.map((item) => (
-              <SmallList text={item.name} />
-            ))}
-          </div>
-          <div className="__small__email">support@spaceone.dev</div>
-        </Container>
-      </Box>
-    </>
   );
 };
 
@@ -98,14 +135,16 @@ const Container = styled.div`
   height: auto;
   font-size: 4.6rem;
   font-weight: 600;
+  font-weight: 500;
   color: ${({ theme }) => theme.color.primary[200]};
   .__big {
     cursor: pointer;
     margin-left: 19rem;
-    font-size: 4.6rem;
-    font-weight: 600;
+    font-size: 4rem;
     letter-spacing: -0.01em;
     &__text {
+      display: flex;
+      align-items: center;
       margin-bottom: 4rem;
       height: 4.1rem;
       cursor: pointer;
@@ -118,7 +157,6 @@ const Container = styled.div`
   .__small {
     position: absolute;
     font-size: 3rem;
-    font-weight: 500;
     margin-bottom: 16.6rem;
     margin-left: 94.6rem;
     &__text {
@@ -129,15 +167,6 @@ const Container = styled.div`
       &:hover {
         color: ${({ theme }) => theme.color.green};
       }
-    }
-    &__email {
-      color: ${({ theme }) => theme.color.primary[100]};
-      font-family: Roboto;
-      position: absolute;
-      font-size: 1.8rem;
-      margin-left: 94.6rem;
-      bottom: 10rem;
-      font-weight: 300;
     }
   }
 `;
