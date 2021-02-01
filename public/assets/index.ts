@@ -32,3 +32,6 @@ export { default as UpIcon } from "./upicon.svg";
 export { default as Integrate } from "./integrate.svg";
 export { default as Improve } from "./improve.svg";
 export { default as Manage } from "./manage.svg";
+export { default as Mail } from "./mail.svg";
+export { default as Mail_hover } from "./mail_hover.svg";
+export { default as SOne_menu } from "./sone_menu.svg";
