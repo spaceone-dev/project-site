@@ -47,7 +47,6 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
 
 const List = ({ text, pathname }) => {
   const [isHover, setIsHover] = useState(false);
-  console.log(pathname.split("/")[1]);
 
   return (
     <div
