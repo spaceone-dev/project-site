@@ -35,3 +35,8 @@ export { default as Manage } from "./manage.svg";
 export { default as Mail } from "./mail.svg";
 export { default as Mail_hover } from "./mail_hover.svg";
 export { default as SOne_menu } from "./sone_menu.svg";
+export { default as Img1 } from "./img1.svg";
+export { default as Img2 } from "./img2.svg";
+export { default as Img3 } from "./img3.svg";
+export { default as Img4 } from "./img4.svg";
+export { default as Img5 } from "./img5.svg";

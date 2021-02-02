@@ -104,3 +104,98 @@ $shadows-big: multiple-box-shadow(100);
     opacity: 1;
   }
 }
+
+@keyframes slide {
+  0% {
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 0;
+  }
+
+  20% {
+    margin-left: -100%;
+  }
+  30% {
+    margin-left: -100%;
+  }
+
+  40% {
+    margin-left: -200%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+
+  60% {
+    margin-left: -300%;
+  }
+  70% {
+    margin-left: -300%;
+  }
+
+  80% {
+    margin-left: -400%;
+  }
+  90% {
+    margin-left: -400%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot1 {
+  0% {
+    background-color: "red";
+  } /* 0 ~ 10  : 정지 */
+  10% {
+    background-color: "red";
+  } /* 10 ~ 25 : 변이 */
+  25% {
+    background-color: "white";
+  } /* 25 ~ 35 : 정지 */
+  35% {
+    background-color: "white";
+  } /* 35 ~ 50 : 변이 */
+  50% {
+    background-color: "white";
+  }
+  60% {
+    background-color: "white";
+  }
+  75% {
+    background-color: "white";
+  }
+  85% {
+    background-color: "white";
+  }
+  100% {
+    background-color: "white";
+  }
+}

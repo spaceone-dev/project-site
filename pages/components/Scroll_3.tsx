@@ -1,54 +1,142 @@
 import styled from "styled-components";
-import { media } from "../../styles/theme";
-import Image from "next/image";
-import Slider from "react-slick";
+import { media, theme } from "../../styles/theme";
+import { Img1, Img2, Img3, Img4, Img5 } from "../../public/assets";
 
 const Scroll_3 = () => {
-  const settings1 = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
-  };
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
-  };
-
   return (
     <Box>
       <Container>
         <Padding>
-          <Slider className="text-slider" {...settings1}>
-            <div>Manage Cloud Resource</div>
-            <div>Project-Based Management System</div>
-            <div>Consolidated Billing</div>
-            <div>Real-Time Monitoring</div>
-          </Slider>
-          <Slider className="image-slider" {...settings}>
-            <div>
-              <Image src="/assets/img1.png" alt="s" width="700" height="560" />
+          <div className="__title">our approach:</div>
+
+          <div style={{ display: "flex", position: "relative", width: "100%" }}>
+            {/* text slider */}
+            <div
+              style={{
+                position: "absolute",
+                height: "100%",
+                top: "4.8rem",
+              }}
+            >
+              <TextSlide
+                style={{
+                  animationDelay: "0s",
+                  color: "white",
+                }}
+              >
+                <Content>
+                  Manage Cloud Resource
+                  <div className="__sub">
+                    Quick and Easy Visualisation of Multi-Cloud Resources.
+                  </div>
+                </Content>
+              </TextSlide>
+              <TextSlide
+                style={{
+                  animationDelay: "4s",
+                  color: "white",
+                }}
+              >
+                <Content>
+                  Project-Based Management System
+                  <div className="__sub">
+                    Manage All Resources with Own Role and the Project over All
+                    Clouds.
+                  </div>
+                </Content>
+              </TextSlide>
+              <TextSlide
+                style={{
+                  animationDelay: "8s",
+                  color: "white",
+                }}
+              >
+                <Content>
+                  Consolidated Billing
+                  <div className="__sub">
+                    Easy View on Resource Expenses and Cost Optimization with
+                    the Most Efficiency.
+                  </div>
+                </Content>
+              </TextSlide>
+              <TextSlide
+                style={{
+                  animationDelay: "12s",
+                  color: "white",
+                }}
+              >
+                <Content>
+                  Real-Time Monitoring
+                  <div className="__sub">
+                    Support Various Mornitoring System: Cloudwatch, Stackdriver,
+                    Azure monitor.
+                  </div>
+                </Content>
+              </TextSlide>
+              <TextSlide
+                style={{
+                  animationDelay: "16s",
+                  color: "white",
+                }}
+              >
+                <Content>
+                  Core Resource Automation Process
+                  <div className="__sub">
+                    Power Scheduling lets you Set Resource and Control Expenses.
+                  </div>
+                </Content>
+              </TextSlide>
             </div>
-            <div>
-              <Image src="/assets/img2.png" alt="s" width="700" height="560" />
+            {/* text slider */}
+
+            {/* image slider */}
+            <div style={{ position: "absolute", left: "36rem" }}>
+              <div
+                style={{
+                  height: "56rem",
+                  width: "70rem",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    width: "350rem",
+                    height: "56rem",
+                    overflow: "hidden",
+                    display: "flex",
+                    animation: "slide 20s infinite",
+                  }}
+                >
+                  <Slide>
+                    <Img1 />
+                  </Slide>
+                  <Slide>
+                    <Img2 />
+                  </Slide>
+                  <Slide>
+                    <Img3 />
+                  </Slide>
+                  <Slide>
+                    <Img4 />
+                  </Slide>
+                  <Slide>
+                    <Img5 />
+                  </Slide>
+                </div>
+              </div>
+              <div
+                style={{
+                  position: "relative",
+                  background: "white",
+                  height: "0.3rem",
+                  width: "70rem",
+                }}
+              >
+                <ProgressBar />
+              </div>
             </div>
-            <div>
-              <Image src="/assets/img3.png" alt="s" width="700" height="560" />
-            </div>
-            <div>
-              <Image src="/assets/img4.png" alt="s" width="700" height="560" />
-            </div>
-          </Slider>
+            {/* image slider */}
+          </div>
         </Padding>
       </Container>
       <Background />
@@ -71,12 +159,11 @@ const Box = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 
 const Padding = styled.div`
   padding: 20rem 19rem;
-  display: flex;
   ${media[768]} {
     padding: 20rem 7rem;
   }
@@ -108,6 +195,45 @@ const Container = styled.div`
   }
   .dots {
     color: red;
+  }
+`;
+
+const Slide = styled.div`
+  width: 70rem;
+  height: 56rem;
+  background-color: white;
+`;
+
+const ProgressBar = styled.div`
+  height: 0.3rem;
+  background-color: ${({ theme }) => theme.color.primary[400]};
+  position: absolute;
+  animation: progress 4s infinite;
+`;
+
+const TextSlide = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  animation: fade 20s infinite;
+`;
+
+const Content = styled.div`
+  width: 33rem;
+  font-weight: 500;
+  font-size: 4.6rem;
+  letter-spacing: -0.01em;
+  color: ${({ theme }) => theme.color.primary[300]};
+  .__sub {
+    margin-top: 2rem;
+    font-family: Helvetica Neue;
+    font-size: 2.1rem;
+    line-height: 140%;
+    font-weight: normal;
+    color: ${({ theme }) => theme.color.white};
   }
 `;
 
