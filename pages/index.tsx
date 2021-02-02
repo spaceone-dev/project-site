@@ -28,12 +28,8 @@ const Index = () => {
     if (!isMenuShown) {
       setIsMenuOpen(true);
       setIsMenuShown(true);
-      setIsScrollable(false);
-      setIsUpShown(false);
     } else {
       setIsMenuOpen(false);
-      setIsScrollable(true);
-      setIsUpShown(true);
       setTimeout(() => {
         setIsMenuShown(false);
       }, 500);
@@ -157,7 +153,7 @@ const ScrollBtn = styled.div<{ isMenuOpen: Boolean }>`
   position: fixed;
   left: 10rem;
   bottom: 7rem;
-  z-index: 10;
+  z-index: 3;
   animation: ${({ isMenuOpen }) => (!isMenuOpen ? "openMenu" : "closeMenu")}
     0.5s;
   .__text {
@@ -176,7 +172,7 @@ const UpBtn = styled.div<{ isMenuOpen: Boolean }>`
   position: fixed;
   right: 12.5rem;
   bottom: 7rem;
-  z-index: 10;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -183,7 +183,7 @@ const Scroll_1 = () => {
               </div>
               <div className="__git__content">
                 <span>{isHover ? <GithubLogo_fill /> : <GithubLogo />}</span>
-                <span style={{ marginLeft: "0.6rem" }}>Github</span>
+                <span style={{ marginLeft: "0.6rem" }}>GitHub</span>
                 <span style={{ marginLeft: "0.4rem" }}>
                   <span>
                     {isHover ? <ExternalLink_fill /> : <ExternalLink />}
