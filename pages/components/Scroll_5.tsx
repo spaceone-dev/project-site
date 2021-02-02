@@ -35,73 +35,75 @@ const Scroll_5 = () => {
   return (
     <Box>
       <Container>
-        <div style={{ position: "absolute", zIndex: 1 }}>
-          <Lottie
-            options={optionsSpinPurple}
-            style={{
-              position: "absolute",
-              width: "11.2rem",
-              height: "11.2rem",
-              left: "8rem",
-              top: "20rem",
-              transform: "rotate(70.54deg)",
-              opacity: "0.5",
-            }}
-          />
-          <Lottie
-            options={optionsSpinPurple}
-            style={{
-              position: "absolute",
-              width: "17.6rem",
-              height: "17.6rem",
-              left: "42rem",
-              top: "54rem",
-              opacity: "0.5",
-            }}
-          />
-          <Lottie
-            options={optionsSpinBlue}
-            style={{
-              position: "absolute",
-              width: "9rem",
-              height: "9rem",
-              left: "13.4rem",
-              top: "76.5rem",
-              transform: "rotate(-90deg)",
-              opacity: "0.7",
-            }}
-          />
-          <Lottie
-            options={optionsSpinBlue}
-            style={{
-              position: "absolute",
-              width: "13.3rem",
-              height: "13.3rem",
-              left: "73.7rem",
-              top: "63rem",
-              opacity: "0.5",
-            }}
-          />
-          <Lottie
-            options={optionsSpinWhite}
-            style={{
-              position: "absolute",
-              width: "7.277rem",
-              height: "7.277rem",
-              left: "89rem",
-              top: "25rem",
-              opacity: "0.5",
-              transform: "rotate(-17.7deg)",
-            }}
-          />
-
-          <div className="__universe">
-            <Universe />
-          </div>
+        <Container>
+          <UniverseGroup>
+            <Lottie
+              options={optionsSpinPurple}
+              style={{
+                position: "absolute",
+                width: "11.2rem",
+                height: "11.2rem",
+                left: "8rem",
+                top: "37rem",
+                transform: "rotate(70.54deg)",
+                opacity: "0.5",
+              }}
+            />
+            <Lottie
+              options={optionsSpinPurple}
+              style={{
+                position: "absolute",
+                width: "17.6rem",
+                height: "17.6rem",
+                left: "40rem",
+                top: "67rem",
+                opacity: "0.5",
+              }}
+            />
+            <Lottie
+              options={optionsSpinBlue}
+              style={{
+                position: "absolute",
+                width: "13.3rem",
+                height: "13.3rem",
+                left: "16rem",
+                bottom: "24rem",
+                opacity: "0.5",
+                transform: "matrix(0.87, -0.5, 0.5, 0.87, 0, 0)",
+              }}
+            />
+            <Lottie
+              options={optionsSpinBlue}
+              style={{
+                position: "absolute",
+                width: "9rem",
+                height: "9rem",
+                left: "62.5rem",
+                bottom: "25rem",
+                transform: "rotate(-90deg)",
+                opacity: "0.5",
+              }}
+            />
+            <Lottie
+              options={optionsSpinWhite}
+              style={{
+                position: "absolute",
+                width: "7.277rem",
+                height: "7.277rem",
+                left: "87rem",
+                top: "48rem",
+                opacity: "0.2",
+                transform: "rotate(-17.7deg)",
+              }}
+            />
+            <div>
+              <Universe />
+            </div>
+          </UniverseGroup>
           <div className="__upcoming">
             <Upcoming />
           </div>
-        </div>
+        </Container>
         <Background />
       </Container>
     </Box>
@@ -110,10 +112,12 @@ const Scroll_5 = () => {
 
 const Background = styled.div`
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   background: #001b33;
   opacity: 0.5;
   position: absolute;
+  left: 0;
+  top: 0;
 `;
 
 const Box = styled.div`
@@ -127,25 +131,21 @@ const Box = styled.div`
 
 const Container = styled.div`
   position: relative;
+  z-index: 1;
   width: 100%;
-  height: 96rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   ${media[768]} {
     left: -22rem;
   }
-  .__universe {
-    position: absolute;
-    left: -30rem;
-  }
-  .__plugins {
-    position: absolute;
-    left: 25rem;
-    top: 16rem;
-  }
   .__upcoming {
-    position: absolute;
-    left: 95rem;
-    top: 25rem;
+    margin-left: 5rem;
   }
+`;
+
+const UniverseGroup = styled.div`
+  position: relative;
 `;
 
 export default Scroll_5;

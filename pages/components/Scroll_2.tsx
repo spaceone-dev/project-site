@@ -32,8 +32,8 @@ const Scroll_2 = () => {
             position: "absolute",
             width: "17.6rem",
             height: "17.6rem",
-            left: "3.5rem",
-            top: "48rem",
+            left: "23rem",
+            top: "55rem",
             transform: "rotate(-30deg)",
             opacity: "0.5",
           }}
@@ -44,8 +44,8 @@ const Scroll_2 = () => {
             position: "absolute",
             width: "7.339rem",
             height: "7.339rem",
-            left: "84rem",
-            top: "42.8rem",
+            left: "81rem",
+            top: "43.5rem",
             transform: "rotate(-30deg)",
             opacity: "0.7",
           }}
@@ -71,7 +71,7 @@ const Scroll_2 = () => {
             <div>
               <Integrate />
               <div className="__word">Integrate</div>
-              <div className="__sub">Multicloud Accounts</div>
+              <div className="__sub">Multi-Cloud Accounts</div>
             </div>
             <div style={{ marginLeft: "6rem" }}>
               <Improve />

@@ -181,7 +181,7 @@ const Scroll_3 = () => {
 
 const Background = styled.div`
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   background: #001b33;
   opacity: 0.5;
   position: absolute;
