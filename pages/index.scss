@@ -170,32 +170,29 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 
-@keyframes dot1 {
+@keyframes carousel {
   0% {
-    background-color: "red";
-  } /* 0 ~ 10  : 정지 */
-  10% {
-    background-color: "red";
-  } /* 10 ~ 25 : 변이 */
-  25% {
-    background-color: "white";
-  } /* 25 ~ 35 : 정지 */
-  35% {
-    background-color: "white";
-  } /* 35 ~ 50 : 변이 */
-  50% {
-    background-color: "white";
+    background-color: #ebeaf6;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 0.65rem;
   }
-  60% {
-    background-color: "white";
+  1% {
+    background-color: #8c81d1;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0 0.45rem;
   }
-  75% {
-    background-color: "white";
+  20% {
+    background-color: #8c81d1;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0 0.45rem;
   }
-  85% {
-    background-color: "white";
-  }
-  100% {
-    background-color: "white";
+  21% {
+    background-color: #ebeaf6;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 0.65rem;
   }
 }

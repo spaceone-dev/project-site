@@ -134,6 +134,41 @@ const Scroll_3 = () => {
               >
                 <ProgressBar />
               </div>
+              <div
+                style={{
+                  display: "flex",
+                  position: "absolute",
+                  right: "-0.65rem",
+                  marginTop: "1.3rem",
+                  alignItems: "center",
+                }}
+              >
+                <Carousel
+                  style={{
+                    animationDelay: "0s",
+                  }}
+                />
+                <Carousel
+                  style={{
+                    animationDelay: "4s",
+                  }}
+                />
+                <Carousel
+                  style={{
+                    animationDelay: "8s",
+                  }}
+                />
+                <Carousel
+                  style={{
+                    animationDelay: "12s",
+                  }}
+                />
+                <Carousel
+                  style={{
+                    animationDelay: "16s",
+                  }}
+                />
+              </div>
             </div>
             {/* image slider */}
           </div>
@@ -235,6 +270,15 @@ const Content = styled.div`
     font-weight: normal;
     color: ${({ theme }) => theme.color.white};
   }
+`;
+
+const Carousel = styled.div`
+  animation: carousel 20s infinite;
+  margin: 0 0.65rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.color.primary[200]};
 `;
 
 export default Scroll_3;
