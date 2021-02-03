@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { Universe, Upcoming } from "../../public/assets";
-import spinPurple from "../../public/assets/spin_purple_final.json";
-import spinWhite from "../../public/assets/spin_white_final.json";
-import spinBlue from "../../public/assets/spin_blue_final.json";
-import { media } from "../../styles/theme";
+import { Universe, Upcoming } from "../public/assets";
+import spinPurple from "../public/assets/spin_purple_final.json";
+import spinWhite from "../public/assets/spin_white_final.json";
+import spinBlue from "../public/assets/spin_blue_final.json";
+import { media } from "../styles/theme";
 
 const Scroll_5 = () => {
   const optionsSpinPurple = {

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { media } from "../../styles/theme";
-import { ExternalLink_green } from "../../public/assets";
+import { media } from "../styles/theme";
+import { ExternalLink_green } from "../public/assets";
 import Lottie from "react-lottie";
-import spaceship from "../../public/assets/spaceship.json";
+import spaceship from "../public/assets/spaceship.json";
 
 const Scroll_6 = () => {
   const optionsSpaceship = {

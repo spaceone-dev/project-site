@@ -2,18 +2,18 @@ import Router, { useRouter } from "next/router";
 import styled from "styled-components";
 import Lottie from "react-lottie";
 import { SpaceONE, SOneMan, UpIcon } from "../public/assets";
-import Footer from "./components/Footer";
-import Scroll_1 from "./components/Scroll_1";
-import Scroll_2 from "./components/Scroll_2";
-import Scroll_3 from "./components/Scroll_3";
-import Scroll_4 from "./components/Scroll_4";
-import Scroll_5 from "./components/Scroll_5";
+import Footer from "../components/Footer";
+import Scroll_1 from "../components/Scroll_1";
+import Scroll_2 from "../components/Scroll_2";
+import Scroll_3 from "../components/Scroll_3";
+import Scroll_4 from "../components/Scroll_4";
+import Scroll_5 from "../components/Scroll_5";
 import scroll from "../public/assets/scroll_FINAL.json";
 import { useEffect, useState } from "react";
-import Menu from "./components/Menu";
-import Background from "./components/Background";
+import Menu from "../components/Menu";
+import Background from "../components/Background";
 import { media } from "../styles/theme";
-import Scroll_6 from "./components/Scroll_6";
+import Scroll_6 from "../components/Scroll_6";
 
 const Index = () => {
   const pathname = useRouter().pathname;

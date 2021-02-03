@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { media, theme } from "../../styles/theme";
-import { Img1, Img2, Img3, Img4, Img5 } from "../../public/assets";
+import { media, theme } from "../styles/theme";
+import { Img1, Img2, Img3, Img4, Img5 } from "../public/assets";
 
 const Scroll_3 = () => {
   return (

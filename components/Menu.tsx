@@ -8,8 +8,8 @@ import {
   Mail,
   Mail_hover,
   SOne_menu,
-} from "../../public/assets";
-import { theme } from "../../styles/theme";
+} from "../public/assets";
+import { theme } from "../styles/theme";
 
 const menuList = [
   { name: "Home", url: "/" },
@@ -133,8 +133,8 @@ const Container = styled.div`
   width: 144rem;
   height: auto;
   font-size: 4.6rem;
-  font-weight: 600;
   font-weight: 500;
+  font-weight: 400;
   color: ${({ theme }) => theme.color.primary[200]};
   .__big {
     cursor: pointer;

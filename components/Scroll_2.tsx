@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { Ellipse3, Integrate, Improve, Manage } from "../../public/assets";
-import spinPurple from "../../public/assets/spin_purple_final.json";
-import spinWhite from "../../public/assets/spin_white_final.json";
-import { media } from "../../styles/theme";
+import { Ellipse3, Integrate, Improve, Manage } from "../public/assets";
+import spinPurple from "../public/assets/spin_purple_final.json";
+import spinWhite from "../public/assets/spin_white_final.json";
+import { media } from "../styles/theme";
 
 const Scroll_2 = () => {
   const optionsSpinPurple = {

@@ -1,9 +1,9 @@
 import Lottie from "react-lottie";
 import styled from "styled-components";
-import cloud from "../../public/assets/cloud.json";
-import plugin from "../../public/assets/plugin architecture.json";
-import openAPI from "../../public/assets/openbox.json";
-import { media } from "../../styles/theme";
+import cloud from "../public/assets/cloud.json";
+import plugin from "../public/assets/plugin architecture.json";
+import openAPI from "../public/assets/openbox.json";
+import { media } from "../styles/theme";
 
 const Scroll_4 = () => {
   const optionsCloudNative = {

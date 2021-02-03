@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { SOneMan_footer } from "../../public/assets";
-import { media } from "../../styles/theme";
+import { SOneMan_footer } from "../public/assets";
+import { media } from "../styles/theme";
 
 const Footer = () => {
   return (

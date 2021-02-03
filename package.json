@@ -10,7 +10,6 @@
     "serve:docker": "docker-compose up"
   },
   "dependencies": {
-    "@ap.cx/react-fullpage": "^0.2.0",
     "@svgr/webpack": "^5.5.0",
     "aos": "^2.3.4",
     "css-loader": "^5.0.1",

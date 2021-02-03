@@ -4,8 +4,8 @@ import Lottie from "react-lottie";
 import styled from "styled-components";
 import { SOneMan, SpaceONE, UpIcon } from "../public/assets";
 import { media } from "../styles/theme";
-import Footer from "./components/Footer";
-import Menu from "./components/Menu";
+import Footer from "../components/Footer";
+import Menu from "../components/Menu";
 import scroll from "../public/assets/scroll_FINAL.json";
 
 const ReleaseNote = () => {
