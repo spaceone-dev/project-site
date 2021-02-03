@@ -37,7 +37,7 @@ const Scroll_4 = () => {
         <Padding>
           <div className="__title">our strength:</div>
           <Cards>
-            <Card>
+            <Card data-aos="fade-up">
               <div className="__content">
                 <Lottie
                   options={optionsCloudNative}
@@ -59,7 +59,7 @@ const Scroll_4 = () => {
               </div>
               <CardBg />
             </Card>
-            <Card>
+            <Card data-aos="fade-up" data-aos-delay="300">
               <div className="__content">
                 <Lottie
                   options={optionsPlugin}
@@ -80,7 +80,7 @@ const Scroll_4 = () => {
               </div>
               <CardBg />
             </Card>
-            <Card>
+            <Card data-aos="fade-up" data-aos-delay="600">
               <div className="__content">
                 <Lottie
                   options={optionsOpenAPI}

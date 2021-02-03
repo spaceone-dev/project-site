@@ -18,11 +18,15 @@ const Scroll_6 = () => {
     <Box>
       <Container>
         <div className="__ghInfo">
-          <div style={{ width: "34rem" }}>
+          <div data-aos="fade-up" style={{ width: "34rem" }}>
             <span className="__ghInfo__num">76</span>
             <span style={{ marginLeft: "1rem" }}>Enrolled Projects</span>
           </div>
-          <div style={{ width: "34rem", marginLeft: "2rem" }}>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            style={{ width: "34rem", marginLeft: "2rem" }}
+          >
             <span className="__ghInfo__num">28</span>
             <span style={{ marginLeft: "1rem" }}>Contributors</span>
             <div className="__ghInfo__link">
@@ -37,17 +41,19 @@ const Scroll_6 = () => {
           SpaceONE’s Mission is to Accelerate the Multi-Cloud Native Technology
           for Sustainable Ecosystem.
         </div>
-        <Lottie
-          options={optionsSpaceship}
-          style={{
-            width: "14rem",
-            height: "14rem",
-            marginTop: "7.1rem",
-          }}
-        />
-        <div className="__gradient">
-          Climb Aboard the <span style={{ fontWeight: 500 }}>SpaceONE</span>
-          ship
+        <div data-aos="fade-up" data-aos-delay="600">
+          <Lottie
+            options={optionsSpaceship}
+            style={{
+              width: "14rem",
+              height: "14rem",
+              marginTop: "7.1rem",
+            }}
+          />
+          <div className="__gradient">
+            Climb Aboard the <span style={{ fontWeight: 500 }}>SpaceONE</span>
+            ship
+          </div>
         </div>
       </Container>
     </Box>

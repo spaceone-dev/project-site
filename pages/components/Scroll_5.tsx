@@ -36,7 +36,7 @@ const Scroll_5 = () => {
     <Box>
       <Container>
         <Container>
-          <UniverseGroup data-aos="fade-up" data-aos-delay="300">
+          <UniverseGroup>
             <Lottie
               options={optionsSpinPurple}
               style={{
@@ -100,7 +100,7 @@ const Scroll_5 = () => {
               <Universe />
             </div>
           </UniverseGroup>
-          <div data-aos="fade-up" data-aos-delay="600" className="__upcoming">
+          <div data-aos="fade" data-aos-delay="500" className="__upcoming">
             <Upcoming />
           </div>
         </Container>
