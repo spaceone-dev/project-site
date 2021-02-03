@@ -23,8 +23,6 @@ export { default as Circle102 } from "./Ellipse 102.svg";
 export { default as Circle171 } from "./Ellipse 171.svg";
 export { default as GithubLogo_menu } from "./github.svg";
 export { default as GithubLogo_menu_hover } from "./github_hover.svg";
-export { default as MZ } from "./mzlogo.svg";
-export { default as CNCF } from "./cncf-logo.svg";
 export { default as Universe } from "./ouruniverse.svg";
 export { default as Upcoming } from "./upcoming.svg";
 export { default as SOneMan_footer } from "./soneman_footer.svg";

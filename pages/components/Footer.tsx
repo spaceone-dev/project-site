@@ -14,24 +14,31 @@ const Footer = () => {
             <div className="__card__400">
               SpaceONE <div />
               Copyright 2021
-              <div className="__card__500">MEGAZONE Cloud</div>
+              <div
+                className="__card__300"
+                style={{ marginTop: "1.8rem", fontSize: "1.4rem" }}
+              >
+                Sponsored by<span className="__card__500"> MEGAZONE Cloud</span>
+              </div>
             </div>
           </div>
           <div className="__card">
             <div className="__card__400">
-              Contacts
-              <div className="__card__300__18">MEGAZONE Cloud</div>
+              Contact
+              <div className="__card__300">support@spaceone.dev</div>
             </div>
           </div>
           <div className="__card">
             <div className="__card__400">
               Seoul
-              <div className="__card__300__18">
+              <div className="__card__300">
                 46, Nonhyeon-ro 85-gil
                 <div />
-                Gangnam-gu, Korea
+                Gangnam-gu, Seoul, Korea
               </div>
-              <div className="__card__300__18">+82 1644-2243 </div>
+              <div className="__card__300" style={{ fontSize: "1.7rem" }}>
+                +82 1644-2243{" "}
+              </div>
             </div>
           </div>
         </Padding>
@@ -41,6 +48,8 @@ const Footer = () => {
 };
 
 const Container = styled.div`
+  font-family: Helvetica Neue;
+  color: ${({ theme }) => theme.color.primary[100]};
   width: auto;
   height: 50vh;
   background: #000f1c;
@@ -60,7 +69,6 @@ const Padding = styled.div`
   .__card {
     width: 100%;
     position: relative;
-    font-family: "Roboto";
     color: #ffffff;
     line-height: 7rem;
     &__big {
@@ -73,16 +81,13 @@ const Padding = styled.div`
       font-size: 2rem;
       font-weight: 300;
       line-height: 2.5rem;
-      &__18 {
-        margin-top: 1rem;
-        font-weight: 300;
-        font-size: 1.8rem;
-      }
+      margin-top: 1rem;
+      font-size: 1.8rem;
     }
     &__400 {
       font-size: 2rem;
       font-weight: 400;
-      line-height: 2.5rem;
+      line-height: 2.4rem;
     }
     &__500 {
       font-size: 2rem;
@@ -92,7 +97,6 @@ const Padding = styled.div`
     }
     &__logo {
       position: relative;
-      font-family: "Roboto";
       color: #ffffff;
       line-height: 7rem;
       ${media[768]} {
