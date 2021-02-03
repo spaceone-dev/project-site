@@ -183,8 +183,8 @@ const Scroll_1 = () => {
               </div>
               <div className="__git__content">
                 <span>{isHover ? <GithubLogo_fill /> : <GithubLogo />}</span>
-                <span style={{ marginLeft: "0.6rem" }}>GitHub</span>
-                <span style={{ marginLeft: "0.4rem" }}>
+                <span className="__git__content__text">GitHub</span>
+                <span style={{ marginLeft: "0.4rem", marginTop: "0.1rem" }}>
                   <span>
                     {isHover ? <ExternalLink_fill /> : <ExternalLink />}
                   </span>
@@ -250,15 +250,20 @@ const Container = styled.div`
       color: #001b33;
     }
     border-radius: 3rem;
+
     &__content {
-      font-family: "Roboto", sans-serif;
-      font-weight: 300;
       font-size: 1.6rem;
       position: absolute;
       bottom: 1rem;
       margin-left: 2.4rem;
       display: flex;
-      align-items: center;
+
+      &__text {
+        font-weight: 300;
+        font-family: Helvetica Neue;
+        letter-spacing: 0.02em;
+        margin-left: 0.6rem;
+      }
     }
   }
 `;

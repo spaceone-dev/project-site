@@ -11,32 +11,32 @@ const Footer = () => {
             <div style={{ position: "absolute", left: "0", top: "-8rem" }}>
               <SOneMan_footer />
             </div>
-            <div className="__card__400">
+            <div className="__card__300">
               SpaceONE <div />
               Copyright 2021
               <div
-                className="__card__300"
+                className="__card__100"
                 style={{ marginTop: "1.8rem", fontSize: "1.4rem" }}
               >
-                Sponsored by<span className="__card__400"> MEGAZONE Cloud</span>
+                Sponsored by<span className="__card__300"> MEGAZONE Cloud</span>
               </div>
             </div>
           </div>
           <div className="__card">
-            <div className="__card__400">
+            <div className="__card__300">
               Contact
-              <div className="__card__300">support@spaceone.dev</div>
+              <div className="__card__100">support@spaceone.dev</div>
             </div>
           </div>
           <div className="__card">
-            <div className="__card__400">
+            <div className="__card__300">
               Seoul
-              <div className="__card__300">
+              <div className="__card__100">
                 46, Nonhyeon-ro 85-gil
                 <div />
                 Gangnam-gu, Seoul, Korea
               </div>
-              <div className="__card__300" style={{ fontSize: "1.7rem" }}>
+              <div className="__card__100" style={{ fontSize: "1.7rem" }}>
                 +82 1644-2243{" "}
               </div>
             </div>
@@ -77,16 +77,16 @@ const Padding = styled.div`
         font-size: 6.8rem;
       }
     }
-    &__300 {
+    &__100 {
       font-size: 2rem;
-      font-weight: 300;
+      font-weight: 100;
       line-height: 2.5rem;
       margin-top: 1rem;
       font-size: 1.8rem;
     }
-    &__400 {
+    &__300 {
       font-size: 2rem;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 2.4rem;
     }
     &__logo {
