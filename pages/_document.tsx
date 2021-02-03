@@ -41,6 +41,8 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <script>AOS.init();</script>
           <Main />
           <NextScript />
         </body>
