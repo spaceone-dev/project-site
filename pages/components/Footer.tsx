@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MZ, CNCF, SOneMan_footer } from "../../public/assets";
+import { SOneMan_footer } from "../../public/assets";
 import { media } from "../../styles/theme";
 
 const Footer = () => {

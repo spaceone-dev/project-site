@@ -68,17 +68,25 @@ const Scroll_2 = () => {
             <Ellipse3 />
           </div>
           <Keywords>
-            <div>
+            <div data-aos="fade-up">
               <Integrate />
               <div className="__word">Integrate</div>
               <div className="__sub">Multi-Cloud Accounts</div>
             </div>
-            <div style={{ marginLeft: "6rem" }}>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              style={{ marginLeft: "6rem" }}
+            >
               <Improve />
               <div className="__word">Improve</div>
               <div className="__sub">Operation Efficiency</div>
             </div>
-            <div style={{ marginLeft: "6rem" }}>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="600"
+              style={{ marginLeft: "6rem" }}
+            >
               <Manage />
               <div className="__word">Manage</div>
               <div className="__sub">Cloud Spend</div>

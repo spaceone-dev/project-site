@@ -28,6 +28,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
