@@ -27,7 +27,10 @@ const Scroll_3 = () => {
                 <Content>
                   Manage Cloud Resource
                   <div className="__sub">
-                    Quick and Easy Visualisation of Multi-Cloud Resources.
+                    Quick and Easy Visualisation{" "}
+                    <span style={{ color: "#858894" }}>
+                      of Multi-Cloud Resources.
+                    </span>
                   </div>
                 </Content>
               </TextSlide>
@@ -40,8 +43,11 @@ const Scroll_3 = () => {
                 <Content>
                   Project-Based Management System
                   <div className="__sub">
-                    Manage All Resources with Own Role and the Project over All
-                    Clouds.
+                    <span style={{ color: "#858894" }}>
+                      Manage All Resources{" "}
+                    </span>
+                    with Own Role and the Project{" "}
+                    <span style={{ color: "#858894" }}>over All Clouds.</span>
                   </div>
                 </Content>
               </TextSlide>
@@ -54,8 +60,11 @@ const Scroll_3 = () => {
                 <Content>
                   Consolidated Billing
                   <div className="__sub">
-                    Easy View on Resource Expenses and Cost Optimization with
-                    the Most Efficiency.
+                    <span style={{ color: "#858894" }}>Easy View on </span>
+                    Resource Expenses and Cost Optimization{" "}
+                    <span style={{ color: "#858894" }}>
+                      with the Most Efficiency.
+                    </span>
                   </div>
                 </Content>
               </TextSlide>
@@ -68,8 +77,11 @@ const Scroll_3 = () => {
                 <Content>
                   Real-Time Monitoring
                   <div className="__sub">
-                    Support Various Mornitoring System: Cloudwatch, Stackdriver,
-                    Azure monitor.
+                    <span style={{ color: "#858894" }}>Support </span>Various
+                    Mornitoring System:{" "}
+                    <span style={{ color: "#858894" }}>
+                      Cloudwatch, Stackdriver, Azure monitor.
+                    </span>
                   </div>
                 </Content>
               </TextSlide>
@@ -82,7 +94,10 @@ const Scroll_3 = () => {
                 <Content>
                   Core Resource Automation Process
                   <div className="__sub">
-                    Power Scheduling lets you Set Resource and Control Expenses.
+                    <span style={{ color: "#858894" }}>
+                      Power Scheduling lets you{" "}
+                    </span>
+                    Set Resource and Control Expenses.
                   </div>
                 </Content>
               </TextSlide>
@@ -264,6 +279,7 @@ const Content = styled.div`
   color: ${({ theme }) => theme.color.primary[300]};
   .__sub {
     margin-top: 2rem;
+    padding-right: 3rem;
     font-family: Helvetica Neue;
     font-size: 2.1rem;
     line-height: 140%;
