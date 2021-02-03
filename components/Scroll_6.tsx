@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { media } from "../styles/theme";
-import { ExternalLink_green } from "../public/assets";
 import Lottie from "react-lottie";
-import spaceship from "../public/assets/spaceship.json";
+import { ExternalLink_green, Spaceship } from "../public/assets";
 
 const Scroll_6 = () => {
   const optionsSpaceship = {
-    animationData: spaceship,
+    animationData: Spaceship,
     loop: true,
     autoplay: true,
     rendererSettings: {
@@ -41,7 +39,7 @@ const Scroll_6 = () => {
           SpaceONE’s Mission is to Accelerate the Multi-Cloud Native Technology
           for Sustainable Ecosystem.
         </div>
-        <div data-aos="fade-up" data-aos-delay="600">
+        <div data-aos="fade-up" data-aos-delay="300">
           <Lottie
             options={optionsSpaceship}
             style={{

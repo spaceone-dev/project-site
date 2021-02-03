@@ -1,3 +1,4 @@
+// svg
 export { default as Wave1 } from "./wave1.svg";
 export { default as Wave2 } from "./wave2.svg";
 export { default as Github } from "./github_border.svg";
@@ -38,3 +39,15 @@ export { default as Img2 } from "./img2.svg";
 export { default as Img3 } from "./img3.svg";
 export { default as Img4 } from "./img4.svg";
 export { default as Img5 } from "./img5.svg";
+
+// json
+export { default as Cloud } from "./cloud.json";
+export { default as OpenAPI } from "./openbox.json";
+export { default as Plugin } from "./plugin architecture.json";
+export { default as PurplePlanet } from "./purpleplanet.json";
+export { default as Scroll } from "./scroll.json";
+export { default as Spaceman } from "./spaceman.json";
+export { default as Spaceship } from "./spaceship.json";
+export { default as SpinBlue } from "./spin_blue.json";
+export { default as SpinPurple } from "./spin_purple.json";
+export { default as SpinWhite } from "./spin_white.json";

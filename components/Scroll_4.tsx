@@ -1,13 +1,11 @@
-import Lottie from "react-lottie";
 import styled from "styled-components";
-import cloud from "../public/assets/cloud.json";
-import plugin from "../public/assets/plugin architecture.json";
-import openAPI from "../public/assets/openbox.json";
+import Lottie from "react-lottie";
+import { Cloud, Plugin, OpenAPI } from "../public/assets";
 import { media } from "../styles/theme";
 
 const Scroll_4 = () => {
   const optionsCloudNative = {
-    animationData: cloud,
+    animationData: Cloud,
     loop: true,
     autoplay: true,
     rendererSettings: {
@@ -15,7 +13,7 @@ const Scroll_4 = () => {
     },
   };
   const optionsPlugin = {
-    animationData: plugin,
+    animationData: Plugin,
     loop: true,
     autoplay: true,
     rendererSettings: {
@@ -23,7 +21,7 @@ const Scroll_4 = () => {
     },
   };
   const optionsOpenAPI = {
-    animationData: openAPI,
+    animationData: OpenAPI,
     loop: true,
     autoplay: true,
     rendererSettings: {

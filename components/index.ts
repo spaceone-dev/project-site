@@ -1,0 +1,9 @@
+export { default as Background } from "./Background";
+export { default as Footer } from "./Footer";
+export { default as Menu } from "./Menu";
+export { default as Scroll_1 } from "./Scroll_1";
+export { default as Scroll_2 } from "./Scroll_2";
+export { default as Scroll_3 } from "./Scroll_3";
+export { default as Scroll_4 } from "./Scroll_4";
+export { default as Scroll_5 } from "./Scroll_5";
+export { default as Scroll_6 } from "./Scroll_6";

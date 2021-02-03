@@ -11,13 +11,13 @@ import {
 } from "../public/assets";
 import { theme } from "../styles/theme";
 
-const menuList = [
+const leftList = [
   { name: "Home", url: "/" },
   { name: "User Guide", url: "" },
   { name: "API Reference", url: "" },
   { name: "Release Note", url: "/releasenote" },
 ];
-const smallMenuList = [
+const rightList = [
   { name: "Github", url: "" },
   { name: "Get In Touch", url: "" },
 ];
@@ -29,15 +29,15 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
     <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
       <Container>
         <div className="__big">
-          {menuList.map((item, idx) => (
+          {leftList.map((item, idx) => (
             <div key={idx} onClick={() => router.push(item.url)}>
-              <List pathname={pathname} text={item.name} />
+              <LeftList pathname={pathname} text={item.name} />
             </div>
           ))}
         </div>
         <div className="__small">
-          {smallMenuList.map((item, idx) => (
-            <SmallList key={idx} text={item.name} />
+          {rightList.map((item, idx) => (
+            <RightList key={idx} text={item.name} />
           ))}
         </div>
       </Container>
@@ -45,7 +45,7 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
   );
 };
 
-const List = ({ text, pathname }) => {
+const LeftList = ({ text, pathname }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -85,7 +85,7 @@ const List = ({ text, pathname }) => {
   );
 };
 
-const SmallList = ({ text }) => {
+const RightList = ({ text }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (

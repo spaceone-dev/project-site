@@ -1,67 +1,22 @@
 import styled from "styled-components";
 import Lottie from "react-lottie";
-import { Ellipse3, Integrate, Improve, Manage } from "../public/assets";
-import spinPurple from "../public/assets/spin_purple_final.json";
-import spinWhite from "../public/assets/spin_white_final.json";
+import {
+  // svg
+  Ellipse3,
+  Integrate,
+  Improve,
+  Manage,
+  // json
+  SpinPurple,
+  SpinWhite,
+} from "../public/assets";
 import { media } from "../styles/theme";
 
 const Scroll_2 = () => {
-  const optionsSpinPurple = {
-    animationData: spinPurple,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const optionsSpinWhite = {
-    animationData: spinWhite,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   return (
     <Box>
       <Container>
-        <Lottie
-          options={optionsSpinPurple}
-          style={{
-            position: "absolute",
-            width: "17.6rem",
-            height: "17.6rem",
-            left: "23rem",
-            top: "55rem",
-            transform: "rotate(-30deg)",
-            opacity: "0.5",
-          }}
-        />
-        <Lottie
-          options={optionsSpinWhite}
-          style={{
-            position: "absolute",
-            width: "7.339rem",
-            height: "7.339rem",
-            left: "81rem",
-            top: "43.5rem",
-            transform: "rotate(-30deg)",
-            opacity: "0.7",
-          }}
-        />
-        <Lottie
-          options={optionsSpinPurple}
-          style={{
-            position: "absolute",
-            width: "12.145rem",
-            height: "12.145rem",
-            left: "117rem",
-            top: "45rem",
-            opacity: "0.5",
-            transform: "rotate(30deg)",
-          }}
-        />
+        <Lotties />
         <Padding>
           <div className="__title">we're very capable:</div>
           <div className="__ellipse">
@@ -95,6 +50,69 @@ const Scroll_2 = () => {
         </Padding>
       </Container>
     </Box>
+  );
+};
+
+/**
+ * lotties
+ */
+const Lotties = () => {
+  const optionsSpinPurple = {
+    animationData: SpinPurple,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const optionsSpinWhite = {
+    animationData: SpinWhite,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  return (
+    <>
+      <Lottie
+        options={optionsSpinPurple}
+        style={{
+          position: "absolute",
+          width: "17.6rem",
+          height: "17.6rem",
+          left: "23rem",
+          top: "55rem",
+          transform: "rotate(-30deg)",
+          opacity: "0.5",
+        }}
+      />
+      <Lottie
+        options={optionsSpinWhite}
+        style={{
+          position: "absolute",
+          width: "7.339rem",
+          height: "7.339rem",
+          left: "81rem",
+          top: "43.8rem",
+          transform: "rotate(-30deg)",
+          opacity: "0.7",
+        }}
+      />
+      <Lottie
+        options={optionsSpinPurple}
+        style={{
+          position: "absolute",
+          width: "12.145rem",
+          height: "12.145rem",
+          left: "117rem",
+          top: "45rem",
+          opacity: "0.5",
+          transform: "rotate(30deg)",
+        }}
+      />
+    </>
   );
 };
 

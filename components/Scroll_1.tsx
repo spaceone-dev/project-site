@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Lottie from "react-lottie";
 import {
+  // svg
   Circle105,
   Circle109,
   Circle110,
@@ -18,136 +20,29 @@ import {
   Wave1,
   Wave2,
   Github,
+  // json
+  SpinPurple,
+  SpinWhite,
+  Spaceman,
+  PurplePlanet,
 } from "../public/assets";
-import spinPurple from "../public/assets/spin_purple_final.json";
-import spinWhite from "../public/assets/spin_white_final.json";
-import spaceMan from "../public/assets/spaceman0119_final.json";
-import planet from "../public/assets/purpleplanet.json";
-import { useState } from "react";
 
 const Scroll_1 = () => {
-  const optionsPlanet = {
-    animationData: planet,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const optionsSpinPurple = {
-    animationData: spinPurple,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const optionsSpinWhite = {
-    animationData: spinWhite,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const optionsSpaceMan = {
-    animationData: spaceMan,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   const [isHover, setIsHover] = useState(false);
+  const optionsSpaceMan = {
+    animationData: Spaceman,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <Box>
       <Container>
-        {/* Background */}
-        <div className="__wave1">
-          <Wave1 />
-        </div>
-        <div className="__wave2">
-          <Wave2 />
-        </div>
-        <div className="__ellipse1">
-          <Ellipse1 />
-        </div>
-        <div className="__ellipse2">
-          <Ellipse2 />
-        </div>
-
-        <div style={{ position: "absolute", left: "14rem", top: "58.2rem" }}>
-          <Circle96 />
-        </div>
-        <div style={{ position: "absolute", left: "26rem", top: "53rem" }}>
-          <Circle105 />
-        </div>
-        <div style={{ position: "absolute", left: "11.5rem", top: "64rem" }}>
-          <Circle109 />
-        </div>
-        <div style={{ position: "absolute", left: "8.5rem", top: "59rem" }}>
-          <Circle110 />
-        </div>
-        <div style={{ position: "absolute", left: "4.5rem", top: "16rem" }}>
-          <Circle111 />
-        </div>
-
-        <div
-          style={{ position: "absolute", left: "90.84rem", top: "33.958rem" }}
-        >
-          <Circle101 />
-        </div>
-        <div
-          style={{ position: "absolute", left: "90.647rem", top: "25.491rem" }}
-        >
-          <Circle102 />
-        </div>
-        <div style={{ position: "absolute", left: "91.1rem", top: "11rem" }}>
-          <Circle171 />
-        </div>
-        {/* Background */}
-
-        {/* Lotties */}
-        <Lottie
-          options={optionsSpinPurple}
-          style={{
-            position: "absolute",
-            width: "13.563rem",
-            height: "13.563rem",
-            left: "10rem",
-            top: "20rem",
-            transform: "rotate(-30deg)",
-            opacity: "0.7",
-          }}
-        />
-        <Lottie
-          options={optionsSpinWhite}
-          style={{
-            position: "absolute",
-            width: "7.557rem",
-            height: "7.557rem",
-            left: "92.387rem",
-            top: "12.5rem",
-            transform: "rotate(-27.22deg)",
-            opacity: "0.8",
-          }}
-        />
-        <Lottie
-          options={optionsPlanet}
-          style={{
-            position: "absolute",
-            width: "12.6rem",
-            height: "12.033rem",
-            left: "-6rem",
-            top: "33.9rem",
-            transform: "matrix(0.97, 0.21, -0.24, 0.98, 0, 0)",
-            opacity: "0.4",
-          }}
-        />
-        {/* Lotties */}
-
+        <Background />
+        <Lotties />
         <div style={{ position: "relative" }}>
           <Title>
             <div>
@@ -195,6 +90,123 @@ const Scroll_1 = () => {
         </div>
       </Container>
     </Box>
+  );
+};
+
+/**
+ * background
+ */
+const Background = () => (
+  <>
+    <div className="__wave1">
+      <Wave1 />
+    </div>
+    <div className="__wave2">
+      <Wave2 />
+    </div>
+    <div className="__ellipse1">
+      <Ellipse1 />
+    </div>
+    <div className="__ellipse2">
+      <Ellipse2 />
+    </div>
+
+    <div style={{ position: "absolute", left: "14rem", top: "58.2rem" }}>
+      <Circle96 />
+    </div>
+    <div style={{ position: "absolute", left: "26rem", top: "53rem" }}>
+      <Circle105 />
+    </div>
+    <div style={{ position: "absolute", left: "11.5rem", top: "64rem" }}>
+      <Circle109 />
+    </div>
+    <div style={{ position: "absolute", left: "8.5rem", top: "59rem" }}>
+      <Circle110 />
+    </div>
+    <div style={{ position: "absolute", left: "4.5rem", top: "16rem" }}>
+      <Circle111 />
+    </div>
+
+    <div style={{ position: "absolute", left: "90.84rem", top: "33.958rem" }}>
+      <Circle101 />
+    </div>
+    <div style={{ position: "absolute", left: "90.647rem", top: "25.491rem" }}>
+      <Circle102 />
+    </div>
+    <div style={{ position: "absolute", left: "91.1rem", top: "11rem" }}>
+      <Circle171 />
+    </div>
+  </>
+);
+
+/**
+ * lotties
+ */
+const Lotties = () => {
+  const optionsPlanet = {
+    animationData: PurplePlanet,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const optionsSpinPurple = {
+    animationData: SpinPurple,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const optionsSpinWhite = {
+    animationData: SpinWhite,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  return (
+    <>
+      <Lottie
+        options={optionsSpinPurple}
+        style={{
+          position: "absolute",
+          width: "13.563rem",
+          height: "13.563rem",
+          left: "10rem",
+          top: "20rem",
+          transform: "rotate(-30deg)",
+          opacity: "0.7",
+        }}
+      />
+      <Lottie
+        options={optionsSpinWhite}
+        style={{
+          position: "absolute",
+          width: "7.557rem",
+          height: "7.557rem",
+          left: "92.387rem",
+          top: "12.5rem",
+          transform: "rotate(-27.22deg)",
+          opacity: "0.8",
+        }}
+      />
+      <Lottie
+        options={optionsPlanet}
+        style={{
+          position: "absolute",
+          width: "12.6rem",
+          height: "12.033rem",
+          left: "-6rem",
+          top: "33.9rem",
+          transform: "matrix(0.97, 0.21, -0.24, 0.98, 0, 0)",
+          opacity: "0.4",
+        }}
+      />
+    </>
   );
 };
 

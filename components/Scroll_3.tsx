@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { media, theme } from "../styles/theme";
 import { Img1, Img2, Img3, Img4, Img5 } from "../public/assets";
+import { media } from "../styles/theme";
 
 const Scroll_3 = () => {
   return (
@@ -8,184 +8,9 @@ const Scroll_3 = () => {
       <Container>
         <Padding>
           <div className="__title">our approach:</div>
-
           <div style={{ display: "flex", position: "relative", width: "100%" }}>
-            {/* text slider */}
-            <div
-              style={{
-                position: "absolute",
-                height: "100%",
-                top: "4.8rem",
-              }}
-            >
-              <TextSlide
-                style={{
-                  animationDelay: "0s",
-                  color: "white",
-                }}
-              >
-                <Content>
-                  Manage Cloud Resource
-                  <div className="__sub">
-                    Quick and Easy Visualisation{" "}
-                    <span style={{ color: "#858894" }}>
-                      of Multi-Cloud Resources.
-                    </span>
-                  </div>
-                </Content>
-              </TextSlide>
-              <TextSlide
-                style={{
-                  animationDelay: "4s",
-                  color: "white",
-                }}
-              >
-                <Content>
-                  Project-Based Management System
-                  <div className="__sub">
-                    <span style={{ color: "#858894" }}>
-                      Manage All Resources{" "}
-                    </span>
-                    with Own Role and the Project{" "}
-                    <span style={{ color: "#858894" }}>over All Clouds.</span>
-                  </div>
-                </Content>
-              </TextSlide>
-              <TextSlide
-                style={{
-                  animationDelay: "8s",
-                  color: "white",
-                }}
-              >
-                <Content>
-                  Consolidated Billing
-                  <div className="__sub">
-                    <span style={{ color: "#858894" }}>Easy View on </span>
-                    Resource Expenses and Cost Optimization{" "}
-                    <span style={{ color: "#858894" }}>
-                      with the Most Efficiency.
-                    </span>
-                  </div>
-                </Content>
-              </TextSlide>
-              <TextSlide
-                style={{
-                  animationDelay: "12s",
-                  color: "white",
-                }}
-              >
-                <Content>
-                  Real-Time Monitoring
-                  <div className="__sub">
-                    <span style={{ color: "#858894" }}>Support </span>Various
-                    Mornitoring System:{" "}
-                    <span style={{ color: "#858894" }}>
-                      Cloudwatch, Stackdriver, Azure monitor.
-                    </span>
-                  </div>
-                </Content>
-              </TextSlide>
-              <TextSlide
-                style={{
-                  animationDelay: "16s",
-                  color: "white",
-                }}
-              >
-                <Content>
-                  Core Resource Automation Process
-                  <div className="__sub">
-                    <span style={{ color: "#858894" }}>
-                      Power Scheduling lets you{" "}
-                    </span>
-                    Set Resource and Control Expenses.
-                  </div>
-                </Content>
-              </TextSlide>
-            </div>
-            {/* text slider */}
-
-            {/* image slider */}
-            <div style={{ position: "absolute", left: "36rem" }}>
-              <div
-                style={{
-                  height: "56rem",
-                  width: "70rem",
-                  overflow: "hidden",
-                }}
-              >
-                <div
-                  style={{
-                    width: "350rem",
-                    height: "56rem",
-                    overflow: "hidden",
-                    display: "flex",
-                    animation: "slide 20s infinite",
-                  }}
-                >
-                  <Slide>
-                    <Img1 />
-                  </Slide>
-                  <Slide>
-                    <Img2 />
-                  </Slide>
-                  <Slide>
-                    <Img3 />
-                  </Slide>
-                  <Slide>
-                    <Img4 />
-                  </Slide>
-                  <Slide>
-                    <Img5 />
-                  </Slide>
-                </div>
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  background: "white",
-                  height: "0.3rem",
-                  width: "70rem",
-                }}
-              >
-                <ProgressBar />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  position: "absolute",
-                  right: "-0.65rem",
-                  marginTop: "1.3rem",
-                  alignItems: "center",
-                }}
-              >
-                <Carousel
-                  style={{
-                    animationDelay: "0s",
-                  }}
-                />
-                <Carousel
-                  style={{
-                    animationDelay: "4s",
-                  }}
-                />
-                <Carousel
-                  style={{
-                    animationDelay: "8s",
-                  }}
-                />
-                <Carousel
-                  style={{
-                    animationDelay: "12s",
-                  }}
-                />
-                <Carousel
-                  style={{
-                    animationDelay: "16s",
-                  }}
-                />
-              </div>
-            </div>
-            {/* image slider */}
+            <TextSlider />
+            <ImageSlider />
           </div>
         </Padding>
       </Container>
@@ -193,6 +18,181 @@ const Scroll_3 = () => {
     </Box>
   );
 };
+
+/**
+ * text slider
+ */
+const TextSlider = () => (
+  <div
+    style={{
+      position: "absolute",
+      height: "100%",
+      top: "4.8rem",
+    }}
+  >
+    <TextSlide
+      style={{
+        animationDelay: "0s",
+        color: "white",
+      }}
+    >
+      <Content>
+        Manage Cloud Resource
+        <div className="__sub">
+          Quick and Easy Visualisation{" "}
+          <span style={{ color: "#858894" }}>of Multi-Cloud Resources.</span>
+        </div>
+      </Content>
+    </TextSlide>
+    <TextSlide
+      style={{
+        animationDelay: "4s",
+        color: "white",
+      }}
+    >
+      <Content>
+        Project-Based Management System
+        <div className="__sub">
+          <span style={{ color: "#858894" }}>Manage All Resources </span>
+          with Own Role and the Project{" "}
+          <span style={{ color: "#858894" }}>over All Clouds.</span>
+        </div>
+      </Content>
+    </TextSlide>
+    <TextSlide
+      style={{
+        animationDelay: "8s",
+        color: "white",
+      }}
+    >
+      <Content>
+        Consolidated Billing
+        <div className="__sub">
+          <span style={{ color: "#858894" }}>Easy View on </span>
+          Resource Expenses and Cost Optimization{" "}
+          <span style={{ color: "#858894" }}>with the Most Efficiency.</span>
+        </div>
+      </Content>
+    </TextSlide>
+    <TextSlide
+      style={{
+        animationDelay: "12s",
+        color: "white",
+      }}
+    >
+      <Content>
+        Real-Time Monitoring
+        <div className="__sub">
+          <span style={{ color: "#858894" }}>Support </span>Various Mornitoring
+          System:{" "}
+          <span style={{ color: "#858894" }}>
+            Cloudwatch, Stackdriver, Azure monitor.
+          </span>
+        </div>
+      </Content>
+    </TextSlide>
+    <TextSlide
+      style={{
+        animationDelay: "16s",
+        color: "white",
+      }}
+    >
+      <Content>
+        Core Resource Automation Process
+        <div className="__sub">
+          <span style={{ color: "#858894" }}>Power Scheduling lets you </span>
+          Set Resource and Control Expenses.
+        </div>
+      </Content>
+    </TextSlide>
+  </div>
+);
+
+/**
+ * image slider
+ */
+const ImageSlider = () => (
+  <div style={{ position: "absolute", left: "36rem" }}>
+    <div
+      style={{
+        height: "56rem",
+        width: "70rem",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          width: "350rem",
+          height: "56rem",
+          overflow: "hidden",
+          display: "flex",
+          animation: "slide 20s infinite",
+        }}
+      >
+        <Slide>
+          <Img1 />
+        </Slide>
+        <Slide>
+          <Img2 />
+        </Slide>
+        <Slide>
+          <Img3 />
+        </Slide>
+        <Slide>
+          <Img4 />
+        </Slide>
+        <Slide>
+          <Img5 />
+        </Slide>
+      </div>
+    </div>
+    <div
+      style={{
+        position: "relative",
+        background: "white",
+        height: "0.3rem",
+        width: "70rem",
+      }}
+    >
+      <ProgressBar />
+    </div>
+    <div
+      style={{
+        display: "flex",
+        position: "absolute",
+        right: "-0.65rem",
+        marginTop: "1.3rem",
+        alignItems: "center",
+      }}
+    >
+      <Carousel
+        style={{
+          animationDelay: "0s",
+        }}
+      />
+      <Carousel
+        style={{
+          animationDelay: "4s",
+        }}
+      />
+      <Carousel
+        style={{
+          animationDelay: "8s",
+        }}
+      />
+      <Carousel
+        style={{
+          animationDelay: "12s",
+        }}
+      />
+      <Carousel
+        style={{
+          animationDelay: "16s",
+        }}
+      />
+    </div>
+  </div>
+);
 
 const Background = styled.div`
   width: 100%;
