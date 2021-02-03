@@ -18,7 +18,7 @@ const Footer = () => {
                 className="__card__300"
                 style={{ marginTop: "1.8rem", fontSize: "1.4rem" }}
               >
-                Sponsored by<span className="__card__500"> MEGAZONE Cloud</span>
+                Sponsored by<span className="__card__400"> MEGAZONE Cloud</span>
               </div>
             </div>
           </div>
@@ -88,12 +88,6 @@ const Padding = styled.div`
       font-size: 2rem;
       font-weight: 400;
       line-height: 2.4rem;
-    }
-    &__500 {
-      font-size: 2rem;
-      font-weight: 500;
-      line-height: 2.5rem;
-      margin-top: 2.4rem;
     }
     &__logo {
       position: relative;

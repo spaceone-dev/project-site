@@ -133,7 +133,7 @@ const Container = styled.div`
   display: flex;
   .__title {
     color: ${({ theme }) => theme.color.pink};
-    font-weight: 600;
+    font-weight: 500;
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;
@@ -163,16 +163,17 @@ const Card = styled.div`
 
     &__keyword {
       margin-top: 21.6rem;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 3rem;
       line-height: 3.5rem;
       letter-spacing: -0.01em;
       color: ${({ theme }) => theme.color.primary[300]};
     }
     &__explain {
+      padding-right: 2.3rem;
       font-family: Helvetica Neue;
       margin-top: 1.3rem;
-      font-weight: 400;
+      font-weight: 300;
       font-size: 1.9rem;
       line-height: 130%;
       opacity: 0.8;

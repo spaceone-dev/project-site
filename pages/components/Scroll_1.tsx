@@ -252,6 +252,7 @@ const Container = styled.div`
     border-radius: 3rem;
     &__content {
       font-family: "Roboto", sans-serif;
+      font-weight: 300;
       font-size: 1.6rem;
       position: absolute;
       bottom: 1rem;
@@ -267,7 +268,7 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.01em;
   text-align: center;
   color: ${({ theme }) => theme.color.primary[200]};

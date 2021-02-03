@@ -213,7 +213,7 @@ const Container = styled.div`
   align-content: space-between;
   .__title {
     color: ${({ theme }) => theme.color.pink};
-    font-weight: 600;
+    font-weight: 500;
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;
@@ -258,7 +258,7 @@ const TextSlide = styled.div`
 
 const Content = styled.div`
   width: 33rem;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 4.6rem;
   letter-spacing: -0.01em;
   color: ${({ theme }) => theme.color.primary[300]};
@@ -267,7 +267,6 @@ const Content = styled.div`
     font-family: Helvetica Neue;
     font-size: 2.1rem;
     line-height: 140%;
-    font-weight: normal;
     color: ${({ theme }) => theme.color.white};
   }
 `;

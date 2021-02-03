@@ -130,6 +130,7 @@ const Container = styled.div<{ isMenuOpen: Boolean }>`
   }
   .__menu {
     cursor: pointer;
+    font-weight: 300;
     position: fixed;
     z-index: 10;
     display: flex;

@@ -123,7 +123,7 @@ const Container = styled.div`
   position: relative;
   .__title {
     color: ${({ theme }) => theme.color.pink};
-    font-weight: 600;
+    font-weight: 500;
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;
@@ -144,7 +144,7 @@ const Container = styled.div`
 const Keywords = styled.div`
   display: flex;
   margin-top: 19rem;
-  font-weight: 500;
+  font-weight: 400;
   color: ${({ theme }) => theme.color.primary[100]};
   .__word {
     margin-top: 1rem;
