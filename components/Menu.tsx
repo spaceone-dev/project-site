@@ -29,15 +29,15 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
     <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
       <Container>
         <div className="__big">
-          {menuList.map((item) => (
-            <div onClick={() => router.push(item.url)}>
+          {menuList.map((item, idx) => (
+            <div key={idx} onClick={() => router.push(item.url)}>
               <List pathname={pathname} text={item.name} />
             </div>
           ))}
         </div>
         <div className="__small">
-          {smallMenuList.map((item) => (
-            <SmallList text={item.name} />
+          {smallMenuList.map((item, idx) => (
+            <SmallList key={idx} text={item.name} />
           ))}
         </div>
       </Container>
