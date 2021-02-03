@@ -109,35 +109,35 @@ $shadows-big: multiple-box-shadow(100);
   0% {
     margin-left: 0;
   }
-  10% {
+  15% {
     margin-left: 0;
   }
 
   20% {
     margin-left: -100%;
   }
-  30% {
+  35% {
     margin-left: -100%;
   }
 
   40% {
     margin-left: -200%;
   }
-  50% {
+  55% {
     margin-left: -200%;
   }
 
   60% {
     margin-left: -300%;
   }
-  70% {
+  75% {
     margin-left: -300%;
   }
 
   80% {
     margin-left: -400%;
   }
-  90% {
+  95% {
     margin-left: -400%;
   }
 
@@ -150,7 +150,7 @@ $shadows-big: multiple-box-shadow(100);
   0% {
     width: 0%;
   }
-  50% {
+  60% {
     width: 100%;
   }
 }
@@ -162,7 +162,7 @@ $shadows-big: multiple-box-shadow(100);
   5% {
     opacity: 1;
   }
-  10% {
+  15% {
     opacity: 1;
   }
   20% {
