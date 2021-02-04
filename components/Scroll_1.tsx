@@ -267,13 +267,13 @@ const Container = styled.div`
       font-size: 1.6rem;
       position: absolute;
       bottom: 1rem;
-      margin-left: 2.4rem;
+      margin-left: 2rem;
       display: flex;
 
       &__text {
-        font-weight: 300;
+        font-weight: 400;
         font-family: Helvetica Neue;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.04em;
         margin-left: 0.6rem;
       }
     }

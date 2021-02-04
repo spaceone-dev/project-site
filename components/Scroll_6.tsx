@@ -49,7 +49,7 @@ const Scroll_6 = () => {
             }}
           />
           <div className="__gradient">
-            Climb Aboard the <span style={{ fontWeight: 500 }}>SpaceONE</span>
+            Climb Aboard the <span style={{ fontWeight: 600 }}>SpaceONE</span>
             ship
           </div>
         </div>
@@ -94,17 +94,18 @@ const Container = styled.div`
     &__link {
       font-weight: 300;
       cursor: pointer;
-      text-decoration: underline;
       font-size: 1.7rem;
       color: ${({ theme }) => theme.color.green};
       display: flex;
       align-items: center;
       letter-spacing: -0.01em;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .__content {
-    font-weight: 300;
-    padding: 0 3.5rem;
+    font-weight: 400;
     margin-top: 5rem;
     color: ${({ theme }) => theme.color.primary[200]};
     font-size: 3.7rem;
@@ -115,7 +116,7 @@ const Container = styled.div`
   }
   .__gradient {
     margin-top: -2rem;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 3.4rem;
     background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
     background-clip: text;

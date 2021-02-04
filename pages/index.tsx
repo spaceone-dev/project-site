@@ -121,6 +121,7 @@ const Index = () => {
 };
 
 const Container = styled.div<{ isMenuOpen: Boolean }>`
+  position: ${({ isMenuOpen }) => isMenuOpen && "fixed"};
   font-size: 3rem;
   .__logo {
     cursor: pointer;
