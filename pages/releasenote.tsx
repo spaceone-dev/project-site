@@ -21,6 +21,8 @@ const ReleaseNote = () => {
   const [isScrollable, setIsScrollable] = useState(true);
   const [isUpShown, setIsUpShown] = useState(false);
 
+  const [data, setData] = useState(null);
+
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
     if (!isMenuShown) {
@@ -38,19 +40,31 @@ const ReleaseNote = () => {
     }
   };
 
+  const getReadme = async () => {
+    try {
+      const { data: rawData } = await axios({
+        url:
+          "https://raw.githubusercontent.com/spaceone-dev/spaceone/master/release_notes/en/version_1.6.1.md",
+        method: "get",
+      });
+      const { data: markdown } = await axios({
+        url: "https://api.github.com/markdown/raw",
+        method: "post",
+        data: rawData,
+      });
+      console.log(markdown);
+      return markdown;
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Show scroll icon or not
-    const html = document.documentElement;
-    window.addEventListener('scroll', () => {
-      if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
-        setIsScrollable(false);
-        setIsUpShown(true);
-      } else {
-        setIsScrollable(true);
-        setIsUpShown(false);
-      }
+    getReadme().then((r) => {
+      setData(r);
     });
   }, []);
 
