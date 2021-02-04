@@ -1,11 +1,13 @@
-import Router, { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import Lottie from "react-lottie";
-import styled from "styled-components";
-import { SOneMan, SpaceONE, UpIcon, Scroll } from "../public/assets";
-import { media } from "../styles/theme";
-import Footer from "../components/Footer";
-import Menu from "../components/Menu";
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import Lottie from 'react-lottie';
+import styled from 'styled-components';
+import {
+  SOneMan, SpaceONE, UpIcon, Scroll,
+} from '../public/assets';
+import { media } from '../styles/theme';
+import Footer from '../components/Footer';
+import Menu from '../components/Menu';
 
 const ReleaseNote = () => {
   const pathname = useRouter().pathname;
@@ -37,7 +39,7 @@ const ReleaseNote = () => {
 
     // Show scroll icon or not
     const html = document.documentElement;
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
         setIsScrollable(false);
         setIsUpShown(true);
@@ -49,11 +51,11 @@ const ReleaseNote = () => {
   }, []);
 
   const optionsScroll = {
-    animationData: scroll,
+    animationData: Scroll,
     loop: true,
     autoplay: true,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
 
@@ -69,10 +71,10 @@ const ReleaseNote = () => {
       <div className="__logo">
         <SpaceONE />
       </div>
-      <div className="__menu" onClick={handleMenuOpen}>
+      <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen} onKeyPress={handleMenuOpen}>
         <SOneMan />
-        <span style={{ marginLeft: "0.4rem", marginTop: "0.2rem" }}>
-          {isMenuOpen ? "Close" : "Menu"}
+        <span style={{ marginLeft: '0.4rem', marginTop: '0.2rem' }}>
+          {isMenuOpen ? 'Close' : 'Menu'}
         </span>
       </div>
       {isScrollable && (
@@ -80,8 +82,8 @@ const ReleaseNote = () => {
           <Lottie
             options={optionsScroll}
             style={{
-              width: "2rem",
-              height: "3.25rem",
+              width: '2rem',
+              height: '3.25rem',
             }}
           />
           <div className="__text">scroll</div>
@@ -90,7 +92,7 @@ const ReleaseNote = () => {
       {isUpShown && (
         <UpBtn
           isMenuOpen={isMenuOpen}
-          onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+          onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
         >
           <UpIcon />
           <div className="__text">up</div>
@@ -101,7 +103,7 @@ const ReleaseNote = () => {
   );
 };
 
-const Container = styled.div<{ isMenuOpen: Boolean }>`
+const Container = styled.div<{ isMenuOpen: boolean }>`
   font-size: 3rem;
   .__logo {
     cursor: pointer;
@@ -112,9 +114,8 @@ const Container = styled.div<{ isMenuOpen: Boolean }>`
     }
     top: 8rem;
     z-index: 10;
-    opacity: ${({ isMenuOpen }) => isMenuOpen && "0.6"};
-    animation: ${({ isMenuOpen }) =>
-        isMenuOpen ? "openMenuLogo" : "closeMenuLogo"}
+    opacity: ${({ isMenuOpen }) => isMenuOpen && '0.6'};
+    animation: ${({ isMenuOpen }) => (isMenuOpen ? 'openMenuLogo' : 'closeMenuLogo')}
       0.5s;
   }
   .__menu {
@@ -138,12 +139,12 @@ const Container = styled.div<{ isMenuOpen: Boolean }>`
   }
 `;
 
-const ScrollBtn = styled.div<{ isMenuOpen: Boolean }>`
+const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
   position: fixed;
   left: 10rem;
   bottom: 7rem;
   z-index: 10;
-  animation: ${({ isMenuOpen }) => (!isMenuOpen ? "openMenu" : "closeMenu")}
+  animation: ${({ isMenuOpen }) => (!isMenuOpen ? 'openMenu' : 'closeMenu')}
     0.5s;
   .__text {
     margin-top: 1rem;
@@ -156,7 +157,7 @@ const ScrollBtn = styled.div<{ isMenuOpen: Boolean }>`
   }
 `;
 
-const UpBtn = styled.div<{ isMenuOpen: Boolean }>`
+const UpBtn = styled.div<{ isMenuOpen: boolean }>`
   cursor: pointer;
   position: fixed;
   right: 12.5rem;
@@ -165,7 +166,7 @@ const UpBtn = styled.div<{ isMenuOpen: Boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${({ isMenuOpen }) => (!isMenuOpen ? "openMenu" : "closeMenu")}
+  animation: ${({ isMenuOpen }) => (!isMenuOpen ? 'openMenu' : 'closeMenu')}
     0.5s;
   .__text {
     margin-top: 1rem;

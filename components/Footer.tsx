@@ -1,51 +1,49 @@
-import styled from "styled-components";
-import { SOneMan_footer } from "../public/assets";
-import { media } from "../styles/theme";
+import styled from 'styled-components';
+import { SOneMan_footer as SOneManFooter } from '../public/assets';
+import { media } from '../styles/theme';
 
-const Footer = () => {
-  return (
-    <div style={{ position: "relative" }}>
-      <Container>
-        <Padding>
-          <div className="__card">
-            <div style={{ position: "absolute", left: "0", top: "-8rem" }}>
-              <SOneMan_footer />
-            </div>
-            <div className="__card__300">
-              SpaceONE <div />
-              Copyright 2021
-              <div
-                className="__card__100"
-                style={{ marginTop: "1.8rem", fontSize: "1.4rem" }}
-              >
-                Sponsored by<span className="__card__300"> MEGAZONE Cloud</span>
-              </div>
+const Footer = () => (
+  <div style={{ position: 'relative' }}>
+    <Container>
+      <Padding>
+        <div className="__card">
+          <div style={{ position: 'absolute', left: '0', top: '-8rem' }}>
+            <SOneManFooter />
+          </div>
+          <div className="__card__300">
+            SpaceONE <div />
+            Copyright 2021
+            <div
+              className="__card__100"
+              style={{ marginTop: '1.8rem', fontSize: '1.4rem' }}
+            >
+              Sponsored by<span className="__card__300"> MEGAZONE Cloud</span>
             </div>
           </div>
-          <div className="__card">
-            <div className="__card__300">
-              Contact
-              <div className="__card__100">support@spaceone.dev</div>
+        </div>
+        <div className="__card">
+          <div className="__card__300">
+            Contact
+            <div className="__card__100">support@spaceone.dev</div>
+          </div>
+        </div>
+        <div className="__card">
+          <div className="__card__300">
+            Seoul
+            <div className="__card__100">
+              46, Nonhyeon-ro 85-gil
+              <div />
+              Gangnam-gu, Seoul, Korea
+            </div>
+            <div className="__card__100" style={{ fontSize: '1.7rem' }}>
+              +82 1644-2243{' '}
             </div>
           </div>
-          <div className="__card">
-            <div className="__card__300">
-              Seoul
-              <div className="__card__100">
-                46, Nonhyeon-ro 85-gil
-                <div />
-                Gangnam-gu, Seoul, Korea
-              </div>
-              <div className="__card__100" style={{ fontSize: "1.7rem" }}>
-                +82 1644-2243{" "}
-              </div>
-            </div>
-          </div>
-        </Padding>
-      </Container>
-    </div>
-  );
-};
+        </div>
+      </Padding>
+    </Container>
+  </div>
+);
 
 const Container = styled.div`
   font-family: Helvetica Neue;

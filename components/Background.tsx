@@ -1,14 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Background = () => {
-  return (
-    <Container>
-      <div className="stars" />
-      <div className="stars2" />
-      <div className="stars3" />
-    </Container>
-  );
-};
+const Background = () => (
+  <Container>
+    <div className="stars" />
+    <div className="stars2" />
+    <div className="stars3" />
+  </Container>
+);
 
 const Container = styled.div`
   width: 100%;

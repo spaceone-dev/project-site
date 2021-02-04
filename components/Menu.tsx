@@ -1,25 +1,25 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
-import styled from "styled-components";
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import styled from 'styled-components';
 import {
-  GithubLogo_menu,
-  ExternalLink_menu_sm,
-  GithubLogo_menu_hover,
+  GithubLogo_menu as GithubLogoMenu,
+  ExternalLink_menu_sm as ExternalLinkMenuSm,
+  GithubLogo_menu_hover as GithubLogoMenuHover,
   Mail,
-  Mail_hover,
-  SOne_menu,
-} from "../public/assets";
-import { theme } from "../styles/theme";
+  Mail_hover as MailHover,
+  SOne_menu as SOneMenu,
+} from '../public/assets';
+import { theme } from '../styles/theme';
 
 const leftList = [
-  { name: "Home", url: "/" },
-  { name: "User Guide", url: "" },
-  { name: "API Reference", url: "" },
-  { name: "Release Note", url: "/releasenote" },
+  { name: 'Home', url: '/' },
+  { name: 'User Guide', url: '' },
+  { name: 'API Reference', url: '' },
+  { name: 'Release Note', url: '/releasenote' },
 ];
 const rightList = [
-  { name: "Github", url: "" },
-  { name: "Get In Touch", url: "" },
+  { name: 'Github', url: '' },
+  { name: 'Get In Touch', url: '' },
 ];
 
 const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
@@ -30,14 +30,14 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
       <Container>
         <div className="__big">
           {leftList.map((item, idx) => (
-            <div key={idx} onClick={() => router.push(item.url)}>
+            <div key={item.name} role="link" tabIndex={idx + 1} onClick={() => router.push(item.url)} onKeyPress={() => router.push(item.url)}>
               <LeftList pathname={pathname} text={item.name} />
             </div>
           ))}
         </div>
         <div className="__small">
-          {rightList.map((item, idx) => (
-            <RightList key={idx} text={item.name} />
+          {rightList.map((item) => (
+            <RightList key={item.name} text={item.name} />
           ))}
         </div>
       </Container>
@@ -46,39 +46,40 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
 };
 
 const LeftList = ({ text, pathname }) => {
+  // eslint-disable-next-line no-unused-vars
   const [isHover, setIsHover] = useState(false);
 
   return (
     <div
       style={{
         color: `${
-          ((text === "Home" && pathname === "/") ||
-            (text === "Release Note" && pathname === "/releasenote")) &&
-          theme.color.green
+          ((text === 'Home' && pathname === '/')
+            || (text === 'Release Note' && pathname === '/releasenote'))
+          && theme.color.green
         }`,
       }}
       className="__big__text"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      {((text === "Home" && pathname === "/") ||
-        (text === "Release Note" && pathname === "/releasenote")) && (
-        <SOne_menu />
+      {((text === 'Home' && pathname === '/')
+        || (text === 'Release Note' && pathname === '/releasenote')) && (
+        <SOneMenu />
       )}
       <span
         style={{
           marginLeft: `${
-            ((text === "Home" && pathname === "/") ||
-              (text === "Release Note" && pathname === "/releasenote")) &&
-            "1rem"
+            ((text === 'Home' && pathname === '/')
+              || (text === 'Release Note' && pathname === '/releasenote'))
+            && '1rem'
           }`,
         }}
       >
         {text}
       </span>
-      {text !== "Home" && text !== "Release Note" && (
-        <span style={{ marginLeft: "0.7rem", marginTop: "0.3rem" }}>
-          <ExternalLink_menu_sm />
+      {text !== 'Home' && text !== 'Release Note' && (
+        <span style={{ marginLeft: '0.7rem', marginTop: '0.3rem' }}>
+          <ExternalLinkMenuSm />
         </span>
       )}
     </div>
@@ -94,27 +95,27 @@ const RightList = ({ text }) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      {text === "Github" &&
-        (!isHover ? <GithubLogo_menu /> : <GithubLogo_menu_hover />)}
-      {text === "Get In Touch" &&
-        (!isHover ? (
-          <span style={{ marginLeft: "0.5rem", marginRight: "1.3rem" }}>
+      {text === 'Github'
+        && (!isHover ? <GithubLogoMenu /> : <GithubLogoMenuHover />)}
+      {text === 'Get In Touch'
+        && (!isHover ? (
+          <span style={{ marginLeft: '0.5rem', marginRight: '1.3rem' }}>
             <Mail />
           </span>
         ) : (
-          <span style={{ marginLeft: "0.5rem", marginRight: "1.3rem" }}>
-            <Mail_hover />
+          <span style={{ marginLeft: '0.5rem', marginRight: '1.3rem' }}>
+            <MailHover />
           </span>
         ))}
-      <span style={{ marginLeft: text === "Github" && "0.8rem" }}>{text}</span>
-      <span style={{ marginLeft: "0.7rem", marginTop: "0.3rem" }}>
-        <ExternalLink_menu_sm />
+      <span style={{ marginLeft: text === 'Github' && '0.8rem' }}>{text}</span>
+      <span style={{ marginLeft: '0.7rem', marginTop: '0.3rem' }}>
+        <ExternalLinkMenuSm />
       </span>
     </div>
   );
 };
 
-const Box = styled.div<{ isMenuOpen: Boolean; isMenuShown: Boolean }>`
+const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
   width: 100%;
   height: 100vh;
   background: #001b33;
@@ -124,7 +125,7 @@ const Box = styled.div<{ isMenuOpen: Boolean; isMenuShown: Boolean }>`
   position: fixed;
   display: flex;
   justify-content: center;
-  animation: ${({ isMenuOpen }) => (isMenuOpen ? "openMenu" : "closeMenu")} 0.5s;
+  animation: ${({ isMenuOpen }) => (isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
 `;
 
 const Container = styled.div`
@@ -135,7 +136,7 @@ const Container = styled.div`
   font-size: 4.6rem;
   font-weight: 500;
   font-weight: 400;
-  color: ${({ theme }) => theme.color.primary[200]};
+  color: ${({ theme: t }) => t.color.primary[200]};
   .__big {
     cursor: pointer;
     margin-left: 19rem;
@@ -149,7 +150,7 @@ const Container = styled.div`
       cursor: pointer;
       display: flex;
       &:hover {
-        color: ${({ theme }) => theme.color.green};
+        color: ${({ theme: t }) => t.color.green};
       }
     }
   }
@@ -164,7 +165,7 @@ const Container = styled.div`
       display: flex;
       margin-bottom: 2rem;
       &:hover {
-        color: ${({ theme }) => theme.color.green};
+        color: ${({ theme: t }) => t.color.green};
       }
     }
   }

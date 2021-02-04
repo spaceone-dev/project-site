@@ -1,3 +1,11 @@
+div[role="button"] {
+  padding: 0.5rem 1rem;
+}
+
+div[role="link"]:focus div {
+  overflow: hidden;
+}
+
 @function multiple-box-shadow($n) {
   $value: "#{random(700)}vh #{random(100)}vh #FFF";
   @for $i from 2 through $n {
@@ -181,13 +189,13 @@ $shadows-big: multiple-box-shadow(100);
     background-color: #8c81d1;
     width: 1.2rem;
     height: 1.2rem;
-    margin-left: 0 0.45rem;
+    margin: 0 0.45rem;
   }
   20% {
     background-color: #8c81d1;
     width: 1.2rem;
     height: 1.2rem;
-    margin-left: 0 0.45rem;
+    margin: 0 0.45rem;
   }
   21% {
     background-color: #ebeaf6;

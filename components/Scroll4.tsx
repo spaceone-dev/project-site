@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import Lottie from "react-lottie";
-import { Cloud, Plugin, OpenAPI } from "../public/assets";
-import { media } from "../styles/theme";
+import styled from 'styled-components';
+import Lottie from 'react-lottie';
+import { Cloud, Plugin, OpenAPI } from '../public/assets';
+import { media } from '../styles/theme';
 
-const Scroll_4 = () => {
+const Scroll4 = () => {
   const optionsCloudNative = {
     animationData: Cloud,
     loop: true,
     autoplay: true,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
   const optionsPlugin = {
@@ -17,7 +17,7 @@ const Scroll_4 = () => {
     loop: true,
     autoplay: true,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
   const optionsOpenAPI = {
@@ -25,7 +25,7 @@ const Scroll_4 = () => {
     loop: true,
     autoplay: true,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
 
@@ -40,17 +40,17 @@ const Scroll_4 = () => {
                 <Lottie
                   options={optionsCloudNative}
                   style={{
-                    position: "absolute",
-                    width: "14rem",
-                    height: "14rem",
-                    top: "5rem",
-                    left: "9.5rem",
+                    position: 'absolute',
+                    width: '14rem',
+                    height: '14rem',
+                    top: '5rem',
+                    left: '9.5rem',
                   }}
                 />
                 <div className="__content__keyword">Cloud Native</div>
                 <div className="__content__explain">
                   We are architecting Cloud Native-Based Technology;
-                  <div style={{ fontStyle: "italic" }}>
+                  <div style={{ fontStyle: 'italic' }}>
                     K8S, Helm, Prometheus, gRPC, Istio.
                   </div>
                 </div>
@@ -62,11 +62,11 @@ const Scroll_4 = () => {
                 <Lottie
                   options={optionsPlugin}
                   style={{
-                    position: "absolute",
-                    width: "14.4rem",
-                    height: "14.4rem",
-                    top: "4.8rem",
-                    left: "8.7rem",
+                    position: 'absolute',
+                    width: '14.4rem',
+                    height: '14.4rem',
+                    top: '4.8rem',
+                    left: '8.7rem',
                   }}
                 />
                 <div className="__content__keyword">Plugin Architecture</div>
@@ -83,11 +83,11 @@ const Scroll_4 = () => {
                 <Lottie
                   options={optionsOpenAPI}
                   style={{
-                    position: "absolute",
-                    width: "20rem",
-                    height: "20rem",
-                    top: "2rem",
-                    left: "6.5rem",
+                    position: 'absolute',
+                    width: '20rem',
+                    height: '20rem',
+                    top: '2rem',
+                    left: '6.5rem',
                   }}
                 />
                 <div className="__content__keyword">Open API</div>
@@ -190,4 +190,4 @@ const CardBg = styled.div`
   border-radius: 20px;
 `;
 
-export default Scroll_4;
+export default Scroll4;

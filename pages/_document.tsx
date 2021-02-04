@@ -4,7 +4,7 @@ import Document, {
   Main,
   NextScript,
   DocumentContext,
-} from "next/document";
+} from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -41,7 +41,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <script src="https://unpkg.com/aos@next/dist/aos.js" />
           <script>AOS.init();</script>
           <Main />
           <NextScript />

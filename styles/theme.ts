@@ -1,30 +1,28 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   color: {
-    black: "#000000",
-    white: "#ffffff",
-    green: "#65CBA0",
-    pink: "#CF88A0",
-    teal: "#5CA2B1",
+    black: '#000000',
+    white: '#ffffff',
+    green: '#65CBA0',
+    pink: '#CF88A0',
+    teal: '#5CA2B1',
     primary: {
-      100: "#F8F8FC",
-      200: "#EBEAF6",
-      300: "#A8A5CE",
-      400: "#8C81D1",
+      100: '#F8F8FC',
+      200: '#EBEAF6',
+      300: '#A8A5CE',
+      400: '#8C81D1',
     },
     blue: {
-      200: "#E9F4FF",
+      200: '#E9F4FF',
     },
     gray: {
-      300: "#CED0D6",
+      300: '#CED0D6',
     },
   },
 };
 
-const customMediaQuery = (maxWidth: number): string => {
-  return `@media (max-width: ${maxWidth}px)`;
-};
+const customMediaQuery = (maxWidth: number): string => `@media (max-width: ${maxWidth}px)`;
 
 export const media = {
   custom: customMediaQuery,

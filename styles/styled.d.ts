@@ -1,24 +1,24 @@
-import "styled-components";
+import 'styled-components';
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     color: {
-      black: "#000000";
-      white: "#ffffff";
-      green: "#65CBA0";
-      pink: "#CF88A0";
-      teal: "#5CA2B1";
+      black: '#000000';
+      white: '#ffffff';
+      green: '#65CBA0';
+      pink: '#CF88A0';
+      teal: '#5CA2B1';
       primary: {
-        100: "#F8F8FC";
-        200: "#EBEAF6";
-        300: "#A8A5CE";
-        400: "#8C81D1";
+        100: '#F8F8FC';
+        200: '#EBEAF6';
+        300: '#A8A5CE';
+        400: '#8C81D1';
       };
       blue: {
-        200: "#E9F4FF";
+        200: '#E9F4FF';
       };
       gray: {
-        300: "#CED0D6";
+        300: '#CED0D6';
       };
     };
   }

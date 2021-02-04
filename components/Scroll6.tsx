@@ -1,14 +1,14 @@
-import styled from "styled-components";
-import Lottie from "react-lottie";
-import { ExternalLink_green, Spaceship } from "../public/assets";
+import styled from 'styled-components';
+import Lottie from 'react-lottie';
+import { ExternalLink_green as ExternalLinkGreen, Spaceship } from '../public/assets';
 
-const Scroll_6 = () => {
+const Scroll6 = () => {
   const optionsSpaceship = {
     animationData: Spaceship,
     loop: true,
     autoplay: true,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
 
@@ -16,21 +16,21 @@ const Scroll_6 = () => {
     <Box>
       <Container>
         <div className="__ghInfo">
-          <div data-aos="fade-up" style={{ width: "34rem" }}>
+          <div data-aos="fade-up" style={{ width: '34rem' }}>
             <span className="__ghInfo__num">76</span>
-            <span style={{ marginLeft: "1rem" }}>Enrolled Projects</span>
+            <span style={{ marginLeft: '1rem' }}>Enrolled Projects</span>
           </div>
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            style={{ width: "34rem", marginLeft: "2rem" }}
+            style={{ width: '34rem', marginLeft: '2rem' }}
           >
             <span className="__ghInfo__num">28</span>
-            <span style={{ marginLeft: "1rem" }}>Contributors</span>
+            <span style={{ marginLeft: '1rem' }}>Contributors</span>
             <div className="__ghInfo__link">
               View Contribution Guide
-              <span style={{ marginLeft: "0.4rem", marginTop: "0.2rem" }}>
-                <ExternalLink_green />
+              <span style={{ marginLeft: '0.4rem', marginTop: '0.2rem' }}>
+                <ExternalLinkGreen />
               </span>
             </div>
           </div>
@@ -43,9 +43,9 @@ const Scroll_6 = () => {
           <Lottie
             options={optionsSpaceship}
             style={{
-              width: "14rem",
-              height: "14rem",
-              marginTop: "7.1rem",
+              width: '14rem',
+              height: '14rem',
+              marginTop: '7.1rem',
             }}
           />
           <div className="__gradient">
@@ -119,10 +119,10 @@ const Container = styled.div`
     font-weight: 500;
     font-size: 3.4rem;
     background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
-    background-clip: text;
+    //background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 `;
 
-export default Scroll_6;
+export default Scroll6;

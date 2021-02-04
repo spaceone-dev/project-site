@@ -27,6 +27,7 @@ module.exports = {
     'react/jsx-filename-extension': ['off'],
     'react/jsx-one-expression-per-line': ['off'],
     'react/react-in-jsx-scope': 0,
+    'react/prop-types': 0,
     'no-use-before-define': 'off',
     'no-nested-ternary': ['off'],
     'max-len': ['error', { code: 200 }],
