@@ -2,12 +2,16 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Lottie from 'react-lottie';
 import styled from 'styled-components';
+import useSWR from 'swr';
+import axios from 'axios';
 import {
   SOneMan, SpaceONE, UpIcon, Scroll,
 } from '../public/assets';
 import { media } from '../styles/theme';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
+
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 const ReleaseNote = () => {
   const pathname = useRouter().pathname;
@@ -59,6 +63,32 @@ const ReleaseNote = () => {
     },
   };
 
+  const { data, error } = useSWR('api/release-note', fetcher);
+  const [isError, setIsError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [noteList, setNoteList] = useState([]);
+  const [noteVersion, setNoteVersion] = useState('');
+  const [noteData, setNoteData] = useState('');
+  useEffect(() => {
+    if (error) {
+      setIsError(true);
+    } else if (data) {
+      setIsError(false);
+      setNoteList(data.noteList);
+      setNoteVersion(data.noteVersion);
+      setNoteData(data.noteData);
+      setLoading(false);
+    }
+  }, [data, error]);
+
+  const getNoteData = async (version) => {
+    setLoading(true);
+    setNoteVersion(version);
+    const res = await axios.get(`api/release-note/${version}`);
+    setNoteData(res.data.noteData);
+    setLoading(false);
+  };
+
   return (
     <Container isMenuOpen={isMenuOpen}>
       {isMenuShown && (
@@ -98,6 +128,19 @@ const ReleaseNote = () => {
           <div className="__text">up</div>
         </UpBtn>
       )}
+      {loading ? (<div>loading...</div>)
+        : isError ? (<div>error occurred</div>) : (
+          <div>
+            <p>Note List: </p>
+            {noteList.map((d) => (<div onClick={() => getNoteData(d)} key={d}>{d}</div>))}
+            <br />
+            <br />
+            <p>Selected Version: {noteVersion}</p>
+            <br />
+            <br />
+            {noteData ? (<pre>{noteData}</pre>) : (<div>No Data</div>)}
+          </div>
+        )}
       <Footer />
     </Container>
   );
