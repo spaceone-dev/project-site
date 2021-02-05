@@ -1,7 +1,6 @@
 # Config
 !public/config/default.json
 !public/config/development.json.sample
-public/config/*
 
 # Next
 .next
