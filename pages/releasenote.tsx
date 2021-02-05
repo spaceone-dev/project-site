@@ -1,17 +1,51 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Lottie from 'react-lottie';
 import styled from 'styled-components';
 import useSWR from 'swr';
-import axios from 'axios';
 import {
   SOneMan, SpaceONE, UpIcon, Scroll,
 } from '../public/assets';
 import { media } from '../styles/theme';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
+import Dropdown from '../components/Dropdown';
 
-const fetcher = (url) => axios.get(url).then((res) => res.data);
+// const MDElement = () => {
+//   const [markdown, setMarkdown] = useState(null);
+
+//   const getReadme = async () => {
+//     try {
+//       const { data: rawData } = await axios({
+//         url:
+//           'https://raw.githubusercontent.com/spaceone-dev/spaceone/master/release_notes/en/version_1.6.1.md',
+//         method: 'get',
+//       });
+//       const { data: md } = await axios({
+//         url: 'https://api.github.com/markdown/raw',
+//         method: 'post',
+//         headers: {
+//           'Content-Type': 'text/x-markdown',
+//         },
+//         data: rawData,
+//       });
+//       setMarkdown(md);
+//       return md;
+//     } catch (e) {
+//       return e;
+//     }
+//   };
+
+//   useEffect(() => {
+//     getReadme();
+//   }, []);
+
+//   // eslint-disable-next-line react/no-danger
+//   return <div className="markdown" dangerouslySetInnerHTML={{ __html: markdown }} />;
+// };
+
+const fetcher = (url:string) => axios.get(url).then((res) => res.data);
 
 const ReleaseNote = () => {
   const pathname = useRouter().pathname;
@@ -20,8 +54,6 @@ const ReleaseNote = () => {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const [isScrollable, setIsScrollable] = useState(true);
   const [isUpShown, setIsUpShown] = useState(false);
-
-  const [data, setData] = useState(null);
 
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -40,32 +72,8 @@ const ReleaseNote = () => {
     }
   };
 
-  const getReadme = async () => {
-    try {
-      const { data: rawData } = await axios({
-        url:
-          "https://raw.githubusercontent.com/spaceone-dev/spaceone/master/release_notes/en/version_1.6.1.md",
-        method: "get",
-      });
-      const { data: markdown } = await axios({
-        url: "https://api.github.com/markdown/raw",
-        method: "post",
-        data: rawData,
-      });
-      console.log(markdown);
-      return markdown;
-    } catch (e) {
-      console.log(e);
-      return e;
-    }
-  };
-
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    getReadme().then((r) => {
-      setData(r);
-    });
   }, []);
 
   const optionsScroll = {
@@ -88,6 +96,7 @@ const ReleaseNote = () => {
       setIsError(true);
     } else if (data) {
       setIsError(false);
+      data.noteList.reverse();
       setNoteList(data.noteList);
       setNoteVersion(data.noteVersion);
       setNoteData(data.noteData);
@@ -105,6 +114,9 @@ const ReleaseNote = () => {
 
   return (
     <Container isMenuOpen={isMenuOpen}>
+      <Tab>
+        <span className="__text">SpaceONE Release Note</span>
+      </Tab>
       {isMenuShown && (
         <Menu
           pathname={pathname}
@@ -115,7 +127,13 @@ const ReleaseNote = () => {
       <div className="__logo">
         <SpaceONE />
       </div>
-      <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen} onKeyPress={handleMenuOpen}>
+      <div
+        className="__menu"
+        role="button"
+        tabIndex={0}
+        onClick={handleMenuOpen}
+        onKeyPress={handleMenuOpen}
+      >
         <SOneMan />
         <span style={{ marginLeft: '0.4rem', marginTop: '0.2rem' }}>
           {isMenuOpen ? 'Close' : 'Menu'}
@@ -144,16 +162,13 @@ const ReleaseNote = () => {
       )}
       {loading ? (<div>loading...</div>)
         : isError ? (<div>error occurred</div>) : (
-          <div>
-            <p>Note List: </p>
-            {noteList.map((d) => (<div onClick={() => getNoteData(d)} key={d}>{d}</div>))}
+          <Box>
+            <Dropdown list={noteList} selected={noteVersion} getNoteData={getNoteData} />
+            {/* {noteList.map((note, idx) => (<div onClick={() => getNoteData(note)} key={idx}>{note}</div>))} */}
             <br />
             <br />
-            <p>Selected Version: {noteVersion}</p>
-            <br />
-            <br />
-            {noteData ? (<pre>{noteData}</pre>) : (<div>No Data</div>)}
-          </div>
+            {noteData ? (<pre className="markdown">{noteData}</pre>) : (<div>No Data</div>)}
+          </Box>
         )}
       <Footer />
     </Container>
@@ -162,6 +177,7 @@ const ReleaseNote = () => {
 
 const Container = styled.div<{ isMenuOpen: boolean }>`
   font-size: 3rem;
+  background-color: #001B33;
   .__logo {
     cursor: pointer;
     position: fixed;
@@ -184,7 +200,7 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
     ${media[768]} {
       right: 4rem;
     }
-    right: 12.5rem;
+    right: 10rem;
     top: 8rem;
     color: ${({ theme }) => theme.color.primary[200]};
     font-family: "Roboto";
@@ -194,6 +210,29 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
       color: #65cba0;
     }
   }
+`;
+
+const Tab = styled.div`
+  width: 100%;
+  font-weight: 300;
+  color: ${({ theme }) => theme.color.white};
+  position: fixed;
+  background-color: #001B33;
+  z-index:10;
+  display: flex;
+  .__text {
+    padding-bottom: 1.6rem;
+    margin-top: 13.6rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    width: 100%;
+    border: 0 solid ${({ theme }) => theme.color.gray[700]};
+    border-bottom-width: 1px;
+  }
+`;
+
+const Box = styled.div`
+  padding: 19rem;
 `;
 
 const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`

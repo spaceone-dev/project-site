@@ -18,6 +18,7 @@ export const theme: DefaultTheme = {
     },
     gray: {
       300: '#CED0D6',
+      700: '#5F616D',
     },
   },
 };

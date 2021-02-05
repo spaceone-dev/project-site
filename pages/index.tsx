@@ -146,7 +146,7 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
     ${media[768]} {
       right: 4rem;
     }
-    right: 12.5rem;
+    right: 10rem;
     top: 8rem;
     color: ${({ theme }) => theme.color.primary[200]};
     font-family: "Roboto";

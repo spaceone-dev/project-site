@@ -31,7 +31,7 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-nested-ternary': ['off'],
     'max-len': ['error', { code: 200 }],
-    // indent: ['error', 4],
+    indent: ['error', 2],
     'prefer-destructuring': ['error', { object: false, array: false }],
     'no-empty': ['error', { allowEmptyCatch: true }],
     'import/extensions': [
