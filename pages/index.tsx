@@ -37,6 +37,10 @@ const Index = () => {
       setIsMenuOpen(true);
       setIsMenuShown(true);
     } else {
+      // according to position change
+      setIsScrollable(true);
+      setIsUpShown(false);
+
       setIsMenuOpen(false);
       setTimeout(() => {
         setIsMenuShown(false);
@@ -159,6 +163,9 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
 `;
 
 const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   left: 10rem;
   bottom: 7rem;
@@ -178,6 +185,9 @@ const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
 
 const UpBtn = styled.div<{ isMenuOpen: boolean }>`
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   right: 12.5rem;
   bottom: 7rem;

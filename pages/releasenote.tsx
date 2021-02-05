@@ -60,12 +60,12 @@ const ReleaseNote = () => {
     if (!isMenuShown) {
       setIsMenuOpen(true);
       setIsMenuShown(true);
-      setIsScrollable(false);
-      setIsUpShown(false);
     } else {
-      setIsMenuOpen(false);
+      // according to position change
       setIsScrollable(true);
-      setIsUpShown(true);
+      setIsUpShown(false);
+
+      setIsMenuOpen(false);
       setTimeout(() => {
         setIsMenuShown(false);
       }, 500);
@@ -74,6 +74,18 @@ const ReleaseNote = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Show scroll icon or not
+    const html = document.documentElement;
+    window.addEventListener('scroll', () => {
+      if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
+        setIsScrollable(false);
+        setIsUpShown(true);
+      } else {
+        setIsScrollable(true);
+        setIsUpShown(false);
+      }
+    });
   }, []);
 
   const optionsScroll = {
@@ -176,7 +188,7 @@ const ReleaseNote = () => {
 };
 
 const Container = styled.div<{ isMenuOpen: boolean }>`
-  position: relative;
+  position: ${({ isMenuOpen }) => (isMenuOpen ? 'fixed' : 'relative')};
   font-size: 3rem;
   background-color: #001B33;
   overflow-x: hidden;
@@ -220,7 +232,7 @@ const Tab = styled.div`
   color: ${({ theme }) => theme.color.white};
   position: fixed;
   background-color: #001B33;
-  z-index: 10;
+  z-index: 3;
   display: flex;
   .__text {
     padding-bottom: 1.6rem;
@@ -244,10 +256,13 @@ const Box = styled.div`
 `;
 
 const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   left: 10rem;
   bottom: 7rem;
-  z-index: 10;
+  z-index: 3;
   animation: ${({ isMenuOpen }) => (!isMenuOpen ? 'openMenu' : 'closeMenu')}
     0.5s;
   .__text {
@@ -263,10 +278,13 @@ const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
 
 const UpBtn = styled.div<{ isMenuOpen: boolean }>`
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   right: 12.5rem;
   bottom: 7rem;
-  z-index: 10;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
