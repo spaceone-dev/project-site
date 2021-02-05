@@ -5,7 +5,7 @@ import Lottie from 'react-lottie';
 import styled from 'styled-components';
 import useSWR from 'swr';
 import {
-  SOneMan, SpaceONE, UpIcon, Scroll,
+  SOneMan, SpaceONE, UpIcon, Scroll, Loading,
 } from '../public/assets';
 import { media } from '../styles/theme';
 import Footer from '../components/Footer';
@@ -160,24 +160,26 @@ const ReleaseNote = () => {
           <div className="__text">up</div>
         </UpBtn>
       )}
-      {loading ? (<div>loading...</div>)
+      {loading ? (<Box><div className="__loading"><Loading /></div></Box>)
         : isError ? (<div>error occurred</div>) : (
-          <Box>
-            <Dropdown list={noteList} selected={noteVersion} getNoteData={getNoteData} />
-            {/* {noteList.map((note, idx) => (<div onClick={() => getNoteData(note)} key={idx}>{note}</div>))} */}
-            <br />
-            <br />
-            {noteData ? (<pre className="markdown">{noteData}</pre>) : (<div>No Data</div>)}
-          </Box>
+          <>
+            <Box>
+              <Dropdown list={noteList} selected={noteVersion} getNoteData={getNoteData} />
+              <br />
+              {noteData ? (<pre className="markdown">{noteData}</pre>) : (<div>No Data</div>)}
+            </Box>
+            <Footer />
+          </>
         )}
-      <Footer />
     </Container>
   );
 };
 
 const Container = styled.div<{ isMenuOpen: boolean }>`
+  position: relative;
   font-size: 3rem;
   background-color: #001B33;
+  overflow-x: hidden;
   .__logo {
     cursor: pointer;
     position: fixed;
@@ -218,7 +220,7 @@ const Tab = styled.div`
   color: ${({ theme }) => theme.color.white};
   position: fixed;
   background-color: #001B33;
-  z-index:10;
+  z-index: 10;
   display: flex;
   .__text {
     padding-bottom: 1.6rem;
@@ -232,7 +234,13 @@ const Tab = styled.div`
 `;
 
 const Box = styled.div`
-  padding: 19rem;
+  padding: 0 19rem;
+  .__loading{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
@@ -262,8 +270,7 @@ const UpBtn = styled.div<{ isMenuOpen: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${({ isMenuOpen }) => (!isMenuOpen ? 'openMenu' : 'closeMenu')}
-    0.5s;
+  animation: ${({ isMenuOpen }) => (!isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
   .__text {
     margin-top: 1rem;
     color: ${({ theme }) => theme.color.primary[200]};

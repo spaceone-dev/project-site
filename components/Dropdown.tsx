@@ -10,7 +10,7 @@ const Dropdown = ({ list, selected, getNoteData }) => {
 
   return (
     <Container>
-      <div style={{ marginTop: '2rem' }}>Select version:</div>
+      <div style={{ paddingTop: '21rem' }}>Select version:</div>
       <Box>
         <span className="__text">{selected}</span>
         <span className="__btn" onClick={handleOpen}><DropdownBtn /></span>
