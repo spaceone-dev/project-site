@@ -10,9 +10,13 @@
     "serve:docker": "docker-compose up"
   },
   "dependencies": {
+    "@octokit/core": "^3.2.5",
     "@svgr/webpack": "^5.5.0",
     "aos": "^2.3.4",
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
+    "base-64": "^1.0.0",
+    "config": "^3.3.3",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "next": "latest",
@@ -23,7 +27,9 @@
     "style-loader": "^2.0.0",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.4",
-    "url-loader": "^4.1.1"
+    "swr": "^0.4.1",
+    "url-loader": "^4.1.1",
+    "utf8": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
