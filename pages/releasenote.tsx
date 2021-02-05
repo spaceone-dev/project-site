@@ -108,7 +108,6 @@ const ReleaseNote = () => {
       setIsError(true);
     } else if (data) {
       setIsError(false);
-      data.noteList.reverse();
       setNoteList(data.noteList);
       setNoteVersion(data.noteVersion);
       setNoteData(data.noteData);
@@ -116,11 +115,12 @@ const ReleaseNote = () => {
     }
   }, [data, error]);
 
-  const getNoteData = async (version) => {
+  const getNoteData = async (version: string) => {
     setLoading(true);
     setNoteVersion(version);
     const res = await axios.get(`api/release-note/${version}`);
     setNoteData(res.data.noteData);
+    console.log(noteData);
     setLoading(false);
   };
 

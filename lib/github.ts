@@ -26,6 +26,7 @@ export const getRootSha = async (): Promise<string> => {
     return '';
   }
 };
+
 export const getNoteTree = async (sha: string, recursive = true): Promise<string[]> => {
   const { data } = await octokit.request('GET /repos/{owner}/{repo}/git/trees/{tree_sha}', {
     owner: OWNER,

@@ -23,6 +23,7 @@ module.exports = {
     es6: true,
   },
   rules: {
+    'no-console': ['off'],
     'react/prefer-stateless-function': ['off'],
     'react/jsx-filename-extension': ['off'],
     'react/jsx-one-expression-per-line': ['off'],

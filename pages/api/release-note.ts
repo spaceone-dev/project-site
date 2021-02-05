@@ -8,6 +8,7 @@ export default function noteListHandler(req, res) {
     try {
       const sha = await getRootSha();
       noteList = await getNoteTree(sha);
+      noteList.reverse();
       noteVersion = noteList[0] || '';
       if (noteVersion) noteData = await getData(noteVersion);
     } catch (e) {
