@@ -60,6 +60,7 @@ module.exports = {
     'no-new': ['off'],
     'prefer-template': ['error'],
     'no-plusplus': ['off'],
+    'react/jsx-props-no-spreading': ['off'],
     // typescript rules
     '@typescript-eslint/explicit-member-accessibility': [
       'error',

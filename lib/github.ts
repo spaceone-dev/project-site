@@ -50,5 +50,6 @@ export const getData = async (noteVersion): Promise<string> => {
     repo: REPO,
     path: `${NOTE_PATH}/${noteVersion}.md`,
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return utf8.decode(base64.decode((data as any).content));
 };

@@ -46,8 +46,7 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
 };
 
 const LeftList = ({ text, pathname }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [isHover, setIsHover] = useState(false);
+  const [, setIsHover] = useState(false);
 
   return (
     <div
