@@ -128,7 +128,6 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
   position: ${({ isMenuOpen }) => isMenuOpen && 'fixed'};
   font-size: 3rem;
   .__logo {
-    cursor: pointer;
     position: fixed;
     left: 10rem;
     ${media[768]} {

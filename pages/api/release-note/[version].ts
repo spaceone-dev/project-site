@@ -1,6 +1,7 @@
 import { getData } from '../../../lib/github';
 
-export default function versionHandler({ query: { version } }, res) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function versionHandler({ query: { version } }, res: any) {
   (async () => {
     console.debug('version', version);
     let noteData = '';

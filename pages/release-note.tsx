@@ -24,6 +24,14 @@ const ReleaseNote = () => {
   const [isScrollable, setIsScrollable] = useState(true);
   const [isUpShown, setIsUpShown] = useState(false);
 
+  // api
+  const { data, error } = useSWR('api/release-note', fetcher);
+  const [isError, setIsError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [noteList, setNoteList] = useState([]);
+  const [noteVersion, setNoteVersion] = useState('');
+  const [noteData, setNoteData] = useState('');
+
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
     if (!isMenuShown) {
@@ -57,21 +65,6 @@ const ReleaseNote = () => {
     });
   }, []);
 
-  const optionsScroll = {
-    animationData: Scroll,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
-  const { data, error } = useSWR('api/release-note', fetcher);
-  const [isError, setIsError] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [noteList, setNoteList] = useState([]);
-  const [noteVersion, setNoteVersion] = useState('');
-  const [noteData, setNoteData] = useState('');
   useEffect(() => {
     if (error) {
       setIsError(true);
@@ -92,8 +85,17 @@ const ReleaseNote = () => {
     setLoading(false);
   };
 
+  const optionsScroll = {
+    animationData: Scroll,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
-    <Container className="releasenote" isMenuOpen={isMenuOpen}>
+    <Container className="release-note" isMenuOpen={isMenuOpen} loading={loading.toString()}>
       <Tab>
         <span className="__text">SpaceONE Release Note</span>
       </Tab>
@@ -119,7 +121,7 @@ const ReleaseNote = () => {
           {isMenuOpen ? 'Close' : 'Menu'}
         </span>
       </div>
-      {isScrollable && (
+      {isScrollable && !loading && (
         <ScrollBtn isMenuOpen={isMenuOpen}>
           <Lottie
             options={optionsScroll}
@@ -155,13 +157,12 @@ const ReleaseNote = () => {
   );
 };
 
-const Container = styled.div<{ isMenuOpen: boolean }>`
+const Container = styled.div<{ isMenuOpen: boolean, loading: string }>`
   width: 100%;
-  position: ${({ isMenuOpen }) => (isMenuOpen ? 'fixed' : 'relative')};
+  position: ${({ isMenuOpen, loading }) => (isMenuOpen || loading === 'true' ? 'fixed' : 'relative')};
   font-size: 3rem;
   overflow-x: hidden;
   .__logo {
-    cursor: pointer;
     position: fixed;
     left: 10rem;
     ${media[768]} {

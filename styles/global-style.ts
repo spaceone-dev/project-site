@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Work Sans', sans-serif;
     }
     body{
-        .releasenote{
+        .release-note{
             background-color: #001B33;
         }
         .markdown{

@@ -161,7 +161,7 @@ const BigEllipse = () => {
       <div style={{ position: 'absolute', left: '8rem', bottom: '6rem' }}>
         <Circle110 />
       </div>
-      <div style={{ position: 'absolute', left: '4.5rem', top: '4jrem' }}>
+      <div style={{ position: 'absolute', left: '4.5rem', top: '4rem' }}>
         <Circle111 />
       </div>
     </div>

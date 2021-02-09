@@ -11,12 +11,11 @@ const Dropdown = ({ list, selected, getNoteData }) => {
   return (
     <Container>
       <div style={{ paddingTop: '21rem' }}>Select version:</div>
-      <Box>
+      <Box onClick={handleOpen}>
         <span className="__text">{selected}</span>
         <span
           aria-label="dropdown"
           className="__btn"
-          onClick={handleOpen}
           onKeyPress={handleOpen}
           tabIndex={0}
           role="button"
@@ -54,6 +53,7 @@ const Container = styled.div`
 `;
 
 const Box = styled.div`
+  cursor: pointer;
   margin-top: 0.8rem;
   position: relative;
   width: 22rem;
@@ -61,7 +61,6 @@ const Box = styled.div`
   border: 1px solid ${({ theme }) => theme.color.gray[700]};
   border-radius: 0.4rem;
   .__btn{
-    cursor: pointer;
     position: absolute;
     right: 1.239rem;
   }

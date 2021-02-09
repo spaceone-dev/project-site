@@ -15,7 +15,7 @@ const leftList = [
   { name: 'Home', url: '/' },
   { name: 'User Guide', url: '' },
   { name: 'API Reference', url: '' },
-  { name: 'Release Note', url: '/releasenote' },
+  { name: 'Release Note', url: '/release-note' },
 ];
 const rightList = [
   { name: 'Github', url: '' },
@@ -53,7 +53,7 @@ const LeftList = ({ text, pathname }) => {
       style={{
         color: `${
           ((text === 'Home' && pathname === '/')
-            || (text === 'Release Note' && pathname === '/releasenote'))
+            || (text === 'Release Note' && pathname === '/release-note'))
           && theme.color.green
         }`,
       }}
@@ -62,14 +62,14 @@ const LeftList = ({ text, pathname }) => {
       onMouseLeave={() => setIsHover(false)}
     >
       {((text === 'Home' && pathname === '/')
-        || (text === 'Release Note' && pathname === '/releasenote')) && (
+        || (text === 'Release Note' && pathname === '/release-note')) && (
         <SOneMenu />
       )}
       <span
         style={{
           marginLeft: `${
             ((text === 'Home' && pathname === '/')
-              || (text === 'Release Note' && pathname === '/releasenote'))
+              || (text === 'Release Note' && pathname === '/release-note'))
             && '1rem'
           }`,
         }}
