@@ -48,7 +48,7 @@ const Index = () => {
 
     // Show scroll icon or not
     const html = document.documentElement;
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
       if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
         setIsScrollable(false);
         setIsUpShown(true);
@@ -56,7 +56,11 @@ const Index = () => {
         setIsScrollable(true);
         setIsUpShown(false);
       }
-    });
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    // cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const optionsScroll = {
