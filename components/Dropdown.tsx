@@ -13,15 +13,30 @@ const Dropdown = ({ list, selected, getNoteData }) => {
       <div style={{ paddingTop: '21rem' }}>Select version:</div>
       <Box>
         <span className="__text">{selected}</span>
-        <span className="__btn" onClick={handleOpen}><DropdownBtn /></span>
+        <span
+          aria-label="dropdown"
+          className="__btn"
+          onClick={handleOpen}
+          onKeyPress={handleOpen}
+          tabIndex={0}
+          role="button"
+        ><DropdownBtn />
+        </span>
       </Box>
       {isOpen && (
         <Drop>
-          {list.map((item: string) => (
-            <Item isSelected={selected === item} onClick={() => getNoteData(item)}>
+          {list.map((item: string, idx: number) => (
+            <Item key={item} isSelected={selected === item}>
               {item === selected
             && <span className="__check"><DropdownCheck /></span>}
-              <span className="__text">{item}</span>
+              <span
+                tabIndex={idx}
+                className="__text"
+                role="button"
+                onKeyPress={() => getNoteData(item)}
+                onClick={() => getNoteData(item)}
+              >{item}
+              </span>
             </Item>
           ))}
         </Drop>

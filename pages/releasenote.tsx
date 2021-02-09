@@ -4,6 +4,8 @@ import axios from 'axios';
 import Lottie from 'react-lottie';
 import styled from 'styled-components';
 import useSWR from 'swr';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 import {
   SOneMan, SpaceONE, UpIcon, Scroll, Loading,
 } from '../public/assets';
@@ -11,39 +13,6 @@ import { media } from '../styles/theme';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import Dropdown from '../components/Dropdown';
-
-// const MDElement = () => {
-//   const [markdown, setMarkdown] = useState(null);
-
-//   const getReadme = async () => {
-//     try {
-//       const { data: rawData } = await axios({
-//         url:
-//           'https://raw.githubusercontent.com/spaceone-dev/spaceone/master/release_notes/en/version_1.6.1.md',
-//         method: 'get',
-//       });
-//       const { data: md } = await axios({
-//         url: 'https://api.github.com/markdown/raw',
-//         method: 'post',
-//         headers: {
-//           'Content-Type': 'text/x-markdown',
-//         },
-//         data: rawData,
-//       });
-//       setMarkdown(md);
-//       return md;
-//     } catch (e) {
-//       return e;
-//     }
-//   };
-
-//   useEffect(() => {
-//     getReadme();
-//   }, []);
-
-//   // eslint-disable-next-line react/no-danger
-//   return <div className="markdown" dangerouslySetInnerHTML={{ __html: markdown }} />;
-// };
 
 const fetcher = (url:string) => axios.get(url).then((res) => res.data);
 
@@ -120,12 +89,11 @@ const ReleaseNote = () => {
     setNoteVersion(version);
     const res = await axios.get(`api/release-note/${version}`);
     setNoteData(res.data.noteData);
-    console.log(noteData);
     setLoading(false);
   };
 
   return (
-    <Container isMenuOpen={isMenuOpen}>
+    <Container className="releasenote" isMenuOpen={isMenuOpen}>
       <Tab>
         <span className="__text">SpaceONE Release Note</span>
       </Tab>
@@ -178,7 +146,7 @@ const ReleaseNote = () => {
             <Box>
               <Dropdown list={noteList} selected={noteVersion} getNoteData={getNoteData} />
               <br />
-              {noteData ? (<pre className="markdown">{noteData}</pre>) : (<div>No Data</div>)}
+              {noteData ? (<ReactMarkdown plugins={[gfm]} className="markdown" allowDangerousHtml>{noteData}</ReactMarkdown>) : (<div>No Data</div>)}
             </Box>
             <Footer />
           </>
@@ -188,9 +156,9 @@ const ReleaseNote = () => {
 };
 
 const Container = styled.div<{ isMenuOpen: boolean }>`
+  width: 100%;
   position: ${({ isMenuOpen }) => (isMenuOpen ? 'fixed' : 'relative')};
   font-size: 3rem;
-  background-color: #001B33;
   overflow-x: hidden;
   .__logo {
     cursor: pointer;
@@ -247,6 +215,7 @@ const Tab = styled.div`
 
 const Box = styled.div`
   padding: 0 19rem;
+  padding-bottom: 5rem;
   .__loading{
     height: 100vh;
     display: flex;
