@@ -66,7 +66,7 @@ const Lotties = () => {
           width: '11.2rem',
           height: '11.2rem',
           left: '8rem',
-          top: '37rem',
+          top: '36rem',
           transform: 'rotate(70.54deg)',
           opacity: '0.5',
         }}
@@ -77,7 +77,7 @@ const Lotties = () => {
           position: 'absolute',
           width: '17.6rem',
           height: '17.6rem',
-          left: '40rem',
+          left: '38.5rem',
           top: '67rem',
           opacity: '0.5',
         }}
@@ -89,7 +89,7 @@ const Lotties = () => {
           width: '13.3rem',
           height: '13.3rem',
           left: '16rem',
-          bottom: '24rem',
+          bottom: '23.5rem',
           opacity: '0.5',
           transform: 'matrix(0.87, -0.5, 0.5, 0.87, 0, 0)',
         }}
@@ -101,7 +101,7 @@ const Lotties = () => {
           width: '9rem',
           height: '9rem',
           left: '62.5rem',
-          bottom: '25rem',
+          bottom: '25.5rem',
           transform: 'rotate(-90deg)',
           opacity: '0.5',
         }}
@@ -112,7 +112,7 @@ const Lotties = () => {
           position: 'absolute',
           width: '7.277rem',
           height: '7.277rem',
-          left: '87rem',
+          left: '86rem',
           top: '48rem',
           opacity: '0.2',
           transform: 'rotate(-17.7deg)',

@@ -15,12 +15,11 @@ import { media } from '../styles/theme';
 const Scroll2 = () => (
   <Box>
     <Container>
-      <Lotties />
+      <Ellipse />
+
       <Padding>
         <div className="__title">we&apos;re very capable:</div>
-        <div className="__ellipse">
-          <Ellipse3 />
-        </div>
+
         <Keywords>
           <div data-aos="fade-up">
             <Integrate />
@@ -54,7 +53,7 @@ const Scroll2 = () => (
 /**
  * lotties
  */
-const Lotties = () => {
+const Ellipse = () => {
   const optionsSpinPurple = {
     animationData: SpinPurple,
     loop: true,
@@ -73,15 +72,17 @@ const Lotties = () => {
   };
 
   return (
-    <>
+    <div className="__ellipse">
+      <Ellipse3 />
+
       <Lottie
         options={optionsSpinPurple}
         style={{
           position: 'absolute',
+          left: '17rem',
+          bottom: '9rem',
           width: '17.6rem',
           height: '17.6rem',
-          left: '23rem',
-          top: '55rem',
           transform: 'rotate(-30deg)',
           opacity: '0.5',
         }}
@@ -89,11 +90,11 @@ const Lotties = () => {
       <Lottie
         options={optionsSpinWhite}
         style={{
+          left: '75rem',
+          top: '25.4rem',
           position: 'absolute',
           width: '7.339rem',
           height: '7.339rem',
-          left: '81rem',
-          top: '43.8rem',
           transform: 'rotate(-30deg)',
           opacity: '0.7',
         }}
@@ -101,16 +102,16 @@ const Lotties = () => {
       <Lottie
         options={optionsSpinPurple}
         style={{
+          right: '12rem',
+          bottom: '23rem',
           position: 'absolute',
           width: '12.145rem',
           height: '12.145rem',
-          left: '117rem',
-          top: '45rem',
           opacity: '0.5',
           transform: 'rotate(30deg)',
         }}
       />
-    </>
+    </div>
   );
 };
 

@@ -10,13 +10,11 @@ import {
   Circle96,
   Ellipse1,
   Ellipse2,
-  Circle101,
-  Circle102,
   Circle171,
   ExternalLink,
-  ExternalLink_fill as ExternalLinkFill,
+  ExternalLinkFill,
   GithubLogo,
-  GithubLogo_fill as GithubLogoFill,
+  GithubLogoFill,
   Wave1,
   Wave2,
   Github,
@@ -41,8 +39,16 @@ const Scroll1 = () => {
   return (
     <Box>
       <Container>
-        <Background />
-        <Lotties />
+
+        <div className="__wave1">
+          <Wave1 />
+        </div>
+        <div className="__wave2">
+          <Wave2 />
+        </div>
+        <BigEllipse />
+        <SmallEllipse />
+
         <div style={{ position: 'relative' }}>
           <Title>
             <div>
@@ -94,55 +100,9 @@ const Scroll1 = () => {
 };
 
 /**
- * background
+ * big ellipse
  */
-const Background = () => (
-  <>
-    <div className="__wave1">
-      <Wave1 />
-    </div>
-    <div className="__wave2">
-      <Wave2 />
-    </div>
-    <div className="__ellipse1">
-      <Ellipse1 />
-    </div>
-    <div className="__ellipse2">
-      <Ellipse2 />
-    </div>
-
-    <div style={{ position: 'absolute', left: '14rem', top: '58.2rem' }}>
-      <Circle96 />
-    </div>
-    <div style={{ position: 'absolute', left: '26rem', top: '53rem' }}>
-      <Circle105 />
-    </div>
-    <div style={{ position: 'absolute', left: '11.5rem', top: '64rem' }}>
-      <Circle109 />
-    </div>
-    <div style={{ position: 'absolute', left: '8.5rem', top: '59rem' }}>
-      <Circle110 />
-    </div>
-    <div style={{ position: 'absolute', left: '4.5rem', top: '16rem' }}>
-      <Circle111 />
-    </div>
-
-    <div style={{ position: 'absolute', left: '90.84rem', top: '33.958rem' }}>
-      <Circle101 />
-    </div>
-    <div style={{ position: 'absolute', left: '90.647rem', top: '25.491rem' }}>
-      <Circle102 />
-    </div>
-    <div style={{ position: 'absolute', left: '91.1rem', top: '11rem' }}>
-      <Circle171 />
-    </div>
-  </>
-);
-
-/**
- * lotties
- */
-const Lotties = () => {
+const BigEllipse = () => {
   const optionsPlanet = {
     animationData: PurplePlanet,
     loop: true,
@@ -159,6 +119,59 @@ const Lotties = () => {
       preserveAspectRatio: 'xMidYMid slice',
     },
   };
+
+  return (
+    <div className="__ellipse1">
+      <Ellipse1 />
+
+      <Lottie
+        options={optionsSpinPurple}
+        style={{
+          top: '5rem',
+          left: '12rem',
+          position: 'absolute',
+          width: '13.563rem',
+          height: '13.563rem',
+          transform: 'rotate(-30deg)',
+          opacity: '0.7',
+        }}
+      />
+      <Lottie
+        options={optionsPlanet}
+        style={{
+          top: '22rem',
+          left: '-6rem',
+          position: 'absolute',
+          width: '12.6rem',
+          height: '12.033rem',
+          transform: 'matrix(0.97, 0.21, -0.24, 0.98, 0, 0)',
+          opacity: '0.4',
+        }}
+      />
+
+      <div style={{ position: 'absolute', left: '14rem', bottom: '7.3rem' }}>
+        <Circle96 />
+      </div>
+      <div style={{ position: 'absolute', left: '26rem', bottom: '13rem' }}>
+        <Circle105 />
+      </div>
+      <div style={{ position: 'absolute', left: '10rem', bottom: '1rem' }}>
+        <Circle109 />
+      </div>
+      <div style={{ position: 'absolute', left: '8rem', bottom: '6rem' }}>
+        <Circle110 />
+      </div>
+      <div style={{ position: 'absolute', left: '4.5rem', top: '4jrem' }}>
+        <Circle111 />
+      </div>
+    </div>
+  );
+};
+
+/**
+ * small ellipse
+ */
+const SmallEllipse = () => {
   const optionsSpinWhite = {
     animationData: SpinWhite,
     loop: true,
@@ -169,44 +182,26 @@ const Lotties = () => {
   };
 
   return (
-    <>
-      <Lottie
-        options={optionsSpinPurple}
-        style={{
-          position: 'absolute',
-          width: '13.563rem',
-          height: '13.563rem',
-          left: '10rem',
-          top: '20rem',
-          transform: 'rotate(-30deg)',
-          opacity: '0.7',
-        }}
-      />
+    <div className="__ellipse2">
+      <Ellipse2 />
+
       <Lottie
         options={optionsSpinWhite}
         style={{
+          top: '12.5rem',
+          left: '1.8rem',
           position: 'absolute',
           width: '7.557rem',
           height: '7.557rem',
-          left: '92.387rem',
-          top: '12.5rem',
           transform: 'rotate(-27.22deg)',
           opacity: '0.8',
         }}
       />
-      <Lottie
-        options={optionsPlanet}
-        style={{
-          position: 'absolute',
-          width: '12.6rem',
-          height: '12.033rem',
-          left: '-6rem',
-          top: '33.9rem',
-          transform: 'matrix(0.97, 0.21, -0.24, 0.98, 0, 0)',
-          opacity: '0.4',
-        }}
-      />
-    </>
+
+      <div style={{ position: 'absolute', left: '0rem', top: '10rem' }}>
+        <Circle171 />
+      </div>
+    </div>
   );
 };
 
@@ -291,7 +286,7 @@ const Title = styled.div`
   color: ${({ theme }) => theme.color.primary[200]};
   .__gradient {
     background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
-    //background-clip: text;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

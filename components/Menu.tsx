@@ -2,12 +2,12 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import {
-  GithubLogo_menu as GithubLogoMenu,
-  ExternalLink_menu_sm as ExternalLinkMenuSm,
-  GithubLogo_menu_hover as GithubLogoMenuHover,
+  GithubLogoMenu,
+  ExternalLinkMenuSm,
+  GithubLogoMenuHover,
   Mail,
-  Mail_hover as MailHover,
-  SOne_menu as SOneMenu,
+  MailHover,
+  SOneMenu,
 } from '../public/assets';
 import { theme } from '../styles/theme';
 

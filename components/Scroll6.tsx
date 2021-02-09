@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
-import { ExternalLink_green as ExternalLinkGreen, Spaceship } from '../public/assets';
+import { ExternalLinkGreen, Spaceship } from '../public/assets';
 
 const Scroll6 = () => {
   const optionsSpaceship = {
@@ -119,7 +119,7 @@ const Container = styled.div`
     font-weight: 500;
     font-size: 3.4rem;
     background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
-    //background-clip: text;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
