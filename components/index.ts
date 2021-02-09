@@ -7,3 +7,4 @@ export { default as Scroll3 } from './Scroll3';
 export { default as Scroll4 } from './Scroll4';
 export { default as Scroll5 } from './Scroll5';
 export { default as Scroll6 } from './Scroll6';
+export { default as Dropdown } from './Dropdown';

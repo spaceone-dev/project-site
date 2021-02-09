@@ -1,18 +1,18 @@
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Lottie from 'react-lottie';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import Lottie from 'react-lottie';
+import axios from 'axios';
 import useSWR from 'swr';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import {
+  Footer, Menu, Dropdown,
+} from '../components';
+import {
   SOneMan, SpaceONE, UpIcon, Scroll, Loading,
 } from '../public/assets';
 import { media } from '../styles/theme';
-import Footer from '../components/Footer';
-import Menu from '../components/Menu';
-import Dropdown from '../components/Dropdown';
 
 const fetcher = (url:string) => axios.get(url).then((res) => res.data);
 
@@ -49,6 +49,14 @@ const ReleaseNote = () => {
     }
   };
 
+  const getNoteData = async (version: string) => {
+    setLoading(true);
+    setNoteVersion(version);
+    const res = await axios.get(`api/release-note/${version}`);
+    setNoteData(res.data.noteData);
+    setLoading(false);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -76,14 +84,6 @@ const ReleaseNote = () => {
       setLoading(false);
     }
   }, [data, error]);
-
-  const getNoteData = async (version: string) => {
-    setLoading(true);
-    setNoteVersion(version);
-    const res = await axios.get(`api/release-note/${version}`);
-    setNoteData(res.data.noteData);
-    setLoading(false);
-  };
 
   const optionsScroll = {
     animationData: Scroll,

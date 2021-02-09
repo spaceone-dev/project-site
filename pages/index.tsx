@@ -14,12 +14,7 @@ import {
   Background,
 } from '../components';
 import {
-  // svg
-  SpaceONE,
-  SOneMan,
-  UpIcon,
-  // json
-  Scroll,
+  SpaceONE, SOneMan, UpIcon, Scroll,
 } from '../public/assets';
 import { media } from '../styles/theme';
 
