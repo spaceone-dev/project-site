@@ -93,6 +93,14 @@ const ReleaseNote = () => {
       preserveAspectRatio: 'xMidYMid slice',
     },
   };
+  const optionsLoading = {
+    animationData: Loading,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   return (
     <Container className="release-note" isMenuOpen={isMenuOpen} loading={loading.toString()}>
@@ -142,7 +150,20 @@ const ReleaseNote = () => {
           <div className="__text">up</div>
         </UpBtn>
       )}
-      {loading ? (<Box><div className="__loading"><Loading /></div></Box>)
+      {loading ? (
+        <Box>
+          <div className="__loading">
+            <Lottie
+              options={optionsLoading}
+              style={{
+                width: '20rem',
+                height: '20rem',
+              }}
+            />
+            <div className="__loading__text">Loading...</div>
+          </div>
+        </Box>
+      )
         : isError ? (<div>error occurred</div>) : (
           <>
             <Box>
@@ -220,8 +241,16 @@ const Box = styled.div`
   .__loading{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    &__text{
+      margin-top: 2rem;
+      font-family: Noto Sans;
+      color: ${({ theme }) => theme.color.gray[400]};
+      font-size: 1.5rem;
+    }
   }
 `;
 

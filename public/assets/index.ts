@@ -39,7 +39,6 @@ export { default as Img4 } from './img4.svg';
 export { default as Img5 } from './img5.svg';
 export { default as DropdownBtn } from './dropdown_btn.svg';
 export { default as DropdownCheck } from './dropdown_check.svg';
-export { default as Loading } from './loading.svg';
 
 // json
 export { default as Cloud } from './cloud.json';
@@ -52,3 +51,4 @@ export { default as Spaceship } from './spaceship.json';
 export { default as SpinBlue } from './spin_blue.json';
 export { default as SpinPurple } from './spin_purple.json';
 export { default as SpinWhite } from './spin_white.json';
+export { default as Loading } from './loading spaceship.json';

@@ -155,9 +155,10 @@ const Container = styled.div`
   }
   .__small {
     position: absolute;
+    right: 0;
     font-size: 3rem;
     margin-bottom: 16.6rem;
-    margin-left: 94.6rem;
+    margin-right: 30rem;
     &__text {
       height: 3.6rem;
       cursor: pointer;

@@ -19,6 +19,7 @@ declare module 'styled-components' {
       };
       gray: {
         300: '#CED0D6';
+        400: '#A7A9B2';
         700: '#5F616D';
       };
     };
