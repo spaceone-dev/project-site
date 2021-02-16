@@ -13,31 +13,50 @@ import { theme } from '../styles/theme';
 
 const leftList = [
   { name: 'Home', url: '/' },
-  { name: 'User Guide', url: '' },
-  { name: 'API Reference', url: '' },
+  { name: 'User Guide', url: 'https://spaceone-dev.gitbook.io/user-guide/' },
+  { name: 'API Reference', url: 'https://spaceone-dev.gitbook.io/spaceone-apis/' },
   { name: 'Release Note', url: '/release-note' },
 ];
 const rightList = [
-  { name: 'Github', url: '' },
-  { name: 'Get In Touch', url: '' },
+  { name: 'Github', url: 'https://github.com/spaceone-dev' },
+  { name: 'Get In Touch', url: 'mailto:support@spaceone.dev' },
 ];
 
 const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
   const router = useRouter();
+
+  const handleRouting = (name: string, url: string) => {
+    if (name !== 'Home' && name !== 'Release Note') window.open(url);
+    else router.push(url);
+  };
 
   return (
     <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
       <Container>
         <div className="__big">
           {leftList.map((item, idx) => (
-            <div key={item.name} role="link" tabIndex={idx + 1} onClick={() => router.push(item.url)} onKeyPress={() => router.push(item.url)}>
+            <div
+              key={item.name}
+              role="link"
+              tabIndex={idx + 1}
+              onClick={() => handleRouting(item.name, item.url)}
+              onKeyPress={() => handleRouting(item.name, item.url)}
+            >
               <LeftList pathname={pathname} text={item.name} />
             </div>
           ))}
         </div>
         <div className="__small">
-          {rightList.map((item) => (
-            <RightList key={item.name} text={item.name} />
+          {rightList.map((item, idx) => (
+            <div
+              key={item.name}
+              role="link"
+              tabIndex={idx + 1}
+              onClick={() => handleRouting(item.name, item.url)}
+              onKeyPress={() => handleRouting(item.name, item.url)}
+            >
+              <RightList key={item.name} text={item.name} />
+            </div>
           ))}
         </div>
       </Container>

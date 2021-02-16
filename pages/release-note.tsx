@@ -17,6 +17,7 @@ import { media } from '../styles/theme';
 const fetcher = (url:string) => axios.get(url).then((res) => res.data);
 
 const ReleaseNote = () => {
+  const router = useRouter();
   const pathname = useRouter().pathname;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -118,7 +119,13 @@ const ReleaseNote = () => {
           isMenuShown={isMenuShown}
         />
       )}
-      <div className="__logo">
+      <div
+        className="__logo"
+        role="link"
+        tabIndex={0}
+        onClick={() => router.push('/')}
+        onKeyPress={() => router.push('/')}
+      >
         <SpaceONE />
       </div>
       <div
@@ -188,6 +195,7 @@ const Container = styled.div<{ isMenuOpen: boolean, loading: string }>`
   font-size: 3rem;
   overflow-x: hidden;
   .__logo {
+    cursor: pointer;
     position: fixed;
     left: 10rem;
     ${media[768]} {

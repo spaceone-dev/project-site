@@ -43,6 +43,10 @@ const Index = () => {
     }
   };
 
+  const moveToTop = () => {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -82,7 +86,13 @@ const Index = () => {
         />
       )}
       <Background />
-      <div className="__logo">
+      <div
+        className="__logo"
+        role="link"
+        tabIndex={0}
+        onClick={moveToTop}
+        onKeyPress={moveToTop}
+      >
         <SpaceONE />
       </div>
       <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen} onKeyPress={handleMenuOpen}>
@@ -106,7 +116,7 @@ const Index = () => {
       {isUpShown && (
         <UpBtn
           isMenuOpen={isMenuOpen}
-          onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
+          onClick={moveToTop}
         >
           <UpIcon />
           <div className="__text">up</div>
@@ -127,6 +137,7 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
   position: ${({ isMenuOpen }) => isMenuOpen && 'fixed'};
   font-size: 3rem;
   .__logo {
+    cursor: pointer;
     position: fixed;
     left: 10rem;
     ${media[768]} {
