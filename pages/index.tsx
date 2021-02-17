@@ -25,18 +25,22 @@ const Index = () => {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const [isScrollable, setIsScrollable] = useState(true);
   const [isUpShown, setIsUpShown] = useState(false);
+  const [currentY, setCurrentY] = useState(0);
 
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
     if (!isMenuShown) {
       setIsMenuOpen(true);
       setIsMenuShown(true);
+      setCurrentY(window.pageYOffset);
     } else {
       // according to position change
       setIsScrollable(true);
       setIsUpShown(false);
 
       setIsMenuOpen(false);
+      window.scrollTo(0, currentY);
+
       setTimeout(() => {
         setIsMenuShown(false);
       }, 500);
@@ -77,7 +81,7 @@ const Index = () => {
   };
 
   return (
-    <Container isMenuOpen={isMenuOpen}>
+    <Container className="area_sub" isMenuOpen={isMenuOpen}>
       {isMenuShown && (
         <Menu
           pathname={pathname}
@@ -134,7 +138,6 @@ const Index = () => {
 };
 
 const Container = styled.div<{ isMenuOpen: boolean }>`
-  position: ${({ isMenuOpen }) => isMenuOpen && 'fixed'};
   font-size: 3rem;
   .__logo {
     cursor: pointer;

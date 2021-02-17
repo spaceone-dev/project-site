@@ -24,6 +24,7 @@ const ReleaseNote = () => {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const [isScrollable, setIsScrollable] = useState(true);
   const [isUpShown, setIsUpShown] = useState(false);
+  const [currentY, setCurrentY] = useState(0);
 
   // api
   const { data, error } = useSWR('api/release-note', fetcher);
@@ -38,12 +39,15 @@ const ReleaseNote = () => {
     if (!isMenuShown) {
       setIsMenuOpen(true);
       setIsMenuShown(true);
+      setCurrentY(window.pageYOffset);
     } else {
       // according to position change
       setIsScrollable(true);
       setIsUpShown(false);
 
       setIsMenuOpen(false);
+      window.scrollTo(0, currentY);
+
       setTimeout(() => {
         setIsMenuShown(false);
       }, 500);
@@ -191,7 +195,6 @@ const ReleaseNote = () => {
 
 const Container = styled.div<{ isMenuOpen: boolean, loading: string }>`
   width: 100%;
-  position: ${({ isMenuOpen, loading }) => (isMenuOpen || loading === 'true' ? 'fixed' : 'relative')};
   font-size: 3rem;
   overflow-x: hidden;
   .__logo {

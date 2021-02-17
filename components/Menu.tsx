@@ -137,7 +137,6 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
   width: 100%;
   height: 100vh;
   background: #001b33;
-  box-shadow: 0px 4px 15px rgba(0, 92, 179, 0.3);
   z-index: 5;
   top: 0;
   position: fixed;

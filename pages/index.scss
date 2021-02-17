@@ -6,6 +6,10 @@ div[role="link"]:focus div {
   overflow: hidden;
 }
 
+::-webkit-scrollbar { 
+  display: none !important;
+}
+
 @function multiple-box-shadow($n) {
   $value: "#{random(700)}vh #{random(100)}vh #FFF";
   @for $i from 2 through $n {
