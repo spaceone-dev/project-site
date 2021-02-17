@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import { Cloud, Plugin, OpenAPI } from '../public/assets';
-import { media } from '../styles/theme';
+import { device } from '../styles/theme';
 
 const Scroll4 = () => {
   const optionsCloudNative = {
@@ -50,9 +50,7 @@ const Scroll4 = () => {
                 <div className="__content__keyword">Cloud Native</div>
                 <div className="__content__explain">
                   We are architecting Cloud Native-Based Technology;
-                  <div style={{ fontStyle: 'italic' }}>
-                    K8S, Helm, Prometheus, gRPC, Istio.
-                  </div>
+                  <i style={{ fontStyle: 'italic' }}> K8S, Helm, Prometheus, gRPC, Istio.</i>
                 </div>
               </div>
               <CardBg />
@@ -113,30 +111,48 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  
+  @media ${device.mobile} {
+    height: auto;
+  }
 `;
 
 const Padding = styled.div`
   padding: 20rem 19rem;
   display: flex;
-  ${media[768]} {
+  flex-direction: column;
+
+  @media ${device.tablet} {
     padding: 20rem 7rem;
   }
-  display: flex;
-  flex-direction: column;
+  
+  @media ${device.mobile} {
+    padding: 20rem 0;
+  }
 `;
 
 const Container = styled.div`
   width: 144rem;
   height: 96rem;
   display: flex;
+
+  @media ${device.mobile} {
+    width: 100vw;
+    height: auto;
+  }
   .__title {
     color: ${({ theme }) => theme.color.pink};
     font-weight: 500;
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;
-    ${media[768]} {
+
+    @media ${device.tablet} {
       font-size: 2.4rem;
+    }
+    
+    @media ${device.mobile} {
+      margin-left: 3rem;
     }
   }
 `;
@@ -144,6 +160,11 @@ const Container = styled.div`
 const Cards = styled.div`
   display: flex;
   margin-top: 4.4rem;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    margin-top: 0;
+  }
 `;
 
 const Card = styled.div`
@@ -152,12 +173,25 @@ const Card = styled.div`
   height: 45rem;
   display: flex;
   flex-direction: column;
+
+  @media ${device.mobile} {
+    width: 100%;
+  }
   &:not(first-child) {
     margin-right: 3.5rem;
+
+    @media ${device.mobile} {
+      height: auto;
+      margin-right: 0;
+    }
   }
   .__content {
     z-index: 1;
     padding: 0 2.5rem;
+
+    @media ${device.mobile} {
+      padding: 0 6rem;
+    }
 
     &__keyword {
       margin-top: 21.6rem;
@@ -176,6 +210,12 @@ const Card = styled.div`
       line-height: 130%;
       opacity: 0.8;
       color: ${({ theme }) => theme.color.primary[200]};
+
+      @media ${device.mobile} {
+        padding-right: 0;
+        font-size: 1.4rem;
+        line-height: 1.3;
+      }
     }
   }
 `;
@@ -188,6 +228,12 @@ const CardBg = styled.div`
   opacity: 0.3;
   box-shadow: 0px 4px 15px rgba(0, 92, 179, 0.3);
   border-radius: 20px;
+
+  @media ${device.mobile} {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
 `;
 
 export default Scroll4;
