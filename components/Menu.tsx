@@ -26,7 +26,10 @@ const Menu = ({ isMenuOpen, isMenuShown, pathname }) => {
   const router = useRouter();
 
   const handleRouting = (name: string, url: string) => {
-    if (name !== 'Home' && name !== 'Release Note') window.open(url);
+    if ((name === 'Home' && pathname === '/')
+    || (name === 'Release Note' && pathname === '/release-note')) {
+      router.reload();
+    } else if (name !== 'Home' && name !== 'Release Note') window.open(url);
     else router.push(url);
   };
 

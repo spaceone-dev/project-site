@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import {
@@ -27,8 +26,6 @@ import {
 } from '../public/assets';
 
 const Scroll1 = () => {
-  const router = useRouter();
-
   const [isHover, setIsHover] = useState(false);
   const optionsSpaceMan = {
     animationData: Spaceman,
@@ -83,8 +80,8 @@ const Scroll1 = () => {
               onMouseLeave={() => setIsHover(false)}
               role="link"
               tabIndex={0}
-              onClick={() => router.push('https://github.com/spaceone-dev')}
-              onKeyPress={() => router.push('https://github.com/spaceone-dev')}
+              onClick={() => window.open('https://github.com/spaceone-dev')}
+              onKeyPress={() => window.open('https://github.com/spaceone-dev')}
             >
               <div style={{ position: 'absolute', bottom: '-1rem' }}>
                 <Github />
