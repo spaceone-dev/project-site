@@ -10,7 +10,7 @@ import {
   SpinPurple,
   SpinWhite,
 } from '../public/assets';
-import { media } from '../styles/theme';
+import { device } from '../styles/theme';
 
 const Scroll2 = () => (
   <Box>
@@ -29,7 +29,6 @@ const Scroll2 = () => (
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            style={{ marginLeft: '6rem' }}
           >
             <Improve />
             <div className="__word">Improve</div>
@@ -38,7 +37,6 @@ const Scroll2 = () => (
           <div
             data-aos="fade-up"
             data-aos-delay="600"
-            style={{ marginLeft: '6rem' }}
           >
             <Manage />
             <div className="__word">Manage</div>
@@ -129,8 +127,13 @@ const Padding = styled.div`
   padding: 20rem 19rem;
   display: flex;
   flex-direction: column;
-  ${media[768]} {
+  
+  @media ${device.tablet} {
     padding: 20rem 7rem;
+  }
+  
+  @media ${device.mobile} {
+    padding: 20rem 3rem;
   }
 `;
 
@@ -138,21 +141,25 @@ const Container = styled.div`
   width: 144rem;
   height: 96rem;
   position: relative;
+
+  @media ${device.mobile} {
+    width: 100vw;
+  }
+
   .__title {
     color: ${({ theme }) => theme.color.pink};
     font-weight: 500;
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;
-    ${media[768]} {
-      font-size: 2.4rem;
-    }
   }
+
   .__ellipse {
     position: absolute;
     top: 18rem;
     left: 5rem;
-    ${media[768]} {
+
+    @media ${device.tablet} {
       left: -10rem;
     }
   }
@@ -163,11 +170,24 @@ const Keywords = styled.div`
   margin-top: 19rem;
   font-weight: 400;
   color: ${({ theme }) => theme.color.primary[100]};
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+  > div:nth-child(2) {
+    margin:0 6rem;
+
+    @media ${device.mobile} {
+      margin:4rem 0;
+    }
+  }
   .__word {
     margin-top: 1rem;
     font-size: 4.6rem;
     color: ${({ theme }) => theme.color.primary[300]};
-    ${media[768]} {
+    
+    @media ${device.tablet} {
       font-size: 3.2rem;
     }
   }
@@ -175,7 +195,8 @@ const Keywords = styled.div`
     font-size: 3rem;
     margin-top: 1.5rem;
     letter-spacing: -0.02em;
-    ${media[768]} {
+
+    @media ${device.tablet} {
       font-size: 3rem;
     }
   }
