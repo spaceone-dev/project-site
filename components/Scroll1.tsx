@@ -24,6 +24,7 @@ import {
   Spaceman,
   PurplePlanet,
 } from '../public/assets';
+import { device } from '../styles/theme';
 
 const Scroll1 = () => {
   const [isHover, setIsHover] = useState(false);
@@ -53,16 +54,12 @@ const Scroll1 = () => {
           <Title>
             <div>
               Manage All
-              <div />
+              <br />
               Cloud Resources
-              <div />
+              <br />
               in <span className="__gradient">One Platform</span>
             </div>
-            <div className="__info">
-              <div>SpaceONE is an Open-Source Platform and</div>
-              <div />
-              <div>Enables Integrated Management of Multi-Cloud.</div>
-            </div>
+            <div className="__info">SpaceONE is an Open-Source Platform and Enables Integrated Management of Multi-Cloud.</div>
             <Lottie
               options={optionsSpaceMan}
               style={{
@@ -222,8 +219,14 @@ const Container = styled.div`
   width: 144rem;
   height: 100vh;
   display: flex;
-  margin-top: 23rem;
+  padding-top: 23rem;
   justify-content: center;
+
+  @media ${device.mobile} {
+    width:100vw;
+    padding-top:18rem;
+  }
+
   .__wave1 {
     position: absolute;
     top: 0;
@@ -288,6 +291,12 @@ const Title = styled.div`
   letter-spacing: -0.01em;
   text-align: center;
   color: ${({ theme }) => theme.color.primary[200]};
+  
+  @media ${device.mobile} {
+    font-size: 3.4rem;
+    line-height:1.23; 
+  }
+  
   .__gradient {
     background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
     background-clip: text;
@@ -295,10 +304,19 @@ const Title = styled.div`
     -webkit-text-fill-color: transparent;
   }
   .__info {
+    width: 52.2rem;
     font-size: 2.2rem;
     line-height: 130%;
     opacity: 0.7;
     margin-top: 3rem;
+    
+    @media ${device.mobile} {
+      width:auto; 
+      padding:0 15%;
+      margin-top: 2.4rem;
+      font-size: 1.8rem;
+      line-height:1.3;
+    }
   }
 `;
 
