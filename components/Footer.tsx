@@ -37,6 +37,7 @@ const Footer = () => (
     </Padding>
   </Container>
 );
+
 const Container = styled.div`
   overflow: hidden;
   position:relative;
@@ -73,13 +74,6 @@ const Padding = styled.div`
   
   @media ${device.mobile} {
     padding: 16rem 3rem 10rem;
-  }
-  
-  > div:first-child {
-    @media ${device.mobile} {
-      flex: 1 0 100%;
-      margin-bottom:6.2rem;
-    }
   }
   .__card {
     position: relative;
@@ -136,9 +130,11 @@ const Padding = styled.div`
       }
     }
   }
-  
-  .__address {
-    
+  .__copyright {
+    @media ${device.mobile} {
+      flex: 1 0 100%;
+      margin-bottom:6.2rem;
+    }
   }
   .__megazone {
     margin-bottom: -1rem;
