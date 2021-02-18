@@ -19,6 +19,7 @@ import {
 import { media } from '../styles/theme';
 
 const Index = () => {
+  const route = useRouter();
   const pathname = useRouter().pathname;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,8 +95,8 @@ const Index = () => {
         className="__logo"
         role="link"
         tabIndex={0}
-        onClick={moveToTop}
-        onKeyPress={moveToTop}
+        onClick={() => route.reload()}
+        onKeyPress={() => route.reload()}
       >
         <SpaceONE />
       </div>
@@ -151,6 +152,9 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
     opacity: ${({ isMenuOpen }) => isMenuOpen && '0.6'};
     animation: ${({ isMenuOpen }) => (isMenuOpen ? 'openMenuLogo' : 'closeMenuLogo')}
       0.5s;
+    :hover{
+      opacity: 1;
+    }
   }
   .__menu {
     cursor: pointer;
