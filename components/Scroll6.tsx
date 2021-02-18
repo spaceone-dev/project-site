@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import { ExternalLinkGreen, Spaceship } from '../public/assets';
+import { device } from '../styles/theme';
 
 const Scroll6 = () => {
   const optionsSpaceship = {
@@ -16,20 +17,25 @@ const Scroll6 = () => {
     <Box>
       <Container>
         <div className="__ghInfo">
-          <div data-aos="fade-up" style={{ width: '34rem' }}>
+          <div className="__info"
+              data-aos="fade-up"
+          >
             <span className="__ghInfo__num">76</span>
             <span style={{ marginLeft: '1rem' }}>Enrolled Projects</span>
           </div>
-          <div
+          <div className="__info"
             data-aos="fade-up"
             data-aos-delay="300"
-            style={{ width: '34rem', marginLeft: '2rem' }}
           >
             <span className="__ghInfo__num">28</span>
             <span style={{ marginLeft: '1rem' }}>Contributors</span>
             <div className="__ghInfo__link">
               View Contribution Guide
-              <span style={{ marginLeft: '0.4rem', marginTop: '0.2rem' }}>
+              <span style={{
+                marginLeft: '0.4rem',
+                marginTop: '0.2rem'
+              }}
+              >
                 <ExternalLinkGreen />
               </span>
             </div>
@@ -40,18 +46,10 @@ const Scroll6 = () => {
           for Sustainable Ecosystem.
         </div>
         <div data-aos="fade-up" data-aos-delay="300">
-          <Lottie
-            options={optionsSpaceship}
-            style={{
-              width: '14rem',
-              height: '14rem',
-              marginTop: '7.1rem',
-            }}
-          />
-          <div className="__gradient">
-            Climb Aboard the <span style={{ fontWeight: 600 }}>SpaceONE</span>
-            ship
-          </div>
+          <LottieWrap>
+            <Lottie options={optionsSpaceship} />
+          </LottieWrap>
+          <div className="__gradient">Climb Aboard the <span style={{ fontWeight: 600 }}>SpaceONE</span>ship</div>
         </div>
       </Container>
     </Box>
@@ -74,6 +72,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   letter-spacing: -0.02em;
+  
+  @media ${device.mobile}{
+    width:100%;
+  }
   .__ghInfo {
     padding-bottom: 5rem;
     width: 100%;
@@ -81,9 +83,13 @@ const Container = styled.div`
     font-size: 2.2rem;
     line-height: 2.6rem;
     color: ${({ theme }) => theme.color.gray[300]};
-    border: 0 solid ${({ theme }) => theme.color.primary[300]};
-    border-bottom-width: 0.1rem;
+    border-bottom: .1rem solid ${({ theme }) => theme.color.primary[300]};
+    justify-content: space-between;
+    flex-wrap:wrap;
 
+    @media ${device.mobile} {
+      width:calc(100% - 5rem);
+    }
     &__num {
       font-family: Helvetica Neue;
       font-size: 6rem;
@@ -103,6 +109,15 @@ const Container = styled.div`
         text-decoration: underline;
       }
     }
+    .__info {
+      width:50%;
+       
+      @media ${device.mobile} {
+        width: 100%;
+        margin-bottom: 2rem;
+        padding: 0 4.2rem;
+      }
+    }
   }
   .__content {
     font-weight: 400;
@@ -113,6 +128,12 @@ const Container = styled.div`
     opacity: 0.8;
     letter-spacing: -0.01em;
     text-align: center;
+    
+    @media ${device.mobile} {
+      padding:0 2.7rem;
+      font-size:2.2rem;
+      line-height: 1.27;
+    }
   }
   .__gradient {
     margin-top: -2rem;
@@ -122,7 +143,23 @@ const Container = styled.div`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
+    @media ${device.mobile} {
+      width: 25.5rem;
+      font-size: 2.4rem;
+      line-height :1.1;
+      text-align: center;
+    }
   }
 `;
 
+const LottieWrap = styled.div`
+  width: 14rem;
+  height: 14rem;
+  margin: 7.1rem auto 0;
+  
+  @media ${device.mobile} {
+    margin-top: 2rem;
+  }
+`
 export default Scroll6;
