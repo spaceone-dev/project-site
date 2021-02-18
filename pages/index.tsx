@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
@@ -82,59 +83,66 @@ const Index = () => {
   };
 
   return (
-    <Container className="area_sub" isMenuOpen={isMenuOpen}>
-      {isMenuShown && (
-        <Menu
-          pathname={pathname}
-          isMenuOpen={isMenuOpen}
-          isMenuShown={isMenuShown}
-        />
-      )}
-      <Background />
-      <div
-        className="__logo"
-        role="link"
-        tabIndex={0}
-        onClick={() => route.reload()}
-        onKeyPress={() => route.reload()}
-      >
-        <SpaceONE />
-      </div>
-      <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen} onKeyPress={handleMenuOpen}>
-        <SOneMan />
-        <span style={{ marginLeft: '0.4rem', marginTop: '0.2rem' }}>
-          {isMenuOpen ? 'Close' : 'Menu'}
-        </span>
-      </div>
-      {isScrollable && (
-        <ScrollBtn isMenuOpen={isMenuOpen}>
-          <Lottie
-            options={optionsScroll}
-            style={{
-              width: '2rem',
-              height: '3.25rem',
-            }}
+    <>
+      <Head>
+        <title>SpaceONE - Open Source Project</title>
+        <meta property="og:title" content="SpaceONE - Open Source Project" />
+        <meta property="og:image" content="/assets/ogimg.png" />
+      </Head>
+      <Container className="area_sub" isMenuOpen={isMenuOpen}>
+        {isMenuShown && (
+          <Menu
+            pathname={pathname}
+            isMenuOpen={isMenuOpen}
+            isMenuShown={isMenuShown}
           />
-          <div className="__text">scroll</div>
-        </ScrollBtn>
-      )}
-      {isUpShown && (
-        <UpBtn
-          isMenuOpen={isMenuOpen}
-          onClick={moveToTop}
+        )}
+        <Background />
+        <div
+          className="__logo"
+          role="link"
+          tabIndex={0}
+          onClick={() => route.reload()}
+          onKeyPress={() => route.reload()}
         >
-          <UpIcon />
-          <div className="__text">up</div>
-        </UpBtn>
-      )}
-      <Scroll1 />
-      <Scroll2 />
-      <Scroll3 />
-      <Scroll4 />
-      <Scroll5 />
-      <Scroll6 />
-      <Footer />
-    </Container>
+          <SpaceONE />
+        </div>
+        <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen} onKeyPress={handleMenuOpen}>
+          <SOneMan />
+          <span style={{ marginLeft: '0.4rem', marginTop: '0.2rem' }}>
+            {isMenuOpen ? 'Close' : 'Menu'}
+          </span>
+        </div>
+        {isScrollable && (
+          <ScrollBtn isMenuOpen={isMenuOpen}>
+            <Lottie
+              options={optionsScroll}
+              style={{
+                width: '2rem',
+                height: '3.25rem',
+              }}
+            />
+            <div className="__text">scroll</div>
+          </ScrollBtn>
+        )}
+        {isUpShown && (
+          <UpBtn
+            isMenuOpen={isMenuOpen}
+            onClick={moveToTop}
+          >
+            <UpIcon />
+            <div className="__text">up</div>
+          </UpBtn>
+        )}
+        <Scroll1 />
+        <Scroll2 />
+        <Scroll3 />
+        <Scroll4 />
+        <Scroll5 />
+        <Scroll6 />
+        <Footer />
+      </Container>
+    </>
   );
 };
 
