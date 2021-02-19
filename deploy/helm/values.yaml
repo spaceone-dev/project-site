@@ -6,10 +6,10 @@ developer: false
 name: project-site
 replicas: 1
 image:
-    repository: spaceone
+    repository: pyengine
     name: project-site
-    version: 0.1
-imagePullPolicy: IfNotPresent
+    version: latest
+imagePullPolicy: Always
 
 # Service
 #
