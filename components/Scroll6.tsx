@@ -58,7 +58,7 @@ const Scroll6 = () => {
 
 const Box = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 96rem;
   position: relative;
   display: flex;
   align-items: center;
