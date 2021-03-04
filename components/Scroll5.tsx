@@ -152,7 +152,7 @@ const Container = styled.div`
     margin-left: 5rem;
     width: 18.7rem;
     height: 62.6rem;
-    
+
     @media ${device.tablet} {
       flex-shrink: 0;
       margin-left: 0;
@@ -173,7 +173,7 @@ const UniverseGroup = styled.div`
   .__universe {
     width: 98.9rem;
     height: 130.7rem;
-    
+
     @media ${device.tablet} {
       margin-left: 0;
     }

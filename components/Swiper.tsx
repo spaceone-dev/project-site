@@ -3,7 +3,14 @@ import styled from "styled-components";
 import {device} from '../styles/theme';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Pagination, Autoplay, EffectFade} from 'swiper/core';
-import {Img1, Img2, Img3, Img4, Img5,} from '../public/assets';
+import {
+    // svg
+    Img1,
+    Img2,
+    Img3,
+    Img4,
+    Img5,
+} from '../public/assets';
 
 SwiperCore.use([Pagination, Autoplay, EffectFade]);
 

@@ -12,46 +12,8 @@ import {
 } from '../public/assets';
 import {device} from '../styles/theme';
 
-const Scroll2 = () => (
-    <Box>
-        <Container>
-            <Ellipse/>
+const Scroll2 = () => {
 
-            <Padding>
-                <div className="__title">we&apos;re very capable:</div>
-
-                <Keywords>
-                    <div data-aos="fade-up">
-                        <Integrate/>
-                        <div className="__word">Integrate</div>
-                        <div className="__sub">Multi-Cloud Accounts</div>
-                    </div>
-                    <div
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                    >
-                        <Improve/>
-                        <div className="__word">Improve</div>
-                        <div className="__sub">Operation Efficiency</div>
-                    </div>
-                    <div
-                        data-aos="fade-up"
-                        data-aos-delay="600"
-                    >
-                        <Manage/>
-                        <div className="__word">Manage</div>
-                        <div className="__sub">Cloud Spend</div>
-                    </div>
-                </Keywords>
-            </Padding>
-        </Container>
-    </Box>
-);
-
-/**
- * lotties
- */
-const Ellipse = () => {
     const optionsSpinPurple = {
         animationData: SpinPurple,
         loop: true,
@@ -68,49 +30,82 @@ const Ellipse = () => {
             preserveAspectRatio: 'xMidYMid slice',
         },
     };
-
     return (
-        <div className="__ellipse">
-            <Ellipse3/>
+        <Box>
+            <Container>
+                <div className="__ellipse">
+                    <div className="EllipseWrap">
+                        <Ellipse3/>
+                    </div>
 
-            <Lottie
-                options={optionsSpinPurple}
-                style={{
-                    position: 'absolute',
-                    left: '17rem',
-                    bottom: '9rem',
-                    width: '17.6rem',
-                    height: '17.6rem',
-                    transform: 'rotate(-30deg)',
-                    opacity: '0.5',
-                }}
-            />
-            <Lottie
-                options={optionsSpinWhite}
-                style={{
-                    left: '75rem',
-                    top: '25.4rem',
-                    position: 'absolute',
-                    width: '7.339rem',
-                    height: '7.339rem',
-                    transform: 'rotate(-30deg)',
-                    opacity: '0.7',
-                }}
-            />
-            <Lottie
-                options={optionsSpinPurple}
-                style={{
-                    right: '12rem',
-                    bottom: '23rem',
-                    position: 'absolute',
-                    width: '12.145rem',
-                    height: '12.145rem',
-                    opacity: '0.5',
-                    transform: 'rotate(30deg)',
-                }}
-            />
-        </div>
-    );
+                    <Lottie
+                        options={optionsSpinPurple}
+                        style={{
+                            position: 'absolute',
+                            left: '17rem',
+                            bottom: '9rem',
+                            width: '17.6rem',
+                            height: '17.6rem',
+                            transform: 'rotate(-30deg)',
+                            opacity: '0.5',
+                        }}
+                    />
+                    <Lottie
+                        options={optionsSpinWhite}
+                        style={{
+                            left: '75rem',
+                            top: '25.4rem',
+                            position: 'absolute',
+                            width: '7.339rem',
+                            height: '7.339rem',
+                            transform: 'rotate(-30deg)',
+                            opacity: '0.7',
+                        }}
+                    />
+                    <Lottie
+                        options={optionsSpinPurple}
+                        style={{
+                            right: '12rem',
+                            bottom: '23rem',
+                            position: 'absolute',
+                            width: '12.145rem',
+                            height: '12.145rem',
+                            opacity: '0.5',
+                            transform: 'rotate(30deg)',
+                        }}
+                    />
+                </div>
+
+                <Padding>
+                    <div className="__title">we&apos;re very capable:</div>
+
+                    <Keywords>
+                        <div data-aos="fade-up">
+                            <Integrate/>
+                            <div className="__word">Integrate</div>
+                            <div className="__sub">Multi-Cloud Accounts</div>
+                        </div>
+                        <div
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                        >
+                            <Improve/>
+                            <div className="__word">Improve</div>
+                            <div className="__sub">Operation Efficiency</div>
+                        </div>
+                        <div
+                            data-aos="fade-up"
+                            data-aos-delay="600"
+                        >
+                            <Manage/>
+                            <div className="__word">Manage</div>
+                            <div className="__sub">Cloud Spend</div>
+                        </div>
+                    </Keywords>
+                </Padding>
+            </Container>
+        </Box>
+    )
 };
 
 const Box = styled.div`
@@ -145,7 +140,7 @@ const Container = styled.div`
   @media ${device.tablet} {
     width: 76.8rem;
   }
-  
+
   @media ${device.mobile} {
     width: 100vw;
   }
@@ -162,12 +157,17 @@ const Container = styled.div`
     position: absolute;
     top: 18rem;
     left: 5rem;
+    width: 134.1rem;
+    height: 64rem;
 
     @media ${device.tablet} {
       left: -15rem;
     }
     @media ${device.mobile} {
+      top: 23rem;
       left: -25rem;
+      width: 80rem;
+      margin-top: 10rem;
     }
   }
 `;
