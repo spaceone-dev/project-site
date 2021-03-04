@@ -200,6 +200,7 @@ const Container = styled.div<{ isMenuOpen: boolean, loading: string }>`
   width: 100%;
   font-size: 3rem;
   overflow-x: hidden;
+
   .__logo {
     cursor: pointer;
     position: fixed;
@@ -212,7 +213,7 @@ const Container = styled.div<{ isMenuOpen: boolean, loading: string }>`
     :hover {
       opacity: 1;
     }
-    
+
     @media ${device.tablet} {
       left: 4rem;
     }
@@ -238,7 +239,7 @@ const Container = styled.div<{ isMenuOpen: boolean, loading: string }>`
       transition: 0.3s;
       color: #65cba0;
     }
-    
+
     @media ${device.tablet} {
       right: 4rem;
     }
@@ -280,11 +281,12 @@ const Tab = styled.div`
 
 const Box = styled.div`
   padding: 0 19rem 5rem;
-  
+
   @media ${device.tablet} {
     padding: 0 3rem 5rem;
   }
   @media ${device.mobile} {
+    overflow-x: scroll;
     padding: 0 1rem 5rem;
   }
 
@@ -313,14 +315,14 @@ const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
   bottom: 7rem;
   z-index: 3;
   animation: ${({isMenuOpen}) => (!isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
-  
+
   .__text {
     margin-top: 1rem;
     color: ${({theme}) => theme.color.primary[200]};
     font-family: "Roboto";
     font-size: 1.2rem;
   }
-  
+
   @media ${device.tablet} {
     left: 4rem;
   }
