@@ -17,7 +17,7 @@ import {
 import {
   SpaceONE, SOneMan, UpIcon, Scroll,
 } from '../public/assets';
-import { media } from '../styles/theme';
+import { device } from '../styles/theme';
 
 const Index = () => {
   const route = useRouter();
@@ -152,9 +152,6 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
     cursor: pointer;
     position: fixed;
     left: 10rem;
-    ${media[768]} {
-      left: 4rem;
-    }
     top: 8rem;
     z-index: 10;
     opacity: ${({ isMenuOpen }) => isMenuOpen && '0.6'};
@@ -162,6 +159,15 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
       0.5s;
     :hover{
       opacity: 1;
+    }
+    
+    @media ${device.tablet} {
+      left: 4rem;
+    }
+    
+    @media ${device.mobile} {
+      top: 2rem;
+      left: 3rem;
     }
   }
   .__menu {
@@ -171,14 +177,21 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
     z-index: 10;
     display: flex;
     align-items: center;
-    ${media[768]} {
-      right: 4rem;
-    }
     right: 10rem;
     top: 8rem;
     color: ${({ theme }) => theme.color.primary[200]};
     font-family: "Roboto";
     font-size: 1.8rem;
+    
+    @media ${device.tablet} {
+      right: 4rem;
+    }
+    
+    @media ${device.mobile} {
+      top: 2rem;
+      right: 3rem;
+    }
+    
     &:hover {
       transition: 0.3s;
       color: #65cba0;
@@ -202,8 +215,14 @@ const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
     font-family: "Roboto";
     font-size: 1.2rem;
   }
-  ${media[768]} {
+  
+  @media ${device.tablet} {
     left: 4rem;
+  }
+
+  @media ${device.mobile} {
+    left: 3rem;
+    bottom: 3rem;
   }
 `;
 
@@ -221,14 +240,20 @@ const UpBtn = styled.div<{ isMenuOpen: boolean }>`
   align-items: center;
   animation: ${({ isMenuOpen }) => (!isMenuOpen ? 'openMenu' : 'closeMenu')}
     0.5s;
+
+  @media ${device.tablet} {
+    right: 4rem;
+  }
+
+  @media ${device.mobile} {
+    right: 3rem;
+    bottom: 3rem;
+  }
   .__text {
     margin-top: 1rem;
     color: ${({ theme }) => theme.color.primary[200]};
     font-family: "Roboto";
     font-size: 1.2rem;
-  }
-  ${media[768]} {
-    right: 4rem;
   }
 `;
 
