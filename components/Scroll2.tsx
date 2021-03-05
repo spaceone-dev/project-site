@@ -88,6 +88,7 @@ const Scroll2 = () => {
                         <div
                             data-aos="fade-up"
                             data-aos-delay="300"
+                            className="__keyword2"
                         >
                             <Improve/>
                             <div className="__word">Improve</div>
@@ -115,7 +116,26 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 96rem;
+  //height: 96rem;
+
+
+  @media ${device.desktop} {
+    height: 96rem;
+  }
+  
+  ::after {
+    content: 'desktop';
+    color: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @media ${device.tablet} {
+      content: 'tablet'
+    }
+    @media ${device.mobile} {
+      content: 'mobile'
+    }
+  }
 `;
 
 const Padding = styled.div`
@@ -128,7 +148,7 @@ const Padding = styled.div`
   }
 
   @media ${device.mobile} {
-    padding: 20rem 3rem;
+    padding: 0 3rem 10rem;
   }
 `;
 
@@ -174,48 +194,62 @@ const Container = styled.div`
 
 const Keywords = styled.div`
   display: flex;
-  margin-top: 19rem;
+  margin-top: 15rem;
   font-weight: 400;
   color: ${({theme}) => theme.color.primary[100]};
 
-  @media ${device.mobile} {
-    flex-direction: column;
+  > div {
     margin-top: 5rem;
   }
 
-  > div:nth-child(2) {
-    margin: 0 6rem;
+  @media ${device.desktop} {
+    width: 114rem;
+    .__keyword2 {
+      margin-right: 6rem;
+      margin-left: 6rem;
+    }
 
-    @media ${device.mobile} {
-      margin: 4rem 0;
+    > div {
+      flex-shrink: 0;
+      margin-top: 5rem;
     }
   }
-
-  .__word {
-    margin-top: 1rem;
-    font-size: 4.6rem;
-    color: ${({theme}) => theme.color.primary[300]};
-
-    @media ${device.tablet} {
-      font-size: 3.2rem;
-    }
-    @media ${device.mobile} {
-      font-size: 3.2rem;
-    }
+  @media ${device.tablet} {
+    flex-direction: column;
+    margin-top: 5rem;
   }
+  @media ${device.mobile} {
+    flex-direction: column;
+    margin-top: 5rem;
+    margin: 4rem 0;
+  }
+}
 
-  .__sub {
+.__word {
+  margin-top: 1rem;
+  font-size: 4.6rem;
+  color: ${({theme}) => theme.color.primary[300]};
+
+  @media ${device.tablet} {
+    font-size: 3.2rem;
+  }
+  @media ${device.mobile} {
+    font-size: 3.2rem;
+  }
+}
+
+.__sub {
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  letter-spacing: -0.02em;
+
+  @media ${device.tablet} {
     font-size: 3rem;
-    margin-top: 1.5rem;
-    letter-spacing: -0.02em;
-
-    @media ${device.tablet} {
-      font-size: 3rem;
-    }
-    @media ${device.mobile} {
-      font-size: 2rem;
-    }
   }
+  @media ${device.mobile} {
+    font-size: 2rem;
+  }
+}
 `;
 
 export default Scroll2;

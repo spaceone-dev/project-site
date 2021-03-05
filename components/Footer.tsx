@@ -28,9 +28,9 @@ const Footer = () => (
       <div className="__card __address">
         <div className="__card__300">
           Seoul
-          <div className="__card__100">46, Nonhyeon-ro 85-gil Gangnam-gu, Seoul, Korea</div>
+          <div className="__card__100">46, Nonhyeon-ro 85-gil <br />Gangnam-gu, Seoul, Korea</div>
           <div className="__card__100">
-            +82 1644-2243{' '}
+            +82 1644-2243
           </div>
         </div>
       </div>
@@ -67,11 +67,15 @@ const Padding = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   position:relative;
-  width: 154rem;
+  width: 106rem;
   height: 100%;
   padding-top: 17.6rem;
   box-sizing: border-box;
-  
+
+  @media ${device.tablet} {
+    width: 83rem;
+    padding: 16rem 1rem 10rem;
+  }
   @media ${device.mobile} {
     padding: 16rem 3rem 10rem;
   }
