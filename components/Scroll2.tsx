@@ -122,20 +122,6 @@ const Box = styled.div`
   @media ${device.desktop} {
     height: 96rem;
   }
-  
-  ::after {
-    content: 'desktop';
-    color: red;
-    position: fixed;
-    top: 0;
-    left: 0;
-    @media ${device.tablet} {
-      content: 'tablet'
-    }
-    @media ${device.mobile} {
-      content: 'mobile'
-    }
-  }
 `;
 
 const Padding = styled.div`
