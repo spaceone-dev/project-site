@@ -34,7 +34,7 @@ export const media = {
 };
 
 export const device = {
-  mobile: 'only screen and (max-width: 767px)', // screen < 767
-  tablet: 'only screen and (min-width: 768px) and (max-width: 1919px)', // 768 <= screen < 1919
-  desktop: 'only screen and (min-width: 1920px)', // 1920 < screen
+  mobile: 'only screen and (max-width: 767px)',
+  tablet: 'only screen and (min-width: 768px) and (max-width: 1140px)',
+  desktop: 'only screen and (min-width: 1141px)',
 };

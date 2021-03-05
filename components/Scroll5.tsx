@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import {
     // svg
-    Universe,
+    UniverseV2,
     Upcoming,
     // json
     SpinPurple,
@@ -16,8 +16,7 @@ const Scroll5 = () => (
         <Container>
             <Container>
                 <UniverseGroup>
-                    <Lotties/>
-                    <Universe className="__universe"/>
+                    <UniverseV2 className="__universe"/>
                 </UniverseGroup>
                 <div data-aos="fade" data-aos-delay="500" className="__upcoming">
                     <Upcoming/>
@@ -124,7 +123,7 @@ const Lotties = () => {
 
 const Background = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: #001b33;
   opacity: 0.5;
   position: absolute;
@@ -133,53 +132,67 @@ const Background = styled.div`
 `;
 const Box = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 96rem;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  @media ${device.mobile} {
+    height: auto;
+  }
 `;
 
 const Container = styled.div`
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @media ${device.tablet} {
+    width: 100vw;
+    margin-left: 0;
+  }
+  @media ${device.mobile} {
+    width: 100vw;
+    margin-left: 0;
+    padding: 5rem 0;
+  }
 
   .__upcoming {
     margin-left: 5rem;
     width: 18.7rem;
-    height: 62.6rem;
+    flex-shrink: 0;
 
     @media ${device.tablet} {
-      flex-shrink: 0;
-      margin-left: 0;
+      
     }
     @media ${device.mobile} {
-      flex-shrink: 0;
-      width: 18rem;
-      margin-left: -3rem;
+      width: 20vw;
+      margin-left: 0;
     }
   }
-`;
+}`;
 
 const UniverseGroup = styled.div`
   position: relative;
-  flex-shrink: 1;
   text-align: center;
 
   .__universe {
-    width: 98.9rem;
-    height: 130.7rem;
+    flex-shrink: 1;
+    width: 143.4rem;
+    margin-left: -60rem;
 
     @media ${device.tablet} {
-      margin-left: 0;
+      width: 100vw;
+      margin-left: -35rem;
     }
     @media ${device.mobile} {
-      width: 50rem;
-      margin-left: -13rem;
+      width: 120vw;
+      margin-left: -50vw;
     }
   }
 `;
