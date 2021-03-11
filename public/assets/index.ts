@@ -23,6 +23,7 @@ export { default as Circle171 } from './Ellipse 171.svg';
 export { default as GithubLogoMenu } from './github.svg';
 export { default as GithubLogoMenuHover } from './github_hover.svg';
 export { default as Universe } from './ouruniverse.svg';
+export { default as UniverseV2 } from './ouruniverseV2.svg';
 export { default as Upcoming } from './upcoming.svg';
 export { default as SOneManFooter } from './soneman_footer.svg';
 export { default as UpIcon } from './upicon.svg';

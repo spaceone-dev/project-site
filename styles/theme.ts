@@ -24,11 +24,17 @@ export const theme: DefaultTheme = {
   },
 };
 
-const customMediaQuery = (maxWidth: number): string => `@media (max-width: ${maxWidth}px)`;
+const customMediaQuery = (minWidth: number): string => `@media (min-width: ${minWidth}px)`;
 
 export const media = {
   custom: customMediaQuery,
   1440: customMediaQuery(1440),
   768: customMediaQuery(768),
-  phone: customMediaQuery(576),
+  414: customMediaQuery(375),
+};
+
+export const device = {
+  mobile: 'only screen and (max-width: 767px)',
+  tablet: 'only screen and (min-width: 768px) and (max-width: 1140px)',
+  desktop: 'only screen and (min-width: 1141px)',
 };
