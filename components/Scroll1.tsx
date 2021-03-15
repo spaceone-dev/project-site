@@ -63,7 +63,7 @@ const Scroll1 = () => {
     return (
         <Box>
             <Content>
-                <h3>Manage All<br/>Cloud Resources<br/>in <span className="__gradient">One Platform</span></h3>
+                <h2>Manage All<br/>Cloud Resources<br/>in <span className="__gradient">One Platform</span></h2>
                 <div className="__sub">SpaceONE is an Open-Source Platform and Enables Integrated Management of Multi-Cloud.</div>
                 <a
                     className="__btn__git"
@@ -111,10 +111,14 @@ const Box = styled.section`
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 96rem;
+  min-height: 96rem;
+
+  @media ${device.tablet} {
+    min-height: 102.4rem;
+  }
 
   @media ${device.mobile} {
-    height: 81.2rem;
+    min-height: 81.2rem;
   }
 `;
 
@@ -129,10 +133,10 @@ const Content = styled.div`
   color: ${({theme}) => theme.color.primary[200]};
 
   @media ${device.desktop} {
-    max-width: 144rem;
+    max-width: 109rem;
   }
 
-  h3 {
+  h2 {
     padding-top: 23rem;
     font-size: 7rem;
     font-weight: 400;
@@ -370,21 +374,21 @@ const Figures = styled.figure`
     width: 31.9rem;
     height: 29.4rem;
     top: 0;
-    right: 19.3rem;
+    left:50%;
+    margin-left: 19rem;
     transform: rotate(-5.95deg);
 
     @media ${device.tablet} {
-      top: 3rem;
-      right: 0;
       width: 29.4rem;
       height: 26.7rem;
+      margin-left: 7rem;
     }
 
     @media ${device.mobile} {
       top: 5rem;
-      right: 0;
       width: 15.2rem;
       height: 13.8rem;
+      margin-left: 3rem;
     }
 
     .__spinWhite {

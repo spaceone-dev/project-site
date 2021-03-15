@@ -26,10 +26,13 @@ const Box = styled.section`
 
   @media ${device.tablet} {
     min-height: 102.4rem;
+    box-sizing: border-box;
   }
 
   @media ${device.mobile} {
     min-height: 81.2rem;
+    padding: 48vw 0;
+    box-sizing: border-box;
   }
 `;
 
@@ -41,7 +44,7 @@ const Content = styled.div`
   box-sizing: border-box;
 
   h3 {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     color: ${({theme}) => theme.color.pink};
     font-weight: 500;
     opacity: 0.8;
@@ -50,12 +53,7 @@ const Content = styled.div`
   }
 
   @media ${device.tablet} {
-    width: 76.8rem;
-    padding: 0 3rem;
-
-    .__swiperWrap {
-      width: 70.8rem;
-    }
+    padding: 0 5rem;
   }
 
   @media ${device.mobile} {
@@ -63,7 +61,7 @@ const Content = styled.div`
     padding: 0 3rem;
 
     h3 {
-      box-sizing: border-box;
+      font-size: 2rem;
     }
   }
 `;

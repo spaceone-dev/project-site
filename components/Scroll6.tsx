@@ -1,62 +1,46 @@
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
-import { ExternalLinkGreen, Spaceship } from '../public/assets';
-import { device } from '../styles/theme';
+import {ExternalLinkGreen, Spaceship} from '../public/assets';
+import {device} from '../styles/theme';
 
-const Scroll6 = () => {
-  const optionsSpaceship = {
+const optionsSpaceship = {
     animationData: Spaceship,
     loop: true,
     autoplay: true,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
+        preserveAspectRatio: 'xMidYMid slice',
     },
-  };
-
-  return (
-    <Box>
-      <Container>
-        <div className="__ghInfo">
-          <div className="__info"
-              data-aos="fade-up"
-          >
-            <span className="__ghInfo__num">76</span>
-            <span style={{ marginLeft: '1rem' }}>Enrolled Projects</span>
-          </div>
-          <div className="__info"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <span className="__ghInfo__num">28</span>
-            <span style={{ marginLeft: '1rem' }}>Contributors</span>
-            <div className="__ghInfo__link">
-              View Contribution Guide
-              <span style={{
-                marginLeft: '0.4rem',
-                marginTop: '0.2rem'
-              }}
-              >
-                <ExternalLinkGreen />
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="__content">
-          SpaceONE’s Mission is to Accelerate the Multi-Cloud Native Technology
-          for Sustainable Ecosystem.
-        </div>
-        <div data-aos="fade-up" data-aos-delay="300">
-          <LottieWrap>
-            <Lottie options={optionsSpaceship} />
-          </LottieWrap>
-          <div className="__gradient">Climb Aboard the <span style={{ fontWeight: 600 }}>SpaceONE</span>ship</div>
-        </div>
-      </Container>
-    </Box>
-  );
+};
+const Scroll6 = () => {
+    return (
+        <Box>
+            <Content>
+                <div className="__ghInfo">
+                    <div className="__info" data-aos="fade-up">
+                        <strong>76</strong>
+                        <span>Enrolled Projects</span>
+                    </div>
+                    <div className="__info" data-aos="fade-up" data-aos-delay="300">
+                        <strong>28</strong>
+                        <span>Contributors</span>
+                        <div className="__ghInfo__btn">View Contribution Guide<span><ExternalLinkGreen/></span></div>
+                    </div>
+                </div>
+                <div className="__mission">
+                    SpaceONE’s Mission is to Accelerate the Multi-Cloud Native Technology
+                    for Sustainable Ecosystem.
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div className="__spaceship"><Lottie options={optionsSpaceship}/></div>
+                    <div className="__gradient">Climb Aboard <span>the <em>SpaceONE</em>ship</span>
+                    </div>
+                </div>
+            </Content>
+        </Box>
+    );
 };
 
-const Box = styled.div`
+const Box = styled.section`
   width: 100%;
   height: 96rem;
   position: relative;
@@ -64,77 +48,83 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  @media ${device.mobile} {
+    height: 81.2rem;
+  }
 `;
 
-const Container = styled.div`
+const Content = styled.div`
   width: 70rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   letter-spacing: -0.02em;
-  
-  @media ${device.mobile}{
-    width:100%;
-  }
+
   .__ghInfo {
     padding-bottom: 5rem;
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: .1rem solid ${({theme}) => theme.color.primary[300]};
     font-size: 2.2rem;
     line-height: 2.6rem;
-    color: ${({ theme }) => theme.color.gray[300]};
-    border-bottom: .1rem solid ${({ theme }) => theme.color.primary[300]};
-    justify-content: space-between;
-    flex-wrap:wrap;
+    color: ${({theme}) => theme.color.gray[300]};
 
-    @media ${device.mobile} {
-      width:calc(100% - 5rem);
+
+    .__info {
+      width: 50%;
+
+      strong {
+        display: inline-block;
+        margin-right: 1rem;
+        font-family: Helvetica Neue;
+        font-size: 6rem;
+        line-height: 1.1;
+        font-weight: 400;
+        color: ${({theme}) => theme.color.primary[300]};
+      }
     }
-    &__num {
-      font-family: Helvetica Neue;
-      font-size: 6rem;
-      font-weight: 400;
-      line-height: 7.2rem;
-      color: ${({ theme }) => theme.color.primary[300]};
-    }
-    &__link {
+
+    &__btn {
       font-weight: 300;
       cursor: pointer;
       font-size: 1.7rem;
-      color: ${({ theme }) => theme.color.green};
+      color: ${({theme}) => theme.color.green};
       display: flex;
       align-items: center;
       letter-spacing: -0.01em;
+
+      span {
+        display: inline-block;
+        margin-left: 0.4rem;
+        margin-top: 0.2rem;
+      }
+
       &:hover {
         text-decoration: underline;
       }
     }
-    .__info {
-      width:50%;
-       
-      @media ${device.mobile} {
-        width: 100%;
-        margin-bottom: 2rem;
-        padding: 0 4.2rem;
-      }
-    }
   }
-  .__content {
+
+  .__mission {
     font-weight: 400;
     margin-top: 5rem;
-    color: ${({ theme }) => theme.color.primary[200]};
+    color: ${({theme}) => theme.color.primary[200]};
     font-size: 3.7rem;
     line-height: 130%;
     opacity: 0.8;
     letter-spacing: -0.01em;
     text-align: center;
-    
-    @media ${device.mobile} {
-      padding:0 2.7rem;
-      font-size:2.2rem;
-      line-height: 1.27;
-    }
   }
+
+  .__spaceship {
+    width: 14rem;
+    height: 14rem;
+    margin: 7.1rem auto 0;
+  }
+
   .__gradient {
     margin-top: -2rem;
     font-weight: 500;
@@ -143,23 +133,65 @@ const Container = styled.div`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-    @media ${device.mobile} {
+
+    em {
+      font-weight: 600;
+    }
+  }
+
+  @media ${device.mobile} {
+    width: 100%;
+    padding: 0 5rem;
+
+    .__ghInfo {
+      width: 100%;
+      padding-bottom: 3rem;
+      font-size: 1.7rem;
+
+      .__info {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        width: 100%;
+        padding: 0 3rem;
+        margin-bottom: 2rem;
+        box-sizing: border-box;
+
+        strong {
+          font-size: 4.4rem;
+        }
+      }
+
+      &__btn {
+        display: flex ;
+        width: 100%;
+        font-size: 1.4rem;
+      }
+    }
+
+    .__mission {
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    .__spaceship {
+      width: 10.3rem;
+      height: 10.3rem;
+      margin-top: 3rem;
+    }
+
+    .__gradient {
       width: 25.5rem;
+      margin-top: -.5rem;
       font-size: 2.4rem;
-      line-height :1.1;
+      line-height: 1.1;
       text-align: center;
+
+      span {
+        display: block;
+      }
     }
   }
 `;
 
-const LottieWrap = styled.div`
-  width: 14rem;
-  height: 14rem;
-  margin: 7.1rem auto 0;
-  
-  @media ${device.mobile} {
-    margin-top: 2rem;
-  }
-`
 export default Scroll6;

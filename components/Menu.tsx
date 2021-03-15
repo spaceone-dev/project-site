@@ -138,48 +138,31 @@ const RightList = ({text}) => {
 };
 
 const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
   width: 100%;
   height: 100vh;
   background: #001b33;
-  z-index: 5;
-  top: 0;
-  position: fixed;
-  display: flex;
-  justify-content: center;
   animation: ${({isMenuOpen}) => (isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
 `;
 
 const Container = styled.div`
-  padding: 26rem 0 0;
   display: flex;
   justify-content: space-between;
-  width: 144rem;
+  width: 100vw;
+  max-width: 106rem;
   height: auto;
-  font-size: 4.6rem;
+  padding: 19.6rem 10rem 0;
   font-weight: 400;
   color: ${({theme: t}) => t.color.primary[200]};
-  
-  @media ${device.tablet} {
-    width: 100vw;
-    padding: 23vh 5rem 10vh;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-  @media ${device.mobile} {
-    width: 100vw;
-    padding: 23vh 5rem 15vh;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
 
   .__big {
     cursor: pointer;
     font-size: 4rem;
     letter-spacing: -0.01em;
-    
-    @media ${device.mobile} {
-      font-size: 3rem;
-    }
 
     &__text {
       display: flex;
@@ -188,10 +171,6 @@ const Container = styled.div`
       height: 4.1rem;
       cursor: pointer;
       display: flex;
-      
-      @media ${device.mobile} {
-        margin-bottom: 2rem;
-      }
 
       &:hover {
         color: ${({theme: t}) => t.color.green};
@@ -202,13 +181,6 @@ const Container = styled.div`
   .__small {
     margin-right: 10rem;
     font-size: 3rem;
-    
-    @media ${device.tablet} {
-      margin-right: 0;
-    }
-    @media ${device.mobile} {
-      margin-right: 0;
-    }
 
     &__text {
       height: 3.6rem;
@@ -219,6 +191,51 @@ const Container = styled.div`
       &:hover {
         color: ${({theme: t}) => t.color.green};
       }
+    }
+  }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    padding: 23rem 5.7rem 0;
+    font-size: 4rem;
+    box-sizing: border-box;
+
+    .__big {
+      margin-bottom: 17rem;
+
+      &__text {
+        margin-bottom: 1.9rem;
+      }
+    }
+
+    .__small {
+      margin-right: 0;
+    }
+  }
+
+  @media ${device.mobile} {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    padding: 10.3rem 3rem 0;
+    box-sizing: border-box;
+    
+    .__big {
+      font-size: 3rem;
+      margin-bottom: 8rem;
+
+      &__text {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .__small {
+      margin-right: 0;
+      font-size: 2.4rem;
     }
   }
 `;

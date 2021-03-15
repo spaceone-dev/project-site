@@ -47,15 +47,15 @@ const Scroll2 = () => {
                     <div className="__keyword __keyword3" data-aos="fade-up" data-aos-delay="600">
                         <figure><Manage/></figure>
                         <em className="__word">Manage</em>
-                        <div className="__sub">Cloud Spend</div>
+                        <div className="__sub">Cloud Expense</div>
                     </div>
                 </div>
             </Content>
             <Figures>
                 <figure className="__ellipse3"><Ellipse3/></figure>
-                <figure className="__spinPurple1"><Lottie options={optionsSpinPurple}/></figure>
-                <figure className="__spinWhite"><Lottie options={optionsSpinWhite}/></figure>
-                <figure className="__spinPurple2"><Lottie options={optionsSpinPurple}/></figure>
+                <figure className="__spinpurple1"><Lottie options={optionsSpinPurple}/></figure>
+                <figure className="__spinwhite"><Lottie options={optionsSpinWhite}/></figure>
+                <figure className="__spinpurple2"><Lottie options={optionsSpinPurple}/></figure>
             </Figures>
         </Box>
     )
@@ -68,31 +68,22 @@ const Box = styled.section`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 96rem;
+  min-height: 96rem;
 
   @media ${device.tablet} {
-    height: 102.4rem;
+    min-height: 102.4rem;
   }
 
   @media ${device.mobile} {
-    height: 81.2rem;
+    min-height: 81.2rem;
     padding-top: 0;
   }
 `;
 
 const Content = styled.div`
-  max-width: 144rem;
-  box-sizing: border-box;
-
-  @media ${device.tablet} {
-    width: 100vw;
-    padding-left: 5rem;
-  }
-
-  @media ${device.mobile} {
-    width: 100vw;
-    padding-left: 3rem;
-  }
+  width: 100%;
+  max-width: 109rem;
+  padding: 0 9.8%;
 
   h3 {
     margin-bottom: 18.3rem;
@@ -101,94 +92,108 @@ const Content = styled.div`
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;
-
-    @media ${device.tablet} {
-      margin-bottom: 9rem;
-    }
-
-    @media ${device.mobile} {
-      margin-bottom: 5rem;
-    }
   }
 
   .__keywords {
     display: flex;
     font-weight: 400;
     color: ${({theme}) => theme.color.primary[100]};
+  }
 
-    @media ${device.desktop} {
+  .__keyword {
+    width: 34rem;
+
+    figure {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .__word {
+      display: inline-block;
+      margin-top: .4rem;
+      margin-bottom: .8rem;
+      font-size: 4.6rem;
+      color: ${({theme}) => theme.color.primary[300]};
+    }
+
+    .__sub {
+      font-size: 3rem;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  @media ${device.desktop} {
+    .__keywords {
       margin-bottom: 15rem;
     }
 
-    .__keyword {
-      width: 34rem;
+    .__keyword2 {
+      margin-right: 2vw;
+      margin-left: 2vw;
+    }
+  }
 
-      @media ${device.tablet} {
-        margin-bottom: 4rem;
+  @media ${device.tablet} {
+    width: 100vw;
+    padding-left: 5rem;
+
+    h3 {
+      margin-bottom: 9rem;
+    }
+
+    .__keywords {
+      flex-direction: column;
+      margin-top: 5rem;
+    }
+
+    .__keyword {
+      margin-bottom: 4rem;
+
+      .__word {
+        font-size: 4.6rem;
+        line-height: 1.17;
       }
 
-      @media ${device.mobile} {
+      .__sub {
+        font-size: 3rem;
+        line-height: 1.17;
+      }
+    }
+  }
+
+  @media ${device.mobile} {
+    width: 100vw;
+    padding-left: 3rem;
+
+    h3 {
+      margin-bottom: 5rem;
+      font-size: 2rem;
+
+    }
+
+    .__keywords {
+      flex-direction: column;
+
+      .__keyword {
+
         margin-bottom: 4rem;
         width: auto;
       }
 
       figure {
-        width: 5rem;
-        height: 5rem;
-
-        @media ${device.mobile} {
-          width: 3.4rem;
-          height: 3.4rem;
-        }
+        width: 3.4rem;
+        height: 3.4rem;
       }
 
       .__word {
-        display: inline-block;
-        margin-top: .4rem;
-        margin-bottom: .8rem;
-        font-size: 4.6rem;
-        color: ${({theme}) => theme.color.primary[300]};
-
-        @media ${device.tablet} {
-          font-size: 4.6rem;
-          line-height: 1.17;
-        }
-
-        @media ${device.mobile} {
-          font-size: 3.2rem;
-          line-height: 1.1;
-        }
+        font-size: 3.2rem;
+        line-height: 1.1;
       }
 
       .__sub {
-        font-size: 3rem;
-        letter-spacing: -0.02em;
 
-        @media ${device.tablet} {
-          font-size: 3rem;
-          line-height: 1.17;
-        }
-
-        @media ${device.mobile} {
-          font-size: 2rem;
-        }
+        font-size: 2rem;
       }
-    }
-
-    @media ${device.desktop} {
-      .__keyword2 {
-        margin-right: 2vw;
-        margin-left: 2vw;
-      }
-    }
-
-    @media ${device.tablet} {
-      flex-direction: column;
-      margin-top: 5rem;
-    }
-
-    @media ${device.mobile} {
-      flex-direction: column;
     }
   }
 `;
@@ -201,18 +206,14 @@ const Figures = styled.figure`
   max-width: 134rem;
   transform: translate(-50%, -50%);
 
-  @media ${device.tablet} {
-    overflow: hidden;
-    width: 120vw;
+
+  .__ellipse3 {
+    width: 100%;
+    max-width: 129rem;
+    margin: 1rem auto 0;
   }
 
-  @media ${device.mobile} {
-    overflow: hidden;
-    width: 80rem;
-    max-width: 120vw;
-  }
-
-  .__spinPurple1 {
+  .__spinpurple1 {
     position: absolute;
     left: 17rem;
     bottom: 9rem;
@@ -220,15 +221,9 @@ const Figures = styled.figure`
     height: 17.6rem;
     transform: rotate(-30deg);
     opacity: 0.5;
-
-    @media ${device.mobile} {
-      width: 15.06vw;
-      height: 15.06vw;
-      left: 5rem;
-    }
   }
 
-  .__spinWhite {
+  .__spinwhite {
     left: 75rem;
     top: 25.4rem;
     position: absolute;
@@ -239,16 +234,49 @@ const Figures = styled.figure`
 
   }
 
-  .__spinPurple2 {
+  .__spinpurple2 {
     right: 12rem;
-    bottom: 23rem;
+    bottom: 25rem;
     position: absolute;
     width: 12.145rem;
     height: 12.145rem;
     opacity: 0.5;
     transform: rotate(30deg);
+  }
 
-    @media ${device.mobile} {
+  @media ${device.tablet} {
+    overflow: hidden;
+    max-width: 120vw;
+
+    .__spinpurple1 {
+      bottom: 3rem;
+      left: 3rem;
+    }
+
+    .__spinwhite {
+      left: 40.6rem;
+      top: 17.1rem;
+    }
+
+    .__spinpurple2 {
+      right: 9rem;
+      bottom: 10rem;
+    }
+  }
+
+  @media ${device.mobile} {
+    overflow: hidden;
+    width: 80rem;
+    max-width: 120vw;
+
+    .__spinpurple1 {
+      width: 11.3rem;
+      height: 11.3rem;
+      bottom: 2rem;
+      left: 0;
+    }
+
+    .__spinwhite, .__spinpurple2 {
       display: none;
     }
   }
