@@ -3,6 +3,7 @@
 !config/default.json
 !config/development.json.sample
 config/*.json
+nginx/development.conf
 
 
 # Next

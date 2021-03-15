@@ -3,259 +3,227 @@ import Lottie from 'react-lottie';
 import {Cloud, Plugin, OpenAPI} from '../public/assets';
 import {device} from '../styles/theme';
 
-const Scroll4 = () => {
-    const optionsCloudNative = {
-        animationData: Cloud,
-        loop: true,
-        autoplay: true,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
-    const optionsPlugin = {
-        animationData: Plugin,
-        loop: true,
-        autoplay: true,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
-    const optionsOpenAPI = {
-        animationData: OpenAPI,
-        loop: true,
-        autoplay: true,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
+const optionsCloudNative = {
+    animationData: Cloud,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice',
+    },
+};
+const optionsPlugin = {
+    animationData: Plugin,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice',
+    },
+};
+const optionsOpenAPI = {
+    animationData: OpenAPI,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice',
+    },
+};
 
+const Scroll4 = () => {
     return (
         <Box>
-            <Container>
-                <Padding>
-                    <div className="__title">our strength:</div>
-                    <Cards>
-                        <Card data-aos="fade-up">
-                            <div className="__content">
-                                <Lottie
-                                    options={optionsCloudNative}
-                                    style={{
-                                        position: 'absolute',
-                                        width: '14rem',
-                                        height: '14rem',
-                                        top: '5rem',
-                                        left: '9.5rem',
-                                    }}
-                                />
-                                <div className="__content__keyword">Cloud Native</div>
-                                <div className="__content__explain">
-                                    We are architecting Cloud Native-Based Technology;
-                                    <i style={{fontStyle: 'italic'}}> K8S, Helm, Prometheus, gRPC, Istio.</i>
-                                </div>
-                            </div>
-                            <CardBg/>
-                        </Card>
-                        <Card data-aos="fade-up" data-aos-delay="300">
-                            <div className="__content">
-                                <Lottie
-                                    options={optionsPlugin}
-                                    style={{
-                                        position: 'absolute',
-                                        width: '14.4rem',
-                                        height: '14.4rem',
-                                        top: '4.8rem',
-                                        left: '8.7rem',
-                                    }}
-                                />
-                                <div className="__content__keyword">Plugin Architecture</div>
-                                <div className="__content__explain">
-                                    You can build your own plugin and share with others. You also
-                                    can find various plugins including multi-cloud service, power
-                                    managements, even scheduling over resources.
-                                </div>
-                            </div>
-                            <CardBg/>
-                        </Card>
-                        <Card data-aos="fade-up" data-aos-delay="600">
-                            <div className="__content">
-                                <Lottie
-                                    options={optionsOpenAPI}
-                                    style={{
-                                        position: 'absolute',
-                                        width: '20rem',
-                                        height: '20rem',
-                                        top: '2rem',
-                                        left: '6.5rem',
-                                    }}
-                                />
-                                <div className="__content__keyword">Open API</div>
-                                <div className="__content__explain">
-                                    We offer you new perspectives on development environments;
-                                    Expand and customize with open APIs if your need arise.
-                                </div>
-                            </div>
-                            <CardBg/>
-                        </Card>
-                    </Cards>
-                </Padding>
-            </Container>
+            <Content>
+                <h3>our strength:</h3>
+                <ul className="__strength__list">
+                    <li data-aos="fade-up">
+                        <figure className="__ico__cloud">
+                            <Lottie options={optionsCloudNative}/>
+                        </figure>
+                        <div className="__keyword">Cloud Native</div>
+                        <div className="__describe">
+                            We are architecting Cloud Native-Based Technology;
+                            <i style={{fontStyle: 'italic'}}> K8S, Helm, Prometheus, gRPC, Istio.</i>
+                        </div>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <figure className="__ico__plugin">
+                            <Lottie options={optionsPlugin}/>
+                        </figure>
+                        <div className="__keyword">Plugin Architecture</div>
+                        <div className="__describe">
+                            You can build your own plugin and share with others. You also
+                            can find various plugins including multi-cloud service, power
+                            managements, even scheduling over resources.
+                        </div>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="600">
+                        <figure className="__ico__openapi">
+                            <Lottie options={optionsOpenAPI}/>
+                        </figure>
+                        <div className="__keyword">Open API</div>
+                        <div className="__describe">
+                            We offer you new perspectives on development environments;
+                            Expand and customize with open APIs if your need arise.
+                        </div>
+                    </li>
+                </ul>
+            </Content>
         </Box>
     );
 };
 
-const Box = styled.div`
-  width: 100%;
-  display: flex;
+const Box = styled.section`
+  overflow: hidden;
   position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  
+  width: 100%;
+  min-height: 96rem;
+
   @media ${device.tablet} {
-    width: 76.8rem;
-    margin: 0 auto ;
+    height: 102.4rem;
   }
+
   @media ${device.mobile} {
-    height: auto;
+    padding: 9.8rem 0 9rem;
   }
 `;
 
-const Padding = styled.div`
-  padding: 20rem 19rem;
-  display: flex;
-  flex-direction: column;
+const Content = styled.div`
+  width: 100vw;
+  max-width: 106rem;
 
-  @media ${device.tablet} {
-    padding: 20rem 0;
-  }
-
-  @media ${device.mobile} {
-    padding: 20rem 0;
-  }
-`;
-
-const Container = styled.div`
-  width: 144rem;
-  height: 96rem;
-  display: flex;
-
-  @media ${device.tablet} {
-    width: 100%;
-    height: auto;
-  }
-  @media ${device.mobile} {
-    width: 100vw;
-    height: auto;
-  }
-
-  .__title {
+  h3 {
+    margin-bottom: 4.4rem;
+    opacity: 0.8;
     color: ${({theme}) => theme.color.pink};
     font-weight: 500;
-    opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;
+  }
 
-    @media ${device.tablet} {
-      padding: 0 3rem;
-      margin-bottom: 2rem;
-      font-size: 2.4rem;
-    }
-    @media ${device.mobile} {
-      margin-left: 3rem;
+  .__strength__list {
+    display: flex;
+    justify-content: space-between;
+    width: 106rem;
+
+    li {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      width: 33rem;
+      padding: 5rem 2.5rem 3.6rem;
+      box-sizing: border-box;
+
+      ::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: #001b33;
+        opacity: 0.3;
+        box-shadow: 0px 4px 15px rgba(0, 92, 179, 0.3);
+        border-radius: 2rem;
+      }
+
+      figure {
+        width: 14rem;
+        height: 14rem;
+        margin: 0 auto;
+      }
+
+      .__keyword {
+        margin-top: 2.5rem;
+        margin-bottom: 1.2rem;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 3.5rem;
+        letter-spacing: -0.01em;
+        color: ${({theme}) => theme.color.primary[300]};
+      }
+
+      .__describe {
+        padding-right: 2.3rem;
+        font-family: Helvetica Neue;
+        font-weight: 300;
+        font-size: 1.9rem;
+        line-height: 130%;
+        opacity: 0.8;
+        color: ${({theme}) => theme.color.primary[200]};
+      }
     }
   }
-`;
-
-const Cards = styled.div`
-  display: flex;
-  width: 106rem;
-  justify-content: space-between;
-  margin-top: 4.4rem;
 
   @media ${device.tablet} {
+    width: 100%;
+    height: auto;
+    padding: 0 5rem;
+
+    h3 {
+      margin-bottom: 3.8rem;
+      font-size: 2.2rem;
+    }
+
+    .__strength__list {
+      width: 100%;
+      flex-wrap: wrap;
+      margin-top: 0;
+      box-sizing: border-box;
+
+      li {
+        width: 47.7%;
+        padding: 0 2rem 3.3rem;
+        margin-bottom: 2rem;
+      }
+
+      figure {
+        width: 11.4rem;
+        height: 11.4rem;
+      }
+
+      .__keyword {
+        margin-top: 2rem;
+        margin-bottom: .8rem;
+      }
+    }
+  }
+
+  @media ${device.mobile} {
     width: 100%;
     padding: 0 3rem;
-    flex-wrap: wrap;
-    margin-top: 0;
-    box-sizing: border-box;
-  }
-  @media ${device.mobile} {
-    width: 100%;
-    flex-direction: column;
-    margin-top: 0;
-  }
-`;
-
-const Card = styled.div`
-  position: relative;
-  width: 33rem;
-  height: 45rem;
-  margin: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  
-  @media ${device.tablet} {
-    width: 31rem;
-  }
-  @media ${device.mobile} {
-    width: 100%;
-    height: auto;
-  }
-
-  .__content {
-    z-index: 1;
-    padding: 0 2.5rem;
-
-    @media ${device.mobile} {
-      padding: 0 4.2rem;
+    
+    h3 {
+      font-size: 2rem;
     }
+    
+    .__strength__list {
+      width: 100%;
+      flex-direction: column;
+      margin-top: 0;
 
-    &__keyword {
-      margin-top: 21.6rem;
-      font-weight: 400;
-      font-size: 3rem;
-      line-height: 3.5rem;
-      letter-spacing: -0.01em;
-      color: ${({theme}) => theme.color.primary[300]};
+      li {
+        width: 100%;
+        min-height: auto;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        margin-bottom: 3rem;
 
-      @media ${device.tablet} {
-        font-size: 2.8rem;
-      }
-    }
-
-    &__explain {
-      padding-right: 2.3rem;
-      font-family: Helvetica Neue;
-      margin-top: 1.3rem;
-      font-weight: 300;
-      font-size: 1.9rem;
-      line-height: 130%;
-      opacity: 0.8;
-      color: ${({theme}) => theme.color.primary[200]};
-
-      @media ${device.mobile} {
-        padding-right: 0;
-        font-size: 1.4rem;
-        line-height: 1.3;
+        .__keyword {
+          margin-top: 1rem;
+          margin-bottom: .4rem;
+          font-size: 2.2rem;
+        }
+        .__describe {
+         font-size: 1.4rem;
+          line-height: 1.29;
+        }
       }
     }
   }
 `;
-
-const CardBg = styled.div`
-  position: absolute;
-  width: 33rem;
-  height: 45rem;
-  background: #001b33;
-  opacity: 0.3;
-  box-shadow: 0px 4px 15px rgba(0, 92, 179, 0.3);
-  border-radius: 20px;
-
-  @media ${device.mobile} {
-    width: 100%;
-    height: auto;
-    box-shadow: none;
-  }
-`;
-
 export default Scroll4;

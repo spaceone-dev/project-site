@@ -98,21 +98,21 @@ const Index = () => {
                     />
                 )}
                 <Background/>
-                <div
-                    className="__logo"
-                    role="link"
-                    tabIndex={0}
-                    onClick={() => route.reload()}
-                    onKeyPress={() => route.reload()}
-                >
-                    <SpaceONE/>
-                </div>
-                <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen} onKeyPress={handleMenuOpen}>
-                    <SOneMan/>
-                    <span style={{marginLeft: '0.4rem', marginTop: '0.2rem'}}>
-            {isMenuOpen ? 'Close' : 'Menu'}
-          </span>
-                </div>
+                <header>
+                    <div
+                        className="__logo"
+                        role="link"
+                        tabIndex={0}
+                        onClick={() => route.reload()}
+                        onKeyPress={() => route.reload()}
+                    ><SpaceONE/>
+                    </div>
+                    <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen}
+                         onKeyPress={handleMenuOpen}>
+                        <SOneMan/><span
+                        style={{marginLeft: '0.4rem', marginTop: '0.2rem'}}>{isMenuOpen ? 'Close' : 'Menu'}</span>
+                    </div>
+                </header>
                 {isScrollable && (
                     <ScrollBtn isMenuOpen={isMenuOpen}>
                         <Lottie
@@ -149,56 +149,64 @@ const Index = () => {
 const Container = styled.div<{ isMenuOpen: boolean }>`
   font-size: 3rem;
 
+  header {
+    position: fixed;
+    top: 7rem;
+    left: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    max-width: 144rem;
+    padding: 1rem 10rem;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+  }
+
   .__logo {
     cursor: pointer;
-    position: fixed;
-    left: 10rem;
-    top: 8rem;
     z-index: 10;
+    width: 18.24rem;
     opacity: ${({isMenuOpen}) => isMenuOpen && '0.6'};
     animation: ${({isMenuOpen}) => (isMenuOpen ? 'openMenuLogo' : 'closeMenuLogo')} 0.5s;
 
     :hover {
       opacity: 1;
     }
-
-    @media ${device.tablet} {
-      left: 4rem;
-    }
-
-    @media ${device.mobile} {
-      top: 2rem;
-      left: 3rem;
-    }
   }
 
   .__menu {
-    cursor: pointer;
-    font-weight: 300;
-    position: fixed;
-    z-index: 10;
     display: flex;
     align-items: center;
-    right: 10rem;
-    top: 8rem;
+    cursor: pointer;
+    font-weight: 300;
     color: ${({theme}) => theme.color.primary[200]};
     font-family: "Roboto";
     font-size: 1.8rem;
-
-    @media ${device.tablet} {
-      right: 4rem;
-    }
-
-    @media ${device.mobile} {
-      top: 2rem;
-      right: 3rem;
-    }
 
     &:hover {
       transition: 0.3s;
       color: #65cba0;
     }
   }
+
+
+  @media ${device.tablet} {
+    header {
+      padding: 1rem 5.7rem;
+    }
+  }
+
+  @media ${device.mobile} {
+    header {
+      top:0;
+      padding: 1rem 3rem;
+    }
+
+    .__logo {
+      width: 13.3rem;
+    }
 `;
 
 const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`

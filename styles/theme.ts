@@ -35,6 +35,6 @@ export const media = {
 
 export const device = {
   mobile: 'only screen and (max-width: 767px)',
-  tablet: 'only screen and (min-width: 768px) and (max-width: 1140px)',
-  desktop: 'only screen and (min-width: 1141px)',
+  tablet: 'only screen and (min-width: 768px) and (max-width: 1023px)',
+  desktop: 'only screen and (min-width: 1024px)',
 };

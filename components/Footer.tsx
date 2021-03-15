@@ -1,46 +1,32 @@
 import styled from 'styled-components';
-import { SOneManFooter } from '../public/assets';
-import { device } from '../styles/theme';
+import {SOneManFooter} from '../public/assets';
+import {device} from '../styles/theme';
 
 const Footer = () => (
-  <Container>
-    <Padding>
-      <div className="__card __copyright">
-        <SOneManFooterWrap>
-          <SOneManFooter />
-        </SOneManFooterWrap>
-        <div className="__card__300">
-          SpaceONE <div /> Copyright 2021
-          <div
-            className="__card__100"
-            style={{ marginTop: '1.8rem', fontSize: '1.4rem' }}
-          >
-            Sponsored by<span className="__card__300"> MEGAZONE Cloud</span>
-          </div>
-        </div>
-      </div>
-      <div className="__card __contact">
-        <div className="__card__300">
-          Contact
-          <div className="__card__100">support@spaceone.dev</div>
-        </div>
-      </div>
-      <div className="__card __address">
-        <div className="__card__300">
-          Seoul
-          <div className="__card__100">46, Nonhyeon-ro 85-gil <br />Gangnam-gu, Seoul, Korea</div>
-          <div className="__card__100">
-            +82 1644-2243
-          </div>
-        </div>
-      </div>
-    </Padding>
-  </Container>
+    <Box>
+        <Content>
+            <figure className="__footer__logo"><SOneManFooter/></figure>
+            <div className="__item __copyright">
+                <h4>SpaceONE<br/>Copyright 2021</h4>
+                <div className="__item__conts __sponsored"><span>Sponsored by </span>MEGAZONE Cloud</div>
+            </div>
+            <div className="__item __contact">
+                <h4>Contact</h4>
+                <a href="mailto:webmaster@example.com" className="__item__conts">support@spaceone.dev</a>
+            </div>
+            <div className="__item __address">
+                <h4>Seoul</h4>
+                <span className="__item__conts">46, Nonhyeon-ro 85-gil <br/>Gangnam-gu, Seoul, Korea</span>
+                <br/>
+                <a href="tel:+82 1644-2243" className="__item__conts">+82 1644-2243</a>
+            </div>
+        </Content>
+    </Box>
 );
 
-const Container = styled.div`
+const Box = styled.footer`
   overflow: hidden;
-  position:relative;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,100 +34,112 @@ const Container = styled.div`
   height: 43rem;
   background: #000f1c;
   font-family: Helvetica Neue;
-  color: ${({ theme }) => theme.color.primary[100]};
-  
+  color: ${({theme}) => theme.color.primary[100]};
+
+  @media ${device.tablet} {
+    height: 54rem;
+  }
   @media ${device.mobile} {
-    height:auto; 
+    height: auto;
   }
 `;
 
-const SOneManFooterWrap = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-100%);
-`
-
-const Padding = styled.div`
+const Content = styled.div`
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  position:relative;
-  width: 106rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 106rem;
   height: 100%;
   padding-top: 17.6rem;
   box-sizing: border-box;
 
+  .__footer__logo {
+    display: inline-block;
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 6.2rem;
+    height: 6.2rem;
+  }
+
+  .__item {
+    h4 {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
+    &__conts {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      font-weight: 300;
+    }
+
+    a {
+      color: ${({theme}) => theme.color.primary[100]};
+      text-decoration: none;
+    }
+
+    .__sponsored span {
+      font-size: 1.4rem;
+    }
+  }
+
   @media ${device.tablet} {
     width: 83rem;
     padding: 16rem 1rem 10rem;
+
+    .__copyright {
+      flex-basis: 100%;
+      margin-bottom: 10rem;
+      margin-top: 1.4rem;
+    }
   }
+
   @media ${device.mobile} {
     padding: 16rem 3rem 10rem;
-  }
-  .__card {
-    position: relative;
-    color: #ffffff;
-    line-height: 7rem;
-    box-sizing: border-box;
-    flex: 1; 
     
-    @media ${device.mobile} {
-      flex: 0 1 50%;
+    .__footer__logo {
+      width: 5rem;
+      height: 5rem;
+      left: 3rem;
     }
-    
-    &__big {
-      font-size: 7.2rem;
-      @media ${device.tablet} {
-        font-size: 6.8rem;
-      }
-    }
-    &__100 {
-      font-size: 2rem;
-      font-weight: 100;
-      line-height: 2.5rem;
-      margin-top: 1rem;
-      font-size: 1.8rem;
-      
-      @media ${device.mobile} {
-        font-size: 1.3rem;
-        line-height: 1.15;
-      }
-    }
-    &__300 {
-      font-size: 2rem;
-      font-weight: 300;
-      line-height: 2.4rem;
-      
-      @media ${device.mobile} {
+
+    .__item {
+      flex-basis: 50%;
+      flex-shrink: 0;
+
+      h4 {
         font-size: 1.6rem;
-        line-height: 1.2;
+        line-height: 1.4;
       }
-    }
-    &__tel {
-      @media ${device.mobile} {
+
+      &__conts {
+        margin-top: 1rem;
         font-size: 1.3rem;
-        line-height: 1.85;
+        letter-spacing: .01rem;
       }
-      
-    }
-    &__logo {
-      position: relative;
-      color: #ffffff;
-      line-height: 7rem;
-      @media ${device.tablet} {
-        width: 25rem;
+
+      .__sponsored {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+        span {
+          display: block;
+          font-size: 1.2rem;
+          font-weight: 300;
+        }
       }
     }
-  }
-  .__copyright {
-    @media ${device.mobile} {
-      flex: 1 0 100%;
-      margin-bottom:6.2rem;
+
+    .__copyright {
+      flex-basis: 100%;
+      margin-bottom: 6rem;
     }
-  }
-  .__megazone {
-    margin-bottom: -1rem;
   }
 `;
 
