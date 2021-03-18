@@ -40,7 +40,7 @@ class MyDocument extends Document {
           <link
             rel="shortcut icon"
             type="image/x-icon"
-            href="/assets/favicon.ico"
+            href="/assets/favicon_v2.ico"
           />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

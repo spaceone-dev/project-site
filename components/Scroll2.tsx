@@ -34,17 +34,17 @@ const Scroll2 = () => {
             <Content>
                 <h3>we&apos;re very capable:</h3>
                 <div className="__keywords">
-                    <div className="__keyword __keyword1" data-aos="fade-up">
+                    <div className="__keyword __keyword1" data-aos="fade-up" data-aos-once="true">
                         <figure><Integrate/></figure>
                         <em className="__word">Integrate</em>
                         <div className="__sub">Multi-Cloud Accounts</div>
                     </div>
-                    <div className="__keyword __keyword2" data-aos="fade-up" data-aos-delay="300">
+                    <div className="__keyword __keyword2" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
                         <figure><Improve/></figure>
                         <em className="__word">Improve</em>
                         <div className="__sub">Operation Efficiency</div>
                     </div>
-                    <div className="__keyword __keyword3" data-aos="fade-up" data-aos-delay="600">
+                    <div className="__keyword __keyword3" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
                         <figure><Manage/></figure>
                         <em className="__word">Manage</em>
                         <div className="__sub">Cloud Expense</div>
@@ -81,6 +81,8 @@ const Box = styled.section`
 `;
 
 const Content = styled.div`
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-width: 109rem;
   padding: 0 9.8%;

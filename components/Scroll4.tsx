@@ -34,7 +34,7 @@ const Scroll4 = () => {
             <Content>
                 <h3>our strength:</h3>
                 <ul className="__strength__list">
-                    <li data-aos="fade-up">
+                    <li data-aos="fade-up" data-aos-once="true">
                         <figure className="__ico__cloud">
                             <Lottie options={optionsCloudNative}/>
                         </figure>
@@ -44,7 +44,7 @@ const Scroll4 = () => {
                             <i style={{fontStyle: 'italic'}}> K8S, Helm, Prometheus, gRPC, Istio.</i>
                         </div>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="300">
+                    <li data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
                         <figure className="__ico__plugin">
                             <Lottie options={optionsPlugin}/>
                         </figure>
@@ -55,7 +55,7 @@ const Scroll4 = () => {
                             managements, even scheduling over resources.
                         </div>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="600">
+                    <li data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
                         <figure className="__ico__openapi">
                             <Lottie options={optionsOpenAPI}/>
                         </figure>
@@ -179,16 +179,16 @@ const Content = styled.div`
         width: 47.7%;
         padding: 0 2rem 3.3rem;
         margin-bottom: 2rem;
-      }
 
-      figure {
-        width: 11.4rem;
-        height: 11.4rem;
-      }
+        figure {
+          width: 11.4rem;
+          height: 11.4rem;
+        }
 
-      .__keyword {
-        margin-top: 2rem;
-        margin-bottom: .8rem;
+        .__keyword {
+          margin-top: 2rem;
+          margin-bottom: .8rem;
+        }
       }
     }
   }
@@ -196,11 +196,11 @@ const Content = styled.div`
   @media ${device.mobile} {
     width: 100%;
     padding: 0 3rem;
-    
+
     h3 {
       font-size: 2rem;
     }
-    
+
     .__strength__list {
       width: 100%;
       flex-direction: column;
@@ -213,13 +213,19 @@ const Content = styled.div`
         padding-bottom: 2rem;
         margin-bottom: 3rem;
 
+        figure {
+          width: 8.5rem;
+          height: 8.5rem;
+        }
+
         .__keyword {
           margin-top: 1rem;
           margin-bottom: .4rem;
           font-size: 2.2rem;
         }
+
         .__describe {
-         font-size: 1.4rem;
+          font-size: 1.4rem;
           line-height: 1.29;
         }
       }
