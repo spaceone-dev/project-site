@@ -1,70 +1,73 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
-import { DropdownBtn, DropdownCheck } from '../public/assets';
+import {DropdownBtn, DropdownCheck} from '../public/assets';
 
-const Dropdown = ({ list, selected, getNoteData }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
-  };
+const Dropdown = ({list, selected, getNoteData}) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const handleOpen = () => {
+        setIsOpen(!isOpen);
+    };
 
-  return (
-    <Container>
-      <div style={{ paddingTop: '21rem' }}>Select version:</div>
-      <Box onClick={handleOpen}>
-        <span className="__text">{selected}</span>
-        <span
-          aria-label="dropdown"
-          className="__btn"
-          onKeyPress={handleOpen}
-          tabIndex={0}
-          role="button"
-        ><DropdownBtn />
+    return (
+        <Container>
+            <div style={{paddingTop: '21rem'}}>Select version:</div>
+            <Box onClick={handleOpen} isOpen={isOpen}>
+                <span className="__text">{selected}</span>
+                <span
+                    aria-label="dropdown"
+                    className="__btn"
+                    onKeyPress={handleOpen}
+                    tabIndex={0}
+                    role="button"
+                ><DropdownBtn/>
         </span>
-      </Box>
-      {isOpen && (
-        <Drop>
-          {list.map((item: string, idx: number) => (
-            <Item key={item} isSelected={selected === item}>
-              {item === selected
-            && <span className="__check"><DropdownCheck /></span>}
-              <span
-                tabIndex={idx}
-                className="__text"
-                role="button"
-                onKeyPress={() => getNoteData(item)}
-                onClick={() => getNoteData(item)}
-              >{item}
+            </Box>
+            {isOpen && (
+                <Drop>
+                    {list.map((item: string, idx: number) => (
+                        <Item key={item} isSelected={selected === item}>
+                            {item === selected
+                            && <span className="__check"><DropdownCheck/></span>}
+                            <span
+                                tabIndex={idx}
+                                className="__text"
+                                role="button"
+                                onKeyPress={() => getNoteData(item)}
+                                onClick={() => getNoteData(item)}
+                            >{item}
               </span>
-            </Item>
-          ))}
-        </Drop>
-      )}
-    </Container>
-  );
+                        </Item>
+                    ))}
+                </Drop>
+            )}
+        </Container>
+    );
 };
 
 const Container = styled.div`
   font-weight: 300;
   font-size: 1.7rem;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({theme}) => theme.color.white};
   position: relative;
-  background-color: #001B33;
 `;
 
-const Box = styled.div`
+const Box = styled.div<{ isOpen: boolean }>`
   cursor: pointer;
   margin-top: 0.8rem;
   position: relative;
   width: 22rem;
   padding: 0.5rem 0;
-  border: 1px solid ${({ theme }) => theme.color.gray[700]};
+  border: 1px solid ${({theme}) => theme.color.gray[700]};
   border-radius: 0.4rem;
-  .__btn{
+
+  .__btn {
     position: absolute;
     right: 1.239rem;
+    transition-duration: .2s;
+    transform: ${({isOpen}) => isOpen && 'rotate(180deg)'};
   }
-  .__text{
+
+  .__text {
     margin-left: 1.4rem;
   }
 `;
@@ -74,24 +77,27 @@ const Drop = styled.div`
   width: 22rem;
   position: absolute;
   background-color: #001B33;
-  border: 1px solid ${({ theme }) => theme.color.gray[700]};
+  border: 1px solid ${({theme}) => theme.color.gray[700]};
   border-radius: 0.4rem;
 `;
 
-const Item = styled.div<{isSelected: boolean}>`
+const Item = styled.div<{ isSelected: boolean }>`
   position: relative;
   padding: 0.5rem 0;
-  color: ${({ isSelected }) => isSelected && '#65CBA0'};
-  .__check{
+  color: ${({isSelected}) => isSelected && '#65CBA0'};
+
+  .__check {
     position: absolute;
     bottom: 0.5rem;
     margin-left: 1.4rem;
   }
-  .__text{
+
+  .__text {
     cursor: pointer;
     margin-left: 3rem;
-    :hover{
-      color: ${({ theme }) => theme.color.green};
+
+    :hover {
+      color: ${({theme}) => theme.color.green};
     }
   }
 `;
