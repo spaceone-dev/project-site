@@ -100,19 +100,3 @@ $shadows-big: multiple-box-shadow(100);
     opacity: 0;
   }
 }
-@keyframes openMenuLogo {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.6;
-  }
-}
-@keyframes closeMenuLogo {
-  from {
-    opacity: 0.6;
-  }
-  to {
-    opacity: 1;
-  }
-}
