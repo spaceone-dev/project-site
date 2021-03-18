@@ -76,7 +76,7 @@ const Drop = styled.div`
   margin-top: 0.2rem;
   width: 22rem;
   position: absolute;
-  background-color: #001B33;
+  background-color: #1C1E21;
   border: 1px solid ${({theme}) => theme.color.gray[700]};
   border-radius: 0.4rem;
 `;
