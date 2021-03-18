@@ -155,7 +155,6 @@ const Content = styled.div`
       width: 162.67vw;
       height: 162.67vw;
       margin-left: -83.47vw;
-      background: url('/assets/ouruniverse_m.png') no-repeat 50% 50%/100%;
     }
 
     .__upcoming {
