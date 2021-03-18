@@ -171,12 +171,6 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
   .__logo {
     cursor: pointer;
     width: 18.24rem;
-    opacity: ${({isMenuOpen}) => isMenuOpen && '0.6'};
-    animation: ${({isMenuOpen}) => (isMenuOpen ? 'openMenuLogo' : 'closeMenuLogo')} 0.5s;
-
-    :hover {
-      opacity: 1;
-    }
   }
 
   .__menu {
