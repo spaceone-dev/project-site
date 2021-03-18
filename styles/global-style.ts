@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body{
         .release-note{
-            background-color: #001B33;
+            background-color: #1c1e21;
         }
         .markdown{
             font-weight: 400;

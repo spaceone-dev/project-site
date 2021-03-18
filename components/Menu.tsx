@@ -27,11 +27,13 @@ const Menu = ({isMenuOpen, isMenuShown, pathname}) => {
     const router = useRouter();
 
     const handleRouting = (name: string, url: string) => {
-        if ((name === 'Home' && pathname === '/')
-            || (name === 'Release Note' && pathname === '/release-note')) {
+        if ((name === 'Home' && pathname === '/') || (name === 'Release Note' && pathname === '/release-note')) {
             router.reload();
-        } else if (name !== 'Home' && name !== 'Release Note') window.open(url);
-        else router.push(url);
+        } else if (name !== 'Home' && name !== 'Release Note') {
+            window.open(url);
+        } else {
+            router.push(url);
+        }
     };
 
     return (
@@ -84,21 +86,7 @@ const LeftList = ({text, pathname}) => {
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
         >
-            {((text === 'Home' && pathname === '/')
-                || (text === 'Release Note' && pathname === '/release-note')) && (
-                <SOneMenu/>
-            )}
-            <span
-                style={{
-                    marginLeft: `${
-                        ((text === 'Home' && pathname === '/')
-                            || (text === 'Release Note' && pathname === '/release-note'))
-                        && '1rem'
-                    }`,
-                }}
-            >
-        {text}
-      </span>
+            <span>{text}</span>
             {text !== 'Home' && text !== 'Release Note' && (
                 <span style={{marginLeft: '0.7rem', marginTop: '0.3rem'}}>
           <ExternalLinkMenuSm/>
@@ -138,6 +126,7 @@ const RightList = ({text}) => {
 };
 
 const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
+  overflow:auto;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -167,11 +156,11 @@ const Container = styled.div`
     &__text {
       display: flex;
       align-items: center;
-      margin-bottom: 4rem;
+      margin-bottom: 2.8rem;
       height: 4.1rem;
       cursor: pointer;
       display: flex;
-
+      
       &:hover {
         color: ${({theme: t}) => t.color.green};
       }
@@ -179,6 +168,7 @@ const Container = styled.div`
   }
 
   .__small {
+    margin-top: 6.4rem;
     margin-right: 10rem;
     font-size: 3rem;
 
@@ -212,6 +202,7 @@ const Container = styled.div`
     }
 
     .__small {
+      margin-top: 0;
       margin-right: 0;
     }
   }
@@ -223,7 +214,7 @@ const Container = styled.div`
     width: 100vw;
     padding: 10.3rem 3rem 0;
     box-sizing: border-box;
-    
+
     .__big {
       font-size: 3rem;
       margin-bottom: 8rem;
@@ -234,6 +225,7 @@ const Container = styled.div`
     }
 
     .__small {
+      margin-top: 0;
       margin-right: 0;
       font-size: 2.4rem;
     }

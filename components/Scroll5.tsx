@@ -43,11 +43,11 @@ const Scroll5 = () => (
             <h3>our universe</h3>
             <div className="__universewrap __only__desktop">
                 <div className="__universe"><UniverseV2/></div>
-                <div className="__upcoming" data-aos="fade" data-aos-delay="500"><Upcoming/></div>
+                <div className="__upcoming" data-aos="fade" data-aos-delay="300" data-aos-once="true"><Upcoming/></div>
             </div>
             <div className="__universewrap __only__mobile">
                 <div className="__universe"><UniverseM/></div>
-                <div className="__upcoming" data-aos="fade" data-aos-delay="500"><UpcomingM/></div>
+                <div className="__upcoming" data-aos="fade" data-aos-delay="300" data-aos-once="true"><UpcomingM/></div>
             </div>
         </Content>
         <Figures>
@@ -149,10 +149,13 @@ const Content = styled.div`
     .__only__mobile {
       display: flex;
     }
-
+    
     .__universe {
+      display: inline-block;
       width: 162.67vw;
+      height: 162.67vw;
       margin-left: -83.47vw;
+      background: url('/assets/ouruniverse_m.png') no-repeat 50% 50%/100%;
     }
 
     .__upcoming {

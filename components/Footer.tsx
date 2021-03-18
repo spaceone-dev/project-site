@@ -12,7 +12,7 @@ const Footer = () => (
             </div>
             <div className="__item __contact">
                 <h4>Contact</h4>
-                <a href="mailto:webmaster@example.com" className="__item__conts">support@spaceone.dev</a>
+                <a href="mailto:webmaster@example.com" target="_blank" className="__item__conts">support@spaceone.dev</a>
             </div>
             <div className="__item __address">
                 <h4>Seoul</h4>

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, {useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import styled from 'styled-components';
@@ -10,9 +11,8 @@ import {
     Footer, Menu, Dropdown,
 } from '../components';
 import {
-    SOneMan, SpaceONE, UpIcon, Scroll, Loading,
+    SOneMenuV2, SpaceONE, UpIcon, Scroll, LoadingV2, Close,
 } from '../public/assets';
-import {media} from '../styles/theme';
 import {device} from '../styles/theme';
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
@@ -104,7 +104,7 @@ const ReleaseNote = () => {
         },
     };
     const optionsLoading = {
-        animationData: Loading,
+        animationData: LoadingV2,
         loop: true,
         autoplay: true,
         rendererSettings: {
@@ -114,9 +114,30 @@ const ReleaseNote = () => {
 
     return (
         <Container className="release-note" isMenuOpen={isMenuOpen} loading={loading.toString()}>
-            <Tab>
-                <span className="__text">SpaceONE Release Note</span>
-            </Tab>
+            <Head>
+                <title>SpaceONE - Release Note</title>
+            </Head>
+            <header>
+                <div
+                    className="__logo"
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => router.push('/')}
+                    onKeyPress={() => router.push('/')}
+                >
+                    <SpaceONE/>
+                </div>
+                <div
+                    className="__menu"
+                    role="button"
+                    tabIndex={0}
+                    onClick={handleMenuOpen}
+                    onKeyPress={handleMenuOpen}
+                >
+                    <span className="__ico_menu">{isMenuOpen ? <Close/> : <SOneMenuV2/>}</span>
+                    <span> {isMenuOpen ? 'Close' : 'Menu'}</span>
+                </div>
+            </header>
             {isMenuShown && (
                 <Menu
                     pathname={pathname}
@@ -124,27 +145,9 @@ const ReleaseNote = () => {
                     isMenuShown={isMenuShown}
                 />
             )}
-            <div
-                className="__logo"
-                role="link"
-                tabIndex={0}
-                onClick={() => router.push('/')}
-                onKeyPress={() => router.push('/')}
-            >
-                <SpaceONE/>
-            </div>
-            <div
-                className="__menu"
-                role="button"
-                tabIndex={0}
-                onClick={handleMenuOpen}
-                onKeyPress={handleMenuOpen}
-            >
-                <SOneMan/>
-                <span style={{marginLeft: '0.4rem', marginTop: '0.2rem'}}>
-          {isMenuOpen ? 'Close' : 'Menu'}
-        </span>
-            </div>
+            <Tab>
+                <span className="__text">SpaceONE Release Note</span>
+            </Tab>
             {isScrollable && !loading && (
                 <ScrollBtn isMenuOpen={isMenuOpen}>
                     <Lottie
@@ -169,14 +172,7 @@ const ReleaseNote = () => {
             {loading ? (
                     <Box>
                         <div className="__loading">
-                            <Lottie
-                                options={optionsLoading}
-                                style={{
-                                    width: '20rem',
-                                    height: '20rem',
-                                }}
-                            />
-                            <div className="__loading__text">Loading...</div>
+                            <Lottie options={optionsLoading} style={{width: '14rem', height: '14rem',}}/>
                         </div>
                     </Box>
                 )
@@ -201,61 +197,100 @@ const Container = styled.div<{ isMenuOpen: boolean, loading: string }>`
   font-size: 3rem;
   overflow-x: hidden;
 
+  header {
+    position: fixed;
+    top: 7rem;
+    left: 50%;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    max-width: 144rem;
+    padding: 1rem 10rem;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+  }
+
   .__logo {
     cursor: pointer;
-    position: fixed;
-    left: 10rem;
-    top: 8rem;
-    z-index: 10;
+    width: 18.24rem;
     opacity: ${({isMenuOpen}) => isMenuOpen && '0.6'};
     animation: ${({isMenuOpen}) => (isMenuOpen ? 'openMenuLogo' : 'closeMenuLogo')} 0.5s;
 
     :hover {
       opacity: 1;
     }
-
-    @media ${device.tablet} {
-      left: 4rem;
-    }
-    @media ${device.mobile} {
-      top: 2.5rem;
-      left: 1rem;
-    }
   }
 
   .__menu {
-    cursor: pointer;
-    position: fixed;
-    z-index: 10;
     display: flex;
     align-items: center;
-    right: 10rem;
-    top: 8rem;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 300;
     color: ${({theme}) => theme.color.primary[200]};
     font-family: "Roboto";
-    font-size: 1.8rem;
+    font-size: 2rem;
+
+    .__ico_menu {
+      margin-right: .4rem;
+    }
 
     &:hover {
       transition: 0.3s;
       color: #65cba0;
-    }
 
-    @media ${device.tablet} {
-      right: 4rem;
-    }
-    @media ${device.mobile} {
-      top: 2.5rem;
-      right: 1rem;
+      .__ico_menu {
+        path {
+          fill: #65cba0;
+          transition: fill 0.3s;
+        }
+      }
     }
   }
+}
+
+@media ${device.tablet} {
+  header {
+    top: 5rem;
+    padding: 1.5rem 5.7rem;
+  }
+
+  .__menu {
+    right: 4rem;
+  }
+}
+
+@media ${device.mobile} {
+  top: 2.5rem;
+  left: 1rem;
+
+  header {
+    top: 2rem;
+    padding: 1.5rem 3rem;
+  }
+
+  .__logo {
+    width: 13.3rem;
+  }
+
+  .__menu {
+    top: 2.5rem;
+    right: 1rem;
+  }
+}
 `;
 
 const Tab = styled.div`
   width: 100%;
+  max-width: 144rem;
   font-weight: 300;
   color: ${({theme}) => theme.color.white};
   position: fixed;
-  background-color: #001B33;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: inherit;
   z-index: 3;
   display: flex;
 
@@ -269,25 +304,31 @@ const Tab = styled.div`
     border-bottom-width: 1px;
 
     @media ${device.tablet} {
-      margin-left: 3rem;
-      margin-right: 3rem;
+      margin-left: 5.7rem;
+      margin-right: 5.7rem;
     }
     @media ${device.mobile} {
-      margin-left: 1rem;
-      margin-right: 1rem;
+      margin-top: 10.6rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
     }
   }
 `;
 
 const Box = styled.div`
-  padding: 0 19rem 5rem;
+  //border: solid 1px red;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 10rem 5rem;
+  box-sizing: border-box;
 
   @media ${device.tablet} {
-    padding: 0 3rem 5rem;
+    padding: 0 5.7rem 5rem;
   }
+
   @media ${device.mobile} {
     overflow-x: scroll;
-    padding: 0 1rem 5rem;
+    padding: 0 3rem 5rem;
   }
 
   .__loading {

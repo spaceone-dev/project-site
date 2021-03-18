@@ -53,14 +53,16 @@ const Content = styled.div`
   }
 
   @media ${device.tablet} {
-    padding: 0 5rem;
+    h3 {
+      padding:0 5rem;
+    }
   }
 
   @media ${device.mobile} {
     width: 100vw;
-    padding: 0 3rem;
 
     h3 {
+      padding: 0 3rem;
       font-size: 2rem;
     }
   }

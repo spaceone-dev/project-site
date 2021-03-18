@@ -15,7 +15,7 @@ import {
     Background,
 } from '../components';
 import {
-    SpaceONE, SOneMan, UpIcon, Scroll,
+    SpaceONE, SOneMenuV2, UpIcon, Scroll, Close
 } from '../public/assets';
 import {device} from '../styles/theme';
 
@@ -107,10 +107,14 @@ const Index = () => {
                         onKeyPress={() => route.reload()}
                     ><SpaceONE/>
                     </div>
-                    <div className="__menu" role="button" tabIndex={0} onClick={handleMenuOpen}
-                         onKeyPress={handleMenuOpen}>
-                        <SOneMan/><span
-                        style={{marginLeft: '0.4rem', marginTop: '0.2rem'}}>{isMenuOpen ? 'Close' : 'Menu'}</span>
+                    <div className="__menu"
+                         role="button"
+                         tabIndex={0}
+                         onClick={handleMenuOpen}
+                         onKeyPress={handleMenuOpen}
+                    >
+                        <span className="__ico_menu">{isMenuOpen ? <Close/> : <SOneMenuV2/>}</span>
+                        <span className="__txt">{isMenuOpen ? 'Close' : 'Menu'}</span>
                     </div>
                 </header>
                 {isScrollable && (
@@ -153,7 +157,7 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
     position: fixed;
     top: 7rem;
     left: 50%;
-    z-index: 10;
+    z-index: 11;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -166,7 +170,6 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
 
   .__logo {
     cursor: pointer;
-    z-index: 10;
     width: 18.24rem;
     opacity: ${({isMenuOpen}) => isMenuOpen && '0.6'};
     animation: ${({isMenuOpen}) => (isMenuOpen ? 'openMenuLogo' : 'closeMenuLogo')} 0.5s;
@@ -179,34 +182,48 @@ const Container = styled.div<{ isMenuOpen: boolean }>`
   .__menu {
     display: flex;
     align-items: center;
+    padding: 0;
     cursor: pointer;
     font-weight: 300;
     color: ${({theme}) => theme.color.primary[200]};
     font-family: "Roboto";
-    font-size: 1.8rem;
+    font-size: 2rem;
+
+    .__ico_menu {
+      margin-right: .4rem;
+    }
 
     &:hover {
-      transition: 0.3s;
+      transition: color 0.3s;
       color: #65cba0;
+
+      .__ico_menu {
+        path {
+          fill: #65cba0;
+          transition: fill 0.3s;
+        }
+      }
     }
   }
+}
 
 
-  @media ${device.tablet} {
-    header {
-      padding: 1rem 5.7rem;
-    }
+@media ${device.tablet} {
+  header {
+    top: 5rem;
+    padding: 1.5rem 5.7rem;
+  }
+}
+
+@media ${device.mobile} {
+  header {
+    top: 2rem;
+    padding: 1.5rem 3rem;
   }
 
-  @media ${device.mobile} {
-    header {
-      top:0;
-      padding: 1rem 3rem;
-    }
-
-    .__logo {
-      width: 13.3rem;
-    }
+  .__logo {
+    width: 13.3rem;
+  }
 `;
 
 const ScrollBtn = styled.div<{ isMenuOpen: boolean }>`
