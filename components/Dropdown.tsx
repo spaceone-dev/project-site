@@ -35,7 +35,7 @@ const Dropdown = ({list, selected, getNoteData}) => {
                                 onKeyPress={() => getNoteData(item)}
                                 onClick={() => getNoteData(item)}
                             >{item}
-              </span>
+                            </span>
                         </Item>
                     ))}
                 </Drop>

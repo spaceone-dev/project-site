@@ -100,7 +100,7 @@ const Content = styled.div`
   }
 
   @media ${device.mobile} {
-    padding: 16rem 3rem 10rem;
+    padding: 16rem 2rem 10rem;
     
     .__footer__logo {
       width: 5rem;
