@@ -49,6 +49,16 @@ const Header = () => {
         window.scroll({top: 0, behavior: 'smooth'});
     };
 
+    const redirectToHome = () => {
+        if (pathname === '/') {
+            router.reload();
+            window.scrollTo(0, 0);
+        } else {
+            router.push('/');
+            window.scrollTo(0, 0);
+        }
+    }
+
     useEffect(() => {
         window.scrollTo(0, 0);
 
@@ -73,14 +83,14 @@ const Header = () => {
         <HeaderWrap isMenuOpen={isMenuOpen}>
             <header>
                 <div className="__inner">
-                    <div
+                    <h1
                         className="__logo"
                         role="link"
                         tabIndex={0}
-                        onClick={() => router.push('/')}
-                        onKeyPress={() => router.push('/')}
+                        onClick={redirectToHome}
+                        onKeyPress={redirectToHome}
                     ><SpaceONE/>
-                    </div>
+                    </h1>
                     <div
                         className="__menu"
                         role="button"
@@ -202,19 +212,19 @@ const HeaderWrap = styled.div<{ isMenuOpen: boolean }>`
 
 const ScrollBtns = styled.div`
   position: fixed;
-  left:50%;
+  left: 50%;
   bottom: 7rem;
   z-index: 3;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width:144rem;
+  max-width: 144rem;
   padding: 0 3rem;
   transform: translateX(-50%);
   box-sizing: border-box;
-  
+
   @media ${device.mobile} {
-    display:none;
+    display: none;
   }
 `;
 
