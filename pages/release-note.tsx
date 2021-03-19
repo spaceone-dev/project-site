@@ -54,12 +54,12 @@ const ReleaseNote = () => {
         <Container className="release-note" loading={loading.toString()}>
             <Head>
                 <title>Release Notes - SpaceONE</title>
-                <meta name="description" content="SpaceONE Release notes provide information on new features, improvements, bug fixes, and plugin compatibility list in each release."/>
+                <meta name="description"
+                      content="SpaceONE Release notes provide information on new features, improvements, bug fixes, and plugin compatibility list in each release."/>
                 <meta name="author" content="Team CloudONE Crews"/>
                 <meta name="keyword" content="Release Notes, spaceone plugin list"/>
             </Head>
             <Header/>
-            <h2 className="__title"><span className="__text">SpaceONE Release Note</span></h2>
             {loading ? (
                     <Box>
                         <div className="__loading">
@@ -70,6 +70,7 @@ const ReleaseNote = () => {
                 )
                 : isError ? (<div>error occurred</div>) : (
                     <>
+                        <h2 className="__title"><span className="__text">SpaceONE Release Note</span></h2>
                         <Box>
                             <Dropdown list={noteList} selected={noteVersion} getNoteData={getNoteData}/>
                             <br/>
@@ -88,7 +89,7 @@ const Container = styled.div<{ loading: string }>`
   overflow-x: hidden;
   width: 100%;
   font-size: 3rem;
-  
+
   .__title {
     display: flex;
     position: fixed;
@@ -114,7 +115,7 @@ const Container = styled.div<{ loading: string }>`
         margin-left: 5.7rem;
         margin-right: 5.7rem;
       }
-      
+
       @media ${device.mobile} {
         margin-top: 10.6rem;
         margin-right: 3rem;

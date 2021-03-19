@@ -7,7 +7,6 @@ import {
     GithubLogoMenuHover,
     Mail,
     MailHover,
-    SOneMenu,
 } from '../public/assets';
 import {theme} from '../styles/theme';
 import {device} from '../styles/theme';
@@ -29,6 +28,7 @@ const Menu = ({isMenuOpen, isMenuShown, pathname}) => {
     const handleRouting = (name: string, url: string) => {
         if ((name === 'Home' && pathname === '/') || (name === 'Release Note' && pathname === '/release-note')) {
             router.reload();
+            window.scrollTo(0, 0);
         } else if (name !== 'Home' && name !== 'Release Note') {
             window.open(url);
         } else {
