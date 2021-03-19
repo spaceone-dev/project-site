@@ -75,23 +75,12 @@ const LeftList = ({text, pathname}) => {
 
     return (
         <div
-            style={{
-                color: `${
-                    ((text === 'Home' && pathname === '/')
-                        || (text === 'Release Note' && pathname === '/release-note'))
-                    && theme.color.green
-                }`,
-            }}
+            style={{color: `${((text === 'Home' && pathname === '/') || (text === 'Release Note' && pathname === '/release-note')) && theme.color.green}`,}}
             className="__big__text"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
         >
-            <span>{text}</span>
-            {text !== 'Home' && text !== 'Release Note' && (
-                <span style={{marginLeft: '0.7rem', marginTop: '0.3rem'}}>
-          <ExternalLinkMenuSm/>
-        </span>
-            )}
+            <span>{text}</span>{text !== 'Home' && text !== 'Release Note' && (<span style={{marginLeft: '0.7rem', marginTop: '0.3rem'}}><ExternalLinkMenuSm/></span>)}
         </div>
     );
 };
@@ -126,7 +115,7 @@ const RightList = ({text}) => {
 };
 
 const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
-  overflow:auto;
+  overflow: auto;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -160,7 +149,7 @@ const Container = styled.div`
       height: 4.1rem;
       cursor: pointer;
       display: flex;
-      
+
       &:hover {
         color: ${({theme: t}) => t.color.green};
       }
