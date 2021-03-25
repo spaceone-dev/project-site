@@ -53,7 +53,7 @@ const ReleaseNote = () => {
     return (
         <Container className="release-note" loading={loading.toString()}>
             <Head>
-                <title>Release Notes - SpaceONE</title>
+                <title>SpaceONE - Release Note</title>
                 <meta name="description"
                       content="SpaceONE Release notes provide information on new features, improvements, bug fixes, and plugin compatibility list in each release."/>
                 <meta name="author" content="Team CloudONE Crews"/>
