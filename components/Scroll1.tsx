@@ -34,22 +34,22 @@ const optionsPlanet = {
         preserveAspectRatio: 'xMidYMid slice',
     },
 };
-const optionsSpinPurple = {
-    animationData: SpinPurple,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
-const optionsSpinWhite = {
-    animationData: SpinWhite,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
+// const optionsSpinPurple = {
+//     animationData: SpinPurple,
+//     loop: true,
+//     autoplay: true,
+//     rendererSettings: {
+//         preserveAspectRatio: 'xMidYMid slice',
+//     },
+// };
+// const optionsSpinWhite = {
+//     animationData: SpinWhite,
+//     loop: true,
+//     autoplay: true,
+//     rendererSettings: {
+//         preserveAspectRatio: 'xMidYMid slice',
+//     },
+// };
 const optionsSpaceMan = {
     animationData: Spaceman,
     loop: true,
@@ -89,17 +89,17 @@ const Scroll1 = () => {
                 </div>
                 <div className="__ellipse1">
                     <div className="__orbit"><Ellipse1/></div>
-                    <div className="__spinPurple"><Lottie options={optionsSpinPurple}/></div>
+                    {/*<div className="__spinPurple"><Lottie options={optionsSpinPurple}/></div>*/}
                     <div className="__planet"><Lottie options={optionsPlanet}/></div>
-                    <div className="__circle __circle96"><Circle96/></div>
-                    <div className="__circle __circle105"><Circle105/></div>
-                    <div className="__circle __circle109"><Circle109/></div>
-                    <div className="__circle __circle110"><Circle110/></div>
-                    <div className="__circle __circle111"><Circle111/></div>
+                    {/*<div className="__circle __circle96"><Circle96/></div>*/}
+                    {/*<div className="__circle __circle105"><Circle105/></div>*/}
+                    {/*<div className="__circle __circle109"><Circle109/></div>*/}
+                    {/*<div className="__circle __circle110"><Circle110/></div>*/}
+                    {/*<div className="__circle __circle111"><Circle111/></div>*/}
                 </div>
                 <div className="__ellipse2">
                     <Ellipse2/>
-                    <div className="__spinWhite"><Lottie options={optionsSpinWhite}/></div>
+                    {/*<div className="__spinWhite"><Lottie options={optionsSpinWhite}/></div>*/}
                     <div className="__circle171"><Circle171/></div>
                 </div>
                 <div className="__spaceman"><Lottie options={optionsSpaceMan}/></div>

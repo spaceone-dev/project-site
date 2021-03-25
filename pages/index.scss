@@ -1,7 +1,3 @@
-div[role="button"] {
-  padding: 0.5rem 1rem;
-}
-
 div[role="link"]:focus div {
   overflow: hidden;
 }
@@ -44,7 +40,7 @@ $shadows-big: multiple-box-shadow(100);
   height: 2px;
   background: transparent;
   box-shadow: $shadows-medium;
-  animation: animStar 150s linear infinite;
+  //animation: animStar 150s linear infinite;
 
   &:after {
     content: " ";
@@ -62,7 +58,7 @@ $shadows-big: multiple-box-shadow(100);
   height: 3px;
   background: transparent;
   box-shadow: $shadows-big;
-  animation: animStar 200s linear infinite;
+  //animation: animStar 200s linear infinite;
 
   &:after {
     content: " ";
@@ -75,14 +71,14 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 
-@keyframes animStar {
-  from {
-    transform: translateY(-100vh);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
+//@keyframes animStar {
+//  from {
+//    transform: translateY(-100vh);
+//  }
+//  to {
+//    transform: translateY(0);
+//  }
+//}
 
 @keyframes openMenu {
   from {
