@@ -18,6 +18,7 @@ declare module 'styled-components' {
         200: '#E9F4FF';
       };
       gray: {
+        100: '#F7F7F7';
         300: '#CED0D6';
         400: '#A7A9B2';
         700: '#5F616D';

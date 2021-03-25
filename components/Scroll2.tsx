@@ -20,14 +20,14 @@ const optionsSpinPurple = {
         preserveAspectRatio: 'xMidYMid slice',
     },
 };
-const optionsSpinWhite = {
-    animationData: SpinWhite,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
+// const optionsSpinWhite = {
+//     animationData: SpinWhite,
+//     loop: true,
+//     autoplay: true,
+//     rendererSettings: {
+//         preserveAspectRatio: 'xMidYMid slice',
+//     },
+// };
 const Scroll2 = () => {
     return (
         <Box>
@@ -54,7 +54,7 @@ const Scroll2 = () => {
             <Figures>
                 <figure className="__ellipse3"><Ellipse3/></figure>
                 <figure className="__spinpurple1"><Lottie options={optionsSpinPurple}/></figure>
-                <figure className="__spinwhite"><Lottie options={optionsSpinWhite}/></figure>
+                {/*<figure className="__spinwhite"><Lottie options={optionsSpinWhite}/></figure>*/}
                 <figure className="__spinpurple2"><Lottie options={optionsSpinPurple}/></figure>
             </Figures>
         </Box>
@@ -112,7 +112,7 @@ const Content = styled.div`
 
     .__word {
       display: inline-block;
-      margin-top: .4rem;
+      margin-top: .8rem;
       margin-bottom: .8rem;
       font-size: 4.6rem;
       color: ${({theme}) => theme.color.primary[300]};

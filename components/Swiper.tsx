@@ -116,10 +116,10 @@ const SliderWrap = styled.div`
       margin-top: 2rem;
       font-size: 2.1rem;
       line-height: 1.4;
-      color: ${({theme}) => theme.color.gray[400]};
+      color: ${({theme}) => theme.color.gray[100]};
 
       em {
-        color: ${({theme}) => theme.color.primary[100]};
+        color: ${({theme}) => theme.color.gray[300]};
       }
     }
   }

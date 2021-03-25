@@ -60,8 +60,8 @@ const Content = styled.div`
     position: absolute;
     top: 10rem;
     left: 0;
-    width: 6.2rem;
-    height: 6.2rem;
+    width: 7rem;
+    height: 7rem;
   }
 
   .__item {
