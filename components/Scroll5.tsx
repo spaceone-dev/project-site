@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import {
     // svg
-    UniverseV2,
-    UniverseM,
+    UniverseDesktop,
+    UniverseTablet,
+    UniverseMobile,
     Upcoming,
     UpcomingM,
     // json
@@ -42,12 +43,13 @@ const Scroll5 = () => (
         <Content>
             <h3>our universe</h3>
             <div className="__universewrap __only__desktop">
-                <div className="__universe"><UniverseV2/></div>
-                <div className="__upcoming" data-aos="fade" data-aos-delay="300" data-aos-once="true"><Upcoming/></div>
+                <UniverseDesktop/>
+            </div>
+            <div className="__universewrap __only__tablet">
+                <UniverseTablet/>
             </div>
             <div className="__universewrap __only__mobile">
-                <div className="__universe"><UniverseM/></div>
-                <div className="__upcoming" data-aos="fade" data-aos-delay="300" data-aos-once="true"><UpcomingM/></div>
+                <UniverseMobile/>
             </div>
         </Content>
         <Figures>
@@ -63,9 +65,6 @@ const Scroll5 = () => (
 const Box = styled.section`
   overflow: hidden;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 96rem;
 
@@ -80,17 +79,26 @@ const Box = styled.section`
     opacity: 0.5;
   }
 
+
+  @media ${device.tablet} {
+    height: 102.4rem;
+  }
+  
   @media ${device.mobile} {
     height: auto;
   }
 `;
 
 const Content = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  
   h3 {
-    display: none;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 2.6rem;
+    position: absolute;
+    z-index: 2;
     opacity: 0.8;
     color: ${({theme}) => theme.color.pink};
     font-weight: 500;
@@ -100,35 +108,35 @@ const Content = styled.div`
   }
 
   .__universewrap {
+    display: none;
     position: relative;
     z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
   }
 
-  .__universe {
-    width: 143.4rem;
-    margin-left: -58rem;
-  }
-
-  .__upcoming {
-    margin-left: 12.6rem;
-    width: 18.7rem;
-  }
-
-  .__only__mobile {
-    display: none;
+  @media ${device.desktop} {
+    .__only__desktop {
+      display: block;
+      margin-left:-65rem;
+    }
+    h3 {
+      top: 48rem;
+      left: 50%;
+      margin-left: -55rem;
+    }
   }
 
   @media ${device.tablet} {
     width: 100vw;
 
-    .__universe {
-      width: 100vw;
-      margin-left: -35rem;
+    .__only__tablet {
+      display: block;
+      margin-left: -52rem;
+    }
+    
+    h3 {
+      top: 15rem;
+      left:0;
+      width: 100%;
     }
   }
 
@@ -138,29 +146,15 @@ const Content = styled.div`
     padding-bottom: 4vw;
 
     h3 {
-      display: block;
+      top: 12rem;
+      left:0;
+      width: 100%;
       font-size: 2rem;
     }
 
-    .__only__desktop {
-      display: none;
-    }
-
     .__only__mobile {
-      display: flex;
-    }
-    
-    .__universe {
-      display: inline-block;
-      width: 162.67vw;
-      height: 162.67vw;
-      margin-left: -83.47vw;
-    }
-
-    .__upcoming {
-      width: 33.33vw;
-      margin-left: -16vw;
-
+      display: block;
+      margin-left: -33rem;
     }
   }
 }`;
