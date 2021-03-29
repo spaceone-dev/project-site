@@ -97,7 +97,7 @@ const Content = styled.div`
     margin-bottom: 4.4rem;
     opacity: 0.8;
     color: ${({theme}) => theme.color.pink};
-    font-weight: 500;
+    font-weight: 600;
     font-size: 2.6rem;
     text-transform: uppercase;
   }
@@ -155,6 +155,19 @@ const Content = styled.div`
         line-height: 130%;
         opacity: 0.8;
         color: ${({theme}) => theme.color.primary[200]};
+      }
+    }
+
+    li:nth-child(3) {
+      .__ico__openapi {
+        position:relative;
+        top: -1rem;
+        width: 17rem;
+        height: 17rem;
+      }
+
+      .__keyword {
+        margin-top: 0;
       }
     }
   }
@@ -227,6 +240,13 @@ const Content = styled.div`
         .__describe {
           font-size: 1.4rem;
           line-height: 1.29;
+        }
+      }
+      
+      li:nth-child(3) {
+        .__ico__openapi {
+          width: 10.5rem;
+          height: 10.5rem;
         }
       }
     }

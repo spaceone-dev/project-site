@@ -116,7 +116,6 @@ const Container = styled.div<{ loading: string }>`
   }
 
   @media ${device.tablet} {
-    //padding-top: 25rem;
     .__release__header {
       flex-direction: column;
       align-items: flex-start;
@@ -125,7 +124,6 @@ const Container = styled.div<{ loading: string }>`
 
       .__title {
         margin-bottom: 2.5rem;
-        //width: 100%;
       }
     }
   }

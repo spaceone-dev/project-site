@@ -41,7 +41,7 @@ import {device} from '../styles/theme';
 const Scroll5 = () => (
     <Box>
         <Content>
-            <h3>our universe</h3>
+            <h3>our <br></br>universe</h3>
             <div className="__universewrap __only__desktop">
                 <UniverseDesktop/>
             </div>
@@ -78,8 +78,7 @@ const Box = styled.section`
     background: #001b33;
     opacity: 0.5;
   }
-
-
+  
   @media ${device.tablet} {
     height: 102.4rem;
   }
@@ -101,8 +100,8 @@ const Content = styled.div`
     z-index: 2;
     opacity: 0.8;
     color: ${({theme}) => theme.color.pink};
-    font-weight: 500;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 2.6rem;
     text-transform: uppercase;
     text-align: center;
   }
@@ -116,12 +115,21 @@ const Content = styled.div`
   @media ${device.desktop} {
     .__only__desktop {
       display: block;
-      margin-left:-65rem;
+      width: 100%;
+      width: 118vw;
+      max-width: 171rem;
+      margin-left:-55rem;
     }
     h3 {
-      top: 48rem;
+      top: 46rem;
       left: 50%;
-      margin-left: -55rem;
+      margin-left: -50rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) and (max-width: 1280px) {
+    h3 {
+      margin-left: -47rem;
     }
   }
 

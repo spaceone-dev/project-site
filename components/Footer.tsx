@@ -12,7 +12,8 @@ const Footer = () => (
             </div>
             <div className="__item __contact">
                 <h4>Contact</h4>
-                <a href="mailto:webmaster@example.com" target="_blank" className="__item__conts">support@spaceone.dev</a>
+                <a href="mailto:webmaster@example.com" target="_blank"
+                   className="__item__conts">support@spaceone.dev</a>
             </div>
             <div className="__item __address">
                 <h4>Seoul</h4>
@@ -31,16 +32,12 @@ const Box = styled.footer`
   align-items: center;
   justify-content: center;
   width: auto;
-  height: 43rem;
   background: #000f1c;
   font-family: Helvetica Neue;
   color: ${({theme}) => theme.color.primary[100]};
 
-  @media ${device.tablet} {
-    height: 54rem;
-  }
-  @media ${device.mobile} {
-    height: auto;
+  @media ${device.desktop} {
+    height: 44rem;
   }
 `;
 
@@ -52,7 +49,7 @@ const Content = styled.div`
   width: 100%;
   max-width: 106rem;
   height: 100%;
-  padding-top: 17.6rem;
+  padding-top: 18.6rem;
   box-sizing: border-box;
 
   .__footer__logo {
@@ -89,19 +86,27 @@ const Content = styled.div`
   }
 
   @media ${device.tablet} {
-    width: 83rem;
-    padding: 16rem 1rem 10rem;
+    padding: 17.6rem 5rem 10rem;
+    justify-content: flex-start;
+
+    .__footer__logo {
+      left: 5rem;
+    }
 
     .__copyright {
       flex-basis: 100%;
-      margin-bottom: 10rem;
-      margin-top: 1.4rem;
+      margin-bottom: 6.4rem;
+    }
+    
+    .__contact {
+      flex-basis: 25rem;
+      margin-right: 9rem;
     }
   }
 
   @media ${device.mobile} {
-    padding: 16rem 2rem 10rem;
-    
+    padding: 16rem 3rem 10rem;
+
     .__footer__logo {
       width: 5rem;
       height: 5rem;
@@ -129,7 +134,6 @@ const Content = styled.div`
         font-weight: 400;
 
         span {
-          display: block;
           font-size: 1.2rem;
           font-weight: 300;
         }

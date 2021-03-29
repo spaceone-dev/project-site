@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import styled from 'styled-components';
 import {DropdownBtn, DropdownCheck} from '../public/assets';
+import {device} from '../styles/theme';
 
 const Dropdown = ({list, selected, getNoteData}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const Dropdown = ({list, selected, getNoteData}) => {
 
     return (
         <Container>
-            <div style={{paddingTop: '21rem'}}>Select version:</div>
+            <span>Select version:</span>
             <Box onClick={handleOpen} isOpen={isOpen}>
                 <span className="__text">{selected}</span>
                 <span
@@ -45,18 +46,34 @@ const Dropdown = ({list, selected, getNoteData}) => {
 };
 
 const Container = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 300;
   font-size: 1.7rem;
   color: ${({theme}) => theme.color.white};
-  position: relative;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  @media ${device.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
 `;
 
 const Box = styled.div<{ isOpen: boolean }>`
+  flex-shrink: 1;
   cursor: pointer;
-  margin-top: 0.8rem;
   position: relative;
-  width: 22rem;
-  padding: 0.5rem 0;
+  width: 35rem;
+  padding: 1rem 0;
+  margin-left: 1rem;
   border: 1px solid ${({theme}) => theme.color.gray[700]};
   border-radius: 0.4rem;
 
@@ -70,15 +87,37 @@ const Box = styled.div<{ isOpen: boolean }>`
   .__text {
     margin-left: 1.4rem;
   }
+
+  @media ${device.tablet} {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-left: 0;
+  }
+
+  @media ${device.mobile} {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-left: 0;
+  }
 `;
 
 const Drop = styled.div`
-  margin-top: 0.2rem;
-  width: 22rem;
   position: absolute;
+  top: 100%;
+  right: 0;
+  width: 35rem;
+  margin-top: 0.2rem;
   background-color: #1C1E21;
   border: 1px solid ${({theme}) => theme.color.gray[700]};
   border-radius: 0.4rem;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
+  
+  @media ${device.mobile} {
+    width: 100%;
+  }
 `;
 
 const Item = styled.div<{ isSelected: boolean }>`
