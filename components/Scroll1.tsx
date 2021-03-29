@@ -3,15 +3,8 @@ import styled from 'styled-components';
 import {device} from '../styles/theme';
 import Lottie from 'react-lottie';
 import {
-    // svg
-    Circle105,
-    Circle109,
-    Circle110,
-    Circle111,
-    Circle96,
     Ellipse1,
     Ellipse2,
-    Circle171,
     ExternalLink,
     ExternalLinkFill,
     GithubLogo,
@@ -19,37 +12,9 @@ import {
     Wave1,
     Wave2,
     Github,
-    // json
-    SpinPurple,
-    SpinWhite,
     Spaceman,
-    PurplePlanet,
 } from '../public/assets';
 
-const optionsPlanet = {
-    animationData: PurplePlanet,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
-// const optionsSpinPurple = {
-//     animationData: SpinPurple,
-//     loop: true,
-//     autoplay: true,
-//     rendererSettings: {
-//         preserveAspectRatio: 'xMidYMid slice',
-//     },
-// };
-// const optionsSpinWhite = {
-//     animationData: SpinWhite,
-//     loop: true,
-//     autoplay: true,
-//     rendererSettings: {
-//         preserveAspectRatio: 'xMidYMid slice',
-//     },
-// };
 const optionsSpaceMan = {
     animationData: Spaceman,
     loop: true,
@@ -87,21 +52,8 @@ const Scroll1 = () => {
                     <div className="__wave1"><Wave1/></div>
                     <div className="__wave2"><Wave2/></div>
                 </div>
-                <div className="__ellipse1">
-                    <div className="__orbit"><Ellipse1/></div>
-                    {/*<div className="__spinPurple"><Lottie options={optionsSpinPurple}/></div>*/}
-                    <div className="__planet"><Lottie options={optionsPlanet}/></div>
-                    {/*<div className="__circle __circle96"><Circle96/></div>*/}
-                    {/*<div className="__circle __circle105"><Circle105/></div>*/}
-                    {/*<div className="__circle __circle109"><Circle109/></div>*/}
-                    {/*<div className="__circle __circle110"><Circle110/></div>*/}
-                    {/*<div className="__circle __circle111"><Circle111/></div>*/}
-                </div>
-                <div className="__ellipse2">
-                    <Ellipse2/>
-                    {/*<div className="__spinWhite"><Lottie options={optionsSpinWhite}/></div>*/}
-                    <div className="__circle171"><Circle171/></div>
-                </div>
+                <div className="__ellipse1"><div className="__orbit"><Ellipse1/></div></div>
+                <div className="__ellipse2"><Ellipse2/></div>
                 <div className="__spaceman"><Lottie options={optionsSpaceMan}/></div>
             </Figures>
         </Box>
@@ -306,67 +258,6 @@ const Figures = styled.figure`
         height: 100%;
       }
     }
-
-    .__spinPurple {
-      position: absolute;
-      top: 5rem;
-      left: 11.3rem;
-      width: 13.563rem;
-      height: 13.563rem;
-      transform: rotate(-30deg);
-      opacity: 0.7;
-
-      @media ${device.mobile} {
-        width: 6rem;
-        height: 6rem;
-      }
-    }
-
-    .__planet {
-      position: absolute;
-      top: 22rem;
-      left: -6rem;
-      width: 12.6rem;
-      height: 12.033rem;
-      transform: matrix(0.97, 0.21, -0.24, 0.98, 0, 0);
-      opacity: 0.4;
-
-      @media ${device.mobile} {
-        top: 0;
-        left: 0;
-        width: 5rem;
-        height: 5rem;
-      }
-    }
-
-    .__circle {
-      position: absolute;
-    }
-
-    .__circle96 {
-      left: 14rem;
-      bottom: 7.3rem;
-    }
-
-    .__circle105 {
-      left: 26rem;
-      bottom: 13rem;
-    }
-
-    .__circle109 {
-      left: 10rem;
-      bottom: 1rem;
-    }
-
-    .__circle110 {
-      left: 8rem;
-      bottom: 6rem;
-    }
-
-    .__circle111 {
-      left: 4.5rem;
-      bottom: 4rem;
-    }
   }
 
   .__ellipse2 {
@@ -390,30 +281,6 @@ const Figures = styled.figure`
       height: 13.8rem;
       margin-left: 3rem;
     }
-
-    .__spinWhite {
-      top: 12.5rem;
-      left: 1.4rem;
-      position: absolute;
-      width: 7.557rem;
-      height: 7.557rem;
-      transform: rotate(-27.22deg);
-      opacity: 0.8;
-
-      @media ${device.mobile} {
-        top: 5rem;
-        left: 1.3rem;
-        width: 3.5rem;
-        height: 3.5rem;
-      }
-
-    }
-    
-    .__circle171 {
-      position: absolute;
-      left: 0;
-      top: 10rem;
-    }
   }
 
   .__spaceman {
@@ -423,7 +290,7 @@ const Figures = styled.figure`
     top: 59rem;
     left: 50%;
     margin-left: 8rem;
-    opacity: .8;
+    opacity: .9;
 
     @media ${device.tablet} {
       top: 60rem;

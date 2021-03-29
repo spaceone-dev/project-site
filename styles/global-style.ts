@@ -16,10 +16,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     .release-note {
       background-color: #1c1e21;
-
-      header {
-        background-color: inherit;
-      }
     }
 
     .markdown {
