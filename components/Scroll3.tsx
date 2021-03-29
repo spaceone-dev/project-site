@@ -46,7 +46,7 @@ const Content = styled.div`
   h3 {
     margin-bottom: 3rem;
     color: ${({theme}) => theme.color.pink};
-    font-weight: 500;
+    font-weight: 600;
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;

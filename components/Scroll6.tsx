@@ -51,6 +51,8 @@ const Box = styled.section`
 
   @media ${device.mobile} {
     height: 81.2rem;
+    padding: 0 3rem;
+    box-sizing: border-box;
   }
 `;
 
@@ -139,14 +141,23 @@ const Content = styled.div`
     }
   }
 
+  @media ${device.tablet} {
+    width: 60rem;
+
+    .__mission {
+      width: 46.5rem;
+      font-size: 2.6rem;
+    }
+  }
+
   @media ${device.mobile} {
     width: 100%;
-    padding: 0 5rem;
 
     .__ghInfo {
-      width: 100%;
+      width: calc(100% - 3rem);
       padding-bottom: 3rem;
       font-size: 1.7rem;
+      box-sizing: border-box;
 
       .__info {
         display: flex;
@@ -163,14 +174,14 @@ const Content = styled.div`
       }
 
       &__btn {
-        display: flex ;
+        display: flex;
         width: 100%;
         font-size: 1.4rem;
       }
     }
 
     .__mission {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       line-height: 1.3;
     }
 

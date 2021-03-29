@@ -70,10 +70,11 @@ const ReleaseNote = () => {
                 )
                 : isError ? (<div>error occurred</div>) : (
                     <>
-                        <h2 className="__title"><span className="__text">SpaceONE Release Note</span></h2>
-                        <Box>
+                        <div className="__release__header">
+                            <h2 className="__title">SpaceONE Release Note</h2>
                             <Dropdown list={noteList} selected={noteVersion} getNoteData={getNoteData}/>
-                            <br/>
+                        </div>
+                        <Box>
                             {noteData ? (<ReactMarkdown plugins={[gfm]} className="markdown"
                                                         allowDangerousHtml>{noteData}</ReactMarkdown>) : (
                                 <div>No Data</div>)}
@@ -89,46 +90,66 @@ const Container = styled.div<{ loading: string }>`
   overflow-x: hidden;
   width: 100%;
   font-size: 3rem;
-
-  .__title {
+  
+  .__release__header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
+    top: 0;
     left: 50%;
     z-index: 3;
     width: 100%;
     max-width: 144rem;
-    font-weight: 300;
-    color: ${({theme}) => theme.color.white};
-    transform: translateX(-50%);
+    height: 12rem;
+    padding: 6rem 3rem 0;
     background-color: inherit;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    border-bottom: 1px solid ${({theme}) => theme.color.gray[700]};
 
-    .__text {
-      width: 100%;
-      padding-bottom: 1.6rem;
-      margin-top: 13.6rem;
-      margin-left: 10rem;
-      margin-right: 10rem;
-      border: 0 solid ${({theme}) => theme.color.gray[700]};
-      border-bottom-width: 1px;
+    .__title {
+      font-weight: 300;
+      line-height: 1;
+      color: ${({theme}) => theme.color.white};
+    }
+  }
 
-      @media ${device.tablet} {
-        margin-left: 5.7rem;
-        margin-right: 5.7rem;
+  @media ${device.tablet} {
+    .__release__header {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      padding: 8rem 3rem 2rem;
+
+      .__title {
+        margin-bottom: 2.5rem;
       }
+    }
+  }
 
-      @media ${device.mobile} {
-        margin-top: 10.6rem;
-        margin-right: 3rem;
-        margin-left: 3rem;
+  @media ${device.mobile} {
+    .__release__header {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      padding: 8rem 3rem 2rem;
+
+      .__title {
+        margin-bottom: 2.5rem;
+        font-size: 2.4rem;
       }
     }
   }
 `;
 
 const Box = styled.div`
-  max-width: 144rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 106rem;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 0 10rem 5rem;
   box-sizing: border-box;
 
   .__loading {
@@ -136,7 +157,8 @@ const Box = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    width: 14rem;
+    margin: 0 auto;
 
     &__text {
       margin-top: 2rem;
@@ -146,13 +168,27 @@ const Box = styled.div`
     }
   }
 
+  .markdown {
+    width: 100%;
+    padding-top: 15rem;
+    padding-bottom: 14rem;
+  }
+
   @media ${device.tablet} {
     padding: 0 5.7rem 5rem;
+
+    .markdown {
+      padding-top: 25rem;
+    }
   }
 
   @media ${device.mobile} {
     overflow-x: auto;
     padding: 0 3rem 5rem;
+
+    .markdown {
+      padding-top: 25rem;
+    }
   }
 `;
 

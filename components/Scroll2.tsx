@@ -6,45 +6,26 @@ import {
     Integrate,
     Improve,
     Manage,
-    // json
-    SpinPurple,
-    SpinWhite,
 } from '../public/assets';
 import {device} from '../styles/theme';
 
-const optionsSpinPurple = {
-    animationData: SpinPurple,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
-// const optionsSpinWhite = {
-//     animationData: SpinWhite,
-//     loop: true,
-//     autoplay: true,
-//     rendererSettings: {
-//         preserveAspectRatio: 'xMidYMid slice',
-//     },
-// };
 const Scroll2 = () => {
     return (
         <Box>
             <Content>
                 <h3>we&apos;re very capable:</h3>
                 <div className="__keywords">
-                    <div className="__keyword __keyword1" data-aos="fade-up" data-aos-once="true">
+                    <div className="__keyword __keyword1">
                         <figure><Integrate/></figure>
                         <em className="__word">Integrate</em>
                         <div className="__sub">Multi-Cloud Accounts</div>
                     </div>
-                    <div className="__keyword __keyword2" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+                    <div className="__keyword __keyword2">
                         <figure><Improve/></figure>
                         <em className="__word">Improve</em>
                         <div className="__sub">Operation Efficiency</div>
                     </div>
-                    <div className="__keyword __keyword3" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+                    <div className="__keyword __keyword3">
                         <figure><Manage/></figure>
                         <em className="__word">Manage</em>
                         <div className="__sub">Cloud Expense</div>
@@ -53,9 +34,6 @@ const Scroll2 = () => {
             </Content>
             <Figures>
                 <figure className="__ellipse3"><Ellipse3/></figure>
-                <figure className="__spinpurple1"><Lottie options={optionsSpinPurple}/></figure>
-                {/*<figure className="__spinwhite"><Lottie options={optionsSpinWhite}/></figure>*/}
-                <figure className="__spinpurple2"><Lottie options={optionsSpinPurple}/></figure>
             </Figures>
         </Box>
     )
@@ -90,7 +68,7 @@ const Content = styled.div`
   h3 {
     margin-bottom: 18.3rem;
     color: ${({theme}) => theme.color.pink};
-    font-weight: 500;
+    font-weight: 600;
     opacity: 0.8;
     font-size: 2.6rem;
     text-transform: uppercase;

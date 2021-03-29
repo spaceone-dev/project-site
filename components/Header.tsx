@@ -223,6 +223,10 @@ const ScrollBtns = styled.div`
   transform: translateX(-50%);
   box-sizing: border-box;
 
+  @media ${device.tablet} {
+    display: none;
+  }
+  
   @media ${device.mobile} {
     display: none;
   }
@@ -239,15 +243,6 @@ const ScrollBtn = styled.div`
     font-size: 1.2rem;
     font-family: "Roboto";
   }
-
-  @media ${device.tablet} {
-    left: 4rem;
-  }
-
-  @media ${device.mobile} {
-    left: 3rem;
-    bottom: 3rem;
-  }
 `;
 
 const UpBtn = styled.div<{ isMenuOpen: boolean }>`
@@ -257,15 +252,6 @@ const UpBtn = styled.div<{ isMenuOpen: boolean }>`
   margin-left: auto;
   animation: ${({isMenuOpen}) => (!isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
   cursor: pointer;
-
-  @media ${device.tablet} {
-    right: 4rem;
-  }
-
-  @media ${device.mobile} {
-    right: 3rem;
-    bottom: 3rem;
-  }
 
   .__text {
     margin-top: 1rem;
