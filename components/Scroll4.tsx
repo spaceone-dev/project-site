@@ -160,10 +160,9 @@ const Content = styled.div`
 
     li:nth-child(3) {
       .__ico__openapi {
-        position:relative;
-        top: -1rem;
         width: 17rem;
         height: 17rem;
+        margin-top: -.5rem;
       }
 
       .__keyword {
@@ -242,7 +241,7 @@ const Content = styled.div`
           line-height: 1.29;
         }
       }
-      
+
       li:nth-child(3) {
         .__ico__openapi {
           width: 10.5rem;
