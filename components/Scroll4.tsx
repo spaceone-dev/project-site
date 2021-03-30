@@ -9,6 +9,7 @@ const optionsCloudNative = {
     autoplay: true,
     rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice',
+        progressiveLoad: true,
     },
 };
 const optionsPlugin = {
@@ -17,6 +18,7 @@ const optionsPlugin = {
     autoplay: true,
     rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice',
+        progressiveLoad: true,
     },
 };
 const optionsOpenAPI = {
@@ -25,6 +27,7 @@ const optionsOpenAPI = {
     autoplay: true,
     rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice',
+        progressiveLoad: true,
     },
 };
 

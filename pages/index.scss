@@ -2,21 +2,21 @@ div[role="link"]:focus div {
   overflow: hidden;
 }
 
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
   display: none !important;
 }
 
-@function multiple-box-shadow($n) {
-  $value: "#{random(700)}vh #{random(100)}vh #FFF";
+@function multiple-box-shadow($n, $density) {
+  $value: "#{random($density)}vh #{random(100)}vh #FFF";
   @for $i from 2 through $n {
-    $value: "#{$value} , #{random(700)}vh #{random(100)}vh #FFF";
+    $value: "#{$value} , #{random($density)}vh #{random(100)}vh #FFF";
   }
   @return unquote($value);
 }
 
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big: multiple-box-shadow(100);
+$shadows-small: multiple-box-shadow(700,300);
+$shadows-medium: multiple-box-shadow(200,300);
+$shadows-big: multiple-box-shadow(100,3000);
 
 .stars {
   width: 1px;
