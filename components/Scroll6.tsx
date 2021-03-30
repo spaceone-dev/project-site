@@ -9,6 +9,7 @@ const optionsSpaceship = {
     autoplay: true,
     rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice',
+        progressiveLoad: true,
     },
 };
 const Scroll6 = () => {

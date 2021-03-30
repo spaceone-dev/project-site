@@ -47,6 +47,7 @@ const ReleaseNote = () => {
         autoplay: true,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice',
+            progressiveLoad: true,
         },
     };
 

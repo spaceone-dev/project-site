@@ -21,6 +21,7 @@ const optionsSpaceMan = {
     autoplay: true,
     rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice',
+        progressiveLoad: true,
     },
 };
 const Scroll1 = () => {

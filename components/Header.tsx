@@ -12,6 +12,7 @@ const optionsScroll = {
     autoplay: true,
     rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice',
+        progressiveLoad: true,
     },
 };
 

@@ -9,9 +9,9 @@ const Background = () => (
 );
 
 const Container = styled.div`
+  overflow: hidden;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   position: fixed;
 `;
