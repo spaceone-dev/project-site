@@ -5,39 +5,8 @@ import {
     UniverseDesktop,
     UniverseTablet,
     UniverseMobile,
-    Upcoming,
-    UpcomingM,
-    // json
-    SpinPurple,
-    SpinWhite,
-    SpinBlue,
 } from '../public/assets';
 import {device} from '../styles/theme';
-
-// const optionsSpinPurple = {
-//     animationData: SpinPurple,
-//     loop: true,
-//     autoplay: true,
-//     rendererSettings: {
-//         preserveAspectRatio: 'xMidYMid slice',
-//     },
-// };
-// const optionsSpinWhite = {
-//     animationData: SpinWhite,
-//     loop: true,
-//     autoplay: true,
-//     rendererSettings: {
-//         preserveAspectRatio: 'xMidYMid slice',
-//     },
-// };
-// const optionsSpinBlue = {
-//     animationData: SpinBlue,
-//     loop: true,
-//     autoplay: true,
-//     rendererSettings: {
-//         preserveAspectRatio: 'xMidYMid slice',
-//     },
-// };
 const Scroll5 = () => (
     <Box>
         <Content>
@@ -52,13 +21,6 @@ const Scroll5 = () => (
                 <UniverseMobile/>
             </div>
         </Content>
-        <Figures>
-            {/*<figure className="__spinpurple1"><Lottie options={optionsSpinPurple}/></figure>*/}
-            {/*<figure className="__spinpurple2"><Lottie options={optionsSpinPurple}/></figure>*/}
-            {/*<figure className="__spinblue1"><Lottie options={optionsSpinBlue}/></figure>*/}
-            {/*<figure className="__spinblue2"><Lottie options={optionsSpinBlue}/></figure>*/}
-            {/*<figure className="__spinwhite"><Lottie options={optionsSpinWhite}/></figure>*/}
-        </Figures>
     </Box>
 );
 
