@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background-color: #090a0f;
+    
     .release-note {
       background-color: #1c1e21;
     }
