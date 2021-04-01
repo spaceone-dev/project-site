@@ -1,23 +1,21 @@
 import styled from 'styled-components';
-import {device} from '../styles/theme';
 import Lottie from 'react-lottie';
 import {ExternalLinkGreen, Spaceship} from '../public/assets';
+import {device} from '../styles/theme';
 
-const Section6 = () => {
-    const optionsSpaceship = {
-        animationData: Spaceship,
-        loop: true,
-        autoplay: true,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-            progressiveLoad: true,
-        },
-    };
-
+const optionsSpaceship = {
+    animationData: Spaceship,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice',
+    },
+};
+const Scroll6 = () => {
     return (
         <Box>
             <Content>
-                <div className="__info__list">
+                <div className="__ghInfo">
                     <div className="__info" data-aos="fade-up" data-aos-once="true">
                         <strong>76</strong>
                         <span>Enrolled Projects</span>
@@ -25,7 +23,7 @@ const Section6 = () => {
                     <div className="__info" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
                         <strong>28</strong>
                         <span>Contributors</span>
-                        {/*<div className="__info__list__btn">View Contribution Guide<span><ExternalLinkGreen/></span></div>*/}
+                        <div className="__ghInfo__btn">View Contribution Guide<span><ExternalLinkGreen/></span></div>
                     </div>
                 </div>
                 <div className="__mission">
@@ -33,8 +31,9 @@ const Section6 = () => {
                     for Sustainable Ecosystem.
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
-                    <figure className="__spaceship"><Lottie options={optionsSpaceship}/></figure>
-                    <div className="__gradient">Climb Aboard <span>the <em>SpaceONE</em>ship</span></div>
+                    <div className="__spaceship"><Lottie options={optionsSpaceship}/></div>
+                    <div className="__gradient">Climb Aboard <span>the <em>SpaceONE</em>ship</span>
+                    </div>
                 </div>
             </Content>
         </Box>
@@ -64,7 +63,7 @@ const Content = styled.div`
   align-items: center;
   letter-spacing: -0.02em;
 
-  .__info__list {
+  .__ghInfo {
     padding-bottom: 5rem;
     width: 100%;
     display: flex;
@@ -90,25 +89,25 @@ const Content = styled.div`
       }
     }
 
-    // &__btn {
-    //   font-weight: 300;
-    //   cursor: pointer;
-    //   font-size: 1.7rem;
-    //   color: ${({theme}) => theme.color.green};
-    //   display: flex;
-    //   align-items: center;
-    //   letter-spacing: -0.01em;
-    //
-    //   span {
-    //     display: inline-block;
-    //     margin-left: 0.4rem;
-    //     margin-top: 0.2rem;
-    //   }
-    //
-    //   &:hover {
-    //     text-decoration: underline;
-    //   }
-    // }
+    &__btn {
+      font-weight: 300;
+      cursor: pointer;
+      font-size: 1.7rem;
+      color: ${({theme}) => theme.color.green};
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.01em;
+
+      span {
+        display: inline-block;
+        margin-left: 0.4rem;
+        margin-top: 0.2rem;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .__mission {
@@ -149,21 +148,12 @@ const Content = styled.div`
       width: 46.5rem;
       font-size: 2.6rem;
     }
-
-    .__spaceship {
-      width: 12rem;
-      height: 12rem;
-    }
-    
-    .__gradient {
-      font-size: 2.4rem;
-    }
   }
 
   @media ${device.mobile} {
     width: 100%;
 
-    .__info__list {
+    .__ghInfo {
       width: calc(100% - 3rem);
       padding-bottom: 3rem;
       font-size: 1.7rem;
@@ -183,11 +173,11 @@ const Content = styled.div`
         }
       }
 
-      //&__btn {
-      //  display: flex;
-      //  width: 100%;
-      //  font-size: 1.4rem;
-      //}
+      &__btn {
+        display: flex;
+        width: 100%;
+        font-size: 1.4rem;
+      }
     }
 
     .__mission {
@@ -215,4 +205,4 @@ const Content = styled.div`
   }
 `;
 
-export default Section6;
+export default Scroll6;

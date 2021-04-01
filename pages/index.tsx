@@ -1,6 +1,16 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import {Header, Section1, Section2, Section3, Section4, Section5, Section6, Footer, Background, ScrollBtns,} from '../components';
+import {
+    Header,
+    Footer,
+    Scroll1,
+    Scroll2,
+    Scroll3,
+    Scroll4,
+    Scroll5,
+    Scroll6,
+    Background,
+} from '../components';
 
 const Index = () => {
     return (
@@ -11,16 +21,15 @@ const Index = () => {
                 <meta name="keyword" content="cloud management platform, multi-cloud managed service, open source project, cloud resource, multi-cloud accounts, cloud automation service, cloud spend optimization, cloud billing, multi-cloud infrastructure, real-time monitoring, cloud governance service, cloud orchestration service, RBAC"/>
             </Head>
             <Container>
-                <Header/>
-                <Section1/>
-                <Section2/>
-                <Section3/>
-                <Section4/>
-                <Section5/>
-                <Section6/>
-                <ScrollBtns/>
-                <Footer/>
                 <Background/>
+                <Header/>
+                <Scroll1/>
+                <Scroll2/>
+                <Scroll3/>
+                <Scroll4/>
+                <Scroll5/>
+                <Scroll6/>
+                <Footer/>
             </Container>
         </>
     );

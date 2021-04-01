@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import {device} from '../styles/theme';
 import {SOneManFooter} from '../public/assets';
+import {device} from '../styles/theme';
 
 const Footer = () => (
     <Box>
@@ -8,17 +8,18 @@ const Footer = () => (
             <figure className="__footer__logo"><SOneManFooter/></figure>
             <div className="__item __copyright">
                 <h4>SpaceONE<br/>Copyright 2021</h4>
-                <div className="__item__info __sponsored"><span>Sponsored by </span>MEGAZONE Cloud</div>
+                <div className="__item__conts __sponsored"><span>Sponsored by </span>MEGAZONE Cloud</div>
             </div>
             <div className="__item __contact">
                 <h4>Contact</h4>
-                <a className="__item__info" href="mailto:webmaster@example.com" target="_blank">support@spaceone.dev</a>
+                <a href="mailto:webmaster@example.com" target="_blank"
+                   className="__item__conts">support@spaceone.dev</a>
             </div>
             <div className="__item __address">
                 <h4>Seoul</h4>
-                <span className="__item__info">46, Nonhyeon-ro 85-gil <br/>Gangnam-gu, Seoul, Korea</span>
+                <span className="__item__conts">46, Nonhyeon-ro 85-gil <br/>Gangnam-gu, Seoul, Korea</span>
                 <br/>
-                <a href="tel:+82 1644-2243" className="__item__info">+82 1644-2243</a>
+                <a href="tel:+82 1644-2243" className="__item__conts">+82 1644-2243</a>
             </div>
         </Content>
     </Box>
@@ -66,7 +67,7 @@ const Content = styled.div`
       line-height: 1.3;
     }
 
-    &__info {
+    &__conts {
       display: inline-block;
       margin-top: 1rem;
       font-size: 1.8rem;
@@ -96,7 +97,7 @@ const Content = styled.div`
       flex-basis: 100%;
       margin-bottom: 6.4rem;
     }
-
+    
     .__contact {
       flex-basis: 25rem;
       margin-right: 9rem;
@@ -121,7 +122,7 @@ const Content = styled.div`
         line-height: 1.4;
       }
 
-      &__info {
+      &__conts {
         margin-top: 1rem;
         font-size: 1.3rem;
         letter-spacing: .01rem;

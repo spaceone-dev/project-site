@@ -1,8 +1,15 @@
 import styled from 'styled-components';
+import Lottie from 'react-lottie';
+import {
+    // svg
+    Ellipse3,
+    Integrate,
+    Improve,
+    Manage,
+} from '../public/assets';
 import {device} from '../styles/theme';
-import {Ellipse3, Integrate, Improve, Manage,} from '../public/assets';
 
-const Section2 = () => {
+const Scroll2 = () => {
     return (
         <Box>
             <Content>
@@ -178,22 +185,80 @@ const Figures = styled.figure`
   width: 100vw;
   max-width: 134rem;
   transform: translate(-50%, -50%);
-  
+
+
   .__ellipse3 {
     width: 100%;
     max-width: 129rem;
     margin: 1rem auto 0;
   }
 
+  .__spinpurple1 {
+    position: absolute;
+    left: 17rem;
+    bottom: 9rem;
+    width: 17.6rem;
+    height: 17.6rem;
+    transform: rotate(-30deg);
+    opacity: 0.5;
+  }
+
+  .__spinwhite {
+    left: 75rem;
+    top: 25.4rem;
+    position: absolute;
+    width: 7.339rem;
+    height: 7.339rem;
+    transform: rotate(-30deg);
+    opacity: 0.7;
+
+  }
+
+  .__spinpurple2 {
+    right: 12rem;
+    bottom: 25rem;
+    position: absolute;
+    width: 12.145rem;
+    height: 12.145rem;
+    opacity: 0.5;
+    transform: rotate(30deg);
+  }
+
   @media ${device.tablet} {
     overflow: hidden;
     max-width: 120vw;
+
+    .__spinpurple1 {
+      bottom: 3rem;
+      left: 3rem;
+    }
+
+    .__spinwhite {
+      left: 40.6rem;
+      top: 17.1rem;
+    }
+
+    .__spinpurple2 {
+      right: 9rem;
+      bottom: 10rem;
+    }
   }
 
   @media ${device.mobile} {
     overflow: hidden;
     width: 80rem;
     max-width: 120vw;
+
+    .__spinpurple1 {
+      width: 11.3rem;
+      height: 11.3rem;
+      bottom: 2rem;
+      left: 0;
+    }
+
+    .__spinwhite, .__spinpurple2 {
+      display: none;
+    }
   }
 `
-export default Section2;
+export default Scroll2;

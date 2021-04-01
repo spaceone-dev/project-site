@@ -8,14 +8,6 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
   }
 
-  button {
-    padding: 0;
-    margin: 0;
-    background: inherit;
-    border: none;
-    cursor: pointer;
-  }
-
   html {
     font-size: 10px;
     font-family: 'Work Sans', sans-serif;

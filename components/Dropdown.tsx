@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import styled from 'styled-components';
-import {device} from '../styles/theme';
 import {DropdownBtn, DropdownCheck} from '../public/assets';
+import {device} from '../styles/theme';
 
 const Dropdown = ({list, selected, getNoteData}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,35 +12,34 @@ const Dropdown = ({list, selected, getNoteData}) => {
     return (
         <Container>
             <span>Select version:</span>
-            <DropdownBox onClick={handleOpen} isOpen={isOpen}>
+            <Box onClick={handleOpen} isOpen={isOpen}>
                 <span className="__text">{selected}</span>
                 <span
-                    className="__btn"
                     aria-label="dropdown"
+                    className="__btn"
                     onKeyPress={handleOpen}
                     tabIndex={0}
                     role="button"
-                >
-                    <DropdownBtn/>
-                </span>
-            </DropdownBox>
+                ><DropdownBtn/>
+        </span>
+            </Box>
             {isOpen && (
-                <DropdownCont>
+                <Drop>
                     {list.map((item: string, idx: number) => (
-                        <DropdownItem key={item} isSelected={selected === item}>
+                        <Item key={item} isSelected={selected === item}>
                             {item === selected
-                            && <span className="__icon__selected"><DropdownCheck/></span>}
+                            && <span className="__check"><DropdownCheck/></span>}
                             <span
-                                className="__text"
                                 tabIndex={idx}
+                                className="__text"
                                 role="button"
                                 onKeyPress={() => getNoteData(item)}
                                 onClick={() => getNoteData(item)}
                             >{item}
                             </span>
-                        </DropdownItem>
+                        </Item>
                     ))}
-                </DropdownCont>
+                </Drop>
             )}
         </Container>
     );
@@ -60,7 +59,7 @@ const Container = styled.div`
     align-items: flex-start;
     width: 100%;
   }
-
+  
   @media ${device.mobile} {
     flex-direction: column;
     align-items: flex-start;
@@ -68,7 +67,7 @@ const Container = styled.div`
   }
 `;
 
-const DropdownBox = styled.div<{ isOpen: boolean }>`
+const Box = styled.div<{ isOpen: boolean }>`
   flex-shrink: 1;
   cursor: pointer;
   position: relative;
@@ -102,7 +101,7 @@ const DropdownBox = styled.div<{ isOpen: boolean }>`
   }
 `;
 
-const DropdownCont = styled.div`
+const Drop = styled.div`
   position: absolute;
   top: 100%;
   right: 0;
@@ -115,18 +114,18 @@ const DropdownCont = styled.div`
   @media ${device.tablet} {
     width: 100%;
   }
-
+  
   @media ${device.mobile} {
     width: 100%;
   }
 `;
 
-const DropdownItem = styled.div<{ isSelected: boolean }>`
+const Item = styled.div<{ isSelected: boolean }>`
   position: relative;
   padding: 0.5rem 0;
   color: ${({isSelected}) => isSelected && '#65CBA0'};
 
-  .__icon__selected {
+  .__check {
     position: absolute;
     bottom: 0.5rem;
     margin-left: 1.4rem;
