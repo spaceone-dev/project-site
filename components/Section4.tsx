@@ -1,40 +1,43 @@
 import styled from 'styled-components';
+import {device} from '../styles/theme';
 import Lottie from 'react-lottie';
 import {Cloud, Plugin, OpenAPI} from '../public/assets';
-import {device} from '../styles/theme';
 
-const optionsCloudNative = {
-    animationData: Cloud,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
-const optionsPlugin = {
-    animationData: Plugin,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
-const optionsOpenAPI = {
-    animationData: OpenAPI,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-    },
-};
+const Section4 = () => {
+    const optionsCloudNative = {
+        animationData: Cloud,
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+            progressiveLoad: true,
+        },
+    };
+    const optionsPlugin = {
+        animationData: Plugin,
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+            progressiveLoad: true,
+        },
+    };
+    const optionsOpenAPI = {
+        animationData: OpenAPI,
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+            progressiveLoad: true,
+        },
+    };
 
-const Scroll4 = () => {
     return (
         <Box>
             <Content>
                 <h3>our strength:</h3>
                 <ul className="__strength__list">
-                    <li data-aos="fade-up" data-aos-once="true">
+                    <li className="__strength1" data-aos="fade-up" data-aos-once="true">
                         <figure className="__ico__cloud">
                             <Lottie options={optionsCloudNative}/>
                         </figure>
@@ -44,7 +47,7 @@ const Scroll4 = () => {
                             <i style={{fontStyle: 'italic'}}> K8S, Helm, Prometheus, gRPC, Istio.</i>
                         </div>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+                    <li className="__strength2" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
                         <figure className="__ico__plugin">
                             <Lottie options={optionsPlugin}/>
                         </figure>
@@ -55,7 +58,7 @@ const Scroll4 = () => {
                             managements, even scheduling over resources.
                         </div>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+                    <li className="__strength3" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
                         <figure className="__ico__openapi">
                             <Lottie options={optionsOpenAPI}/>
                         </figure>
@@ -158,12 +161,11 @@ const Content = styled.div`
       }
     }
 
-    li:nth-child(3) {
+    .__strength3 {
       .__ico__openapi {
-        position:relative;
-        top: -1rem;
         width: 17rem;
         height: 17rem;
+        margin-top: -.5rem;
       }
 
       .__keyword {
@@ -242,8 +244,8 @@ const Content = styled.div`
           line-height: 1.29;
         }
       }
-      
-      li:nth-child(3) {
+
+      .__strength3 {
         .__ico__openapi {
           width: 10.5rem;
           height: 10.5rem;
@@ -252,4 +254,4 @@ const Content = styled.div`
     }
   }
 `;
-export default Scroll4;
+export default Section4;
