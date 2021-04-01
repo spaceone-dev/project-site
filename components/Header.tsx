@@ -1,20 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useRouter} from 'next/router';
-import styled from "styled-components";
-import Lottie from 'react-lottie';
-import {device} from '../styles/theme';
-import {SpaceONE, SOneMenuV2, UpIcon, Scroll, Close} from '../public/assets';
 import {Menu} from "./index";
-
-const optionsScroll = {
-    animationData: Scroll,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-        progressiveLoad: true,
-    },
-};
+import styled from "styled-components";
+import {device} from '../styles/theme';
+import {SpaceONE, SOneMenuV2, Close} from '../public/assets';
 
 const Header = () => {
     const router = useRouter();
@@ -22,8 +11,6 @@ const Header = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMenuShown, setIsMenuShown] = useState(false);
-    const [isScrollable, setIsScrollable] = useState(true);
-    const [isUpShown, setIsUpShown] = useState(false);
     const [currentY, setCurrentY] = useState(0);
 
     const handleMenuOpen = () => {
@@ -33,10 +20,6 @@ const Header = () => {
             setIsMenuShown(true);
             setCurrentY(window.pageYOffset);
         } else {
-            // according to position change
-            setIsScrollable(true);
-            setIsUpShown(false);
-
             setIsMenuOpen(false);
             window.scrollTo(0, currentY);
 
@@ -44,10 +27,6 @@ const Header = () => {
                 setIsMenuShown(false);
             }, 500);
         }
-    };
-
-    const moveToTop = () => {
-        window.scroll({top: 0, behavior: 'smooth'});
     };
 
     const redirectToHome = () => {
@@ -60,29 +39,9 @@ const Header = () => {
         }
     }
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-
-        // Show scroll icon or not
-        const html = document.documentElement;
-        const handleScroll = () => {
-            if (html.scrollHeight - window.pageYOffset === window.innerHeight) {
-                setIsScrollable(false);
-                setIsUpShown(true);
-            } else {
-                setIsScrollable(true);
-                setIsUpShown(false);
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-
-        // cleanup
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
-        <HeaderWrap isMenuOpen={isMenuOpen}>
-            <header>
+        <Wrap isMenuOpen={isMenuOpen}>
+            <div className="__header">
                 <div className="__inner">
                     <h1
                         className="__logo"
@@ -92,7 +51,7 @@ const Header = () => {
                         onKeyPress={redirectToHome}
                     ><SpaceONE/>
                     </h1>
-                    <div
+                    <button
                         className="__menu"
                         role="button"
                         tabIndex={0}
@@ -101,9 +60,9 @@ const Header = () => {
                     >
                         <span className="__ico_menu">{isMenuOpen ? <Close/> : <SOneMenuV2/>}</span>
                         <span className="__txt">{isMenuOpen ? 'Close' : 'Menu'}</span>
-                    </div>
+                    </button>
                 </div>
-            </header>
+            </div>
             {isMenuShown && (
                 <Menu
                     pathname={pathname}
@@ -111,37 +70,14 @@ const Header = () => {
                     isMenuShown={isMenuShown}
                 />
             )}
-            <ScrollBtns>
-                {isScrollable && (
-                    <ScrollBtn>
-                        <Lottie
-                            options={optionsScroll}
-                            style={{
-                                width: '2rem',
-                                height: '3.25rem',
-                            }}
-                        />
-                        <div className="__text">scroll</div>
-                    </ScrollBtn>
-                )}
-                {isUpShown && (
-                    <UpBtn
-                        isMenuOpen={isMenuOpen}
-                        onClick={moveToTop}
-                    >
-                        <UpIcon/>
-                        <div className="__text">up</div>
-                    </UpBtn>
-                )}
-            </ScrollBtns>
-        </HeaderWrap>
+        </Wrap>
     )
 }
 
-const HeaderWrap = styled.div<{ isMenuOpen: boolean }>`
+const Wrap = styled.header<{ isMenuOpen: boolean }>`
   font-size: 3rem;
 
-  header {
+  .__header {
     position: fixed;
     top: 0;
     left: 0;
@@ -196,7 +132,7 @@ const HeaderWrap = styled.div<{ isMenuOpen: boolean }>`
   }
 
   @media ${device.mobile} {
-    header .__inner {
+    .__inner {
       padding: 0 2rem;
     }
 
@@ -208,57 +144,6 @@ const HeaderWrap = styled.div<{ isMenuOpen: boolean }>`
       top: 2.5rem;
       right: 1rem;
     }
-  }
-`;
-
-const ScrollBtns = styled.div`
-  position: fixed;
-  left: 50%;
-  bottom: 7rem;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 144rem;
-  padding: 0 3rem;
-  transform: translateX(-50%);
-  box-sizing: border-box;
-
-  @media ${device.tablet} {
-    display: none;
-  }
-  
-  @media ${device.mobile} {
-    display: none;
-  }
-`;
-
-const ScrollBtn = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .__text {
-    margin-top: 1rem;
-    color: ${({theme}) => theme.color.primary[200]};
-    font-size: 1.2rem;
-    font-family: "Roboto";
-  }
-`;
-
-const UpBtn = styled.div<{ isMenuOpen: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: auto;
-  animation: ${({isMenuOpen}) => (!isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
-  cursor: pointer;
-
-  .__text {
-    margin-top: 1rem;
-    color: ${({theme}) => theme.color.primary[200]};
-    font-size: 1.2rem;
-    font-family: "Roboto";
   }
 `;
 

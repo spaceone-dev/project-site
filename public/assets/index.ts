@@ -10,7 +10,6 @@ export { default as ExternalLinkFill } from './external-link_fill.svg';
 export { default as ExternalLinkGreen } from './external-link_green.svg';
 export { default as ExternalLinkMenuSm } from './external-link_menu_sm.svg';
 export { default as GithubLogoMenu } from './github.svg';
-export { default as Github } from './github_border.svg';
 export { default as GithubLogoMenuHover } from './github_hover.svg';
 export { default as GithubLogo } from './github_logo.svg';
 export { default as GithubLogoFill } from './github_logo_fill.svg';

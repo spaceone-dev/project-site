@@ -11,26 +11,28 @@ import {
     GithubLogoFill,
     Wave1,
     Wave2,
-    Github,
     Spaceman,
 } from '../public/assets';
 
-const optionsSpaceMan = {
-    animationData: Spaceman,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice',
-        progressiveLoad: true,
-    },
-};
-const Scroll1 = () => {
+const Section1 = () => {
+    const optionsSpaceMan = {
+        animationData: Spaceman,
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+            progressiveLoad: true,
+        },
+    };
+
     const [isHover, setIsHover] = useState(false);
     return (
         <Box>
             <Content>
                 <h2>Manage All<br/>Cloud Resources<br/>in <span className="__gradient">One Platform</span></h2>
-                <div className="__sub">SpaceONE is an Open-Source Platform and Enables Integrated Management of Multi-Cloud.</div>
+                <div className="__sub">SpaceONE is an Open-Source Platform and Enables Integrated Management of
+                    Multi-Cloud.
+                </div>
                 <a
                     className="__btn__git"
                     onMouseEnter={() => setIsHover(true)}
@@ -40,22 +42,19 @@ const Scroll1 = () => {
                     onClick={() => window.open('https://github.com/spaceone-dev')}
                     onKeyPress={() => window.open('https://github.com/spaceone-dev')}
                 >
-                    <span className="__btn__git__inner">
-                        <span className="__icon__lft">{isHover ? <GithubLogoFill/> : <GithubLogo/>}</span>
-                        <em className="__btn__git__inner__txt">GitHub</em>
-                        <span className="__icon__rgt">{isHover ? <ExternalLinkFill/> : <ExternalLink/>}</span>
-                    </span>
-                    <span className="__btn__git__border"><Github/></span>
+                    <span className="__icon__lft">{isHover ? <GithubLogoFill/> : <GithubLogo/>}</span>
+                    <em className="__btn__git__txt">GitHub</em>
+                    <span className="__icon__rgt">{isHover ? <ExternalLinkFill/> : <ExternalLink/>}</span>
                 </a>
             </Content>
             <Figures>
-                <div className="__wave__wrap">
-                    <div className="__wave1"><Wave1/></div>
-                    <div className="__wave2"><Wave2/></div>
-                </div>
-                <div className="__ellipse1"><div className="__orbit"><Ellipse1/></div></div>
-                <div className="__ellipse2"><Ellipse2/></div>
-                <div className="__spaceman"><Lottie options={optionsSpaceMan}/></div>
+                <figure className="__wave__wrap">
+                    <figure className="__wave1"><Wave1/></figure>
+                    <figure className="__wave2"><Wave2/></figure>
+                </figure>
+                <figure className="__ellipse1"><Ellipse1/></figure>
+                <figure className="__ellipse2"><Ellipse2/></figure>
+                <figure className="__spaceman"><Lottie options={optionsSpaceMan}/></figure>
             </Figures>
         </Box>
     );
@@ -78,6 +77,9 @@ const Box = styled.section`
 const Content = styled.div`
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
   height: 100%;
   margin: 0 auto;
@@ -85,20 +87,10 @@ const Content = styled.div`
   text-align: center;
   color: ${({theme}) => theme.color.primary[200]};
 
-  @media ${device.desktop} {
-    max-width: 109rem;
-  }
-
   h2 {
     padding-top: 23rem;
     font-size: 7rem;
     font-weight: 400;
-
-    @media ${device.mobile} {
-      font-size: 3.4rem;
-      line-height: 1.23;
-      padding-top: 18rem;
-    }
 
     .__gradient {
       background: linear-gradient(to right, #65cba0, #cf88a0, #5ca2b1);
@@ -110,37 +102,31 @@ const Content = styled.div`
 
   .__sub {
     width: 52.2rem;
-    margin: 0 auto;
     padding-top: 3rem;
     font-size: 2.2rem;
     line-height: 130%;
     opacity: 0.7;
-
-    @media ${device.mobile} {
-      width: auto;
-      padding: 0 15%;
-      margin-top: 2.4rem;
-      font-size: 1.8rem;
-      line-height: 1.3;
-    }
   }
 
   .__btn__git {
-    display: inline-block;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 13.4rem;
     height: 4rem;
     margin-top: 13.2rem;
     cursor: pointer;
     color: white;
     border-radius: 3rem;
+    background: url('/assets/github_border.svg') no-repeat center / contain;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "Helvetica Neue";
+    letter-spacing: 0.04em;
 
-    @media ${device.tablet} {
-      margin-top: 30.5rem;
-    }
-
-    @media ${device.mobile} {
-      margin-top: 19.4rem;
+    &__txt {
+      margin-left: .8rem;
     }
 
     &:hover {
@@ -151,36 +137,40 @@ const Content = styled.div`
       color: #001b33;
     }
 
-    &__inner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      font-size: 1.6rem;
-      font-weight: 400;
-      font-family: "Helvetica Neue";
-      letter-spacing: 0.04em;
-
-      &__txt {
-        margin-left: .8rem;
-      }
-    }
-
     .__icon__rgt {
       margin-left: .4rem;
       margin-top: .1rem;
     }
   }
 
-  &__border {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+  @media ${device.desktop} {
+    max-width: 109rem;
+  }
+
+  @media ${device.tablet} {
+    .__btn__git {
+      margin-top: 30.5rem;
+    }
+  }
+
+  @media ${device.mobile} {
+    h2 {
+      font-size: 3.4rem;
+      line-height: 1.23;
+      padding-top: 18rem;
+    }
+
+    .__sub {
+      width: auto;
+      padding: 0 15%;
+      margin-top: 2.4rem;
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    .__btn__git {
+      margin-top: 19.4rem;
+    }
   }
 `
 
@@ -193,10 +183,6 @@ const Figures = styled.figure`
   height: 100%;
   transform: translateX(-50%);
 
-  @media ${device.mobile} {
-    max-width: 100vw;
-  }
-
   .__wave__wrap {
     position: absolute;
     top: 0;
@@ -205,22 +191,11 @@ const Figures = styled.figure`
     opacity: 0.5;
     transform: matrix(1, -0.1, 0.07, 1, 0, 0);
 
-    @media ${device.desktop} {
-      left: 0;
-      opacity: 1;
-      transform: initial;
-    }
-
     .__wave1 {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-
-      @media ${device.desktop} {
-        width: 144rem;
-        height: 96.4rem;
-      }
     }
 
     .__wave2 {
@@ -228,11 +203,6 @@ const Figures = styled.figure`
       top: 0;
       left: 0;
       width: 100%;
-
-      @media ${device.desktop} {
-        width: 143.6rem;
-        height: 84.7rem;
-      }
     }
   }
 
@@ -243,21 +213,9 @@ const Figures = styled.figure`
     width: 31rem;
     height: 57rem;
 
-    @media ${device.mobile} {
-      width: 29rem;
-      height: 29rem;
-      top: 10rem;
-      left: -13rem;
-    }
-
-    .__orbit {
+    svg {
       width: 100%;
       height: 100%;
-
-      svg {
-        width: 100%;
-        height: 100%;
-      }
     }
   }
 
@@ -266,22 +224,9 @@ const Figures = styled.figure`
     width: 31.9rem;
     height: 29.4rem;
     top: 0;
-    left:50%;
+    left: 50%;
     margin-left: 19rem;
     transform: rotate(-5.95deg);
-
-    @media ${device.tablet} {
-      width: 29.4rem;
-      height: 26.7rem;
-      margin-left: 7rem;
-    }
-
-    @media ${device.mobile} {
-      top: 5rem;
-      width: 15.2rem;
-      height: 13.8rem;
-      margin-left: 3rem;
-    }
   }
 
   .__spaceman {
@@ -292,22 +237,67 @@ const Figures = styled.figure`
     left: 50%;
     margin-left: 8rem;
     opacity: .9;
+  }
 
-    @media ${device.tablet} {
-      top: 60rem;
-      width: 18rem;
-      height: 18rem;
-      margin-left: -9rem;
+  @media ${device.desktop} {
+    .__wave__wrap {
+      left: 0;
+      opacity: 1;
+      transform: initial;
+
+      .__wave1 {
+        width: 144rem;
+        height: 96.4rem;
+      }
+
+      .__wave2 {
+        width: 143.6rem;
+        height: 84.7rem;
+      }
+    }
+  }
+
+  @media ${device.mobile} {
+    max-width: 100vw;
+
+    .__ellipse1 {
+      width: 29rem;
+      height: 29rem;
+      top: 10rem;
+      left: -13rem;
     }
 
-    @media ${device.mobile} {
+    .__ellipse2 {
+      top: 5rem;
+      width: 15.2rem;
+      height: 13.8rem;
+      margin-left: 3rem;
+    }
+
+    .__spaceman {
       top: 43rem;
       width: 14rem;
       height: 14rem;
       margin-left: -7rem;
     }
   }
+
+  @media ${device.tablet} {
+    .__ellipse2 {
+      width: 29.4rem;
+      height: 26.7rem;
+      margin-left: 7rem;
+    }
+
+    .__spaceman {
+      top: 60rem;
+      width: 18rem;
+      height: 18rem;
+      margin-left: -9rem;
+
+    }
+  }
 }
 `
 
-export default Scroll1;
+export default Section1;

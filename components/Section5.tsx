@@ -1,13 +1,8 @@
 import styled from 'styled-components';
-import Lottie from 'react-lottie';
-import {
-    // svg
-    UniverseDesktop,
-    UniverseTablet,
-    UniverseMobile,
-} from '../public/assets';
 import {device} from '../styles/theme';
-const Scroll5 = () => (
+import {UniverseDesktop, UniverseTablet, UniverseMobile,} from '../public/assets';
+
+const Section5 = () => (
     <Box>
         <Content>
             <h3>our <br></br>universe</h3>
@@ -128,71 +123,4 @@ const Content = styled.div`
     }
   }
 }`;
-
-const Figures = styled.figure`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100vw;
-  height: 100%;
-
-  figure {
-    position: absolute;
-    left: 50%;
-    opacity: 0.5;
-  }
-
-  .__spinpurple1 {
-    width: 11.2rem;
-    height: 11.2rem;
-    top: 18.5rem;
-    margin-left: -65rem;
-    transform: rotate(70.54deg);
-  }
-
-  .__spinpurple2 {
-    width: 17.6rem;
-    height: 17.6rem;
-    top: 48rem;
-    margin-left: -33rem;
-  }
-
-  .__spinblue1 {
-    width: 13.3rem;
-    height: 13.3rem;
-    bottom: 6rem;
-    margin-left: -58rem;
-    transform: matrix(0.87, -0.5, 0.5, 0.87, 0, 0);
-  }
-
-  .__spinblue2 {
-    width: 9rem;
-    height: 9rem;
-    bottom: 7rem;
-    margin-left: -10rem;
-    transform: rotate(-90deg);
-  }
-
-  .__spinwhite {
-    width: 7.277rem;
-    height: 7.277rem;
-    top: 30rem;
-    margin-left: 14rem;
-    opacity: 0.2;
-    transform: rotate(-17.7deg);
-  }
-
-  @media ${device.tablet} {
-    figure {
-      display: none;
-    }
-  }
-  @media ${device.mobile} {
-    figure {
-      display: none;
-    }
-  }
-`
-
-export default Scroll5;
+export default Section5;
