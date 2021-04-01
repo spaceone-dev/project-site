@@ -1,12 +1,12 @@
-export { default as Background } from './Background';
 export { default as Header } from './Header';
-export { default as Footer } from './Footer';
 export { default as Menu } from './Menu';
+export { default as Dropdown } from './Dropdown';
 export { default as Section1 } from './Section1';
 export { default as Section2 } from './Section2';
 export { default as Section3 } from './Section3';
 export { default as Section4 } from './Section4';
 export { default as Section5 } from './Section5';
 export { default as Section6 } from './Section6';
-export { default as Dropdown } from './Dropdown';
+export { default as Footer } from './Footer';
 export { default as ScrollBtns } from './ScrollBtns';
+export { default as Background } from './Background';
