@@ -1,9 +1,8 @@
+import Swiper from './Swiper';
 import styled from 'styled-components';
 import {device} from '../styles/theme';
 
-import Swiper from './Swiper';
-
-const Scroll3 = () => (
+const Section3 = () => (
     <Box>
         <Content>
             <h3>our approach:</h3>
@@ -68,4 +67,4 @@ const Content = styled.div`
   }
 `;
 
-export default Scroll3;
+export default Section3;

@@ -1,14 +1,14 @@
 import Head from "next/head";
 import React, {useEffect, useState} from 'react';
-import styled from 'styled-components';
-import Lottie from 'react-lottie';
-import axios from 'axios';
 import useSWR from 'swr';
 import ReactMarkdown from 'react-markdown';
+import axios from 'axios';
 import gfm from 'remark-gfm';
+import styled from 'styled-components';
 import {Header, Footer, Dropdown,} from '../components';
-import {LoadingV2,} from '../public/assets';
 import {device} from '../styles/theme';
+import Lottie from 'react-lottie';
+import {LoadingV2,} from '../public/assets';
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
@@ -64,21 +64,28 @@ const ReleaseNote = () => {
             {loading ? (
                     <Box>
                         <div className="__loading">
-                            <Lottie options={optionsLoading} style={{width: '14rem', height: '14rem',}}/>
+                            <div className="__loading__lotties"><Lottie options={optionsLoading}/></div>
                             <p className="__loading__text">Loading</p>
                         </div>
                     </Box>
                 )
-                : isError ? (<div>error occurred</div>) : (
+                : isError ? (
+                    <div>error occurred</div>
+                ) : (
                     <>
                         <div className="__release__header">
                             <h2 className="__title">SpaceONE Release Note</h2>
                             <Dropdown list={noteList} selected={noteVersion} getNoteData={getNoteData}/>
                         </div>
                         <Box>
-                            {noteData ? (<ReactMarkdown plugins={[gfm]} className="markdown"
-                                                        allowDangerousHtml>{noteData}</ReactMarkdown>) : (
-                                <div>No Data</div>)}
+                            {
+                                noteData ? (
+                                    <ReactMarkdown className="markdown" plugins={[gfm]}
+                                                   allowDangerousHtml>{noteData}</ReactMarkdown>
+                                ) : (
+                                    <div>No Data</div>
+                                )
+                            }
                         </Box>
                         <Footer/>
                     </>
@@ -91,7 +98,7 @@ const Container = styled.div<{ loading: string }>`
   overflow-x: hidden;
   width: 100%;
   font-size: 3rem;
-  
+
   .__release__header {
     display: flex;
     justify-content: space-between;
@@ -160,6 +167,11 @@ const Box = styled.div`
     flex-direction: column;
     width: 14rem;
     margin: 0 auto;
+
+    &__lotties {
+      width: 14rem;
+      height: 14rem;
+    }
 
     &__text {
       margin-top: 2rem;

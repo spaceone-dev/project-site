@@ -1,19 +1,10 @@
 import React from 'react';
-import styled from "styled-components";
-import {device} from '../styles/theme';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Navigation, Pagination, Autoplay, EffectFade} from 'swiper/core';
-
-import {
-    // svg
-    Img1V2,
-    Img2V2,
-    Img3V2,
-    Img4V2,
-    Img5V2,
-} from '../public/assets';
-
 SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
+import styled from "styled-components";
+import {device} from '../styles/theme';
+
 const Slider = () => {
     return (
         <SliderWrap>
@@ -22,53 +13,47 @@ const Slider = () => {
                 loop={true}
                 navigation
                 pagination={{clickable: true}}
-                // autoplay={{delay: 4000}}
-                autoplay={false}
+                autoplay={{delay: 4000}}
                 spaceBetween={50}
             >
                 <SwiperSlide>
-                    <div className={"__feature"}>
+                    <div className="__feature">
                         Manage Cloud Resource
-                        <p className={"__description"}><em>Quick and Easy Visualisation</em> of Multi-Cloud Resources.
+                        <p className="__description"><em>Quick and Easy Visualisation</em> of Multi-Cloud Resources.
                         </p>
                     </div>
-                    {/*<figure className="__thumbnail"><Img1V2/></figure>*/}
                     <figure className="__thumbnail"><img src="/assets/img_slide1.png" alt=""/></figure>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={"__feature"}>
+                    <div className="__feature">
                         Project-Based Management System
-                        <p className={"__description"}>Manage All Resources with <em>Own Role and the Project</em> over
+                        <p className="__description">Manage All Resources with <em>Own Role and the Project</em> over
                             All Clouds.</p>
                     </div>
-                    {/*<figure className="__thumbnail"><Img2V2/></figure>*/}
                     <figure className="__thumbnail"><img src="/assets/img_slide2.png" alt=""/></figure>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={"__feature"}>
+                    <div className="__feature">
                         Consolidated Billing
-                        <p className={"__description"}>Easy View on <em>Resource Expenses and Cost
+                        <p className="__description">Easy View on <em>Resource Expenses and Cost
                             Optimization</em> with the Most Efficiency.</p>
                     </div>
-                    {/*<figure className="__thumbnail"><Img3V2/></figure>*/}
                     <figure className="__thumbnail"><img src="/assets/img_slide3.png" alt=""/></figure>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={"__feature"}>
+                    <div className="__feature">
                         Real-Time Monitoring
                         <p className={"__description"}>Support <em>Various Mornitoring System</em>: Cloudwatch,
                             Stackdriver, Azure monitor.</p>
                     </div>
-                    {/*<figure className="__thumbnail"><Img4V2/></figure>*/}
                     <figure className="__thumbnail"><img src="/assets/img_slide4.png" alt=""/></figure>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className={"__feature"}>
+                    <div className="__feature">
                         Core Resource Automation Process
                         <p className={"__description"}>Power Scheduling lets you <em>Set Resource and Control
                             Expenses.</em></p>
                     </div>
-                    {/*<figure className="__thumbnail"><Img5V2/></figure>*/}
                     <figure className="__thumbnail"><img src="/assets/img_slide5.png" alt=""/></figure>
                 </SwiperSlide>
             </Swiper>
@@ -98,7 +83,7 @@ const SliderWrap = styled.div`
         justify-content: space-between;
         width: 100%;
       }
-
+      
       .swiper-slide-active {
         .__feature {
           opacity: 1;
