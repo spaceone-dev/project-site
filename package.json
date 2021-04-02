@@ -13,7 +13,6 @@
     "@next/bundle-analyzer": "^10.1.1",
     "@octokit/core": "^3.2.5",
     "@svgr/webpack": "^5.5.0",
-    "aos": "^2.3.4",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
     "base-64": "^1.0.0",
