@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 const Background = () => (
   <Container>
-    <div className="stars" />
-    <div className="stars2" />
-    <div className="stars3" />
+    <figure className="stars stars1" />
+    <figure className="stars stars2" />
+    <figure className="stars stars3" />
   </Container>
 );
 
-const Container = styled.div`
+const Container = styled.figure`
   overflow: hidden;
   position: fixed;
   top: 0;
