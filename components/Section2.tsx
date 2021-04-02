@@ -178,7 +178,7 @@ const Figures = styled.figure`
   width: 100vw;
   max-width: 134rem;
   transform: translate(-50%, -50%);
-  
+
   .__ellipse3 {
     width: 100%;
     max-width: 129rem;
