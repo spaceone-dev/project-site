@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
-import {useRouter} from 'next/router';
 import {Menu} from "./index";
 import styled from "styled-components";
 import {device} from '../styles/theme';
 import {SpaceONE, SOneMenuV2, Close} from '../public/assets';
 
 const Header = () => {
-    const router = useRouter();
-    const pathname = useRouter().pathname;
-
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMenuShown, setIsMenuShown] = useState(false);
     const [currentY, setCurrentY] = useState(0);
@@ -29,16 +25,6 @@ const Header = () => {
         }
     };
 
-    const redirectToHome = () => {
-        if (pathname === '/') {
-            router.reload();
-            window.scrollTo(0, 0);
-        } else {
-            router.push('/');
-            window.scrollTo(0, 0);
-        }
-    }
-
     return (
         <Wrap isMenuOpen={isMenuOpen}>
             <div className="__header">
@@ -47,9 +33,7 @@ const Header = () => {
                         className="__logo"
                         role="link"
                         tabIndex={0}
-                        onClick={redirectToHome}
-                        onKeyPress={redirectToHome}
-                    ><SpaceONE/>
+                    ><a href="/"><SpaceONE/></a>
                     </h1>
                     <button
                         className="__menu"
@@ -58,14 +42,13 @@ const Header = () => {
                         onClick={handleMenuOpen}
                         onKeyPress={handleMenuOpen}
                     >
-                        <span className="__ico_menu">{isMenuOpen ? <Close/> : <SOneMenuV2/>}</span>
+                        <span className="__ico__menu">{isMenuOpen ? <Close/> : <SOneMenuV2/>}</span>
                         <span className="__txt">{isMenuOpen ? 'Close' : 'Menu'}</span>
                     </button>
                 </div>
             </div>
             {isMenuShown && (
                 <Menu
-                    pathname={pathname}
                     isMenuOpen={isMenuOpen}
                     isMenuShown={isMenuShown}
                 />
@@ -114,19 +97,17 @@ const Wrap = styled.header<{ isMenuOpen: boolean }>`
     font-weight: 300;
     cursor: pointer;
 
-    .__ico_menu {
+    .__ico__menu {
       margin-right: .4rem;
     }
 
     &:hover {
       transition: 0.3s;
-      color: #65cba0;
+      color: ${({theme: t}) => t.color.green};
 
-      .__ico_menu {
-        path {
-          fill: #65cba0;
-          transition: fill 0.3s;
-        }
+      path {
+        fill: ${({theme: t}) => t.color.green};
+        transition: fill 0.3s;
       }
     }
   }

@@ -37,7 +37,7 @@ const Section4 = () => {
             <Content>
                 <h3>our strength:</h3>
                 <ul className="__strength__list">
-                    <li className="__strength1" data-aos="fade-up" data-aos-once="true">
+                    <li className="__strength1 sa sa-up">
                         <figure className="__ico__cloud">
                             <Lottie options={optionsCloudNative}/>
                         </figure>
@@ -47,7 +47,7 @@ const Section4 = () => {
                             <i style={{fontStyle: 'italic'}}> K8S, Helm, Prometheus, gRPC, Istio.</i>
                         </div>
                     </li>
-                    <li className="__strength2" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+                    <li className="__strength2 sa sa-up" data-sa-delay="200">
                         <figure className="__ico__plugin">
                             <Lottie options={optionsPlugin}/>
                         </figure>
@@ -58,7 +58,7 @@ const Section4 = () => {
                             managements, even scheduling over resources.
                         </div>
                     </li>
-                    <li className="__strength3" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+                    <li className="__strength3 sa sa-up" data-sa-delay="400">
                         <figure className="__ico__openapi">
                             <Lottie options={optionsOpenAPI}/>
                         </figure>

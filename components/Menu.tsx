@@ -1,105 +1,67 @@
-import {useRouter} from 'next/router';
-import {useState} from 'react';
 import {theme} from '../styles/theme';
 import styled from 'styled-components';
 import {device} from '../styles/theme';
-import {GithubLogoMenu, ExternalLinkMenuSm, GithubLogoMenuHover, Mail, MailHover} from '../public/assets';
+import {GithubLogoMenu, ExternalLinkMenuSm, Mail,} from '../public/assets';
 
-const Menu = ({isMenuOpen, isMenuShown, pathname}) => {
+const Menu = ({isMenuOpen, isMenuShown}) => {
     const nav1 = [
         {name: 'Home', url: '/'},
         {name: 'User Guide', url: 'https://spaceone-dev.gitbook.io/user-guide/'},
         {name: 'API Reference', url: 'https://spaceone-dev.gitbook.io/spaceone-apis/'},
         {name: 'Release Note', url: '/release-note'},
     ];
+
     const nav2 = [
         {name: 'Github', url: 'https://github.com/spaceone-dev'},
         {name: 'Get In Touch', url: 'mailto:support@spaceone.dev'},
     ];
-    const router = useRouter();
-
-    const handleRouting = (name: string, url: string) => {
-        if ((name === 'Home' && pathname === '/') || (name === 'Release Note' && pathname === '/release-note')) {
-            router.reload();
-            window.scrollTo(0, 0);
-        } else if (name !== 'Home' && name !== 'Release Note') {
-            window.open(url);
-        } else {
-            router.push(url);
-        }
-    };
 
     return (
         <Box isMenuOpen={isMenuOpen} isMenuShown={isMenuShown}>
             <nav>
                 <ul className="__nav1">
                     {nav1.map((item, idx) => (
-                        <li
-                            key={item.name}
-                            role="link"
-                            tabIndex={idx + 1}
-                            onClick={() => handleRouting(item.name, item.url)}
-                            onKeyPress={() => handleRouting(item.name, item.url)}>
-                            <Nav1 pathname={pathname} text={item.name}/>
+                        <li className="__text">
+                            <a
+                                key={item.name}
+                                role="link"
+                                tabIndex={idx + 1}
+                                href={item.url}
+                                target={item.name !== 'Home' && item.name !== 'Release Note' && ("_blank")}
+                                style={{color: `${((item.name === 'Home' && item.url === '/')) && theme.color.green}`}}
+                            >
+                                {item.name}
+                                {item.name !== 'Home' && item.name !== 'Release Note' && (
+                                    <span className="__ico__external"><ExternalLinkMenuSm/></span>
+                                )}
+                            </a>
                         </li>
                     ))}
                 </ul>
                 <ul className="__nav2">
                     {nav2.map((item, idx) => (
-                        <li
-                            key={item.name}
-                            role="link"
-                            tabIndex={idx + 1}
-                            onClick={() => handleRouting(item.name, item.url)}
-                            onKeyPress={() => handleRouting(item.name, item.url)}>
-                            <Nav2 key={item.name} text={item.name}/>
+                        <li className="__text">
+                            <a
+                                key={item.name}
+                                role="link"
+                                tabIndex={idx + 1}
+                                href={item.url}
+                                target={"_blank"}
+                            >
+                                {item.name === 'Github' && (
+                                    <span className="__ico"><GithubLogoMenu/></span>
+                                )}
+                                {item.name === 'Get In Touch' && (
+                                    <span className="__ico"><Mail/></span>
+                                )}
+                                {item.name}
+                                <span className="__ico__external"><ExternalLinkMenuSm/></span>
+                            </a>
                         </li>
                     ))}
                 </ul>
             </nav>
         </Box>
-    );
-};
-const Nav1 = ({text, pathname}) => {
-    return (
-        <div
-            className="__nav1__text"
-            style={{color: `${((text === 'Home' && pathname === '/') || (text === 'Release Note' && pathname === '/release-note')) && theme.color.green}`,}}
-        >
-            <span>{text}</span>
-            {text !== 'Home' && text !== 'Release Note' && (
-                <span className="__ico_external"><ExternalLinkMenuSm/></span>
-            )}
-        </div>
-    );
-};
-
-const Nav2 = ({text}) => {
-    const [isHover, setIsHover] = useState(false);
-
-    return (
-        <div
-            className="__nav2__text"
-            onMouseEnter={() => setIsHover(true)}
-            onMouseLeave={() => setIsHover(false)}
-        >
-            {text === 'Github' && (
-                !isHover ? (
-                    <span className="__ico"><GithubLogoMenu/></span>
-                ) : (
-                    <span className="__ico"><GithubLogoMenuHover/></span>
-                )
-            )}
-            {text === 'Get In Touch' && (
-                !isHover ? (
-                    <span className="__ico"><Mail/></span>
-                ) : (
-                    <span className="__ico"><MailHover/></span>
-                )
-            )}
-            <span>{text}</span>
-            <span className="__ico_external"><ExternalLinkMenuSm/></span>
-        </div>
     );
 };
 
@@ -130,15 +92,17 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
       font-size: 4rem;
       letter-spacing: -0.01em;
 
-      &__text {
+      .__text {
         display: flex;
         align-items: center;
-        margin-bottom: 2.8rem;
         height: 4.1rem;
+        margin-bottom: 2.8rem;
         cursor: pointer;
-
+        transition: color .2s;
+        
         &:hover {
           color: ${({theme: t}) => t.color.green};
+          transition: color .2s;
         }
       }
     }
@@ -148,14 +112,27 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
       margin-right: 10rem;
       font-size: 3rem;
 
-      &__text {
+      .__text {
         height: 3.6rem;
-        cursor: pointer;
-        display: flex;
         margin-bottom: 2rem;
-
+        transition: color .2s;
+        
+        a {
+          display: flex;
+          align-items: center;
+        }
+        .__ico path {
+          transition: fill .2s;
+        }
+        
         &:hover {
           color: ${({theme: t}) => t.color.green};
+          transition: color .2s;
+
+          .__ico path {
+            fill: ${({theme: t}) => t.color.green};
+            transition: fill .2s;
+          }
         }
       }
     }
@@ -166,7 +143,7 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
       text-align: center;
     }
 
-    .__ico_external {
+    .__ico__external {
       margin-top: .3rem;
       margin-left: .7rem;
     }
@@ -183,7 +160,7 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
       .__nav1 {
         margin-bottom: 17rem;
 
-        &__text {
+        .__text {
           margin-bottom: 1.9rem;
         }
       }
@@ -206,7 +183,7 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
         font-size: 3rem;
         margin-bottom: 8rem;
 
-        &__text {
+        .__text {
           margin-bottom: 2rem;
         }
       }

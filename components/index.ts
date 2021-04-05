@@ -10,3 +10,4 @@ export { default as Section6 } from './Section6';
 export { default as Footer } from './Footer';
 export { default as ScrollBtns } from './ScrollBtns';
 export { default as Background } from './Background';
+export { default as ScrollAnimation } from './ScrollAnimation';

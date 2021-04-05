@@ -43,9 +43,10 @@ const ScrollBtns = () => {
     }, []);
 
     return (
-        <ScrollBtns2>
+        <BtnGrp>
             {isScrollable && (
-                <ScrollBtn>
+                <Btn leftSide={true}
+                >
                     <Lottie
                         options={optionsScroll}
                         style={{
@@ -54,20 +55,20 @@ const ScrollBtns = () => {
                         }}
                     />
                     <div className="__text">scroll</div>
-                </ScrollBtn>
+                </Btn>
             )}
             {isUpShown && (
-                <UpBtn
-                    onClick={moveToTop}
+                <Btn leftSide={false}
+                     onClick={moveToTop}
                 >
                     <UpIcon/>
                     <div className="__text">up</div>
-                </UpBtn>
+                </Btn>
             )}
-        </ScrollBtns2>
+        </BtnGrp>
     )
 }
-const ScrollBtns2 = styled.div`
+const BtnGrp = styled.div`
   position: fixed;
   left: 50%;
   bottom: 7rem;
@@ -83,32 +84,19 @@ const ScrollBtns2 = styled.div`
   @media ${device.tablet} {
     display: none;
   }
-  
+
   @media ${device.mobile} {
     display: none;
   }
 `;
 
-const ScrollBtn = styled.div`
+const Btn = styled.button<{ leftSide: boolean; }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .__text {
-    margin-top: 1rem;
-    color: ${({theme}) => theme.color.primary[200]};
-    font-size: 1.2rem;
-    font-family: "Roboto";
-  }
-`;
-
-const UpBtn = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: auto;
   cursor: pointer;
-
+  margin-left: ${({leftSide}) => leftSide ? `0` : `auto`};
+  
   .__text {
     margin-top: 1rem;
     color: ${({theme}) => theme.color.primary[200]};

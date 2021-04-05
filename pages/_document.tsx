@@ -48,11 +48,8 @@ class MyDocument extends Document {
                           rel="stylesheet"/>
                     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"
                           rel="stylesheet"/>
-                    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-                    <script src="https://unpkg.com/aos@next/dist/aos.js"/>
                 </Head>
                 <body>
-                <script>AOS.init();</script>
                 <Main/>
                 <NextScript/>
                 </body>

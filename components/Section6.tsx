@@ -18,11 +18,11 @@ const Section6 = () => {
         <Box>
             <Content>
                 <div className="__info__list">
-                    <div className="__info" data-aos="fade-up" data-aos-once="true">
+                    <div className="__info sa sa-up">
                         <strong>76</strong>
                         <span>Enrolled Projects</span>
                     </div>
-                    <div className="__info" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+                    <div className="__info sa sa-up" data-sa-delay="200">
                         <strong>28</strong>
                         <span>Contributors</span>
                         {/*<div className="__info__list__btn">View Contribution Guide<span><ExternalLinkGreen/></span></div>*/}
@@ -32,9 +32,9 @@ const Section6 = () => {
                     SpaceONE’s Mission is to Accelerate the Multi-Cloud Native Technology
                     for Sustainable Ecosystem.
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
-                    <figure className="__spaceship"><Lottie options={optionsSpaceship}/></figure>
-                    <div className="__gradient">Climb Aboard <span>the <em>SpaceONE</em>ship</span></div>
+                <div>
+                    <figure className="__spaceship sa sa-up"><Lottie options={optionsSpaceship}/></figure>
+                    <div className="__gradient sa sa-up" data-sa-delay="100">Climb Aboard <span>the <em>SpaceONE</em>ship</span></div>
                 </div>
             </Content>
         </Box>
