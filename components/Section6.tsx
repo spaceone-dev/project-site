@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {device} from '../styles/theme';
-import Lottie from 'react-lottie-light-js';
+import Lottie from 'react-lottie';
 import {ExternalLinkGreen, Spaceship} from '../public/assets';
 
 const Section6 = () => {
@@ -12,6 +12,7 @@ const Section6 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
+        useSubFrames: false,
     };
 
     return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Lottie from 'react-lottie-light-js';
+import Lottie from 'react-lottie';
 import { device } from '../styles/theme';
 import {
     Ellipse1,
@@ -23,6 +23,7 @@ const Section1 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
+        useSubFrames: false,
     };
 
     const [isHover, setIsHover] = useState(false);

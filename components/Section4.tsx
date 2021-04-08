@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {device} from '../styles/theme';
-import Lottie from 'react-lottie-light-js';
+import Lottie from 'react-lottie';
 import {Cloud, Plugin, OpenAPI} from '../public/assets';
 
 const Section4 = () => {
@@ -12,6 +12,7 @@ const Section4 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
+        useSubFrames: false,
     };
     const optionsPlugin = {
         animationData: Plugin,
@@ -21,6 +22,7 @@ const Section4 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
+        useSubFrames: false,
     };
     const optionsOpenAPI = {
         animationData: OpenAPI,
@@ -30,6 +32,7 @@ const Section4 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
+        useSubFrames: false,
     };
 
     return (
