@@ -6600,6 +6600,14 @@ react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-lottie-light-js@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/react-lottie-light-js/-/react-lottie-light-js-1.2.6.tgz#14d09b5060f412a759957a059c5437b8e60d369b"
+  integrity sha512-gZoYV1DtWhsc+LDEma1cs140Px0z3BPDdvfhaLwKTJYaESHp3QSwU8Jwzzqd3UsiaQclI6stFc2V+tHqysILPw==
+  dependencies:
+    babel-runtime "^6.26.0"
+    lottie-web "^5.1.3"
+
 react-lottie@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/react-lottie/-/react-lottie-1.2.3.tgz#8544b96939e088658072eea5e12d912cdaa3acc1"

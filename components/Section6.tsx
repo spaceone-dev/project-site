@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {device} from '../styles/theme';
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie-light-js';
 import {ExternalLinkGreen, Spaceship} from '../public/assets';
 
 const Section6 = () => {
