@@ -1,7 +1,7 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-import {device} from '../styles/theme';
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie-light-js';
+import { device } from '../styles/theme';
 import {
     Ellipse1,
     Ellipse2,
@@ -29,32 +29,33 @@ const Section1 = () => {
     return (
         <Box>
             <Content>
-                <h2>Manage All<br/>Cloud Resources<br/>in <span className="__gradient">One Platform</span></h2>
-                <div className="__sub">SpaceONE is an Open-Source Platform and Enables Integrated Management of
+                <h2>Manage All<br />Cloud Resources<br />in <span className="__gradient">One Platform</span></h2>
+                <div className="__sub">
+                    SpaceONE is an Open-Source Platform and Enables Integrated Management of
                     Multi-Cloud.
                 </div>
                 <a
                     className="__btn__git"
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}
-                    role="link"
                     tabIndex={0}
-                    onClick={() => window.open('https://github.com/spaceone-dev')}
-                    onKeyPress={() => window.open('https://github.com/spaceone-dev')}
+                    href="https://github.com/spaceone-dev"
+                    target="_blank"
+                    rel="noreferrer"
                 >
-                    <span className="__icon__lft">{isHover ? <GithubLogoFill/> : <GithubLogo/>}</span>
+                    <span className="__icon__lft">{isHover ? <GithubLogoFill /> : <GithubLogo />}</span>
                     <em className="__btn__git__txt">GitHub</em>
-                    <span className="__icon__rgt">{isHover ? <ExternalLinkFill/> : <ExternalLink/>}</span>
+                    <span className="__icon__rgt">{isHover ? <ExternalLinkFill /> : <ExternalLink />}</span>
                 </a>
             </Content>
             <Figures>
                 <figure className="__wave__wrap">
-                    <figure className="__wave1"><Wave1/></figure>
-                    <figure className="__wave2"><Wave2/></figure>
+                    <figure className="__wave1"><Wave1 /></figure>
+                    <figure className="__wave2"><Wave2 /></figure>
                 </figure>
-                <figure className="__ellipse1"><Ellipse1/></figure>
-                <figure className="__ellipse2"><Ellipse2/></figure>
-                <figure className="__spaceman"><Lottie options={optionsSpaceMan}/></figure>
+                <figure className="__ellipse1"><Ellipse1 /></figure>
+                <figure className="__ellipse2"><Ellipse2 /></figure>
+                <figure className="__spaceman"><Lottie options={optionsSpaceMan} /></figure>
             </Figures>
         </Box>
     );
@@ -85,7 +86,7 @@ const Content = styled.div`
   margin: 0 auto;
   letter-spacing: -0.01em;
   text-align: center;
-  color: ${({theme}) => theme.color.primary[200]};
+  color: ${({ theme }) => theme.color.primary[200]};
 
   h2 {
     padding-top: 23rem;
@@ -172,7 +173,7 @@ const Content = styled.div`
       margin-top: 19.4rem;
     }
   }
-`
+`;
 
 const Figures = styled.figure`
   position: absolute;
@@ -298,6 +299,6 @@ const Figures = styled.figure`
     }
   }
 }
-`
+`;
 
 export default Section1;

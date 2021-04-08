@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {UpIcon, Scroll} from "../public/assets";
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie-light-js';
 import styled from "styled-components";
 import {device} from "../styles/theme";
 
