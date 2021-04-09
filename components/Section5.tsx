@@ -1,20 +1,11 @@
 import styled from 'styled-components';
 import {device} from '../styles/theme';
-import {UniverseDesktop, UniverseTablet, UniverseMobile,} from '../public/assets';
 
 const Section5 = () => (
     <Box>
+        <div className="__universe"></div>
         <Content>
             <h3>our <br></br>universe</h3>
-            <div className="__universewrap __only__desktop">
-                <UniverseDesktop/>
-            </div>
-            <div className="__universewrap __only__tablet">
-                <UniverseTablet/>
-            </div>
-            <div className="__universewrap __only__mobile">
-                <UniverseMobile/>
-            </div>
         </Content>
     </Box>
 );
@@ -35,13 +26,32 @@ const Box = styled.section`
     background: #001b33;
     opacity: 0.5;
   }
-  
+
+  .__universe {
+    position: relative;
+    z-index: 5;
+    width: auto;
+    height: 100%;
+    margin-left: -55rem;
+    background:url("/assets/universe_desktop.svg") no-repeat center / auto;
+    
+    @media ${device.tablet} {
+      margin-left: -52rem;
+      background-image:url("/assets/universe_tab.svg")
+    }
+
+    @media ${device.mobile} {
+      margin-left:-33rem;
+      background-image:url("/assets/universe_mo.svg")
+    }
+  }
+
   @media ${device.tablet} {
     height: 102.4rem;
   }
-  
+
   @media ${device.mobile} {
-    height: auto;
+    height: 81.2rem;
   }
 `;
 
@@ -51,7 +61,7 @@ const Content = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  
+
   h3 {
     position: absolute;
     z-index: 2;
@@ -64,26 +74,26 @@ const Content = styled.div`
   }
 
   .__universewrap {
-    display: none;
+    //display: none;
     position: relative;
     z-index: 1;
+    //width: 118vw;
+    border: solid 1px white;
+
+    img {
+      diaplay: inline-block;
+      width: 100%;
+    }
   }
 
   @media ${device.desktop} {
-    .__only__desktop {
-      display: block;
-      width: 100%;
-      width: 118vw;
-      max-width: 171rem;
-      margin-left:-55rem;
-    }
     h3 {
       top: 46rem;
       left: 50%;
       margin-left: -50rem;
     }
   }
-  
+
   @media only screen and (min-width: 1024px) and (max-width: 1280px) {
     h3 {
       margin-left: -47rem;
@@ -92,15 +102,9 @@ const Content = styled.div`
 
   @media ${device.tablet} {
     width: 100vw;
-
-    .__only__tablet {
-      display: block;
-      margin-left: -52rem;
-    }
-    
     h3 {
       top: 15rem;
-      left:0;
+      left: 0;
       width: 100%;
     }
   }
@@ -112,14 +116,16 @@ const Content = styled.div`
 
     h3 {
       top: 12rem;
-      left:0;
+      left: 0;
       width: 100%;
       font-size: 2rem;
     }
 
-    .__only__mobile {
+    .__universewrap {
       display: block;
+      //width: 70rem;
       margin-left: -33rem;
+      border: solid 1px yellow;
     }
   }
 }`;
