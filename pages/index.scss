@@ -29,28 +29,26 @@ a:hover, a:active {
 
 $shadows-small: multiple-box-shadow(700,300);
 $shadows-medium: multiple-box-shadow(200,300);
-$shadows-big: multiple-box-shadow(100,3000);
+$shadows-big: multiple-box-shadow(100,300);
 
 .stars {
   width: 1px;
   height: 1px;
   box-shadow: $shadows-small;
   background-color:transparent;
-  animation: animStar 1.7s linear 200;
 }
 
 .stars2 {
   width: 2px;
   height: 2px;
   box-shadow: $shadows-medium;
-  animation-delay: .5s;
+  animation: animStar 1.7s linear 200;
 }
 
 .stars3 {
   width: 3px;
   height: 3px;
   box-shadow: $shadows-big;
-  animation-delay: .7s;
 }
 
 @keyframes animStar {

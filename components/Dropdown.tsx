@@ -1,9 +1,9 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-import {device} from '../styles/theme';
-import {DropdownBtn, DropdownCheck} from '../public/assets';
+import { device } from '../styles/theme';
+import { DropdownBtn, DropdownCheck } from '../public/assets';
 
-const Dropdown = ({list, selected, getNoteData}) => {
+const Dropdown = ({ list, selected, getNoteData }) => {
     const [isOpen, setIsOpen] = useState(false);
     const handleOpen = () => {
         setIsOpen(!isOpen);
@@ -21,7 +21,7 @@ const Dropdown = ({list, selected, getNoteData}) => {
                     tabIndex={0}
                     role="button"
                 >
-                    <DropdownBtn/>
+                    <DropdownBtn />
                 </span>
             </DropdownBox>
             {isOpen && (
@@ -29,7 +29,7 @@ const Dropdown = ({list, selected, getNoteData}) => {
                     {list.map((item: string, idx: number) => (
                         <DropdownItem key={item} isSelected={selected === item}>
                             {item === selected
-                            && <span className="__icon__selected"><DropdownCheck/></span>}
+                            && <span className="__icon__selected"><DropdownCheck /></span>}
                             <span
                                 className="__text"
                                 tabIndex={idx}
@@ -53,7 +53,7 @@ const Container = styled.div`
   align-items: center;
   font-weight: 300;
   font-size: 1.7rem;
-  color: ${({theme}) => theme.color.white};
+  color: ${({ theme }) => theme.color.white};
 
   @media ${device.tablet} {
     flex-direction: column;
@@ -75,14 +75,14 @@ const DropdownBox = styled.div<{ isOpen: boolean }>`
   width: 35rem;
   padding: 1rem 0;
   margin-left: 1rem;
-  border: 1px solid ${({theme}) => theme.color.gray[700]};
+  border: 1px solid ${({ theme }) => theme.color.gray[700]};
   border-radius: 0.4rem;
 
   .__btn {
     position: absolute;
     right: 1.239rem;
     transition-duration: .2s;
-    transform: ${({isOpen}) => isOpen && 'rotate(180deg)'};
+    transform: ${({ isOpen }) => isOpen && 'rotate(180deg)'};
   }
 
   .__text {
@@ -109,7 +109,7 @@ const DropdownCont = styled.div`
   width: 35rem;
   margin-top: 0.2rem;
   background-color: #1C1E21;
-  border: 1px solid ${({theme}) => theme.color.gray[700]};
+  border: 1px solid ${({ theme }) => theme.color.gray[700]};
   border-radius: 0.4rem;
 
   @media ${device.tablet} {
@@ -124,7 +124,7 @@ const DropdownCont = styled.div`
 const DropdownItem = styled.div<{ isSelected: boolean }>`
   position: relative;
   padding: 0.5rem 0;
-  color: ${({isSelected}) => isSelected && '#65CBA0'};
+  color: ${({ isSelected }) => isSelected && '#65CBA0'};
 
   .__icon__selected {
     position: absolute;
@@ -137,7 +137,7 @@ const DropdownItem = styled.div<{ isSelected: boolean }>`
     margin-left: 3rem;
 
     :hover {
-      color: ${({theme}) => theme.color.green};
+      color: ${({ theme }) => theme.color.green};
     }
   }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {device} from '../styles/theme';
-import Lottie from 'react-lottie';
-import {Cloud, Plugin, OpenAPI} from '../public/assets';
+import Lottie from 'react-lottie-light-js';
+import { device } from '../styles/theme';
+import { Cloud, Plugin, OpenAPI } from '../public/assets';
 
 const Section4 = () => {
     const optionsCloudNative = {
@@ -12,7 +12,6 @@ const Section4 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
-        useSubFrames: false,
     };
     const optionsPlugin = {
         animationData: Plugin,
@@ -22,7 +21,6 @@ const Section4 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
-        useSubFrames: false,
     };
     const optionsOpenAPI = {
         animationData: OpenAPI,
@@ -32,7 +30,6 @@ const Section4 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
-        useSubFrames: false,
     };
 
     return (
@@ -42,17 +39,17 @@ const Section4 = () => {
                 <ul className="__strength__list">
                     <li className="__strength1 sa sa-up">
                         <figure className="__ico__cloud">
-                            <Lottie options={optionsCloudNative}/>
+                            <Lottie options={optionsCloudNative} />
                         </figure>
                         <div className="__keyword">Cloud Native</div>
                         <div className="__describe">
                             We are architecting Cloud Native-Based Technology;
-                            <i style={{fontStyle: 'italic'}}> K8S, Helm, Prometheus, gRPC, Istio.</i>
+                            <i style={{ fontStyle: 'italic' }}> K8S, Helm, Prometheus, gRPC, Istio.</i>
                         </div>
                     </li>
                     <li className="__strength2 sa sa-up" data-sa-delay="200">
                         <figure className="__ico__plugin">
-                            <Lottie options={optionsPlugin}/>
+                            <Lottie options={optionsPlugin} />
                         </figure>
                         <div className="__keyword">Plugin Architecture</div>
                         <div className="__describe">
@@ -63,7 +60,7 @@ const Section4 = () => {
                     </li>
                     <li className="__strength3 sa sa-up" data-sa-delay="400">
                         <figure className="__ico__openapi">
-                            <Lottie options={optionsOpenAPI}/>
+                            <Lottie options={optionsOpenAPI} />
                         </figure>
                         <div className="__keyword">Open API</div>
                         <div className="__describe">
@@ -102,7 +99,7 @@ const Content = styled.div`
   h3 {
     margin-bottom: 4.4rem;
     opacity: 0.8;
-    color: ${({theme}) => theme.color.pink};
+    color: ${({ theme }) => theme.color.pink};
     font-weight: 600;
     font-size: 2.6rem;
     text-transform: uppercase;
@@ -150,7 +147,7 @@ const Content = styled.div`
         font-size: 3rem;
         line-height: 3.5rem;
         letter-spacing: -0.01em;
-        color: ${({theme}) => theme.color.primary[300]};
+        color: ${({ theme }) => theme.color.primary[300]};
       }
 
       .__describe {
@@ -160,7 +157,7 @@ const Content = styled.div`
         font-size: 1.9rem;
         line-height: 130%;
         opacity: 0.8;
-        color: ${({theme}) => theme.color.primary[200]};
+        color: ${({ theme }) => theme.color.primary[200]};
       }
     }
 

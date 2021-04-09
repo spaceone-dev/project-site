@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie-light-js';
 import { device } from '../styles/theme';
 import {
     Ellipse1,
@@ -23,7 +23,6 @@ const Section1 = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
-        useSubFrames: false,
     };
 
     const [isHover, setIsHover] = useState(false);
@@ -39,8 +38,8 @@ const Section1 = () => {
                     className="__btn__git"
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}
-                    tabIndex={0}
                     href="https://github.com/spaceone-dev"
+                    tabIndex={0}
                     target="_blank"
                     rel="noreferrer"
                 >

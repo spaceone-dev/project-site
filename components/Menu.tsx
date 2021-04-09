@@ -1,19 +1,19 @@
-import {theme} from '../styles/theme';
 import styled from 'styled-components';
-import {device} from '../styles/theme';
-import {GithubLogoMenu, ExternalLinkMenuSm, Mail,} from '../public/assets';
+import { theme, device } from '../styles/theme';
 
-const Menu = ({isMenuOpen, isMenuShown}) => {
+import { GithubLogoMenu, ExternalLinkMenuSm, Mail } from '../public/assets';
+
+const Menu = ({ isMenuOpen, isMenuShown }) => {
     const nav1 = [
-        {name: 'Home', url: '/'},
-        {name: 'User Guide', url: 'https://spaceone-dev.gitbook.io/user-guide/'},
-        {name: 'API Reference', url: 'https://spaceone-dev.gitbook.io/spaceone-apis/'},
-        {name: 'Release Note', url: '/release-note'},
+        { name: 'Home', url: '/' },
+        { name: 'User Guide', url: 'https://spaceone-dev.gitbook.io/user-guide/' },
+        { name: 'API Reference', url: 'https://spaceone-dev.gitbook.io/spaceone-apis/' },
+        { name: 'Release Note', url: '/release-note' },
     ];
 
     const nav2 = [
-        {name: 'Github', url: 'https://github.com/spaceone-dev'},
-        {name: 'Get In Touch', url: 'mailto:support@spaceone.dev'},
+        { name: 'Github', url: 'https://github.com/spaceone-dev' },
+        { name: 'Get In Touch', url: 'mailto:support@spaceone.dev' },
     ];
 
     return (
@@ -24,15 +24,14 @@ const Menu = ({isMenuOpen, isMenuShown}) => {
                         <li className="__text">
                             <a
                                 key={item.name}
-                                role="link"
                                 tabIndex={idx + 1}
                                 href={item.url}
-                                target={item.name !== 'Home' && item.name !== 'Release Note' && ("_blank")}
-                                style={{color: `${((item.name === 'Home' && item.url === '/')) && theme.color.green}`}}
+                                target={item.name !== 'Home' && item.name !== 'Release Note' && ('_blank')}
+                                style={{ color: `${((item.name === 'Home' && item.url === '/')) && theme.color.green}` }}
                             >
                                 {item.name}
                                 {item.name !== 'Home' && item.name !== 'Release Note' && (
-                                    <span className="__ico__external"><ExternalLinkMenuSm/></span>
+                                    <span className="__ico__external"><ExternalLinkMenuSm /></span>
                                 )}
                             </a>
                         </li>
@@ -43,19 +42,19 @@ const Menu = ({isMenuOpen, isMenuShown}) => {
                         <li className="__text">
                             <a
                                 key={item.name}
-                                role="link"
                                 tabIndex={idx + 1}
                                 href={item.url}
-                                target={"_blank"}
+                                target="_blank"
+                                rel="noreferrer"
                             >
                                 {item.name === 'Github' && (
-                                    <span className="__ico"><GithubLogoMenu/></span>
+                                    <span className="__ico"><GithubLogoMenu /></span>
                                 )}
                                 {item.name === 'Get In Touch' && (
-                                    <span className="__ico"><Mail/></span>
+                                    <span className="__ico"><Mail /></span>
                                 )}
                                 {item.name}
-                                <span className="__ico__external"><ExternalLinkMenuSm/></span>
+                                <span className="__ico__external"><ExternalLinkMenuSm /></span>
                             </a>
                         </li>
                     ))}
@@ -75,7 +74,7 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
   width: 100%;
   height: 100vh;
   background: #001b33;
-  animation: ${({isMenuOpen}) => (isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
+  animation: ${({ isMenuOpen }) => (isMenuOpen ? 'openMenu' : 'closeMenu')} 0.5s;
 
   nav {
     display: flex;
@@ -85,7 +84,7 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
     height: auto;
     padding: 19.6rem 10rem 0;
     font-weight: 400;
-    color: ${({theme: t}) => t.color.primary[200]};
+    color: ${({ theme: t }) => t.color.primary[200]};
 
     .__nav1 {
       cursor: pointer;
@@ -101,7 +100,7 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
         transition: color .2s;
         
         &:hover {
-          color: ${({theme: t}) => t.color.green};
+          color: ${({ theme: t }) => t.color.green};
           transition: color .2s;
         }
       }
@@ -126,11 +125,11 @@ const Box = styled.div<{ isMenuOpen: boolean; isMenuShown: boolean }>`
         }
         
         &:hover {
-          color: ${({theme: t}) => t.color.green};
+          color: ${({ theme: t }) => t.color.green};
           transition: color .2s;
 
           .__ico path {
-            fill: ${({theme: t}) => t.color.green};
+            fill: ${({ theme: t }) => t.color.green};
             transition: fill .2s;
           }
         }

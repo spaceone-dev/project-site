@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {UpIcon, Scroll} from "../public/assets";
-import Lottie from 'react-lottie';
-import styled from "styled-components";
-import {device} from "../styles/theme";
+import React, { useEffect, useState } from 'react';
+import Lottie from 'react-lottie-light-js';
+import styled from 'styled-components';
+import { UpIcon, Scroll } from '../public/assets';
+import { device } from '../styles/theme';
 
 const ScrollBtns = () => {
     const optionsScroll = {
@@ -13,14 +13,13 @@ const ScrollBtns = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
-        useSubFrames: false,
     };
 
     const [isScrollable, setIsScrollable] = useState(true);
     const [isUpShown, setIsUpShown] = useState(false);
 
     const moveToTop = () => {
-        window.scroll({top: 0, behavior: 'smooth'});
+        window.scroll({ top: 0, behavior: 'smooth' });
     };
 
     useEffect(() => {
@@ -46,8 +45,7 @@ const ScrollBtns = () => {
     return (
         <BtnGrp>
             {isScrollable && (
-                <Btn leftSide={true}
-                >
+                <Btn leftSide>
                     <Lottie
                         options={optionsScroll}
                         style={{
@@ -59,16 +57,17 @@ const ScrollBtns = () => {
                 </Btn>
             )}
             {isUpShown && (
-                <Btn leftSide={false}
-                     onClick={moveToTop}
+                <Btn
+                    leftSide={false}
+                    onClick={moveToTop}
                 >
-                    <UpIcon/>
+                    <UpIcon />
                     <div className="__text">up</div>
                 </Btn>
             )}
         </BtnGrp>
-    )
-}
+    );
+};
 const BtnGrp = styled.div`
   position: fixed;
   left: 50%;
@@ -96,11 +95,11 @@ const Btn = styled.button<{ leftSide: boolean; }>`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  margin-left: ${({leftSide}) => leftSide ? `0` : `auto`};
+  margin-left: ${({ leftSide }) => (leftSide ? '0' : 'auto')};
   
   .__text {
     margin-top: 1rem;
-    color: ${({theme}) => theme.color.primary[200]};
+    color: ${({ theme }) => theme.color.primary[200]};
     font-size: 1.2rem;
     font-family: "Roboto";
   }

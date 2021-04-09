@@ -1,65 +1,69 @@
 import React from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Navigation, Pagination, Autoplay, EffectFade} from 'swiper/core';
-SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
-import styled from "styled-components";
-import {device} from '../styles/theme';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, {
+    Navigation, Pagination, Autoplay, EffectFade,
+} from 'swiper/core';
+import styled from 'styled-components';
+import { device } from '../styles/theme';
 
-const Slider = () => {
-    return (
-        <SliderWrap>
-            <Swiper
-                speed={1100}
-                loop={true}
-                navigation
-                pagination={{clickable: true}}
-                autoplay={{delay: 4000}}
-                spaceBetween={50}
-            >
-                <SwiperSlide>
-                    <div className="__feature">
-                        Manage Cloud Resource
-                        <p className="__description"><em>Quick and Easy Visualisation</em> of Multi-Cloud Resources.
-                        </p>
-                    </div>
-                    <figure className="__thumbnail"><img src="/assets/img_slide1.png" alt=""/></figure>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="__feature">
-                        Project-Based Management System
-                        <p className="__description">Manage All Resources with <em>Own Role and the Project</em> over
-                            All Clouds.</p>
-                    </div>
-                    <figure className="__thumbnail"><img src="/assets/img_slide2.png" alt=""/></figure>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="__feature">
-                        Consolidated Billing
-                        <p className="__description">Easy View on <em>Resource Expenses and Cost
-                            Optimization</em> with the Most Efficiency.</p>
-                    </div>
-                    <figure className="__thumbnail"><img src="/assets/img_slide3.png" alt=""/></figure>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="__feature">
-                        Real-Time Monitoring
-                        <p className={"__description"}>Support <em>Various Mornitoring System</em>: Cloudwatch,
-                            Stackdriver, Azure monitor.</p>
-                    </div>
-                    <figure className="__thumbnail"><img src="/assets/img_slide4.png" alt=""/></figure>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="__feature">
-                        Core Resource Automation Process
-                        <p className={"__description"}>Power Scheduling lets you <em>Set Resource and Control
-                            Expenses.</em></p>
-                    </div>
-                    <figure className="__thumbnail"><img src="/assets/img_slide5.png" alt=""/></figure>
-                </SwiperSlide>
-            </Swiper>
-        </SliderWrap>
-    );
-};
+SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
+
+const Slider = () => (
+    <SliderWrap>
+        <Swiper
+            speed={1100}
+            loop
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000 }}
+            spaceBetween={50}
+        >
+            <SwiperSlide>
+                <div className="__feature">
+                    Manage Cloud Resource
+                    <p className="__description"><em>Quick and Easy Visualisation</em> of Multi-Cloud Resources.
+                    </p>
+                </div>
+                <figure className="__thumbnail"><img src="/assets/img_slide1.png" alt="" /></figure>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="__feature">
+                    Project-Based Management System
+                    <p className="__description">Manage All Resources with <em>Own Role and the Project</em> over
+                        All Clouds.
+                    </p>
+                </div>
+                <figure className="__thumbnail"><img src="/assets/img_slide2.png" alt="" /></figure>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="__feature">
+                    Consolidated Billing
+                    <p className="__description">Easy View on <em>Resource Expenses and Cost Optimization</em> with the
+                        Most Efficiency.
+                    </p>
+                </div>
+                <figure className="__thumbnail"><img src="/assets/img_slide3.png" alt="" /></figure>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="__feature">
+                    Real-Time Monitoring
+                    <p className="__description">Support <em>Various Mornitoring System</em>: Cloudwatch, Stackdriver,
+                        Azure monitor.
+                    </p>
+                </div>
+                <figure className="__thumbnail"><img src="/assets/img_slide4.png" alt="" /></figure>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className="__feature">
+                    Core Resource Automation Process
+                    <p className="__description">Power Scheduling lets you <em>Set Resource and Control Expenses.</em>
+                    </p>
+                </div>
+                <figure className="__thumbnail"><img src="/assets/img_slide5.png" alt="" /></figure>
+            </SwiperSlide>
+        </Swiper>
+    </SliderWrap>
+);
 
 const SliderWrap = styled.div`
   overflow: hidden;
@@ -83,7 +87,7 @@ const SliderWrap = styled.div`
         justify-content: space-between;
         width: 100%;
       }
-      
+
       .swiper-slide-active {
         .__feature {
           opacity: 1;
@@ -99,7 +103,7 @@ const SliderWrap = styled.div`
     margin-right: 3rem;
     font-size: 4.6rem;
     line-height: 1.1;
-    color: ${({theme}) => theme.color.primary[300]};
+    color: ${({ theme }) => theme.color.primary[300]};
     opacity: 0;
     transition: opacity .3s;
 
@@ -107,10 +111,10 @@ const SliderWrap = styled.div`
       margin-top: 2rem;
       font-size: 2.1rem;
       line-height: 1.4;
-      color: ${({theme}) => theme.color.white};
+      color: ${({ theme }) => theme.color.white};
 
       em {
-        color: ${({theme}) => theme.color.gray[300]};
+        color: ${({ theme }) => theme.color.gray[300]};
       }
     }
   }
@@ -163,7 +167,7 @@ const SliderWrap = styled.div`
       width: 1.2rem;
       height: 1.2rem;
       margin-left: 1.4rem;
-      background-color: ${({theme}) => theme.color.gray[700]};
+      background-color: ${({ theme }) => theme.color.gray[700]};
       border-radius: 50%;
       transition: opacity .3s;
       cursor: pointer;
@@ -174,7 +178,7 @@ const SliderWrap = styled.div`
     }
 
     .swiper-pagination-bullet-active {
-      background-color: ${({theme}) => theme.color.green};
+      background-color: ${({ theme }) => theme.color.green};
     }
   }
 
@@ -207,6 +211,7 @@ const SliderWrap = styled.div`
       flex-direction: column;
       justify-content: center;
       width: 100%;
+      height: auto;
       min-height: 57.03vw;
       padding: 0 10.9rem;
       box-sizing: border-box;
@@ -270,7 +275,7 @@ const SliderWrap = styled.div`
       padding: 0 2rem;
       box-sizing: border-box;
     }
-    
+
 
     div[class^="swiper-button"] {
       right: 19.1vw;

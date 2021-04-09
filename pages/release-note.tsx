@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 import gfm from 'remark-gfm';
 import styled from 'styled-components';
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie-light-js';
 import { Header, Footer, Dropdown } from '../components';
 import { device } from '../styles/theme';
 import { LoadingV2 } from '../public/assets';
@@ -49,7 +49,6 @@ const ReleaseNote = () => {
             preserveAspectRatio: 'xMidYMid slice',
             progressiveLoad: true,
         },
-        useSubFrames: false,
     };
 
     return (
