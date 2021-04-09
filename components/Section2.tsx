@@ -1,36 +1,36 @@
 import styled from 'styled-components';
-import {device} from '../styles/theme';
-import {Ellipse3, Integrate, Improve, Manage,} from '../public/assets';
+import { device } from '../styles/theme';
+import {
+    Ellipse3, Integrate, Improve, Manage,
+} from '../public/assets';
 
-const Section2 = () => {
-    return (
-        <Box>
-            <Content>
-                <h3>we&apos;re very capable:</h3>
-                <div className="__keywords">
-                    <div className="__keyword __keyword1">
-                        <figure><Integrate/></figure>
-                        <em className="__word">Integrate</em>
-                        <div className="__sub">Multi-Cloud Accounts</div>
-                    </div>
-                    <div className="__keyword __keyword2">
-                        <figure><Improve/></figure>
-                        <em className="__word">Improve</em>
-                        <div className="__sub">Operation Efficiency</div>
-                    </div>
-                    <div className="__keyword __keyword3">
-                        <figure><Manage/></figure>
-                        <em className="__word">Manage</em>
-                        <div className="__sub">Cloud Expense</div>
-                    </div>
+const Section2 = () => (
+    <Box>
+        <Content>
+            <h3>we&apos;re very capable:</h3>
+            <div className="__keywords">
+                <div className="__keyword __keyword1">
+                    <figure><Integrate /></figure>
+                    <em className="__word">Integrate</em>
+                    <div className="__sub">Multi-Cloud Accounts</div>
                 </div>
-            </Content>
-            <Figures>
-                <figure className="__ellipse3"><Ellipse3/></figure>
-            </Figures>
-        </Box>
-    )
-};
+                <div className="__keyword __keyword2">
+                    <figure><Improve /></figure>
+                    <em className="__word">Improve</em>
+                    <div className="__sub">Operation Efficiency</div>
+                </div>
+                <div className="__keyword __keyword3">
+                    <figure><Manage /></figure>
+                    <em className="__word">Manage</em>
+                    <div className="__sub">Cloud Expense</div>
+                </div>
+            </div>
+        </Content>
+        <Figures>
+            <figure className="__ellipse3"><Ellipse3 /></figure>
+        </Figures>
+    </Box>
+);
 
 const Box = styled.section`
   overflow: hidden;
@@ -60,7 +60,7 @@ const Content = styled.div`
 
   h3 {
     margin-bottom: 18.3rem;
-    color: ${({theme}) => theme.color.pink};
+    color: ${({ theme }) => theme.color.pink};
     font-weight: 600;
     opacity: 0.8;
     font-size: 2.6rem;
@@ -70,7 +70,7 @@ const Content = styled.div`
   .__keywords {
     display: flex;
     font-weight: 400;
-    color: ${({theme}) => theme.color.primary[100]};
+    color: ${({ theme }) => theme.color.primary[100]};
   }
 
   .__keyword {
@@ -86,7 +86,7 @@ const Content = styled.div`
       margin-top: .8rem;
       margin-bottom: .8rem;
       font-size: 4.6rem;
-      color: ${({theme}) => theme.color.primary[300]};
+      color: ${({ theme }) => theme.color.primary[300]};
     }
 
     .__sub {
@@ -195,5 +195,5 @@ const Figures = styled.figure`
     width: 80rem;
     max-width: 120vw;
   }
-`
+`;
 export default Section2;

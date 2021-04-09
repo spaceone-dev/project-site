@@ -31,7 +31,7 @@ module.exports = {
         'react/prop-types': 0,
         'no-use-before-define': 'off',
         'no-nested-ternary': ['off'],
-        'max-len': ['error', { code: 200 }],
+        'max-len': ['error', { code: 400 }],
         indent: ['error', 4],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],

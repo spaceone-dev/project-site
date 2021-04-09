@@ -1,13 +1,13 @@
-import Swiper from './Swiper';
 import styled from 'styled-components';
-import {device} from '../styles/theme';
+import Swiper from './Swiper';
+import { device } from '../styles/theme';
 
 const Section3 = () => (
     <Box>
         <Content>
             <h3>our approach:</h3>
             <div className="__swiperWrap">
-                <Swiper/>
+                <Swiper />
             </div>
         </Content>
     </Box>
@@ -44,7 +44,7 @@ const Content = styled.div`
 
   h3 {
     margin-bottom: 3rem;
-    color: ${({theme}) => theme.color.pink};
+    color: ${({ theme }) => theme.color.pink};
     font-weight: 600;
     opacity: 0.8;
     font-size: 2.6rem;

@@ -1,23 +1,23 @@
 import styled from 'styled-components';
-import {device} from '../styles/theme';
-import {SOneManFooter} from '../public/assets';
+import { device } from '../styles/theme';
+import { SOneManFooter } from '../public/assets';
 
 const Footer = () => (
     <Box>
         <Content>
-            <figure className="__footer__logo"><SOneManFooter/></figure>
+            <figure className="__footer__logo"><SOneManFooter /></figure>
             <div className="__item __copyright">
-                <h4>SpaceONE<br/>Copyright 2021</h4>
+                <h4>SpaceONE<br />Copyright 2021</h4>
                 <div className="__item__info __sponsored"><span>Sponsored by </span>MEGAZONE Cloud</div>
             </div>
             <div className="__item __contact">
                 <h4>Contact</h4>
-                <a className="__item__info" href="mailto:webmaster@example.com" target="_blank">support@spaceone.dev</a>
+                <a className="__item__info" href="mailto:webmaster@example.com" target="_blank" rel="noreferrer">support@spaceone.dev</a>
             </div>
             <div className="__item __address">
                 <h4>Seoul</h4>
-                <span className="__item__info">46, Nonhyeon-ro 85-gil <br/>Gangnam-gu, Seoul, Korea</span>
-                <br/>
+                <span className="__item__info">46, Nonhyeon-ro 85-gil <br />Gangnam-gu, Seoul, Korea</span>
+                <br />
                 <a href="tel:+82 1644-2243" className="__item__info">+82 1644-2243</a>
             </div>
         </Content>
@@ -33,7 +33,7 @@ const Box = styled.footer`
   width: auto;
   background: #000f1c;
   font-family: Helvetica Neue;
-  color: ${({theme}) => theme.color.primary[100]};
+  color: ${({ theme }) => theme.color.primary[100]};
 
   @media ${device.desktop} {
     height: 44rem;
@@ -75,7 +75,7 @@ const Content = styled.div`
     }
 
     a {
-      color: ${({theme}) => theme.color.primary[100]};
+      color: ${({ theme }) => theme.color.primary[100]};
       text-decoration: none;
     }
 
