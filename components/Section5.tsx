@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import {device} from '../styles/theme';
+import { device } from '../styles/theme';
 
 const Section5 = () => (
     <Box>
-        <div className="__universe"></div>
+        <div className="__universe" />
         <Content>
-            <h3>our <br></br>universe</h3>
+            <h3>our <br />universe</h3>
         </Content>
     </Box>
 );
@@ -66,7 +66,7 @@ const Content = styled.div`
     position: absolute;
     z-index: 2;
     opacity: 0.8;
-    color: ${({theme}) => theme.color.pink};
+    color: ${({ theme }) => theme.color.pink};
     font-weight: 600;
     font-size: 2.6rem;
     text-transform: uppercase;
@@ -74,10 +74,8 @@ const Content = styled.div`
   }
 
   .__universewrap {
-    //display: none;
     position: relative;
     z-index: 1;
-    //width: 118vw;
     border: solid 1px white;
 
     img {
@@ -123,7 +121,6 @@ const Content = styled.div`
 
     .__universewrap {
       display: block;
-      //width: 70rem;
       margin-left: -33rem;
       border: solid 1px yellow;
     }

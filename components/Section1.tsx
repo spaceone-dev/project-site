@@ -38,8 +38,8 @@ const Section1 = () => {
                     className="__btn__git"
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}
-                    tabIndex={0}
                     href="https://github.com/spaceone-dev"
+                    tabIndex={0}
                     target="_blank"
                     rel="noreferrer"
                 >

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {device} from '../styles/theme';
 import Lottie from 'react-lottie-light-js';
-import {ExternalLinkGreen, Spaceship} from '../public/assets';
+import { device } from '../styles/theme';
+import { Spaceship } from '../public/assets';
 
 const Section6 = () => {
     const optionsSpaceship = {
@@ -25,7 +25,6 @@ const Section6 = () => {
                     <div className="__info sa sa-up" data-sa-delay="200">
                         <strong>28</strong>
                         <span>Contributors</span>
-                        {/*<div className="__info__list__btn">View Contribution Guide<span><ExternalLinkGreen/></span></div>*/}
                     </div>
                 </div>
                 <div className="__mission">
@@ -33,7 +32,7 @@ const Section6 = () => {
                     for Sustainable Ecosystem.
                 </div>
                 <div>
-                    <figure className="__spaceship sa sa-up"><Lottie options={optionsSpaceship}/></figure>
+                    <figure className="__spaceship sa sa-up"><Lottie options={optionsSpaceship} /></figure>
                     <div className="__gradient sa sa-up" data-sa-delay="100">Climb Aboard <span>the <em>SpaceONE</em>ship</span></div>
                 </div>
             </Content>
@@ -70,10 +69,10 @@ const Content = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    border-bottom: .1rem solid ${({theme}) => theme.color.primary[300]};
+    border-bottom: .1rem solid ${({ theme }) => theme.color.primary[300]};
     font-size: 2.2rem;
     line-height: 2.6rem;
-    color: ${({theme}) => theme.color.gray[300]};
+    color: ${({ theme }) => theme.color.gray[300]};
 
 
     .__info {
@@ -86,35 +85,15 @@ const Content = styled.div`
         font-size: 6rem;
         line-height: 1.1;
         font-weight: 400;
-        color: ${({theme}) => theme.color.primary[300]};
+        color: ${({ theme }) => theme.color.primary[300]};
       }
     }
-
-    // &__btn {
-    //   font-weight: 300;
-    //   cursor: pointer;
-    //   font-size: 1.7rem;
-    //   color: ${({theme}) => theme.color.green};
-    //   display: flex;
-    //   align-items: center;
-    //   letter-spacing: -0.01em;
-    //
-    //   span {
-    //     display: inline-block;
-    //     margin-left: 0.4rem;
-    //     margin-top: 0.2rem;
-    //   }
-    //
-    //   &:hover {
-    //     text-decoration: underline;
-    //   }
-    // }
   }
 
   .__mission {
     font-weight: 400;
     margin-top: 5rem;
-    color: ${({theme}) => theme.color.primary[200]};
+    color: ${({ theme }) => theme.color.primary[200]};
     font-size: 3.7rem;
     line-height: 130%;
     opacity: 0.8;
@@ -182,12 +161,6 @@ const Content = styled.div`
           font-size: 4.4rem;
         }
       }
-
-      //&__btn {
-      //  display: flex;
-      //  width: 100%;
-      //  font-size: 1.4rem;
-      //}
     }
 
     .__mission {

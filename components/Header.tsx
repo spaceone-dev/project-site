@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {Menu} from "./index";
-import styled from "styled-components";
-import {device} from '../styles/theme';
-import {SpaceONE, SOneMenuV2, Close} from '../public/assets';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Menu } from './index';
+import { device } from '../styles/theme';
+import { SpaceONE, SOneMenuV2, Close } from '../public/assets';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,20 +29,22 @@ const Header = () => {
         <Wrap isMenuOpen={isMenuOpen}>
             <div className="__header">
                 <div className="__inner">
-                    <h1
-                        className="__logo"
-                        role="link"
-                        tabIndex={0}
-                    ><a href="/"><SpaceONE/></a>
+                    <h1 className="__logo">
+                        <a
+                            href="/"
+                            tabIndex={0}
+                        >
+                            <SpaceONE />
+                        </a>
                     </h1>
                     <button
+                        type="button"
                         className="__menu"
-                        role="button"
                         tabIndex={0}
                         onClick={handleMenuOpen}
                         onKeyPress={handleMenuOpen}
                     >
-                        <span className="__ico__menu">{isMenuOpen ? <Close/> : <SOneMenuV2/>}</span>
+                        <span className="__ico__menu">{isMenuOpen ? <Close /> : <SOneMenuV2 />}</span>
                         <span className="__txt">{isMenuOpen ? 'Close' : 'Menu'}</span>
                     </button>
                 </div>
@@ -54,8 +56,8 @@ const Header = () => {
                 />
             )}
         </Wrap>
-    )
-}
+    );
+};
 
 const Wrap = styled.header<{ isMenuOpen: boolean }>`
   font-size: 3rem;
@@ -91,7 +93,7 @@ const Wrap = styled.header<{ isMenuOpen: boolean }>`
     display: flex;
     align-items: center;
     padding: 0;
-    color: ${({theme}) => theme.color.primary[200]};
+    color: ${({ theme }) => theme.color.primary[200]};
     font-size: 2rem;
     font-family: "Roboto";
     font-weight: 300;
@@ -103,10 +105,10 @@ const Wrap = styled.header<{ isMenuOpen: boolean }>`
 
     &:hover {
       transition: 0.3s;
-      color: ${({theme: t}) => t.color.green};
+      color: ${({ theme: t }) => t.color.green};
 
       path {
-        fill: ${({theme: t}) => t.color.green};
+        fill: ${({ theme: t }) => t.color.green};
         transition: fill 0.3s;
       }
     }
