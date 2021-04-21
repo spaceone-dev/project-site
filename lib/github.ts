@@ -7,7 +7,7 @@ const { serverRuntimeConfig } = getConfig();
 const OWNER = 'spaceone-dev';
 const REPO = 'spaceone';
 const BRANCH = 'master';
-const NOTE_PATH = 'release_notes/en';
+const NOTE_PATH = 'release_notes/ko';
 
 const octokit = new Octokit({
   auth: serverRuntimeConfig.githubAccessToken,
