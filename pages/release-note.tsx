@@ -24,14 +24,21 @@ const ReleaseNote = () => {
     const getNoteData = async (version: string) => {
         setLoading(true);
         setNoteVersion(version);
-        const res = await axios.get(`api/release-note/${version}`);
-        setNoteData(res.data.noteData);
-        setLoading(false);
+        try {
+            const res = await axios.get(`api/release-note/${version}`);
+            setNoteData(res.data.noteData);
+        } catch (e) {
+            console.error(e);
+            setNoteData('');
+        } finally {
+            setLoading(false);
+        }
     };
 
     useEffect(() => {
         if (error) {
             setIsError(true);
+            setLoading(false);
         } else if (data) {
             setIsError(false);
             setNoteList(data.noteList);
