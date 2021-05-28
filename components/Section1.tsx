@@ -31,8 +31,8 @@ const Section1 = () => {
             <Content>
                 <h2>Manage All<br />Cloud Resources<br />in <span className="__gradient">One Platform</span></h2>
                 <div className="__sub">
-                    SpaceONE is an Open-Source Platform and Enables Integrated Management of
-                    Multi-Cloud.
+                    SpaceONE is an Open Source Platform for Enabling Integrated Management of
+                    Multi-Clouds.
                 </div>
                 <a
                     className="__btn__git"

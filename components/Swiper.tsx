@@ -38,8 +38,7 @@ const Slider = () => (
             <SwiperSlide>
                 <div className="__feature">
                     Consolidated Billing
-                    <p className="__description">Easy View on <em>Resource Expenses and Cost Optimization</em> with the
-                        Most Efficiency.
+                    <p className="__description">Easy View on <em>Resource Expenses and the Most Efficient Cost Optimization</em>
                     </p>
                 </div>
                 <figure className="__thumbnail"><img src="/assets/img_slide3.png" alt="" /></figure>
@@ -47,7 +46,7 @@ const Slider = () => (
             <SwiperSlide>
                 <div className="__feature">
                     Real-Time Monitoring
-                    <p className="__description">Support <em>Various Mornitoring System</em>: Cloudwatch, Stackdriver,
+                    <p className="__description">Support <em>Various Mornitoring Systems</em>: Cloudwatch, Stackdriver,
                         Azure monitor.
                     </p>
                 </div>
