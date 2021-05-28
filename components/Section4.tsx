@@ -53,8 +53,8 @@ const Section4 = () => {
                         </figure>
                         <div className="__keyword">Plugin Architecture</div>
                         <div className="__describe">
-                            You can build your own plugin and share with others. You also
-                            can find various plugins including multi-cloud service, power
+                            You can build your own plugin and share with others. You can also
+                            find various plugins including multi-cloud service, power
                             managements, even scheduling over resources.
                         </div>
                     </li>
